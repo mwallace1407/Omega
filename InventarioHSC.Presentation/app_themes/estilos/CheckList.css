@@ -1,0 +1,14 @@
+﻿.ModalPopupBG
+{
+    background-color: #DAE7F6;
+    filter: alpha(opacity=50);
+    opacity: 0.7;
+}
+
+.Popup
+{
+    min-width:200px;
+    min-height:150px;
+    background:#C4D7EF;
+    font-size:x-small;
+}

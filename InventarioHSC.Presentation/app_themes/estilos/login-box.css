@@ -1,0 +1,19 @@
+.Login .Textbox, .Login .Hover
+{
+    width: 37px;
+    height: 17px;
+    background: transparent url('../Imagenes/inputlogin.png') no-repeat left top;
+    color: Black;
+    border: none;
+    padding: 5px;
+    font-weight: bold;
+}
+.Textbox:focus 
+{
+    background: transparent url('../Imagenes/inputloginOrange.png') no-repeat left top;
+}
+.Textbox:active 
+{
+    background: transparent url('../Imagenes/inputloginOrange.png') no-repeat left top;
+}
+

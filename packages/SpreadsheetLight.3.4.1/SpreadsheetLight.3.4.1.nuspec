@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>SpreadsheetLight</id>
+    <version>3.4.1</version>
+    <title>SpreadsheetLight</title>
+    <authors>Vincent Tan</authors>
+    <owners>Vincent Tan</owners>
+    <licenseUrl>http://spreadsheetlight.com/license/</licenseUrl>
+    <projectUrl>http://spreadsheetlight.com/</projectUrl>
+    <iconUrl>http://spreadsheetlight.com/images/spreadsheetlightlogo.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>SpreadsheetLight is an open source Open XML spreadsheet library for .NET Framework written in C#, and is released under the MIT License. You can create new Open XML spreadsheets, or work with existing Open XML spreadsheets that are compatible with Microsoft Excel 2007/2010/2013 and LibreOffice Calc.
+
+No Office/Excel Interop needed. You do not need Microsoft Office/Excel to be installed.
+
+Dependency: Open XML SDK 2.0 (not 2.5)</description>
+    <summary>SpreadsheetLight is an Open XML spreadsheet library compatible with Microsoft Excel 2007/2010/2013 and LibreOffice Calc.</summary>
+    <releaseNotes>- Optimised GetWorksheetStatistics(). It's now faster and less memory intensive.
+- Bug fix: autofitting rows with a smaller initial height now correctly autofit to content
+- Bug fix (?): SLStyle.MergeStyle() now takes on the new style object's format code regardless.</releaseNotes>
+    <copyright>Vincent Tan</copyright>
+    <language />
+    <tags>excel spreadsheet openxml ooxml xlsx txt csv</tags>
+  </metadata>
+</package>

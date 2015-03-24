@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>=P</title>
+    <link href="../../App_Themes/Estilos/Redmon/jquery-ui-1.7.2.custom.css" type="text/css"
+        rel="stylesheet" />
+    <script type="text/javascript">
+        function FocusPrimero() {
+            document.getElementById("btnIngresar").focus();
+        }
+
+        function IrPrincipal() {
+            window.location = "../Acceso.aspx";
+        }
+    </script>
+    <style type="text/css">
+        body
+        {
+            background-image: url('../App_Themes/Imagenes/SuCasitaWater.png');
+            background-repeat: repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body onload="FocusPrimero();">
+    <table width="100%">
+        <tr>
+            <td align="center">
+                <img alt="" src="../App_Themes/Imagenes/TimeOut.png" />
+                <br />
+                <input id="btnIngresar" type="button" value="Ingresar" class="ui-corner-all ui-state-default cancel"
+                    onclick="IrPrincipal();" style="width: 120px" />
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

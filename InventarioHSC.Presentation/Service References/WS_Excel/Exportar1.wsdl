@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ReportePolizas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="FechaIni" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="FechaFin" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="NumeroMovimiento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cuenta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DescripcionCuenta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DescripcionEncabezado" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Moneda" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="BusquedaEstricta" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutaArchivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrosPorHoja" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RelSrvApp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutaArchivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrosPorHoja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Srv_Id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RelBDApp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutaArchivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrosPorHoja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppBD_Id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RelSrvBD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutaArchivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrosPorHoja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Srv_Id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DiscosSrv">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutaArchivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrosPorHoja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Srv_Id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeneralAplicaciones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutaArchivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrosPorHoja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppSt_Id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AppT_Id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="App_EnTFS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="App_Productiva" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeneralServidores">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutaArchivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrosPorHoja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="idSO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idEquipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Srv_Tipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Srv_EsVirtual" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Srv_Estado" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InventarioEquipos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutaArchivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrosPorHoja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="idTipoEquipo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idMarca" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idUbicacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idUsuario" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Responsiva" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Modelo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NoSerie" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaMovimientoIni" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaMovimientoFin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="idEstado" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Acumulados_SAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutaArchivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrosPorHoja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Anio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Empleados" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Concepto_Nomina" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AsignacionOrganizativa">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutaArchivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrosPorHoja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Empleados" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuxiliaresContables">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutaArchivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrosPorHoja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ejercicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cuenta_Mayor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuxiliaresDetalle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutaArchivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrosPorHoja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ejercicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cuenta_Mayor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BalanzasContables">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutaArchivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrosPorHoja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ejercicio" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cuenta_Mayor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ContratosLaborales">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutaArchivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrosPorHoja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Empleados" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Cuentas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutaArchivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrosPorHoja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Sociedad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cuenta_Mayor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DatosBancarios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutaArchivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrosPorHoja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Empleados" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DatosPersonales">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutaArchivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrosPorHoja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Empleados" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Direcciones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutaArchivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrosPorHoja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Empleados" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HorariosLaborales">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutaArchivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrosPorHoja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Empleados" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IngresoEmpleados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutaArchivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrosPorHoja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Empleados" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MedidasRH">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutaArchivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrosPorHoja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Empleados" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NumAntEmp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutaArchivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrosPorHoja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Empleados" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemuneracionEconomica">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutaArchivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrosPorHoja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Empleados" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CintasRespaldo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutaArchivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrosPorHoja" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Tipo" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="Obj_Id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="RC_Cinta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MonitoreoSW">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutaArchivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrosPorHoja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UsuarioRevisor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Pass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Dominio" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RevisarTodos" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="EquipoEspecifico" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InventarioSW">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RutaArchivos" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RegistrosPorHoja" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="SWE_Id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SWG_Id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SW_Descripcion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SW_Version" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SWEx_NoParte" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SWEx_Llave" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SWEx_Ubicacion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SWEx_Observaciones" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SWEx_EnExistencia" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarArchivoTempGeneral">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TipoDocumento" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Finalizado" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ReportePolizasSoapIn">
+    <wsdl:part name="parameters" element="tns:ReportePolizas" />
+  </wsdl:message>
+  <wsdl:message name="RelSrvAppSoapIn">
+    <wsdl:part name="parameters" element="tns:RelSrvApp" />
+  </wsdl:message>
+  <wsdl:message name="RelBDAppSoapIn">
+    <wsdl:part name="parameters" element="tns:RelBDApp" />
+  </wsdl:message>
+  <wsdl:message name="RelSrvBDSoapIn">
+    <wsdl:part name="parameters" element="tns:RelSrvBD" />
+  </wsdl:message>
+  <wsdl:message name="DiscosSrvSoapIn">
+    <wsdl:part name="parameters" element="tns:DiscosSrv" />
+  </wsdl:message>
+  <wsdl:message name="GeneralAplicacionesSoapIn">
+    <wsdl:part name="parameters" element="tns:GeneralAplicaciones" />
+  </wsdl:message>
+  <wsdl:message name="GeneralServidoresSoapIn">
+    <wsdl:part name="parameters" element="tns:GeneralServidores" />
+  </wsdl:message>
+  <wsdl:message name="InventarioEquiposSoapIn">
+    <wsdl:part name="parameters" element="tns:InventarioEquipos" />
+  </wsdl:message>
+  <wsdl:message name="Acumulados_SAPSoapIn">
+    <wsdl:part name="parameters" element="tns:Acumulados_SAP" />
+  </wsdl:message>
+  <wsdl:message name="AsignacionOrganizativaSoapIn">
+    <wsdl:part name="parameters" element="tns:AsignacionOrganizativa" />
+  </wsdl:message>
+  <wsdl:message name="AuxiliaresContablesSoapIn">
+    <wsdl:part name="parameters" element="tns:AuxiliaresContables" />
+  </wsdl:message>
+  <wsdl:message name="AuxiliaresDetalleSoapIn">
+    <wsdl:part name="parameters" element="tns:AuxiliaresDetalle" />
+  </wsdl:message>
+  <wsdl:message name="BalanzasContablesSoapIn">
+    <wsdl:part name="parameters" element="tns:BalanzasContables" />
+  </wsdl:message>
+  <wsdl:message name="ContratosLaboralesSoapIn">
+    <wsdl:part name="parameters" element="tns:ContratosLaborales" />
+  </wsdl:message>
+  <wsdl:message name="CuentasSoapIn">
+    <wsdl:part name="parameters" element="tns:Cuentas" />
+  </wsdl:message>
+  <wsdl:message name="DatosBancariosSoapIn">
+    <wsdl:part name="parameters" element="tns:DatosBancarios" />
+  </wsdl:message>
+  <wsdl:message name="DatosPersonalesSoapIn">
+    <wsdl:part name="parameters" element="tns:DatosPersonales" />
+  </wsdl:message>
+  <wsdl:message name="DireccionesSoapIn">
+    <wsdl:part name="parameters" element="tns:Direcciones" />
+  </wsdl:message>
+  <wsdl:message name="HorariosLaboralesSoapIn">
+    <wsdl:part name="parameters" element="tns:HorariosLaborales" />
+  </wsdl:message>
+  <wsdl:message name="IngresoEmpleadosSoapIn">
+    <wsdl:part name="parameters" element="tns:IngresoEmpleados" />
+  </wsdl:message>
+  <wsdl:message name="MedidasRHSoapIn">
+    <wsdl:part name="parameters" element="tns:MedidasRH" />
+  </wsdl:message>
+  <wsdl:message name="NumAntEmpSoapIn">
+    <wsdl:part name="parameters" element="tns:NumAntEmp" />
+  </wsdl:message>
+  <wsdl:message name="RemuneracionEconomicaSoapIn">
+    <wsdl:part name="parameters" element="tns:RemuneracionEconomica" />
+  </wsdl:message>
+  <wsdl:message name="CintasRespaldoSoapIn">
+    <wsdl:part name="parameters" element="tns:CintasRespaldo" />
+  </wsdl:message>
+  <wsdl:message name="MonitoreoSWSoapIn">
+    <wsdl:part name="parameters" element="tns:MonitoreoSW" />
+  </wsdl:message>
+  <wsdl:message name="InventarioSWSoapIn">
+    <wsdl:part name="parameters" element="tns:InventarioSW" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarArchivoTempGeneralSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarArchivoTempGeneral" />
+  </wsdl:message>
+  <wsdl:portType name="ExportarSoap">
+    <wsdl:operation name="ReportePolizas">
+      <wsdl:input message="tns:ReportePolizasSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="RelSrvApp">
+      <wsdl:input message="tns:RelSrvAppSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="RelBDApp">
+      <wsdl:input message="tns:RelBDAppSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="RelSrvBD">
+      <wsdl:input message="tns:RelSrvBDSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="DiscosSrv">
+      <wsdl:input message="tns:DiscosSrvSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="GeneralAplicaciones">
+      <wsdl:input message="tns:GeneralAplicacionesSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="GeneralServidores">
+      <wsdl:input message="tns:GeneralServidoresSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="InventarioEquipos">
+      <wsdl:input message="tns:InventarioEquiposSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="Acumulados_SAP">
+      <wsdl:input message="tns:Acumulados_SAPSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="AsignacionOrganizativa">
+      <wsdl:input message="tns:AsignacionOrganizativaSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="AuxiliaresContables">
+      <wsdl:input message="tns:AuxiliaresContablesSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="AuxiliaresDetalle">
+      <wsdl:input message="tns:AuxiliaresDetalleSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="BalanzasContables">
+      <wsdl:input message="tns:BalanzasContablesSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="ContratosLaborales">
+      <wsdl:input message="tns:ContratosLaboralesSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="Cuentas">
+      <wsdl:input message="tns:CuentasSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="DatosBancarios">
+      <wsdl:input message="tns:DatosBancariosSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="DatosPersonales">
+      <wsdl:input message="tns:DatosPersonalesSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="Direcciones">
+      <wsdl:input message="tns:DireccionesSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="HorariosLaborales">
+      <wsdl:input message="tns:HorariosLaboralesSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="IngresoEmpleados">
+      <wsdl:input message="tns:IngresoEmpleadosSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="MedidasRH">
+      <wsdl:input message="tns:MedidasRHSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="NumAntEmp">
+      <wsdl:input message="tns:NumAntEmpSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="RemuneracionEconomica">
+      <wsdl:input message="tns:RemuneracionEconomicaSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="CintasRespaldo">
+      <wsdl:input message="tns:CintasRespaldoSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="MonitoreoSW">
+      <wsdl:input message="tns:MonitoreoSWSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="InventarioSW">
+      <wsdl:input message="tns:InventarioSWSoapIn" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarArchivoTempGeneral">
+      <wsdl:input message="tns:RegistrarArchivoTempGeneralSoapIn" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ExportarSoap" type="tns:ExportarSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReportePolizas">
+      <soap:operation soapAction="http://tempuri.org/ReportePolizas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="RelSrvApp">
+      <soap:operation soapAction="http://tempuri.org/RelSrvApp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="RelBDApp">
+      <soap:operation soapAction="http://tempuri.org/RelBDApp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="RelSrvBD">
+      <soap:operation soapAction="http://tempuri.org/RelSrvBD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="DiscosSrv">
+      <soap:operation soapAction="http://tempuri.org/DiscosSrv" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="GeneralAplicaciones">
+      <soap:operation soapAction="http://tempuri.org/GeneralAplicaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="GeneralServidores">
+      <soap:operation soapAction="http://tempuri.org/GeneralServidores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="InventarioEquipos">
+      <soap:operation soapAction="http://tempuri.org/InventarioEquipos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Acumulados_SAP">
+      <soap:operation soapAction="http://tempuri.org/Acumulados_SAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="AsignacionOrganizativa">
+      <soap:operation soapAction="http://tempuri.org/AsignacionOrganizativa" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="AuxiliaresContables">
+      <soap:operation soapAction="http://tempuri.org/AuxiliaresContables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="AuxiliaresDetalle">
+      <soap:operation soapAction="http://tempuri.org/AuxiliaresDetalle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="BalanzasContables">
+      <soap:operation soapAction="http://tempuri.org/BalanzasContables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ContratosLaborales">
+      <soap:operation soapAction="http://tempuri.org/ContratosLaborales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Cuentas">
+      <soap:operation soapAction="http://tempuri.org/Cuentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="DatosBancarios">
+      <soap:operation soapAction="http://tempuri.org/DatosBancarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="DatosPersonales">
+      <soap:operation soapAction="http://tempuri.org/DatosPersonales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Direcciones">
+      <soap:operation soapAction="http://tempuri.org/Direcciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="HorariosLaborales">
+      <soap:operation soapAction="http://tempuri.org/HorariosLaborales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="IngresoEmpleados">
+      <soap:operation soapAction="http://tempuri.org/IngresoEmpleados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="MedidasRH">
+      <soap:operation soapAction="http://tempuri.org/MedidasRH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NumAntEmp">
+      <soap:operation soapAction="http://tempuri.org/NumAntEmp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="RemuneracionEconomica">
+      <soap:operation soapAction="http://tempuri.org/RemuneracionEconomica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="CintasRespaldo">
+      <soap:operation soapAction="http://tempuri.org/CintasRespaldo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="MonitoreoSW">
+      <soap:operation soapAction="http://tempuri.org/MonitoreoSW" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="InventarioSW">
+      <soap:operation soapAction="http://tempuri.org/InventarioSW" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarArchivoTempGeneral">
+      <soap:operation soapAction="http://tempuri.org/RegistrarArchivoTempGeneral" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ExportarSoap12" type="tns:ExportarSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReportePolizas">
+      <soap12:operation soapAction="http://tempuri.org/ReportePolizas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="RelSrvApp">
+      <soap12:operation soapAction="http://tempuri.org/RelSrvApp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="RelBDApp">
+      <soap12:operation soapAction="http://tempuri.org/RelBDApp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="RelSrvBD">
+      <soap12:operation soapAction="http://tempuri.org/RelSrvBD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="DiscosSrv">
+      <soap12:operation soapAction="http://tempuri.org/DiscosSrv" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="GeneralAplicaciones">
+      <soap12:operation soapAction="http://tempuri.org/GeneralAplicaciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="GeneralServidores">
+      <soap12:operation soapAction="http://tempuri.org/GeneralServidores" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="InventarioEquipos">
+      <soap12:operation soapAction="http://tempuri.org/InventarioEquipos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Acumulados_SAP">
+      <soap12:operation soapAction="http://tempuri.org/Acumulados_SAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="AsignacionOrganizativa">
+      <soap12:operation soapAction="http://tempuri.org/AsignacionOrganizativa" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="AuxiliaresContables">
+      <soap12:operation soapAction="http://tempuri.org/AuxiliaresContables" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="AuxiliaresDetalle">
+      <soap12:operation soapAction="http://tempuri.org/AuxiliaresDetalle" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="BalanzasContables">
+      <soap12:operation soapAction="http://tempuri.org/BalanzasContables" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ContratosLaborales">
+      <soap12:operation soapAction="http://tempuri.org/ContratosLaborales" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Cuentas">
+      <soap12:operation soapAction="http://tempuri.org/Cuentas" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="DatosBancarios">
+      <soap12:operation soapAction="http://tempuri.org/DatosBancarios" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="DatosPersonales">
+      <soap12:operation soapAction="http://tempuri.org/DatosPersonales" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Direcciones">
+      <soap12:operation soapAction="http://tempuri.org/Direcciones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="HorariosLaborales">
+      <soap12:operation soapAction="http://tempuri.org/HorariosLaborales" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="IngresoEmpleados">
+      <soap12:operation soapAction="http://tempuri.org/IngresoEmpleados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="MedidasRH">
+      <soap12:operation soapAction="http://tempuri.org/MedidasRH" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NumAntEmp">
+      <soap12:operation soapAction="http://tempuri.org/NumAntEmp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="RemuneracionEconomica">
+      <soap12:operation soapAction="http://tempuri.org/RemuneracionEconomica" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="CintasRespaldo">
+      <soap12:operation soapAction="http://tempuri.org/CintasRespaldo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="MonitoreoSW">
+      <soap12:operation soapAction="http://tempuri.org/MonitoreoSW" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="InventarioSW">
+      <soap12:operation soapAction="http://tempuri.org/InventarioSW" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarArchivoTempGeneral">
+      <soap12:operation soapAction="http://tempuri.org/RegistrarArchivoTempGeneral" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Exportar">
+    <wsdl:port name="ExportarSoap" binding="tns:ExportarSoap">
+      <soap:address location="http://localhost/ExportarExcelWS/Exportar.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ExportarSoap12" binding="tns:ExportarSoap12">
+      <soap12:address location="http://localhost/ExportarExcelWS/Exportar.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
