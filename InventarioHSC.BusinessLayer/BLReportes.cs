@@ -808,6 +808,31 @@ namespace InventarioHSC.BusinessLayer
             objRpt.ActualizarAutorizacionReporte(Id, Autorizado, EsCat);
         }
 
+        #region Permisos_Usuarios
+        public void BuscarUsuarioPermisos(ref DropDownList oddlUsu, string strBusqueda)
+        {
+            DLRptDinamicos odlRpt = new DLRptDinamicos();
+
+            oddlUsu.DataValueField = "puestoDesc";
+            oddlUsu.DataTextField = "nombre";
+            oddlUsu.DataSource = odlRpt.BuscarUsuarioPermisos(strBusqueda);
+        }
+
+        public System.Data.DataTable LeePermisosUsuario(string UserId)
+        {
+            DLRptDinamicos odlRpt = new DLRptDinamicos();
+
+            return odlRpt.LeePermisosUsuario(UserId);
+        }
+
+        public System.Data.DataTable ActualizaPermisosUsuario(string UserId, int RD_Id, bool Usu_Autorizado)
+        {
+            DLRptDinamicos odlRpt = new DLRptDinamicos();
+
+            return odlRpt.ActualizaPermisosUsuario(UserId, RD_Id, Usu_Autorizado);
+        }
+        #endregion Permisos_Usuarios
+
         public struct RptDinamicosParametro
         {
             public string Nombre;

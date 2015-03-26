@@ -427,5 +427,114 @@ namespace InventarioHSC.DataLayer
             }
             catch { }
         }
+
+        #region Permisos_Usuario
+        public List<Usuario> BuscarUsuarioPermisos(string strBusqueda)
+        {
+            DataSet MensajeBD = new DataSet();
+            Database db = EnterpriseLibraryContainer.Current.GetInstance<Database>("Inventario");
+            StringBuilder sqlCommand = new StringBuilder();
+            DbCommand selectCommand = null;
+            List<Usuario> lstUsuarios = new List<Usuario>();
+
+            try
+            {
+                selectCommand = db.GetSqlStringCommand("stpS_RptDinamicosBuscaUsuarios");
+                selectCommand.CommandType = CommandType.StoredProcedure;
+
+                db.AddInParameter(selectCommand, "@Usu_Nombres", DbType.String, strBusqueda);
+
+                MensajeBD = db.ExecuteDataSet(selectCommand);
+
+                if (MensajeBD.Tables.Count > 0 && MensajeBD.Tables[0].Rows.Count > 0)
+                {
+                    foreach (DataRow dr in MensajeBD.Tables[0].Rows)
+                    {
+                        Usuario oUsuario = new Usuario();
+
+                        oUsuario.puestoDesc = dr["Valor"].ToString();
+                        oUsuario.nombre = dr["Descripcion"].ToString();
+                        lstUsuarios.Add(oUsuario);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return lstUsuarios;
+        }
+
+        public DataTable LeePermisosUsuario(string UserId)
+        {
+            DataSet MensajeBD = new DataSet();
+            Database db = EnterpriseLibraryContainer.Current.GetInstance<Database>("Inventario");
+            StringBuilder sqlCommand = new StringBuilder();
+            DbCommand selectCommand = null;
+
+            try
+            {
+                selectCommand = db.GetSqlStringCommand("stpS_RptDinamicosLeePermisosUsuario");
+                selectCommand.CommandType = CommandType.StoredProcedure;
+
+                db.AddInParameter(selectCommand, "@Usu_Id", DbType.String, UserId);
+
+                MensajeBD = db.ExecuteDataSet(selectCommand);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            if (MensajeBD.Tables.Count > 0)
+                return MensajeBD.Tables[0];
+            else
+                return null;
+        }
+
+        public DataTable ActualizaPermisosUsuario(string UserId, int RD_Id, bool Usu_Autorizado)
+        {
+            DataSet MensajeBD = new DataSet();
+            Database db = EnterpriseLibraryContainer.Current.GetInstance<Database>("Inventario");
+            StringBuilder sqlCommand = new StringBuilder();
+            DbCommand selectCommand = null;
+            DataTable Resultados;
+
+            try
+            {
+                selectCommand = db.GetSqlStringCommand("stpU_RptDinamicosPermisos");
+                selectCommand.CommandType = CommandType.StoredProcedure;
+
+                db.AddInParameter(selectCommand, "@Usu_Id", DbType.String, UserId);
+                db.AddInParameter(selectCommand, "@RD_Id", DbType.Int32, RD_Id);
+                db.AddInParameter(selectCommand, "@Usu_Autorizado", DbType.Boolean, Usu_Autorizado);
+
+                Resultados = new DataTable("Resultados");
+                DataRow dr;
+
+                Resultados.Columns.Add("Resultados");
+                dr = Resultados.NewRow();
+                dr[0] = "";
+                Resultados.Rows.Add(dr);
+                Resultados.AcceptChanges();
+
+                MensajeBD = db.ExecuteDataSet(selectCommand);
+            }
+            catch (Exception ex)
+            {
+                Resultados = new DataTable("Error");
+                DataRow dr;
+
+                Resultados.Columns.Add("Error");
+                dr = Resultados.NewRow();
+                dr[0] = ex.Message;
+                Resultados.Rows.Add(dr);
+                Resultados.AcceptChanges();
+            }
+
+            return Resultados;
+        }
+        #endregion Permisos_Usuario
     }
 }

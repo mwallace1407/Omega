@@ -392,6 +392,7 @@
     <Content Include="Forms\Reportes\RptWizardAut.aspx" />
     <Content Include="Forms\Reportes\RptWizardExe.aspx" />
     <Content Include="Forms\Reportes\RptWizardMod.aspx" />
+    <Content Include="Forms\Reportes\RptWizardUsuPerm.aspx" />
     <Content Include="Forms\Servidores\MonitoreoRemotoSW.aspx" />
     <Content Include="Forms\Servidores\RegistrarCintas.aspx" />
     <Content Include="Forms\Servidores\RptCintas.aspx" />
@@ -1156,6 +1157,13 @@
     </Compile>
     <Compile Include="Forms\Reportes\RptWizardMod.aspx.designer.cs">
       <DependentUpon>RptWizardMod.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reportes\RptWizardUsuPerm.aspx.cs">
+      <DependentUpon>RptWizardUsuPerm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Reportes\RptWizardUsuPerm.aspx.designer.cs">
+      <DependentUpon>RptWizardUsuPerm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Servidores\MonitoreoRemotoSW.aspx.cs">
       <DependentUpon>MonitoreoRemotoSW.aspx</DependentUpon>
