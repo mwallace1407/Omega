@@ -146,6 +146,7 @@ namespace InventarioHSC.Forms.Reportes
             hddGridStoredProcesado.Value = "0";
             grdParams.DataSource = objRep.ParametrosStored(ddlCnx.SelectedValue, ddlStored.SelectedValue);
             grdParams.DataBind();
+            grdParams.Columns[CeldaTipo].Visible = false;
             hddGridStoredProcesado.Value = "1";
         }
 
@@ -333,6 +334,7 @@ namespace InventarioHSC.Forms.Reportes
 
                 grdParamsQ.DataSource = objRpt.CargarParametrosScript(Variables);
                 grdParamsQ.DataBind();
+                grdParamsQ.Columns[CeldaTipo].Visible = false;
                 btnProcesar04Q.Visible = true;
                 pnlGridQ.Visible = true;
             }
@@ -407,7 +409,7 @@ namespace InventarioHSC.Forms.Reportes
                     break;
                 }
 
-                Label lblD = (Label)grdParams.Rows[w].FindControl("lblDesc");
+                Label lblD = (Label)grdParamsQ.Rows[w].FindControl("lblDesc");
 
                 if (string.IsNullOrWhiteSpace(lblD.Text) || lblD.Text == "&nbsp;")
                 {

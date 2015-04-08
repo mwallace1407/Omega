@@ -24,18 +24,65 @@
             width: 600px;
             height: 450px;
         }
+        
+        .modal
+        {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: Silver;
+            z-index: 99;
+            opacity: 0.8;
+            filter: alpha(opacity=80);
+            -moz-opacity: 0.8;
+            min-height: 100%;
+            width: 100%;
+        }
+        .loading
+        {
+            width: 200px;
+            height: 170px;
+            display: none;
+            position: fixed;
+            z-index: 999;
+            color: Black;
+            font-weight: bold;
+        }
     </style>
+    <script src="../../Scripts/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function ShowProgress() {
+            setTimeout(function () {
+                var modal = $('<div />');
+                modal.addClass("modal");
+                $('body').append(modal);
+                var loading = $(".loading");
+                loading.show();
+                var top = Math.max($(window).height() / 2 - loading[0].offsetHeight / 2, 0);
+                var left = Math.max($(window).width() / 2 - loading[0].offsetWidth / 2, 0);
+                loading.css({ top: top, left: left });
+            }, 200);
+        }
+        $('form').live("submit", function () {
+            ShowProgress();
+        });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
     </asp:ToolkitScriptManager>
+    <div class="loading">
+        <img src="../../App_Themes/Imagenes/gears_animated.gif" alt="" />
+        <br />
+        Procesando tarea...
+    </div>
     <br />
     <br />
     <br />
     <br />
     <uc1:uscMsgBox ID="MsgBox" runat="server" />
     <div style="text-align: center; width: 100%; margin-left: auto; margin-right: auto;">
-        <div style="width: 900px; margin-left: auto; margin-right: auto; height: 590px; text-align: left;"
+        <div style="width: 900px; margin-left: auto; margin-right: auto; height: 620px; text-align: left;"
             class="divRoundedOpacity">
             <div style="width: 900px;" class="divRoundedOpacityTitle">
                 Asistente para la modificación de reportes</div>
@@ -207,16 +254,16 @@
                                                     <ItemStyle Width="230px" HorizontalAlign="Left" />
                                                 </asp:BoundField>
                                                 <asp:BoundField HeaderText="Tipo" DataField="Tipo">
-                                                    <HeaderStyle Width="230px" />
-                                                    <ItemStyle Width="230px" />
+                                                    <HeaderStyle Width="70px" />
+                                                    <ItemStyle Width="70px" />
                                                 </asp:BoundField>
                                                 <asp:BoundField HeaderText="Tipo dato" DataField="TipoDato">
-                                                    <HeaderStyle Width="230px" />
-                                                    <ItemStyle Width="230px" />
+                                                    <HeaderStyle Width="70px" />
+                                                    <ItemStyle Width="70px" />
                                                 </asp:BoundField>
                                                 <asp:BoundField HeaderText="Longitud" DataField="Longitud">
-                                                    <HeaderStyle Width="230px" />
-                                                    <ItemStyle Width="230px" />
+                                                    <HeaderStyle Width="70px" />
+                                                    <ItemStyle Width="70px" />
                                                 </asp:BoundField>
                                                 <asp:TemplateField HeaderText="Obligatorio">
                                                     <ItemTemplate>
@@ -393,12 +440,12 @@
                                                     <ItemStyle Width="230px" />
                                                 </asp:BoundField>
                                                 <asp:BoundField HeaderText="Tipo dato" DataField="TipoDato">
-                                                    <HeaderStyle Width="230px" />
-                                                    <ItemStyle Width="230px" />
+                                                    <HeaderStyle Width="70px" />
+                                                    <ItemStyle Width="70px" />
                                                 </asp:BoundField>
                                                 <asp:BoundField HeaderText="Longitud" DataField="Longitud">
-                                                    <HeaderStyle Width="230px" />
-                                                    <ItemStyle Width="230px" />
+                                                    <HeaderStyle Width="70px" />
+                                                    <ItemStyle Width="70px" />
                                                 </asp:BoundField>
                                                 <asp:TemplateField HeaderText="Obligatorio">
                                                     <ItemTemplate>

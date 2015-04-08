@@ -137,7 +137,8 @@ namespace InventarioHSC.Model
             Reporte_CintasRespaldo = 25,
             Cartero_Cartas = 26,
             Constancias = 27,
-            Reporte_MonitoreoSW = 28
+            Reporte_MonitoreoSW = 28,
+            Reportes_Dinamicos = 29
         }
 
         public enum EstiloReportesDinamicos
@@ -168,6 +169,7 @@ namespace InventarioHSC.Model
         public static string QueryDetalleStored = "SELECT parameter_name as Nombre, parameter_mode AS Tipo, data_Type AS TipoDato, character_maximum_length AS Longitud FROM information_schema.parameters WHERE specific_name = @Stored";
         public static string QueryScriptStored = "SELECT t.TEXT FROM sysobjects o JOIN syscomments t ON t.id = o.id WHERE o.NAME = @Stored";
         public static string QueryTiposDato = "SELECT NAME AS Valor, NAME AS Descripcion FROM systypes ORDER BY NAME ";
+        public static int LongitudBaseCampo = 50;
         
         public enum OpcionesInsertarServidoresStored
         {

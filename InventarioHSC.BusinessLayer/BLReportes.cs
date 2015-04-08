@@ -787,6 +787,20 @@ namespace InventarioHSC.BusinessLayer
             return objRpt.ObtenerParametrosReporte(RD_Id);
         }
 
+        public DataTable ObtenerParametrosReporteOrdenado(int RD_Id)
+        {
+            DLRptDinamicos objRpt = new DLRptDinamicos();
+            System.Data.DataTable Resultados = new System.Data.DataTable();
+
+            Resultados = objRpt.ObtenerParametrosReporte(RD_Id);
+
+            System.Data.DataView dv = Resultados.DefaultView;
+
+            dv.Sort = "RDP_Obligatorio desc";
+
+            return dv.ToTable();
+        }
+
         public int ActualizarReporte(int RD_Id, string RD_Nombre, string RD_Script, string UserName)
         {
             DLRptDinamicos objRpt = new DLRptDinamicos();
@@ -806,6 +820,30 @@ namespace InventarioHSC.BusinessLayer
             DLRptDinamicos objRpt = new DLRptDinamicos();
 
             objRpt.ActualizarAutorizacionReporte(Id, Autorizado, EsCat);
+        }
+
+        public void ReportesUsuario(ref DropDownList ddl, string UserName, bool IncluirValorInicial = true)
+        {
+            DLRptDinamicos odlRpt = new DLRptDinamicos();
+
+            ddl.DataSource = odlRpt.ReportesUsuario(UserName);
+            ddl.DataValueField = "Valor";
+            ddl.DataTextField = "Descripcion";
+            ddl.DataBind();
+
+            if (IncluirValorInicial)
+            {
+                ListItem itm = new ListItem("Seleccionar reporte", "0");
+
+                ddl.Items.Insert(0, itm);
+            }
+        }
+
+        public DataTable ObtenerScriptCatalogo(int RDC_Id)
+        {
+            DLRptDinamicos odlRpt = new DLRptDinamicos();
+
+            return odlRpt.ObtenerScriptCatalogo(RDC_Id);
         }
 
         #region Permisos_Usuarios

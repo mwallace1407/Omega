@@ -428,6 +428,53 @@ namespace InventarioHSC.DataLayer
             catch { }
         }
 
+        public DataTable ReportesUsuario(string UserName)
+        {
+            DataTable Tabla = new DataTable();
+            Database db = EnterpriseLibraryContainer.Current.GetInstance<Database>("Inventario");
+            DbCommand selectCommand = null;
+
+            try
+            {
+                selectCommand = db.GetSqlStringCommand("stpS_RptDinamicosReportesUsuario");
+                selectCommand.CommandType = CommandType.StoredProcedure;
+
+                db.AddInParameter(selectCommand, "@UserName", DbType.String, UserName);
+                Tabla.Load(db.ExecuteReader(selectCommand));
+            }
+            catch
+            {
+                Tabla = new DataTable("Error");
+                Tabla.Columns.Add("Valor");
+                Tabla.Columns.Add("Descripcion");
+                Tabla.AcceptChanges();
+            }
+
+            return Tabla;
+        }
+
+        public DataTable ObtenerScriptCatalogo(int RDC_Id)
+        {
+            DataTable Tabla = new DataTable();
+            Database db = EnterpriseLibraryContainer.Current.GetInstance<Database>("Inventario");
+            DbCommand selectCommand = null;
+
+            try
+            {
+                selectCommand = db.GetSqlStringCommand("stpS_RptDinamicosScriptCatalogo");
+                selectCommand.CommandType = CommandType.StoredProcedure;
+
+                db.AddInParameter(selectCommand, "@RDC_Id", DbType.Int32, RDC_Id);
+                Tabla.Load(db.ExecuteReader(selectCommand));
+            }
+            catch (DataException ex)
+            {
+                throw ex;
+            }
+
+            return Tabla;
+        }
+
         #region Permisos_Usuario
         public List<Usuario> BuscarUsuarioPermisos(string strBusqueda)
         {

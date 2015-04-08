@@ -224,6 +224,7 @@
     <Content Include="App_Themes\Imagenes\itemorange_on.gif" />
     <Content Include="App_Themes\Imagenes\itemviolet_on.gif" />
     <Content Include="App_Themes\Imagenes\itemyellow_on.gif" />
+    <Content Include="App_Themes\Imagenes\loading.gif" />
     <Content Include="App_Themes\Imagenes\login-box-backg.png" />
     <Content Include="App_Themes\Imagenes\login-btn.png" />
     <Content Include="App_Themes\Imagenes\LogoHSC.png" />

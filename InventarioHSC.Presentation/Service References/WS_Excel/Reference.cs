@@ -9,1753 +9,124 @@
 //------------------------------------------------------------------------------
 
 namespace InventarioHSC.WS_Excel {
+    using System.Data;
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WS_Excel.ExportarSoap")]
     public interface ExportarSoap {
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ReportePolizas")]
-        void ReportePolizas(InventarioHSC.WS_Excel.ReportePolizas request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void ReportePolizas(int TipoDocumento, string UserName, System.DateTime FechaIni, System.DateTime FechaFin, int NumeroMovimiento, string Cuenta, string DescripcionCuenta, string DescripcionEncabezado, int Moneda, bool BusquedaEstricta, string RutaArchivos, string Archivo, int RegistrosPorHoja);
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/RelSrvApp")]
-        void RelSrvApp(InventarioHSC.WS_Excel.RelSrvApp request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void RelSrvApp(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Srv_Id);
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/RelBDApp")]
-        void RelBDApp(InventarioHSC.WS_Excel.RelBDApp request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void RelBDApp(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string AppBD_Id);
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/RelSrvBD")]
-        void RelSrvBD(InventarioHSC.WS_Excel.RelSrvBD request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void RelSrvBD(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Srv_Id);
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/DiscosSrv")]
-        void DiscosSrv(InventarioHSC.WS_Excel.DiscosSrv request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void DiscosSrv(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Srv_Id);
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/GeneralAplicaciones")]
-        void GeneralAplicaciones(InventarioHSC.WS_Excel.GeneralAplicaciones request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void GeneralAplicaciones(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string AppSt_Id, string AppT_Id, string App_EnTFS, string App_Productiva);
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/GeneralServidores")]
-        void GeneralServidores(InventarioHSC.WS_Excel.GeneralServidores request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void GeneralServidores(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string idSO, string idEquipo, string Srv_Tipo, string Srv_EsVirtual, string Srv_Estado);
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/InventarioEquipos")]
-        void InventarioEquipos(InventarioHSC.WS_Excel.InventarioEquipos request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void InventarioEquipos(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string idTipoEquipo, string idMarca, string idUbicacion, string idUsuario, string Responsiva, string Modelo, string NoSerie, string FechaMovimientoIni, string FechaMovimientoFin, string idEstado);
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/EjecutarRD")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void EjecutarRD(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, System.Data.DataTable Parametros, int RD_Id);
+        
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/Acumulados_SAP")]
-        void Acumulados_SAP(InventarioHSC.WS_Excel.Acumulados_SAP request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void Acumulados_SAP(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Anio, string Empleados, string Concepto_Nomina);
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/AsignacionOrganizativa")]
-        void AsignacionOrganizativa(InventarioHSC.WS_Excel.AsignacionOrganizativa request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void AsignacionOrganizativa(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados);
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/AuxiliaresContables")]
-        void AuxiliaresContables(InventarioHSC.WS_Excel.AuxiliaresContables request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void AuxiliaresContables(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Sociedad, string Ejercicio, string Cuenta_Mayor);
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/AuxiliaresDetalle")]
-        void AuxiliaresDetalle(InventarioHSC.WS_Excel.AuxiliaresDetalle request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void AuxiliaresDetalle(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Sociedad, string Ejercicio, string Cuenta_Mayor);
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/BalanzasContables")]
-        void BalanzasContables(InventarioHSC.WS_Excel.BalanzasContables request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void BalanzasContables(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Sociedad, string Ejercicio, string Cuenta_Mayor);
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/ContratosLaborales")]
-        void ContratosLaborales(InventarioHSC.WS_Excel.ContratosLaborales request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void ContratosLaborales(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados);
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/Cuentas")]
-        void Cuentas(InventarioHSC.WS_Excel.Cuentas request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void Cuentas(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Sociedad, string Cuenta_Mayor);
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/DatosBancarios")]
-        void DatosBancarios(InventarioHSC.WS_Excel.DatosBancarios request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void DatosBancarios(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados);
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/DatosPersonales")]
-        void DatosPersonales(InventarioHSC.WS_Excel.DatosPersonales request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void DatosPersonales(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados);
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/Direcciones")]
-        void Direcciones(InventarioHSC.WS_Excel.Direcciones request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void Direcciones(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados);
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/HorariosLaborales")]
-        void HorariosLaborales(InventarioHSC.WS_Excel.HorariosLaborales request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void HorariosLaborales(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados);
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IngresoEmpleados")]
-        void IngresoEmpleados(InventarioHSC.WS_Excel.IngresoEmpleados request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void IngresoEmpleados(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados);
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/MedidasRH")]
-        void MedidasRH(InventarioHSC.WS_Excel.MedidasRH request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void MedidasRH(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados);
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/NumAntEmp")]
-        void NumAntEmp(InventarioHSC.WS_Excel.NumAntEmp request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void NumAntEmp(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados);
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/RemuneracionEconomica")]
-        void RemuneracionEconomica(InventarioHSC.WS_Excel.RemuneracionEconomica request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void RemuneracionEconomica(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados);
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/CintasRespaldo")]
-        void CintasRespaldo(InventarioHSC.WS_Excel.CintasRespaldo request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void CintasRespaldo(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, int Tipo, int Obj_Id, string RC_Cinta);
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/MonitoreoSW")]
-        void MonitoreoSW(InventarioHSC.WS_Excel.MonitoreoSW request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void MonitoreoSW(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string UsuarioRevisor, string Pass, string Dominio, bool RevisarTodos, string EquipoEspecifico);
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/InventarioSW")]
-        void InventarioSW(InventarioHSC.WS_Excel.InventarioSW request);
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void InventarioSW(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string SWE_Id, string SWG_Id, string SW_Descripcion, string SW_Version, string SWEx_NoParte, string SWEx_Llave, string SWEx_Ubicacion, string SWEx_Observaciones, string SWEx_EnExistencia);
         
-        // CODEGEN: Generating message contract since element name UserName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/RegistrarArchivoTempGeneral")]
-        void RegistrarArchivoTempGeneral(InventarioHSC.WS_Excel.RegistrarArchivoTempGeneral request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ReportePolizas {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ReportePolizas", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.ReportePolizasBody Body;
-        
-        public ReportePolizas() {
-        }
-        
-        public ReportePolizas(InventarioHSC.WS_Excel.ReportePolizasBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class ReportePolizasBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public System.DateTime FechaIni;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public System.DateTime FechaFin;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int NumeroMovimiento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Cuenta;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string DescripcionCuenta;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string DescripcionEncabezado;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
-        public int Moneda;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
-        public bool BusquedaEstricta;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
-        public string RutaArchivos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
-        public int RegistrosPorHoja;
-        
-        public ReportePolizasBody() {
-        }
-        
-        public ReportePolizasBody(int TipoDocumento, string UserName, System.DateTime FechaIni, System.DateTime FechaFin, int NumeroMovimiento, string Cuenta, string DescripcionCuenta, string DescripcionEncabezado, int Moneda, bool BusquedaEstricta, string RutaArchivos, string Archivo, int RegistrosPorHoja) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.FechaIni = FechaIni;
-            this.FechaFin = FechaFin;
-            this.NumeroMovimiento = NumeroMovimiento;
-            this.Cuenta = Cuenta;
-            this.DescripcionCuenta = DescripcionCuenta;
-            this.DescripcionEncabezado = DescripcionEncabezado;
-            this.Moneda = Moneda;
-            this.BusquedaEstricta = BusquedaEstricta;
-            this.RutaArchivos = RutaArchivos;
-            this.Archivo = Archivo;
-            this.RegistrosPorHoja = RegistrosPorHoja;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class RelSrvApp {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="RelSrvApp", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.RelSrvAppBody Body;
-        
-        public RelSrvApp() {
-        }
-        
-        public RelSrvApp(InventarioHSC.WS_Excel.RelSrvAppBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class RelSrvAppBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string RutaArchivos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int RegistrosPorHoja;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Srv_Id;
-        
-        public RelSrvAppBody() {
-        }
-        
-        public RelSrvAppBody(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Srv_Id) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.RutaArchivos = RutaArchivos;
-            this.Archivo = Archivo;
-            this.RegistrosPorHoja = RegistrosPorHoja;
-            this.Srv_Id = Srv_Id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class RelBDApp {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="RelBDApp", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.RelBDAppBody Body;
-        
-        public RelBDApp() {
-        }
-        
-        public RelBDApp(InventarioHSC.WS_Excel.RelBDAppBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class RelBDAppBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string RutaArchivos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int RegistrosPorHoja;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string AppBD_Id;
-        
-        public RelBDAppBody() {
-        }
-        
-        public RelBDAppBody(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string AppBD_Id) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.RutaArchivos = RutaArchivos;
-            this.Archivo = Archivo;
-            this.RegistrosPorHoja = RegistrosPorHoja;
-            this.AppBD_Id = AppBD_Id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class RelSrvBD {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="RelSrvBD", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.RelSrvBDBody Body;
-        
-        public RelSrvBD() {
-        }
-        
-        public RelSrvBD(InventarioHSC.WS_Excel.RelSrvBDBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class RelSrvBDBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string RutaArchivos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int RegistrosPorHoja;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Srv_Id;
-        
-        public RelSrvBDBody() {
-        }
-        
-        public RelSrvBDBody(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Srv_Id) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.RutaArchivos = RutaArchivos;
-            this.Archivo = Archivo;
-            this.RegistrosPorHoja = RegistrosPorHoja;
-            this.Srv_Id = Srv_Id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class DiscosSrv {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="DiscosSrv", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.DiscosSrvBody Body;
-        
-        public DiscosSrv() {
-        }
-        
-        public DiscosSrv(InventarioHSC.WS_Excel.DiscosSrvBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class DiscosSrvBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string RutaArchivos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int RegistrosPorHoja;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Srv_Id;
-        
-        public DiscosSrvBody() {
-        }
-        
-        public DiscosSrvBody(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Srv_Id) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.RutaArchivos = RutaArchivos;
-            this.Archivo = Archivo;
-            this.RegistrosPorHoja = RegistrosPorHoja;
-            this.Srv_Id = Srv_Id;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GeneralAplicaciones {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GeneralAplicaciones", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.GeneralAplicacionesBody Body;
-        
-        public GeneralAplicaciones() {
-        }
-        
-        public GeneralAplicaciones(InventarioHSC.WS_Excel.GeneralAplicacionesBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GeneralAplicacionesBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string RutaArchivos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int RegistrosPorHoja;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string AppSt_Id;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string AppT_Id;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string App_EnTFS;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
-        public string App_Productiva;
-        
-        public GeneralAplicacionesBody() {
-        }
-        
-        public GeneralAplicacionesBody(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string AppSt_Id, string AppT_Id, string App_EnTFS, string App_Productiva) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.RutaArchivos = RutaArchivos;
-            this.Archivo = Archivo;
-            this.RegistrosPorHoja = RegistrosPorHoja;
-            this.AppSt_Id = AppSt_Id;
-            this.AppT_Id = AppT_Id;
-            this.App_EnTFS = App_EnTFS;
-            this.App_Productiva = App_Productiva;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GeneralServidores {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GeneralServidores", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.GeneralServidoresBody Body;
-        
-        public GeneralServidores() {
-        }
-        
-        public GeneralServidores(InventarioHSC.WS_Excel.GeneralServidoresBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class GeneralServidoresBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string RutaArchivos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int RegistrosPorHoja;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string idSO;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string idEquipo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string Srv_Tipo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
-        public string Srv_EsVirtual;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
-        public string Srv_Estado;
-        
-        public GeneralServidoresBody() {
-        }
-        
-        public GeneralServidoresBody(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string idSO, string idEquipo, string Srv_Tipo, string Srv_EsVirtual, string Srv_Estado) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.RutaArchivos = RutaArchivos;
-            this.Archivo = Archivo;
-            this.RegistrosPorHoja = RegistrosPorHoja;
-            this.idSO = idSO;
-            this.idEquipo = idEquipo;
-            this.Srv_Tipo = Srv_Tipo;
-            this.Srv_EsVirtual = Srv_EsVirtual;
-            this.Srv_Estado = Srv_Estado;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class InventarioEquipos {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="InventarioEquipos", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.InventarioEquiposBody Body;
-        
-        public InventarioEquipos() {
-        }
-        
-        public InventarioEquipos(InventarioHSC.WS_Excel.InventarioEquiposBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class InventarioEquiposBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string RutaArchivos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int RegistrosPorHoja;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string idTipoEquipo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string idMarca;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string idUbicacion;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
-        public string idUsuario;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
-        public string Responsiva;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
-        public string Modelo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
-        public string NoSerie;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
-        public string FechaMovimientoIni;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
-        public string FechaMovimientoFin;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=14)]
-        public string idEstado;
-        
-        public InventarioEquiposBody() {
-        }
-        
-        public InventarioEquiposBody(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string idTipoEquipo, string idMarca, string idUbicacion, string idUsuario, string Responsiva, string Modelo, string NoSerie, string FechaMovimientoIni, string FechaMovimientoFin, string idEstado) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.RutaArchivos = RutaArchivos;
-            this.Archivo = Archivo;
-            this.RegistrosPorHoja = RegistrosPorHoja;
-            this.idTipoEquipo = idTipoEquipo;
-            this.idMarca = idMarca;
-            this.idUbicacion = idUbicacion;
-            this.idUsuario = idUsuario;
-            this.Responsiva = Responsiva;
-            this.Modelo = Modelo;
-            this.NoSerie = NoSerie;
-            this.FechaMovimientoIni = FechaMovimientoIni;
-            this.FechaMovimientoFin = FechaMovimientoFin;
-            this.idEstado = idEstado;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class Acumulados_SAP {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="Acumulados_SAP", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.Acumulados_SAPBody Body;
-        
-        public Acumulados_SAP() {
-        }
-        
-        public Acumulados_SAP(InventarioHSC.WS_Excel.Acumulados_SAPBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class Acumulados_SAPBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string RutaArchivos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int RegistrosPorHoja;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Anio;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string Empleados;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string Concepto_Nomina;
-        
-        public Acumulados_SAPBody() {
-        }
-        
-        public Acumulados_SAPBody(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Anio, string Empleados, string Concepto_Nomina) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.RutaArchivos = RutaArchivos;
-            this.Archivo = Archivo;
-            this.RegistrosPorHoja = RegistrosPorHoja;
-            this.Anio = Anio;
-            this.Empleados = Empleados;
-            this.Concepto_Nomina = Concepto_Nomina;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class AsignacionOrganizativa {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="AsignacionOrganizativa", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.AsignacionOrganizativaBody Body;
-        
-        public AsignacionOrganizativa() {
-        }
-        
-        public AsignacionOrganizativa(InventarioHSC.WS_Excel.AsignacionOrganizativaBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class AsignacionOrganizativaBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string RutaArchivos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int RegistrosPorHoja;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Empleados;
-        
-        public AsignacionOrganizativaBody() {
-        }
-        
-        public AsignacionOrganizativaBody(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.RutaArchivos = RutaArchivos;
-            this.Archivo = Archivo;
-            this.RegistrosPorHoja = RegistrosPorHoja;
-            this.Empleados = Empleados;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class AuxiliaresContables {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="AuxiliaresContables", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.AuxiliaresContablesBody Body;
-        
-        public AuxiliaresContables() {
-        }
-        
-        public AuxiliaresContables(InventarioHSC.WS_Excel.AuxiliaresContablesBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class AuxiliaresContablesBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string RutaArchivos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int RegistrosPorHoja;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Sociedad;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string Ejercicio;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string Cuenta_Mayor;
-        
-        public AuxiliaresContablesBody() {
-        }
-        
-        public AuxiliaresContablesBody(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Sociedad, string Ejercicio, string Cuenta_Mayor) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.RutaArchivos = RutaArchivos;
-            this.Archivo = Archivo;
-            this.RegistrosPorHoja = RegistrosPorHoja;
-            this.Sociedad = Sociedad;
-            this.Ejercicio = Ejercicio;
-            this.Cuenta_Mayor = Cuenta_Mayor;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class AuxiliaresDetalle {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="AuxiliaresDetalle", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.AuxiliaresDetalleBody Body;
-        
-        public AuxiliaresDetalle() {
-        }
-        
-        public AuxiliaresDetalle(InventarioHSC.WS_Excel.AuxiliaresDetalleBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class AuxiliaresDetalleBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string RutaArchivos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int RegistrosPorHoja;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Sociedad;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string Ejercicio;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string Cuenta_Mayor;
-        
-        public AuxiliaresDetalleBody() {
-        }
-        
-        public AuxiliaresDetalleBody(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Sociedad, string Ejercicio, string Cuenta_Mayor) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.RutaArchivos = RutaArchivos;
-            this.Archivo = Archivo;
-            this.RegistrosPorHoja = RegistrosPorHoja;
-            this.Sociedad = Sociedad;
-            this.Ejercicio = Ejercicio;
-            this.Cuenta_Mayor = Cuenta_Mayor;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class BalanzasContables {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="BalanzasContables", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.BalanzasContablesBody Body;
-        
-        public BalanzasContables() {
-        }
-        
-        public BalanzasContables(InventarioHSC.WS_Excel.BalanzasContablesBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class BalanzasContablesBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string RutaArchivos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int RegistrosPorHoja;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Sociedad;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string Ejercicio;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string Cuenta_Mayor;
-        
-        public BalanzasContablesBody() {
-        }
-        
-        public BalanzasContablesBody(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Sociedad, string Ejercicio, string Cuenta_Mayor) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.RutaArchivos = RutaArchivos;
-            this.Archivo = Archivo;
-            this.RegistrosPorHoja = RegistrosPorHoja;
-            this.Sociedad = Sociedad;
-            this.Ejercicio = Ejercicio;
-            this.Cuenta_Mayor = Cuenta_Mayor;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ContratosLaborales {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ContratosLaborales", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.ContratosLaboralesBody Body;
-        
-        public ContratosLaborales() {
-        }
-        
-        public ContratosLaborales(InventarioHSC.WS_Excel.ContratosLaboralesBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class ContratosLaboralesBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string RutaArchivos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int RegistrosPorHoja;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Empleados;
-        
-        public ContratosLaboralesBody() {
-        }
-        
-        public ContratosLaboralesBody(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.RutaArchivos = RutaArchivos;
-            this.Archivo = Archivo;
-            this.RegistrosPorHoja = RegistrosPorHoja;
-            this.Empleados = Empleados;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class Cuentas {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="Cuentas", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.CuentasBody Body;
-        
-        public Cuentas() {
-        }
-        
-        public Cuentas(InventarioHSC.WS_Excel.CuentasBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class CuentasBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string RutaArchivos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int RegistrosPorHoja;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Sociedad;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string Cuenta_Mayor;
-        
-        public CuentasBody() {
-        }
-        
-        public CuentasBody(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Sociedad, string Cuenta_Mayor) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.RutaArchivos = RutaArchivos;
-            this.Archivo = Archivo;
-            this.RegistrosPorHoja = RegistrosPorHoja;
-            this.Sociedad = Sociedad;
-            this.Cuenta_Mayor = Cuenta_Mayor;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class DatosBancarios {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="DatosBancarios", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.DatosBancariosBody Body;
-        
-        public DatosBancarios() {
-        }
-        
-        public DatosBancarios(InventarioHSC.WS_Excel.DatosBancariosBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class DatosBancariosBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string RutaArchivos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int RegistrosPorHoja;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Empleados;
-        
-        public DatosBancariosBody() {
-        }
-        
-        public DatosBancariosBody(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.RutaArchivos = RutaArchivos;
-            this.Archivo = Archivo;
-            this.RegistrosPorHoja = RegistrosPorHoja;
-            this.Empleados = Empleados;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class DatosPersonales {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="DatosPersonales", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.DatosPersonalesBody Body;
-        
-        public DatosPersonales() {
-        }
-        
-        public DatosPersonales(InventarioHSC.WS_Excel.DatosPersonalesBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class DatosPersonalesBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string RutaArchivos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int RegistrosPorHoja;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Empleados;
-        
-        public DatosPersonalesBody() {
-        }
-        
-        public DatosPersonalesBody(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.RutaArchivos = RutaArchivos;
-            this.Archivo = Archivo;
-            this.RegistrosPorHoja = RegistrosPorHoja;
-            this.Empleados = Empleados;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class Direcciones {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="Direcciones", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.DireccionesBody Body;
-        
-        public Direcciones() {
-        }
-        
-        public Direcciones(InventarioHSC.WS_Excel.DireccionesBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class DireccionesBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string RutaArchivos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int RegistrosPorHoja;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Empleados;
-        
-        public DireccionesBody() {
-        }
-        
-        public DireccionesBody(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.RutaArchivos = RutaArchivos;
-            this.Archivo = Archivo;
-            this.RegistrosPorHoja = RegistrosPorHoja;
-            this.Empleados = Empleados;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HorariosLaborales {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="HorariosLaborales", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.HorariosLaboralesBody Body;
-        
-        public HorariosLaborales() {
-        }
-        
-        public HorariosLaborales(InventarioHSC.WS_Excel.HorariosLaboralesBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class HorariosLaboralesBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string RutaArchivos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int RegistrosPorHoja;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Empleados;
-        
-        public HorariosLaboralesBody() {
-        }
-        
-        public HorariosLaboralesBody(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.RutaArchivos = RutaArchivos;
-            this.Archivo = Archivo;
-            this.RegistrosPorHoja = RegistrosPorHoja;
-            this.Empleados = Empleados;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class IngresoEmpleados {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="IngresoEmpleados", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.IngresoEmpleadosBody Body;
-        
-        public IngresoEmpleados() {
-        }
-        
-        public IngresoEmpleados(InventarioHSC.WS_Excel.IngresoEmpleadosBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class IngresoEmpleadosBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string RutaArchivos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int RegistrosPorHoja;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Empleados;
-        
-        public IngresoEmpleadosBody() {
-        }
-        
-        public IngresoEmpleadosBody(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.RutaArchivos = RutaArchivos;
-            this.Archivo = Archivo;
-            this.RegistrosPorHoja = RegistrosPorHoja;
-            this.Empleados = Empleados;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class MedidasRH {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="MedidasRH", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.MedidasRHBody Body;
-        
-        public MedidasRH() {
-        }
-        
-        public MedidasRH(InventarioHSC.WS_Excel.MedidasRHBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class MedidasRHBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string RutaArchivos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int RegistrosPorHoja;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Empleados;
-        
-        public MedidasRHBody() {
-        }
-        
-        public MedidasRHBody(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.RutaArchivos = RutaArchivos;
-            this.Archivo = Archivo;
-            this.RegistrosPorHoja = RegistrosPorHoja;
-            this.Empleados = Empleados;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class NumAntEmp {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="NumAntEmp", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.NumAntEmpBody Body;
-        
-        public NumAntEmp() {
-        }
-        
-        public NumAntEmp(InventarioHSC.WS_Excel.NumAntEmpBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class NumAntEmpBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string RutaArchivos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int RegistrosPorHoja;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Empleados;
-        
-        public NumAntEmpBody() {
-        }
-        
-        public NumAntEmpBody(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.RutaArchivos = RutaArchivos;
-            this.Archivo = Archivo;
-            this.RegistrosPorHoja = RegistrosPorHoja;
-            this.Empleados = Empleados;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class RemuneracionEconomica {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="RemuneracionEconomica", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.RemuneracionEconomicaBody Body;
-        
-        public RemuneracionEconomica() {
-        }
-        
-        public RemuneracionEconomica(InventarioHSC.WS_Excel.RemuneracionEconomicaBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class RemuneracionEconomicaBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string RutaArchivos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int RegistrosPorHoja;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string Empleados;
-        
-        public RemuneracionEconomicaBody() {
-        }
-        
-        public RemuneracionEconomicaBody(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.RutaArchivos = RutaArchivos;
-            this.Archivo = Archivo;
-            this.RegistrosPorHoja = RegistrosPorHoja;
-            this.Empleados = Empleados;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class CintasRespaldo {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="CintasRespaldo", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.CintasRespaldoBody Body;
-        
-        public CintasRespaldo() {
-        }
-        
-        public CintasRespaldo(InventarioHSC.WS_Excel.CintasRespaldoBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class CintasRespaldoBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string RutaArchivos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int RegistrosPorHoja;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public int Tipo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-        public int Obj_Id;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string RC_Cinta;
-        
-        public CintasRespaldoBody() {
-        }
-        
-        public CintasRespaldoBody(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, int Tipo, int Obj_Id, string RC_Cinta) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.RutaArchivos = RutaArchivos;
-            this.Archivo = Archivo;
-            this.RegistrosPorHoja = RegistrosPorHoja;
-            this.Tipo = Tipo;
-            this.Obj_Id = Obj_Id;
-            this.RC_Cinta = RC_Cinta;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class MonitoreoSW {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="MonitoreoSW", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.MonitoreoSWBody Body;
-        
-        public MonitoreoSW() {
-        }
-        
-        public MonitoreoSW(InventarioHSC.WS_Excel.MonitoreoSWBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class MonitoreoSWBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string RutaArchivos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int RegistrosPorHoja;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string UsuarioRevisor;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string Pass;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string Dominio;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
-        public bool RevisarTodos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
-        public string EquipoEspecifico;
-        
-        public MonitoreoSWBody() {
-        }
-        
-        public MonitoreoSWBody(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string UsuarioRevisor, string Pass, string Dominio, bool RevisarTodos, string EquipoEspecifico) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.RutaArchivos = RutaArchivos;
-            this.Archivo = Archivo;
-            this.RegistrosPorHoja = RegistrosPorHoja;
-            this.UsuarioRevisor = UsuarioRevisor;
-            this.Pass = Pass;
-            this.Dominio = Dominio;
-            this.RevisarTodos = RevisarTodos;
-            this.EquipoEspecifico = EquipoEspecifico;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class InventarioSW {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="InventarioSW", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.InventarioSWBody Body;
-        
-        public InventarioSW() {
-        }
-        
-        public InventarioSW(InventarioHSC.WS_Excel.InventarioSWBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class InventarioSWBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string RutaArchivos;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public int RegistrosPorHoja;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=5)]
-        public string SWE_Id;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
-        public string SWG_Id;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
-        public string SW_Descripcion;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=8)]
-        public string SW_Version;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=9)]
-        public string SWEx_NoParte;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=10)]
-        public string SWEx_Llave;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=11)]
-        public string SWEx_Ubicacion;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=12)]
-        public string SWEx_Observaciones;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=13)]
-        public string SWEx_EnExistencia;
-        
-        public InventarioSWBody() {
-        }
-        
-        public InventarioSWBody(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string SWE_Id, string SWG_Id, string SW_Descripcion, string SW_Version, string SWEx_NoParte, string SWEx_Llave, string SWEx_Ubicacion, string SWEx_Observaciones, string SWEx_EnExistencia) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.RutaArchivos = RutaArchivos;
-            this.Archivo = Archivo;
-            this.RegistrosPorHoja = RegistrosPorHoja;
-            this.SWE_Id = SWE_Id;
-            this.SWG_Id = SWG_Id;
-            this.SW_Descripcion = SW_Descripcion;
-            this.SW_Version = SW_Version;
-            this.SWEx_NoParte = SWEx_NoParte;
-            this.SWEx_Llave = SWEx_Llave;
-            this.SWEx_Ubicacion = SWEx_Ubicacion;
-            this.SWEx_Observaciones = SWEx_Observaciones;
-            this.SWEx_EnExistencia = SWEx_EnExistencia;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class RegistrarArchivoTempGeneral {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="RegistrarArchivoTempGeneral", Namespace="http://tempuri.org/", Order=0)]
-        public InventarioHSC.WS_Excel.RegistrarArchivoTempGeneralBody Body;
-        
-        public RegistrarArchivoTempGeneral() {
-        }
-        
-        public RegistrarArchivoTempGeneral(InventarioHSC.WS_Excel.RegistrarArchivoTempGeneralBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class RegistrarArchivoTempGeneralBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int TipoDocumento;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string UserName;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string Archivo;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public bool Finalizado;
-        
-        public RegistrarArchivoTempGeneralBody() {
-        }
-        
-        public RegistrarArchivoTempGeneralBody(int TipoDocumento, string UserName, string Archivo, bool Finalizado) {
-            this.TipoDocumento = TipoDocumento;
-            this.UserName = UserName;
-            this.Archivo = Archivo;
-            this.Finalizado = Finalizado;
-        }
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void RegistrarArchivoTempGeneral(int TipoDocumento, string UserName, string Archivo, bool Finalizado);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1785,507 +156,116 @@ namespace InventarioHSC.WS_Excel {
                 base(binding, remoteAddress) {
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.ReportePolizas(InventarioHSC.WS_Excel.ReportePolizas request) {
-            base.Channel.ReportePolizas(request);
-        }
-        
         public void ReportePolizas(int TipoDocumento, string UserName, System.DateTime FechaIni, System.DateTime FechaFin, int NumeroMovimiento, string Cuenta, string DescripcionCuenta, string DescripcionEncabezado, int Moneda, bool BusquedaEstricta, string RutaArchivos, string Archivo, int RegistrosPorHoja) {
-            InventarioHSC.WS_Excel.ReportePolizas inValue = new InventarioHSC.WS_Excel.ReportePolizas();
-            inValue.Body = new InventarioHSC.WS_Excel.ReportePolizasBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.FechaIni = FechaIni;
-            inValue.Body.FechaFin = FechaFin;
-            inValue.Body.NumeroMovimiento = NumeroMovimiento;
-            inValue.Body.Cuenta = Cuenta;
-            inValue.Body.DescripcionCuenta = DescripcionCuenta;
-            inValue.Body.DescripcionEncabezado = DescripcionEncabezado;
-            inValue.Body.Moneda = Moneda;
-            inValue.Body.BusquedaEstricta = BusquedaEstricta;
-            inValue.Body.RutaArchivos = RutaArchivos;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.RegistrosPorHoja = RegistrosPorHoja;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).ReportePolizas(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.RelSrvApp(InventarioHSC.WS_Excel.RelSrvApp request) {
-            base.Channel.RelSrvApp(request);
+            base.Channel.ReportePolizas(TipoDocumento, UserName, FechaIni, FechaFin, NumeroMovimiento, Cuenta, DescripcionCuenta, DescripcionEncabezado, Moneda, BusquedaEstricta, RutaArchivos, Archivo, RegistrosPorHoja);
         }
         
         public void RelSrvApp(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Srv_Id) {
-            InventarioHSC.WS_Excel.RelSrvApp inValue = new InventarioHSC.WS_Excel.RelSrvApp();
-            inValue.Body = new InventarioHSC.WS_Excel.RelSrvAppBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.RutaArchivos = RutaArchivos;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.RegistrosPorHoja = RegistrosPorHoja;
-            inValue.Body.Srv_Id = Srv_Id;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).RelSrvApp(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.RelBDApp(InventarioHSC.WS_Excel.RelBDApp request) {
-            base.Channel.RelBDApp(request);
+            base.Channel.RelSrvApp(TipoDocumento, UserName, RutaArchivos, Archivo, RegistrosPorHoja, Srv_Id);
         }
         
         public void RelBDApp(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string AppBD_Id) {
-            InventarioHSC.WS_Excel.RelBDApp inValue = new InventarioHSC.WS_Excel.RelBDApp();
-            inValue.Body = new InventarioHSC.WS_Excel.RelBDAppBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.RutaArchivos = RutaArchivos;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.RegistrosPorHoja = RegistrosPorHoja;
-            inValue.Body.AppBD_Id = AppBD_Id;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).RelBDApp(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.RelSrvBD(InventarioHSC.WS_Excel.RelSrvBD request) {
-            base.Channel.RelSrvBD(request);
+            base.Channel.RelBDApp(TipoDocumento, UserName, RutaArchivos, Archivo, RegistrosPorHoja, AppBD_Id);
         }
         
         public void RelSrvBD(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Srv_Id) {
-            InventarioHSC.WS_Excel.RelSrvBD inValue = new InventarioHSC.WS_Excel.RelSrvBD();
-            inValue.Body = new InventarioHSC.WS_Excel.RelSrvBDBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.RutaArchivos = RutaArchivos;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.RegistrosPorHoja = RegistrosPorHoja;
-            inValue.Body.Srv_Id = Srv_Id;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).RelSrvBD(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.DiscosSrv(InventarioHSC.WS_Excel.DiscosSrv request) {
-            base.Channel.DiscosSrv(request);
+            base.Channel.RelSrvBD(TipoDocumento, UserName, RutaArchivos, Archivo, RegistrosPorHoja, Srv_Id);
         }
         
         public void DiscosSrv(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Srv_Id) {
-            InventarioHSC.WS_Excel.DiscosSrv inValue = new InventarioHSC.WS_Excel.DiscosSrv();
-            inValue.Body = new InventarioHSC.WS_Excel.DiscosSrvBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.RutaArchivos = RutaArchivos;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.RegistrosPorHoja = RegistrosPorHoja;
-            inValue.Body.Srv_Id = Srv_Id;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).DiscosSrv(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.GeneralAplicaciones(InventarioHSC.WS_Excel.GeneralAplicaciones request) {
-            base.Channel.GeneralAplicaciones(request);
+            base.Channel.DiscosSrv(TipoDocumento, UserName, RutaArchivos, Archivo, RegistrosPorHoja, Srv_Id);
         }
         
         public void GeneralAplicaciones(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string AppSt_Id, string AppT_Id, string App_EnTFS, string App_Productiva) {
-            InventarioHSC.WS_Excel.GeneralAplicaciones inValue = new InventarioHSC.WS_Excel.GeneralAplicaciones();
-            inValue.Body = new InventarioHSC.WS_Excel.GeneralAplicacionesBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.RutaArchivos = RutaArchivos;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.RegistrosPorHoja = RegistrosPorHoja;
-            inValue.Body.AppSt_Id = AppSt_Id;
-            inValue.Body.AppT_Id = AppT_Id;
-            inValue.Body.App_EnTFS = App_EnTFS;
-            inValue.Body.App_Productiva = App_Productiva;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).GeneralAplicaciones(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.GeneralServidores(InventarioHSC.WS_Excel.GeneralServidores request) {
-            base.Channel.GeneralServidores(request);
+            base.Channel.GeneralAplicaciones(TipoDocumento, UserName, RutaArchivos, Archivo, RegistrosPorHoja, AppSt_Id, AppT_Id, App_EnTFS, App_Productiva);
         }
         
         public void GeneralServidores(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string idSO, string idEquipo, string Srv_Tipo, string Srv_EsVirtual, string Srv_Estado) {
-            InventarioHSC.WS_Excel.GeneralServidores inValue = new InventarioHSC.WS_Excel.GeneralServidores();
-            inValue.Body = new InventarioHSC.WS_Excel.GeneralServidoresBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.RutaArchivos = RutaArchivos;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.RegistrosPorHoja = RegistrosPorHoja;
-            inValue.Body.idSO = idSO;
-            inValue.Body.idEquipo = idEquipo;
-            inValue.Body.Srv_Tipo = Srv_Tipo;
-            inValue.Body.Srv_EsVirtual = Srv_EsVirtual;
-            inValue.Body.Srv_Estado = Srv_Estado;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).GeneralServidores(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.InventarioEquipos(InventarioHSC.WS_Excel.InventarioEquipos request) {
-            base.Channel.InventarioEquipos(request);
+            base.Channel.GeneralServidores(TipoDocumento, UserName, RutaArchivos, Archivo, RegistrosPorHoja, idSO, idEquipo, Srv_Tipo, Srv_EsVirtual, Srv_Estado);
         }
         
         public void InventarioEquipos(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string idTipoEquipo, string idMarca, string idUbicacion, string idUsuario, string Responsiva, string Modelo, string NoSerie, string FechaMovimientoIni, string FechaMovimientoFin, string idEstado) {
-            InventarioHSC.WS_Excel.InventarioEquipos inValue = new InventarioHSC.WS_Excel.InventarioEquipos();
-            inValue.Body = new InventarioHSC.WS_Excel.InventarioEquiposBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.RutaArchivos = RutaArchivos;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.RegistrosPorHoja = RegistrosPorHoja;
-            inValue.Body.idTipoEquipo = idTipoEquipo;
-            inValue.Body.idMarca = idMarca;
-            inValue.Body.idUbicacion = idUbicacion;
-            inValue.Body.idUsuario = idUsuario;
-            inValue.Body.Responsiva = Responsiva;
-            inValue.Body.Modelo = Modelo;
-            inValue.Body.NoSerie = NoSerie;
-            inValue.Body.FechaMovimientoIni = FechaMovimientoIni;
-            inValue.Body.FechaMovimientoFin = FechaMovimientoFin;
-            inValue.Body.idEstado = idEstado;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).InventarioEquipos(inValue);
+            base.Channel.InventarioEquipos(TipoDocumento, UserName, RutaArchivos, Archivo, RegistrosPorHoja, idTipoEquipo, idMarca, idUbicacion, idUsuario, Responsiva, Modelo, NoSerie, FechaMovimientoIni, FechaMovimientoFin, idEstado);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.Acumulados_SAP(InventarioHSC.WS_Excel.Acumulados_SAP request) {
-            base.Channel.Acumulados_SAP(request);
+        public void EjecutarRD(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, System.Data.DataTable Parametros, int RD_Id) {
+            base.Channel.EjecutarRD(TipoDocumento, UserName, RutaArchivos, Archivo, RegistrosPorHoja, Parametros, RD_Id);
         }
         
         public void Acumulados_SAP(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Anio, string Empleados, string Concepto_Nomina) {
-            InventarioHSC.WS_Excel.Acumulados_SAP inValue = new InventarioHSC.WS_Excel.Acumulados_SAP();
-            inValue.Body = new InventarioHSC.WS_Excel.Acumulados_SAPBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.RutaArchivos = RutaArchivos;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.RegistrosPorHoja = RegistrosPorHoja;
-            inValue.Body.Anio = Anio;
-            inValue.Body.Empleados = Empleados;
-            inValue.Body.Concepto_Nomina = Concepto_Nomina;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).Acumulados_SAP(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.AsignacionOrganizativa(InventarioHSC.WS_Excel.AsignacionOrganizativa request) {
-            base.Channel.AsignacionOrganizativa(request);
+            base.Channel.Acumulados_SAP(TipoDocumento, UserName, RutaArchivos, Archivo, RegistrosPorHoja, Anio, Empleados, Concepto_Nomina);
         }
         
         public void AsignacionOrganizativa(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados) {
-            InventarioHSC.WS_Excel.AsignacionOrganizativa inValue = new InventarioHSC.WS_Excel.AsignacionOrganizativa();
-            inValue.Body = new InventarioHSC.WS_Excel.AsignacionOrganizativaBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.RutaArchivos = RutaArchivos;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.RegistrosPorHoja = RegistrosPorHoja;
-            inValue.Body.Empleados = Empleados;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).AsignacionOrganizativa(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.AuxiliaresContables(InventarioHSC.WS_Excel.AuxiliaresContables request) {
-            base.Channel.AuxiliaresContables(request);
+            base.Channel.AsignacionOrganizativa(TipoDocumento, UserName, RutaArchivos, Archivo, RegistrosPorHoja, Empleados);
         }
         
         public void AuxiliaresContables(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Sociedad, string Ejercicio, string Cuenta_Mayor) {
-            InventarioHSC.WS_Excel.AuxiliaresContables inValue = new InventarioHSC.WS_Excel.AuxiliaresContables();
-            inValue.Body = new InventarioHSC.WS_Excel.AuxiliaresContablesBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.RutaArchivos = RutaArchivos;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.RegistrosPorHoja = RegistrosPorHoja;
-            inValue.Body.Sociedad = Sociedad;
-            inValue.Body.Ejercicio = Ejercicio;
-            inValue.Body.Cuenta_Mayor = Cuenta_Mayor;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).AuxiliaresContables(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.AuxiliaresDetalle(InventarioHSC.WS_Excel.AuxiliaresDetalle request) {
-            base.Channel.AuxiliaresDetalle(request);
+            base.Channel.AuxiliaresContables(TipoDocumento, UserName, RutaArchivos, Archivo, RegistrosPorHoja, Sociedad, Ejercicio, Cuenta_Mayor);
         }
         
         public void AuxiliaresDetalle(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Sociedad, string Ejercicio, string Cuenta_Mayor) {
-            InventarioHSC.WS_Excel.AuxiliaresDetalle inValue = new InventarioHSC.WS_Excel.AuxiliaresDetalle();
-            inValue.Body = new InventarioHSC.WS_Excel.AuxiliaresDetalleBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.RutaArchivos = RutaArchivos;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.RegistrosPorHoja = RegistrosPorHoja;
-            inValue.Body.Sociedad = Sociedad;
-            inValue.Body.Ejercicio = Ejercicio;
-            inValue.Body.Cuenta_Mayor = Cuenta_Mayor;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).AuxiliaresDetalle(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.BalanzasContables(InventarioHSC.WS_Excel.BalanzasContables request) {
-            base.Channel.BalanzasContables(request);
+            base.Channel.AuxiliaresDetalle(TipoDocumento, UserName, RutaArchivos, Archivo, RegistrosPorHoja, Sociedad, Ejercicio, Cuenta_Mayor);
         }
         
         public void BalanzasContables(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Sociedad, string Ejercicio, string Cuenta_Mayor) {
-            InventarioHSC.WS_Excel.BalanzasContables inValue = new InventarioHSC.WS_Excel.BalanzasContables();
-            inValue.Body = new InventarioHSC.WS_Excel.BalanzasContablesBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.RutaArchivos = RutaArchivos;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.RegistrosPorHoja = RegistrosPorHoja;
-            inValue.Body.Sociedad = Sociedad;
-            inValue.Body.Ejercicio = Ejercicio;
-            inValue.Body.Cuenta_Mayor = Cuenta_Mayor;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).BalanzasContables(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.ContratosLaborales(InventarioHSC.WS_Excel.ContratosLaborales request) {
-            base.Channel.ContratosLaborales(request);
+            base.Channel.BalanzasContables(TipoDocumento, UserName, RutaArchivos, Archivo, RegistrosPorHoja, Sociedad, Ejercicio, Cuenta_Mayor);
         }
         
         public void ContratosLaborales(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados) {
-            InventarioHSC.WS_Excel.ContratosLaborales inValue = new InventarioHSC.WS_Excel.ContratosLaborales();
-            inValue.Body = new InventarioHSC.WS_Excel.ContratosLaboralesBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.RutaArchivos = RutaArchivos;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.RegistrosPorHoja = RegistrosPorHoja;
-            inValue.Body.Empleados = Empleados;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).ContratosLaborales(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.Cuentas(InventarioHSC.WS_Excel.Cuentas request) {
-            base.Channel.Cuentas(request);
+            base.Channel.ContratosLaborales(TipoDocumento, UserName, RutaArchivos, Archivo, RegistrosPorHoja, Empleados);
         }
         
         public void Cuentas(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Sociedad, string Cuenta_Mayor) {
-            InventarioHSC.WS_Excel.Cuentas inValue = new InventarioHSC.WS_Excel.Cuentas();
-            inValue.Body = new InventarioHSC.WS_Excel.CuentasBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.RutaArchivos = RutaArchivos;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.RegistrosPorHoja = RegistrosPorHoja;
-            inValue.Body.Sociedad = Sociedad;
-            inValue.Body.Cuenta_Mayor = Cuenta_Mayor;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).Cuentas(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.DatosBancarios(InventarioHSC.WS_Excel.DatosBancarios request) {
-            base.Channel.DatosBancarios(request);
+            base.Channel.Cuentas(TipoDocumento, UserName, RutaArchivos, Archivo, RegistrosPorHoja, Sociedad, Cuenta_Mayor);
         }
         
         public void DatosBancarios(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados) {
-            InventarioHSC.WS_Excel.DatosBancarios inValue = new InventarioHSC.WS_Excel.DatosBancarios();
-            inValue.Body = new InventarioHSC.WS_Excel.DatosBancariosBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.RutaArchivos = RutaArchivos;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.RegistrosPorHoja = RegistrosPorHoja;
-            inValue.Body.Empleados = Empleados;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).DatosBancarios(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.DatosPersonales(InventarioHSC.WS_Excel.DatosPersonales request) {
-            base.Channel.DatosPersonales(request);
+            base.Channel.DatosBancarios(TipoDocumento, UserName, RutaArchivos, Archivo, RegistrosPorHoja, Empleados);
         }
         
         public void DatosPersonales(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados) {
-            InventarioHSC.WS_Excel.DatosPersonales inValue = new InventarioHSC.WS_Excel.DatosPersonales();
-            inValue.Body = new InventarioHSC.WS_Excel.DatosPersonalesBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.RutaArchivos = RutaArchivos;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.RegistrosPorHoja = RegistrosPorHoja;
-            inValue.Body.Empleados = Empleados;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).DatosPersonales(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.Direcciones(InventarioHSC.WS_Excel.Direcciones request) {
-            base.Channel.Direcciones(request);
+            base.Channel.DatosPersonales(TipoDocumento, UserName, RutaArchivos, Archivo, RegistrosPorHoja, Empleados);
         }
         
         public void Direcciones(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados) {
-            InventarioHSC.WS_Excel.Direcciones inValue = new InventarioHSC.WS_Excel.Direcciones();
-            inValue.Body = new InventarioHSC.WS_Excel.DireccionesBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.RutaArchivos = RutaArchivos;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.RegistrosPorHoja = RegistrosPorHoja;
-            inValue.Body.Empleados = Empleados;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).Direcciones(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.HorariosLaborales(InventarioHSC.WS_Excel.HorariosLaborales request) {
-            base.Channel.HorariosLaborales(request);
+            base.Channel.Direcciones(TipoDocumento, UserName, RutaArchivos, Archivo, RegistrosPorHoja, Empleados);
         }
         
         public void HorariosLaborales(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados) {
-            InventarioHSC.WS_Excel.HorariosLaborales inValue = new InventarioHSC.WS_Excel.HorariosLaborales();
-            inValue.Body = new InventarioHSC.WS_Excel.HorariosLaboralesBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.RutaArchivos = RutaArchivos;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.RegistrosPorHoja = RegistrosPorHoja;
-            inValue.Body.Empleados = Empleados;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).HorariosLaborales(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.IngresoEmpleados(InventarioHSC.WS_Excel.IngresoEmpleados request) {
-            base.Channel.IngresoEmpleados(request);
+            base.Channel.HorariosLaborales(TipoDocumento, UserName, RutaArchivos, Archivo, RegistrosPorHoja, Empleados);
         }
         
         public void IngresoEmpleados(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados) {
-            InventarioHSC.WS_Excel.IngresoEmpleados inValue = new InventarioHSC.WS_Excel.IngresoEmpleados();
-            inValue.Body = new InventarioHSC.WS_Excel.IngresoEmpleadosBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.RutaArchivos = RutaArchivos;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.RegistrosPorHoja = RegistrosPorHoja;
-            inValue.Body.Empleados = Empleados;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).IngresoEmpleados(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.MedidasRH(InventarioHSC.WS_Excel.MedidasRH request) {
-            base.Channel.MedidasRH(request);
+            base.Channel.IngresoEmpleados(TipoDocumento, UserName, RutaArchivos, Archivo, RegistrosPorHoja, Empleados);
         }
         
         public void MedidasRH(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados) {
-            InventarioHSC.WS_Excel.MedidasRH inValue = new InventarioHSC.WS_Excel.MedidasRH();
-            inValue.Body = new InventarioHSC.WS_Excel.MedidasRHBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.RutaArchivos = RutaArchivos;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.RegistrosPorHoja = RegistrosPorHoja;
-            inValue.Body.Empleados = Empleados;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).MedidasRH(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.NumAntEmp(InventarioHSC.WS_Excel.NumAntEmp request) {
-            base.Channel.NumAntEmp(request);
+            base.Channel.MedidasRH(TipoDocumento, UserName, RutaArchivos, Archivo, RegistrosPorHoja, Empleados);
         }
         
         public void NumAntEmp(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados) {
-            InventarioHSC.WS_Excel.NumAntEmp inValue = new InventarioHSC.WS_Excel.NumAntEmp();
-            inValue.Body = new InventarioHSC.WS_Excel.NumAntEmpBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.RutaArchivos = RutaArchivos;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.RegistrosPorHoja = RegistrosPorHoja;
-            inValue.Body.Empleados = Empleados;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).NumAntEmp(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.RemuneracionEconomica(InventarioHSC.WS_Excel.RemuneracionEconomica request) {
-            base.Channel.RemuneracionEconomica(request);
+            base.Channel.NumAntEmp(TipoDocumento, UserName, RutaArchivos, Archivo, RegistrosPorHoja, Empleados);
         }
         
         public void RemuneracionEconomica(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string Empleados) {
-            InventarioHSC.WS_Excel.RemuneracionEconomica inValue = new InventarioHSC.WS_Excel.RemuneracionEconomica();
-            inValue.Body = new InventarioHSC.WS_Excel.RemuneracionEconomicaBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.RutaArchivos = RutaArchivos;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.RegistrosPorHoja = RegistrosPorHoja;
-            inValue.Body.Empleados = Empleados;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).RemuneracionEconomica(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.CintasRespaldo(InventarioHSC.WS_Excel.CintasRespaldo request) {
-            base.Channel.CintasRespaldo(request);
+            base.Channel.RemuneracionEconomica(TipoDocumento, UserName, RutaArchivos, Archivo, RegistrosPorHoja, Empleados);
         }
         
         public void CintasRespaldo(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, int Tipo, int Obj_Id, string RC_Cinta) {
-            InventarioHSC.WS_Excel.CintasRespaldo inValue = new InventarioHSC.WS_Excel.CintasRespaldo();
-            inValue.Body = new InventarioHSC.WS_Excel.CintasRespaldoBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.RutaArchivos = RutaArchivos;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.RegistrosPorHoja = RegistrosPorHoja;
-            inValue.Body.Tipo = Tipo;
-            inValue.Body.Obj_Id = Obj_Id;
-            inValue.Body.RC_Cinta = RC_Cinta;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).CintasRespaldo(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.MonitoreoSW(InventarioHSC.WS_Excel.MonitoreoSW request) {
-            base.Channel.MonitoreoSW(request);
+            base.Channel.CintasRespaldo(TipoDocumento, UserName, RutaArchivos, Archivo, RegistrosPorHoja, Tipo, Obj_Id, RC_Cinta);
         }
         
         public void MonitoreoSW(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string UsuarioRevisor, string Pass, string Dominio, bool RevisarTodos, string EquipoEspecifico) {
-            InventarioHSC.WS_Excel.MonitoreoSW inValue = new InventarioHSC.WS_Excel.MonitoreoSW();
-            inValue.Body = new InventarioHSC.WS_Excel.MonitoreoSWBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.RutaArchivos = RutaArchivos;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.RegistrosPorHoja = RegistrosPorHoja;
-            inValue.Body.UsuarioRevisor = UsuarioRevisor;
-            inValue.Body.Pass = Pass;
-            inValue.Body.Dominio = Dominio;
-            inValue.Body.RevisarTodos = RevisarTodos;
-            inValue.Body.EquipoEspecifico = EquipoEspecifico;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).MonitoreoSW(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.InventarioSW(InventarioHSC.WS_Excel.InventarioSW request) {
-            base.Channel.InventarioSW(request);
+            base.Channel.MonitoreoSW(TipoDocumento, UserName, RutaArchivos, Archivo, RegistrosPorHoja, UsuarioRevisor, Pass, Dominio, RevisarTodos, EquipoEspecifico);
         }
         
         public void InventarioSW(int TipoDocumento, string UserName, string RutaArchivos, string Archivo, int RegistrosPorHoja, string SWE_Id, string SWG_Id, string SW_Descripcion, string SW_Version, string SWEx_NoParte, string SWEx_Llave, string SWEx_Ubicacion, string SWEx_Observaciones, string SWEx_EnExistencia) {
-            InventarioHSC.WS_Excel.InventarioSW inValue = new InventarioHSC.WS_Excel.InventarioSW();
-            inValue.Body = new InventarioHSC.WS_Excel.InventarioSWBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.RutaArchivos = RutaArchivos;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.RegistrosPorHoja = RegistrosPorHoja;
-            inValue.Body.SWE_Id = SWE_Id;
-            inValue.Body.SWG_Id = SWG_Id;
-            inValue.Body.SW_Descripcion = SW_Descripcion;
-            inValue.Body.SW_Version = SW_Version;
-            inValue.Body.SWEx_NoParte = SWEx_NoParte;
-            inValue.Body.SWEx_Llave = SWEx_Llave;
-            inValue.Body.SWEx_Ubicacion = SWEx_Ubicacion;
-            inValue.Body.SWEx_Observaciones = SWEx_Observaciones;
-            inValue.Body.SWEx_EnExistencia = SWEx_EnExistencia;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).InventarioSW(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        void InventarioHSC.WS_Excel.ExportarSoap.RegistrarArchivoTempGeneral(InventarioHSC.WS_Excel.RegistrarArchivoTempGeneral request) {
-            base.Channel.RegistrarArchivoTempGeneral(request);
+            base.Channel.InventarioSW(TipoDocumento, UserName, RutaArchivos, Archivo, RegistrosPorHoja, SWE_Id, SWG_Id, SW_Descripcion, SW_Version, SWEx_NoParte, SWEx_Llave, SWEx_Ubicacion, SWEx_Observaciones, SWEx_EnExistencia);
         }
         
         public void RegistrarArchivoTempGeneral(int TipoDocumento, string UserName, string Archivo, bool Finalizado) {
-            InventarioHSC.WS_Excel.RegistrarArchivoTempGeneral inValue = new InventarioHSC.WS_Excel.RegistrarArchivoTempGeneral();
-            inValue.Body = new InventarioHSC.WS_Excel.RegistrarArchivoTempGeneralBody();
-            inValue.Body.TipoDocumento = TipoDocumento;
-            inValue.Body.UserName = UserName;
-            inValue.Body.Archivo = Archivo;
-            inValue.Body.Finalizado = Finalizado;
-            ((InventarioHSC.WS_Excel.ExportarSoap)(this)).RegistrarArchivoTempGeneral(inValue);
+            base.Channel.RegistrarArchivoTempGeneral(TipoDocumento, UserName, Archivo, Finalizado);
         }
     }
 }
