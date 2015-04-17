@@ -262,6 +262,12 @@ namespace InventarioHSC.Forms.Servidores
             Tabla = DatosGenerales.ConvertirExcelADataTable(hddArchivoExcel.Value, true);
             Errores = ValidarExcel(Tabla);
 
+            try
+            {
+                System.IO.File.Delete(hddArchivoExcel.Value);
+            }
+            catch { }
+
             if (Errores == "")
             {
                 for (int w = 0; w < Tabla.Rows.Count; w++)
