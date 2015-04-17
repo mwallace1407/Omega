@@ -74,6 +74,7 @@
     </Compile>
     <Compile Include="DLArticulo.cs" />
     <Compile Include="DLAsignacion_Software.cs" />
+    <Compile Include="DLBovedaContra.cs" />
     <Compile Include="DLConstantes.cs" />
     <Compile Include="DLDatosGenerales.cs" />
     <Compile Include="DLDetalleServidor.cs" />

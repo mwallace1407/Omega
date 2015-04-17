@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SendMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="From" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="To" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CC" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Body" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isHTML" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SendMailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMailAttTxt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="From" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="To" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CC" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Body" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isHTML" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="Att" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Archivo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMailAttTxtResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMailAttTxtResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendMailSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMail" />
+  </wsdl:message>
+  <wsdl:message name="SendMailSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMailAttTxtSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMailAttTxt" />
+  </wsdl:message>
+  <wsdl:message name="SendMailAttTxtSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMailAttTxtResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MailerServiceSoap">
+    <wsdl:operation name="SendMail">
+      <wsdl:input message="tns:SendMailSoapIn" />
+      <wsdl:output message="tns:SendMailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMailAttTxt">
+      <wsdl:input message="tns:SendMailAttTxtSoapIn" />
+      <wsdl:output message="tns:SendMailAttTxtSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MailerServiceSoap" type="tns:MailerServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendMail">
+      <soap:operation soapAction="http://tempuri.org/SendMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMailAttTxt">
+      <soap:operation soapAction="http://tempuri.org/SendMailAttTxt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MailerServiceSoap12" type="tns:MailerServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendMail">
+      <soap12:operation soapAction="http://tempuri.org/SendMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMailAttTxt">
+      <soap12:operation soapAction="http://tempuri.org/SendMailAttTxt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MailerService">
+    <wsdl:port name="MailerServiceSoap" binding="tns:MailerServiceSoap">
+      <soap:address location="http://mailer.tecnolideres.com/Mailer.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MailerServiceSoap12" binding="tns:MailerServiceSoap12">
+      <soap12:address location="http://mailer.tecnolideres.com/Mailer.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

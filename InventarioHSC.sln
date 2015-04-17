@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventarioHSC.DataLayer", "InventarioHSC.DataLayer\InventarioHSC.DataLayer.csproj", "{E1F30B6B-D785-4564-AECB-EAED8668E14E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventarioHSC.Presentation", "InventarioHSC.Presentation\InventarioHSC.Presentation.csproj", "{4C8AE0DC-2E8A-4D16-9B3C-7AD12B47F835}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E1F30B6B-D785-4564-AECB-EAED8668E14E} = {E1F30B6B-D785-4564-AECB-EAED8668E14E}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventarioHSC.Model", "InventarioHSC.Model\InventarioHSC.Model.csproj", "{D0DE45A1-0744-4A94-9037-E7096E538DAB}"
 EndProject

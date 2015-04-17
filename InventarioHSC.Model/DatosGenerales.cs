@@ -154,6 +154,23 @@ namespace InventarioHSC.Model
             Paquete = 3
         }
 
+        public enum BovedaAcciones
+        {
+            Generar_llave = 1,
+            Insertar_contrasenna = 2,
+            Modificar_contrasenna = 3
+        }
+
+        public enum BovedaTipos
+        {
+            Aplicaciones = 1,
+            Servidores = 2,
+            Bases_de_Datos = 3,
+            Sitios_Web = 4,
+            Dispositivos_Electrónicos = 5,
+            Otros = 6
+        }
+
         public static string RutaLocalReportesDinamicos = "TmpFiles";
         public static string RutaLocalReportesGeneral = "Docs/Export";
 
@@ -170,6 +187,8 @@ namespace InventarioHSC.Model
         public static string QueryScriptStored = "SELECT t.TEXT FROM sysobjects o JOIN syscomments t ON t.id = o.id WHERE o.NAME = @Stored";
         public static string QueryTiposDato = "SELECT NAME AS Valor, NAME AS Descripcion FROM systypes ORDER BY NAME ";
         public static int LongitudBaseCampo = 50;
+
+        public static int LongitudLlaveBoveda = 1024;
         
         public enum OpcionesInsertarServidoresStored
         {
@@ -725,6 +744,143 @@ namespace InventarioHSC.Model
             ddl.DataTextField = "Descripcion";
             ddl.DataSource = Combo;
             ddl.DataBind();
+        }
+
+        public static string GenerarLlaveUnica(int Tamanno)
+        {
+            string Llave = "";
+            int Iteraciones = (Tamanno / 8) + 3;
+
+            for (int w = 0; w <= Iteraciones; w++)
+            {
+                Llave += Guid.NewGuid().ToString().GetHashCode().ToString("x");
+            }
+
+            Llave = Llave.Substring(0, Tamanno);
+
+            return Llave;
+        }
+
+        public static string ObtenerHashCadena(string Cadena)
+        {
+            string hash = "";
+
+            using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
+            {
+                hash = BitConverter.ToString(md5.ComputeHash(Encoding.UTF8.GetBytes(Cadena))).Replace("-", String.Empty);
+            }
+
+            return hash;
+        }
+
+        public static System.Data.DataTable GenerateTransposedTable(System.Data.DataTable inputTable)
+        {
+            System.Data.DataTable outputTable = new System.Data.DataTable();
+
+            // Add columns by looping rows
+
+            // Header row's first column is same as in inputTable
+            outputTable.Columns.Add(inputTable.Columns[0].ColumnName.ToString());
+
+            // Header row's second column onwards, 'inputTable's first column taken
+            foreach (System.Data.DataRow inRow in inputTable.Rows)
+            {
+                string newColName = inRow[0].ToString();
+                outputTable.Columns.Add(newColName);
+            }
+
+            // Add rows by looping columns        
+            for (int rCount = 1; rCount <= inputTable.Columns.Count - 1; rCount++)
+            {
+                System.Data.DataRow newRow = outputTable.NewRow();
+
+                // First column is inputTable's Header row's second column
+                newRow[0] = inputTable.Columns[rCount].ColumnName.ToString();
+
+                for (int cCount = 0; cCount <= inputTable.Rows.Count - 1; cCount++)
+                {
+                    string colValue = inputTable.Rows[cCount][rCount].ToString();
+                    newRow[cCount + 1] = colValue;
+                }
+
+                outputTable.Rows.Add(newRow);
+            }
+
+            return outputTable;
+        }
+
+        private static bool EmailInvalido = false;
+
+        public static bool EsEmail(string strIn)
+        {
+            EmailInvalido = false;
+
+            if (String.IsNullOrEmpty(strIn))
+                return false;
+
+            // Use IdnMapping class to convert Unicode domain names.
+            strIn = System.Text.RegularExpressions.Regex.Replace(strIn, @"(@)(.+)$", DomainMapper);
+            if (EmailInvalido)
+                return false;
+
+            // Return true if strIn is in valid e-mail format.
+            return System.Text.RegularExpressions.Regex.IsMatch(strIn,
+                   @"^(?("")(""[^""]+?""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
+                   @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9]{2,17}))$",
+                   System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+        }
+
+        private static string DomainMapper(System.Text.RegularExpressions.Match match)
+        {
+            // IdnMapping class with default property values.
+            System.Globalization.IdnMapping idn = new System.Globalization.IdnMapping();
+
+            string domainName = match.Groups[2].Value;
+            try
+            {
+                domainName = idn.GetAscii(domainName);
+            }
+            catch (ArgumentException)
+            {
+                EmailInvalido = true;
+            }
+            return match.Groups[1].Value + domainName;
+        }
+
+        public static System.Data.DataTable ConvertirExcelADataTable(string Archivo, bool TieneEncabezados)
+        {
+            using (var pck = new OfficeOpenXml.ExcelPackage())
+            {
+                using (var stream = System.IO.File.OpenRead(Archivo))
+                {
+                    pck.Load(stream);
+                }
+
+                var ws = pck.Workbook.Worksheets.First();
+                System.Data.DataTable Tabla = new System.Data.DataTable();
+
+                foreach (var PrimeraFila in ws.Cells[1, 1, 1, ws.Dimension.End.Column])
+                {
+                    Tabla.Columns.Add(TieneEncabezados ? PrimeraFila.Text : string.Format("Column {0}", PrimeraFila.Start.Column));
+                }
+
+                var FilaInicial = TieneEncabezados ? 2 : 1;
+
+                for (var rowNum = FilaInicial; rowNum <= ws.Dimension.End.Row; rowNum++)
+                {
+                    var wsFila = ws.Cells[rowNum, 1, rowNum, ws.Dimension.End.Column];
+                    var Fila = Tabla.NewRow();
+
+                    foreach (var celda in wsFila)
+                    {
+                        Fila[celda.Start.Column - 1] = celda.Text;
+                    }
+
+                    Tabla.Rows.Add(Fila);
+                }
+
+                return Tabla;
+            }
         }
 
         #region ManejoFechas

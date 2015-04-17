@@ -256,6 +256,7 @@
     <Content Include="App_Themes\Imagenes\pistol.jpg" />
     <Content Include="App_Themes\Imagenes\Plus_green.png" />
     <Content Include="App_Themes\Imagenes\prv.gif" />
+    <Content Include="App_Themes\Imagenes\Question.png" />
     <Content Include="App_Themes\Imagenes\Refresh.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -394,6 +395,11 @@
     <Content Include="Forms\Reportes\RptWizardExe.aspx" />
     <Content Include="Forms\Reportes\RptWizardMod.aspx" />
     <Content Include="Forms\Reportes\RptWizardUsuPerm.aspx" />
+    <Content Include="Forms\Servidores\AltaBoveda.aspx" />
+    <Content Include="Forms\Servidores\GenerarLlave.aspx" />
+    <Content Include="Forms\Servidores\Help.png" />
+    <Content Include="Forms\Servidores\imgProc.aspx" />
+    <Content Include="Forms\Servidores\LecturaBoveda.aspx" />
     <Content Include="Forms\Servidores\MonitoreoRemotoSW.aspx" />
     <Content Include="Forms\Servidores\RegistrarCintas.aspx" />
     <Content Include="Forms\Servidores\RptCintas.aspx" />
@@ -456,6 +462,7 @@
     <Content Include="Scripts\MaskedEditFix.js" />
     <Content Include="Scripts\mmenudom.js" />
     <Content Include="Scripts\ui.datepicker-es.js" />
+    <None Include="Forms\Servidores\Ejemplo.xlsx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -1165,6 +1172,34 @@
     </Compile>
     <Compile Include="Forms\Reportes\RptWizardUsuPerm.aspx.designer.cs">
       <DependentUpon>RptWizardUsuPerm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Servidores\AltaBoveda.aspx.cs">
+      <DependentUpon>AltaBoveda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Servidores\AltaBoveda.aspx.designer.cs">
+      <DependentUpon>AltaBoveda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Servidores\GenerarLlave.aspx.cs">
+      <DependentUpon>GenerarLlave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Servidores\GenerarLlave.aspx.designer.cs">
+      <DependentUpon>GenerarLlave.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Servidores\imgProc.aspx.cs">
+      <DependentUpon>imgProc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Servidores\imgProc.aspx.designer.cs">
+      <DependentUpon>imgProc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Servidores\LecturaBoveda.aspx.cs">
+      <DependentUpon>LecturaBoveda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Servidores\LecturaBoveda.aspx.designer.cs">
+      <DependentUpon>LecturaBoveda.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Servidores\MonitoreoRemotoSW.aspx.cs">
       <DependentUpon>MonitoreoRemotoSW.aspx</DependentUpon>
