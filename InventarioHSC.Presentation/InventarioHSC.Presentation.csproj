@@ -355,6 +355,7 @@
     <Content Include="Forms\Operacion\Op_Cartero_CreaPDF.aspx" />
     <Content Include="Forms\Operacion\Op_Cartero_GenerarCarta.aspx" />
     <Content Include="Forms\Operacion\Op_Cartero_LiberarCarta.aspx" />
+    <Content Include="Forms\Operacion\Op_Cartero_SHF.aspx" />
     <Content Include="Forms\Operacion\Op_GenerarConstancia.aspx" />
     <Content Include="Forms\Operacion\Op_SAB_BuscarDocumento.aspx" />
     <Content Include="Forms\Reportes\BuscarDocumentoSAP.aspx" />
@@ -411,6 +412,7 @@
     <Content Include="Forms\Software\SoftwareExistente.aspx" />
     <Content Include="Forms\Software\ValidacionesJquery.aspx" />
     <Content Include="Forms\UserImg\BasePrincipal.png" />
+    <Content Include="Forms\UserImg\BasePrincipalP.png" />
     <Content Include="FusionCharts\Area2D.swf" />
     <Content Include="FusionCharts\Bar2D.swf" />
     <Content Include="FusionCharts\Bubble.swf" />
@@ -892,6 +894,13 @@
     </Compile>
     <Compile Include="Forms\Operacion\Op_Cartero_LiberarCarta.aspx.designer.cs">
       <DependentUpon>Op_Cartero_LiberarCarta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Operacion\Op_Cartero_SHF.aspx.cs">
+      <DependentUpon>Op_Cartero_SHF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Operacion\Op_Cartero_SHF.aspx.designer.cs">
+      <DependentUpon>Op_Cartero_SHF.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Operacion\Op_GenerarConstancia.aspx.cs">
       <DependentUpon>Op_GenerarConstancia.aspx</DependentUpon>

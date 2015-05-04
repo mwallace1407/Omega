@@ -63,7 +63,8 @@ namespace InventarioHSC.Model
             Lista_tipos_almacenamiento = 36,
             Lista_usos_disco = 37,
             Lista_monedas_Abanks = 38,
-            Lista_tipos_script = 39
+            Lista_tipos_script = 39,
+            Catalogo_Tipos_Busqueda_CartasSHF = 40
         }
 
         public enum OpcionesCatalogosSAP

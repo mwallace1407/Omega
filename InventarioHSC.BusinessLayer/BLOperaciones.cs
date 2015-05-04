@@ -65,6 +65,22 @@ namespace InventarioHSC.BusinessLayer
 
             return obj.CrearPDFCartaGenerada(Archivo, Cart_Id);
         }
+
+        public void ListaTiposFiltroCartasSHF(ref System.Web.UI.WebControls.DropDownList oddlF, bool IncluirValorInicial = true)
+        {
+            DLSoftware DataLayerSoftware = new DLSoftware();
+            oddlF.DataSource = DataLayerSoftware.ListaTiposFiltroMaxI(IncluirValorInicial);
+            oddlF.DataValueField = "Valor";
+            oddlF.DataTextField = "Descripcion";
+            oddlF.DataBind();
+        }
+
+        public System.Data.DataTable BuscarCartaSHF(string Tipo, int Numero_Prestamo = 0, int Codigo_Cliente = 0, string Numero_Jit = "", string Nombre = "")
+        {
+            DLOperaciones odlSoftware = new DLOperaciones();
+
+            return odlSoftware.BuscarCartaSHF(Tipo, Numero_Prestamo, Codigo_Cliente, Numero_Jit, Nombre);
+        }
         #endregion Cartero
         #region AAE
         public DataTable BuscarDocumentosAAE(string CadenaBusqueda)

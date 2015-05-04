@@ -403,11 +403,11 @@ namespace InventarioHSC.Forms.Reportes
                     break;
                 }
 
-                if (string.IsNullOrWhiteSpace(grdParamsQ.Rows[w].Cells[CeldaTipo].Text) || grdParamsQ.Rows[w].Cells[CeldaTipo].Text == "&nbsp;")
-                {
-                    Errores = "Debe asignar un tipo de dato para cada parámetro.";
-                    break;
-                }
+                //if (string.IsNullOrWhiteSpace(grdParamsQ.Rows[w].Cells[CeldaTipo].Text) || grdParamsQ.Rows[w].Cells[CeldaTipo].Text == "&nbsp;")
+                //{
+                //    Errores = "Debe asignar un tipo para cada parámetro.";
+                //    break;
+                //}
 
                 Label lblD = (Label)grdParamsQ.Rows[w].FindControl("lblDesc");
 
@@ -429,10 +429,13 @@ namespace InventarioHSC.Forms.Reportes
             Resultados = objRpt.ObtenerParametrosReporte(RD_Id);
 
             txtNombreReporteQ.Text = ddlReportesTexto.SelectedItem.Text;
-            txtScriptPaso04.Text = Resultados.Rows[0]["RD_Script"].ToString();
+
 
             if (PreviamenteCargado)
+            {
+                txtScriptPaso04.Text = Resultados.Rows[0]["RD_Script"].ToString();
                 RegistrarQuery();
+            }
 
             for (int w = 0; w < Resultados.Rows.Count; w++)
             {

@@ -287,6 +287,65 @@ namespace InventarioHSC.DataLayer
 
             return MsjBD;
         }
+
+        public DataTable ListaTiposFiltroCartasSHF(bool IncluirValorInicial = true)
+        {
+            DataSet ds = new DataSet();
+            Database db = EnterpriseLibraryContainer.Current.GetInstance<Database>("Inventario");
+            StringBuilder sqlCommand = new StringBuilder();
+            DataTable Resultados = new DataTable();
+
+            sqlCommand.AppendLine("EXEC stpS_Catalogos");
+
+            if (IncluirValorInicial)
+                sqlCommand.AppendLine(((int)DatosGenerales.OpcionesCatalogosStored.Catalogo_Tipos_Busqueda_CartasSHF).ToString() + ", 1, 0, 0");
+            else
+                sqlCommand.AppendLine(((int)DatosGenerales.OpcionesCatalogosStored.Catalogo_Tipos_Busqueda_CartasSHF).ToString() + ", 0, 0, 0");
+
+            DbCommand selectCommand = null;
+            selectCommand = db.GetSqlStringCommand(sqlCommand.ToString());
+
+            try
+            {
+                ds = db.ExecuteDataSet(selectCommand);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    Resultados = ds.Tables[0];
+                }
+
+                return Resultados;
+            }
+            catch (DataException ex)
+            {
+                throw ex;
+            }
+        }
+
+        public DataTable BuscarCartaSHF(string Tipo, int Numero_Prestamo, int Codigo_Cliente, string Numero_Jit, string Nombre)
+        {
+            DataSet MensajeBD = new DataSet();
+            Database db = EnterpriseLibraryContainer.Current.GetInstance<Database>("Inventario");
+            StringBuilder sqlCommand = new StringBuilder();
+            DbCommand selectCommand = null;
+
+            try
+            {
+                selectCommand = db.GetSqlStringCommand("stpS_CarteroBuscarCartaSHF");
+                selectCommand.CommandType = CommandType.StoredProcedure;
+
+                db.AddInParameter(selectCommand, "@Tipo", DbType.String, Tipo);
+                db.AddInParameter(selectCommand, "@Numero_Prestamo", DbType.Int32, Numero_Prestamo);
+                db.AddInParameter(selectCommand, "@Codigo_Cliente", DbType.Int32, Codigo_Cliente);
+                db.AddInParameter(selectCommand, "@Numero_Jit", DbType.String, Numero_Jit);
+                db.AddInParameter(selectCommand, "@Nombre", DbType.String, Nombre);
+
+                MensajeBD = db.ExecuteDataSet(selectCommand);
+            }
+            catch { }
+
+            return MensajeBD.Tables[0];
+        }
         #endregion Cartero
         #region AAE
         public DataTable BuscarDocumentosAAE(string CadenaBusqueda)
