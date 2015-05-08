@@ -124,6 +124,13 @@ namespace InventarioHSC.Forms.Reportes
 
                 lnkRuta.NavigateUrl = e.Row.Cells[CeldaRuta].Text;
                 lnkRuta.Text = "Descargar";
+
+                if (e.Row.Cells[CeldaRuta].Text == "#")
+                {
+                    lnkRuta.Enabled = false;
+                    lnkRuta.ForeColor = System.Drawing.Color.SteelBlue;
+                    lnkRuta.Font.Strikeout = true;
+                }
             }
         }
 
