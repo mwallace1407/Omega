@@ -550,18 +550,7 @@ namespace InventarioHSC.Forms.Reportes
             return Params;
         }
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            if (!Page.IsPostBack)
-            {
-                string script = "$(document).ready(function () { $('[id*=btnSubmit]').click(); });";
-                ClientScript.RegisterStartupScript(this.GetType(), "load", script, true);
-
-                CargaCatalogos();
-            }
-        }
-
-        protected void ddlReportes_SelectedIndexChanged(object sender, EventArgs e)
+        protected void CargarReporte()
         {
             int RD_Id = 0;
 
@@ -592,6 +581,23 @@ namespace InventarioHSC.Forms.Reportes
 
                 btnEjecutar.Visible = true;
             }
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!Page.IsPostBack)
+            {
+                string script = "$(document).ready(function () { $('[id*=btnSubmit]').click(); });";
+                ClientScript.RegisterStartupScript(this.GetType(), "load", script, true);
+
+                CargaCatalogos();
+                lblMensaje.Text = (ddlReportes.Items.Count - 1).ToString() + " reportes encontrados.";
+            }
+        }
+
+        protected void ddlReportes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarReporte();
         }
 
         protected void btnEjecutar_Click(object sender, EventArgs e)
@@ -627,6 +633,11 @@ namespace InventarioHSC.Forms.Reportes
                     lblMsj.Text = "Errores encontrados: " + "<br/><br/>No se obtuvo el Id del reporte.";
                 }
             }
+        }
+
+        protected void btnCargar_Click(object sender, EventArgs e)
+        {
+            CargarReporte();
         }
     }
 }

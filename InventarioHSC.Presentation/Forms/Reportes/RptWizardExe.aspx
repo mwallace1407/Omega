@@ -66,6 +66,53 @@
             ShowProgress();
         });
     </script>
+    <script type="text/javascript">
+
+        var ddlText, ddlValue, ddl, lblMesg;
+
+        function CacheItems() {
+
+            ddlText = new Array();
+            ddlValue = new Array();
+            ddl = document.getElementById("<%=ddlReportes.ClientID %>");
+            lblMesg = document.getElementById("<%=lblMensaje.ClientID%>");
+
+            for (var i = 0; i < ddl.options.length; i++) {
+                ddlText[ddlText.length] = ddl.options[i].text;
+                ddlValue[ddlValue.length] = ddl.options[i].value;
+            }
+        }
+
+        window.onload = CacheItems;
+
+        function FilterItems(value) {
+
+            ddl.options.length = 0;
+
+            for (var i = 0; i < ddlText.length; i++) {
+                if (ddlText[i].toLowerCase().indexOf(value) != -1) {
+                    AddItem(ddlText[i], ddlValue[i]);
+                }
+            }
+
+            lblMesg.innerHTML = ddl.options.length - 1 + " reportes encontrados.";
+
+            if (ddl.options.length == 0) {
+                AddItem("No se encontraron reportes", "");
+                lblMesg.innerHTML = "0 reportes encontrados.";
+            }
+        }
+
+        function AddItem(text, value) {
+
+            var opt = document.createElement("option");
+
+            opt.text = text;
+            opt.value = value;
+            ddl.options.add(opt);
+        }
+
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
@@ -96,10 +143,18 @@
                 Ejecución de reportes dinámicos</div>
             <br />
             <div style="padding-left: 10px; width: 880px;">
-                <asp:DropDownList ID="ddlReportes" runat="server" Width="250" AutoPostBack="True"
-                    OnSelectedIndexChanged="ddlReportes_SelectedIndexChanged">
-                </asp:DropDownList>
-                <asp:HiddenField ID="hddConexion" runat="server" />
+                <asp:Panel ID="pnlReportes" runat="server" DefaultButton="btnCargar">
+                    Filtrar lista:<br />
+                    <asp:TextBox ID="txtSearch" runat="server" onkeyup="FilterItems(this.value)" Width="248px" autocomplete="off"></asp:TextBox><br />
+                    <asp:DropDownList ID="ddlReportes" runat="server" Width="250" AutoPostBack="True"
+                        OnSelectedIndexChanged="ddlReportes_SelectedIndexChanged">
+                    </asp:DropDownList>
+                    <asp:Button ID="btnCargar" runat="server" Text="Cargar reporte" CssClass="boton" OnClick="btnCargar_Click" />
+                    <br />
+                    <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
+                    <br />
+                    <asp:HiddenField ID="hddConexion" runat="server" />
+                </asp:Panel>
                 <asp:Panel ID="pnlVariables" runat="server">
                     <br />
                     <div style="height: 410px; width: 625px; overflow: auto; text-align: left; float: left">
