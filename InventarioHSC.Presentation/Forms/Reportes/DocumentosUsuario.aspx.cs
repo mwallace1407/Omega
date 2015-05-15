@@ -92,7 +92,7 @@ namespace InventarioHSC.Forms.Reportes
             if (grdDatosPendientes.Rows.Count == 0)
                 lblPendientes.Text = "No se encontraron documentos pendientes.";
             else
-                lblPendientes.Text = "A continuación se muestran los documentos que se están generando, una vez finalizados los podrá visualizar en la pestaña de pendientes:";
+                lblPendientes.Text = "A continuación se muestran los documentos que se están generando, una vez generados los podrá visualizar en la pestaña \"Finalizados\":";
 
             if (grdDatosEliminados.Rows.Count == 0)
                 lblEliminados.Text = "No se encontraron documentos eliminados.";

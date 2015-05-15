@@ -95,7 +95,17 @@
                 }
             }
 
-            lblMesg.innerHTML = ddl.options.length - 1 + " reportes encontrados.";
+            if (ddl.options.length >= 1) {
+                if (ddl.options.length == 1) {
+                    lblMesg.innerHTML = ddl.options.length + " reporte encontrado.";
+                }
+                else {
+                    lblMesg.innerHTML = ddl.options.length + " reportes encontrados.";
+                }
+            }
+            else {
+                lblMesg.innerHTML = ddl.options.length + " reportes encontrados.";
+            }
 
             if (ddl.options.length == 0) {
                 AddItem("No se encontraron reportes", "");
@@ -157,8 +167,8 @@
                 </asp:Panel>
                 <asp:Panel ID="pnlVariables" runat="server">
                     <br />
-                    <div style="height: 410px; width: 625px; overflow: auto; text-align: left; float: left">
-                        <asp:GridView ID="grdParams" runat="server" Width="600px" AutoGenerateColumns="False"
+                    <div style="height: 410px; width: 745px; overflow: auto; text-align: left; float: left">
+                        <asp:GridView ID="grdParams" runat="server" Width="720px" AutoGenerateColumns="False"
                             ForeColor="#333333" GridLines="None">
                             <Columns>
                                 <asp:BoundField HeaderText="" DataField="Nombre">
@@ -192,7 +202,7 @@
                                         <asp:HiddenField ID="hddBusquedaAprox" runat="server" />
                                         <asp:HiddenField ID="hddTexto" runat="server" />
                                         <asp:HiddenField ID="hddValor" runat="server" />
-                                        <asp:TextBox ID="txtValor" runat="server" Width="145" Visible="False" autocomplete="off"></asp:TextBox>
+                                        <asp:TextBox ID="txtValor" runat="server" Width="265" Visible="False" autocomplete="off"></asp:TextBox>
                                         <asp:FilteredTextBoxExtender ID="txtValor_FilteredTextBoxExtender" runat="server"
                                             Enabled="False" TargetControlID="txtValor">
                                         </asp:FilteredTextBoxExtender>
@@ -204,20 +214,20 @@
                                         <asp:CalendarExtender ID="txtValor_CalendarExtender" runat="server" Enabled="False"
                                             FirstDayOfWeek="Monday" Format="dd/MM/yyyy" TargetControlID="txtValor">
                                         </asp:CalendarExtender>
-                                        <asp:TextBox ID="txtmValor" runat="server" Width="145" Visible="False" TextMode="MultiLine"
+                                        <asp:TextBox ID="txtmValor" runat="server" Width="265" Visible="False" TextMode="MultiLine"
                                             Height="75"></asp:TextBox>
                                         <asp:CheckBox ID="chkValor" runat="server" Visible="False" />
                                         <asp:Panel ID="pnlchkl" runat="server" Visible="False">
-                                            <div style="height: 100px; overflow: auto; width: 145px;">
-                                                <asp:CheckBoxList ID="chklValor" runat="server" Visible="False" Width="135">
+                                            <div style="height: 100px; overflow: auto; width: 265px;">
+                                                <asp:CheckBoxList ID="chklValor" runat="server" Visible="False" Width="255">
                                                 </asp:CheckBoxList>
                                             </div>
                                         </asp:Panel>
-                                        <asp:DropDownList ID="ddlValor" runat="server" Visible="False" Width="145">
+                                        <asp:DropDownList ID="ddlValor" runat="server" Visible="False" Width="265">
                                         </asp:DropDownList>
                                     </ItemTemplate>
-                                    <HeaderStyle Width="150px" />
-                                    <ItemStyle Width="150px" />
+                                    <HeaderStyle Width="270px" />
+                                    <ItemStyle Width="270px" />
                                 </asp:TemplateField>
                                 <asp:TemplateField HeaderText="Enviar nulo">
                                     <ItemTemplate>
@@ -244,7 +254,7 @@
                             <AlternatingRowStyle CssClass="GridAltItem" />
                         </asp:GridView>
                     </div>
-                    <div style="width: 245px; overflow: auto; text-align: left; float: right">
+                    <div style="width: 120px; overflow: auto; text-align: left; float: right">
                         <asp:Button ID="btnEjecutar" runat="server" Text="Ejecutar" CssClass="boton" OnClick="btnEjecutar_Click"
                             Visible="False" />
                     </div>

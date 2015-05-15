@@ -183,6 +183,7 @@ namespace InventarioHSC.Forms.Reportes
                         Longitud = 0;
 
                     txt.MaxLength = Longitud;
+                    txt.Style["text-align"] = "left";
                     AjaxControlToolkit.FilteredTextBoxExtender filter = (AjaxControlToolkit.FilteredTextBoxExtender)grdParams.Rows[Registro].FindControl("txtValor_FilteredTextBoxExtender");
 
                     switch (DatosGenerales.Equivalencia_SQLDotNet(hdd4.Value).ToLowerInvariant())
@@ -196,6 +197,7 @@ namespace InventarioHSC.Forms.Reportes
                             AjaxControlToolkit.CalendarExtender cal = (AjaxControlToolkit.CalendarExtender)grdParams.Rows[Registro].FindControl("txtValor_CalendarExtender");
                             mask.Enabled = true;
                             cal.Enabled = true;
+                            txt.Style["text-align"] = "center";
                             break;
                         case "decimal":
                         case "double":
@@ -592,6 +594,7 @@ namespace InventarioHSC.Forms.Reportes
 
                 CargaCatalogos();
                 lblMensaje.Text = (ddlReportes.Items.Count - 1).ToString() + " reportes encontrados.";
+                txtSearch.Focus();
             }
         }
 
