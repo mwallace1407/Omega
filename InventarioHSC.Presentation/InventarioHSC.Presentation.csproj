@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -23,6 +24,16 @@
     <SccProvider>
     </SccProvider>
     <TargetFrameworkProfile />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -268,6 +279,7 @@
     <Content Include="App_Themes\Imagenes\suc.png" />
     <Content Include="App_Themes\Imagenes\SuCasitaWater.png" />
     <Content Include="App_Themes\Imagenes\TimeOut.PNG" />
+    <Content Include="App_Themes\Imagenes\trans_16x16.gif" />
     <Content Include="App_Themes\Imagenes\warning.png" />
     <Content Include="App_Themes\Imagenes\whitedots.gif" />
     <Content Include="App_Themes\Imagenes\yahoo.gif" />
@@ -324,6 +336,7 @@
     <Content Include="Forms\Articulos\ConsultaGeneral.aspx" />
     <Content Include="Forms\Articulos\EntregaEquipo.aspx" />
     <Content Include="Forms\Articulos\ReubicaciondeEquipo.aspx" />
+    <Content Include="Forms\Articulos\ReubicarEquipos.aspx" />
     <Content Include="Forms\Articulos\ValidacionesJquery.aspx" />
     <Content Include="Forms\Catalogos\CatalogoEmpresasSoftware.aspx" />
     <Content Include="Forms\Catalogos\CatalogoGruposSoftware.aspx" />
@@ -349,6 +362,7 @@
     <Content Include="Forms\Inicio.aspx" />
     <Content Include="Forms\MaxImage\BuscarDocumento.aspx" />
     <Content Include="Forms\Mensaje.aspx" />
+    <Content Include="Forms\MensajeA.aspx" />
     <Content Include="Forms\Operacion\CartaLiberacionDN.html" />
     <Content Include="Forms\Operacion\Op_AAE_BuscarDocumento.aspx" />
     <Content Include="Forms\Operacion\Op_Cartero_BuscarCartas.aspx" />
@@ -356,8 +370,12 @@
     <Content Include="Forms\Operacion\Op_Cartero_GenerarCarta.aspx" />
     <Content Include="Forms\Operacion\Op_Cartero_LiberarCarta.aspx" />
     <Content Include="Forms\Operacion\Op_Cartero_SHF.aspx" />
+    <Content Include="Forms\Operacion\Op_Constancias_BuzonE.aspx" />
+    <Content Include="Forms\Operacion\Op_Constancias_Carga.aspx" />
+    <Content Include="Forms\Operacion\Op_Constancias_Generacion.aspx" />
     <Content Include="Forms\Operacion\Op_GenerarConstancia.aspx" />
     <Content Include="Forms\Operacion\Op_SAB_BuscarDocumento.aspx" />
+    <Content Include="Forms\Operacion\Op_SisCre.aspx" />
     <Content Include="Forms\Reportes\BuscarDocumentoSAP.aspx" />
     <Content Include="Forms\Reportes\BusquedaTipoActivo.aspx" />
     <Content Include="Forms\Reportes\DocumentosUsuario.aspx" />
@@ -465,6 +483,8 @@
     <Content Include="Scripts\mmenudom.js" />
     <Content Include="Scripts\ui.datepicker-es.js" />
     <None Include="Forms\Servidores\Ejemplo.xlsx" />
+    <None Include="Properties\PublishProfiles\Prod.pubxml" />
+    <None Include="Properties\PublishProfiles\QA.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -678,6 +698,13 @@
     <Compile Include="Forms\Articulos\ReubicaciondeEquipo.aspx.designer.cs">
       <DependentUpon>ReubicaciondeEquipo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Articulos\ReubicarEquipos.aspx.cs">
+      <DependentUpon>ReubicarEquipos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Articulos\ReubicarEquipos.aspx.designer.cs">
+      <DependentUpon>ReubicarEquipos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Articulos\ValidacionesJquery.aspx.cs">
       <DependentUpon>ValidacionesJquery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -860,6 +887,13 @@
     <Compile Include="Forms\Mensaje.aspx.designer.cs">
       <DependentUpon>Mensaje.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MensajeA.aspx.cs">
+      <DependentUpon>MensajeA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\MensajeA.aspx.designer.cs">
+      <DependentUpon>MensajeA.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Operacion\Op_AAE_BuscarDocumento.aspx.cs">
       <DependentUpon>Op_AAE_BuscarDocumento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -902,6 +936,27 @@
     <Compile Include="Forms\Operacion\Op_Cartero_SHF.aspx.designer.cs">
       <DependentUpon>Op_Cartero_SHF.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Operacion\Op_Constancias_BuzonE.aspx.cs">
+      <DependentUpon>Op_Constancias_BuzonE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Operacion\Op_Constancias_BuzonE.aspx.designer.cs">
+      <DependentUpon>Op_Constancias_BuzonE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Operacion\Op_Constancias_Carga.aspx.cs">
+      <DependentUpon>Op_Constancias_Carga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Operacion\Op_Constancias_Carga.aspx.designer.cs">
+      <DependentUpon>Op_Constancias_Carga.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Operacion\Op_Constancias_Generacion.aspx.cs">
+      <DependentUpon>Op_Constancias_Generacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Operacion\Op_Constancias_Generacion.aspx.designer.cs">
+      <DependentUpon>Op_Constancias_Generacion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Operacion\Op_GenerarConstancia.aspx.cs">
       <DependentUpon>Op_GenerarConstancia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -915,6 +970,13 @@
     </Compile>
     <Compile Include="Forms\Operacion\Op_SAB_BuscarDocumento.aspx.designer.cs">
       <DependentUpon>Op_SAB_BuscarDocumento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Operacion\Op_SisCre.aspx.cs">
+      <DependentUpon>Op_SisCre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Operacion\Op_SisCre.aspx.designer.cs">
+      <DependentUpon>Op_SisCre.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Reportes\BuscarDocumentoSAP.aspx.cs">
       <DependentUpon>BuscarDocumentoSAP.aspx</DependentUpon>
@@ -1355,8 +1417,13 @@
     <WCFMetadataStorage Include="Service References\WS_Excel\" />
     <WCFMetadataStorage Include="Service References\WS_PDF\" />
   </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">

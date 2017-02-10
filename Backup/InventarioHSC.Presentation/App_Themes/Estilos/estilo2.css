@@ -1,0 +1,140 @@
+BODY 
+{
+	PADDING-RIGHT: 0px;
+	PADDING-LEFT: 0px;
+	FONT-SIZE: 20px;
+	PADDING-BOTTOM: 0px;
+	MARGIN: 0px;
+	COLOR: #000000;
+	PADDING-TOP: 0px;
+	FONT-FAMILY: Trebuchet MS;
+	text-align: justify;
+
+}
+
+A:link
+{
+    FONT-SIZE: 11px;
+    BACKGROUND: none transparent scroll repeat 0% 0%;
+    COLOR: #000000;
+    FONT-FAMILY: Trebuchet MS;
+    TEXT-DECORATION: none
+}
+
+A:active
+{
+    FONT-SIZE: 11px;
+    BACKGROUND: none transparent scroll repeat 0% 0%;
+    COLOR: #000000;
+    FONT-FAMILY: Trebuchet MS;
+    TEXT-DECORATION: none
+}
+
+A:visited
+{
+    FONT-SIZE: 11px;
+    BACKGROUND: none transparent scroll repeat 0% 0%;
+    COLOR: #000000;
+    FONT-FAMILY: Trebuchet MS;
+    TEXT-DECORATION: none
+}
+
+A:hover
+{
+	FONT-SIZE: 11px;
+	FONT-FAMILY: Trebuchet MS;
+	TEXT-DECORATION: none;
+}
+#cajatext
+{
+WIDTH: 450px;
+HEIGHT: 150px;
+MARGIN-LEFT: 50px;
+FONT-SIZE: 11px;
+COLOR: #000000;
+FONT-FAMILY: Trebuchet MS;
+line-height: 16px;
+BORDER-BOTTOM: 1px dotted #333;
+}
+.subtitulo
+ {
+ FONT-WEIGHT: bold;
+ list-style-type:none;
+ color:#333;
+ background-color: #FFF;
+ background:  url(../imagenes/arrow.png) no-repeat;
+ background-position: 0 .3em;
+ padding-left: 15px;
+ } 
+
+TD 
+{
+	FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Trebuchet MS; line-height: 16px;
+}
+
+INPUT {
+	FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Trebuchet MS
+}
+
+INPUT.button {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 12px;
+	CURSOR: hand;
+	COLOR: #FFFFFF;
+	FONT-FAMILY: Trebuchet MS;
+	background-color: #456071;
+	border: 1px solid #000000;
+
+}
+
+Select {
+	FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Trebuchet MS; background-color: #EFEBEF;
+}
+
+
+.estilotabla{ 
+    border-style:solid; 
+    border-color:666666; 
+    border-width:1px; 
+} 
+
+.estilotabla2
+{
+	border-style:solid;
+	border-color:666666;
+	border-width:1px;
+	background-color: #FFFFFF;
+
+} 
+
+ul{
+    padding-left: 10px;
+    margin-left: 10px;
+    list-style-type: disc;
+}
+
+ul li 
+{
+    padding-left: 0px;
+    margin-bottom: 1em;
+}
+
+.jutifica 
+{
+	text-align: justify;
+}
+
+.textFondo:hover
+{
+    FONT-SIZE: 11px;
+    background-color: #192158;
+    COLOR: #FFFFFF;
+    FONT-FAMILY: Trebuchet MS;
+    TEXT-DECORATION: none
+}
+.floatleft
+{
+float: left;
+padding: 2px;
+margin: 4px;
+}

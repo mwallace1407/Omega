@@ -1,0 +1,13 @@
+/* scroller background - TABLE */
+.TScrBack1 {
+	background-color: white;
+}
+/* style to be applyed to all items' bodies
+  - SPAN in Netscape 4.x, TD in rest
+  all local stylesheets of external files if any are to be ignored */
+.TScrItemBody1 {
+	font-family: Verdana;
+	font-size: 11px;
+	text-align: justify;
+	padding: 5px;
+}

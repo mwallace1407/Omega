@@ -326,5 +326,32 @@ namespace InventarioHSC.BusinessLayer
 
             return dlArticulo.getResponsivaAnterior(responsi, idUsuario);
         }
+
+        public string ReubicarEquipos(int idItem, int idUbicacion)
+        {
+            DLArticulo objArt = new DLArticulo();
+
+            return objArt.ReubicarEquipos(idItem, idUbicacion);
+        }
+
+        public System.Data.DataTable BuscarArticulosUnity(string Clave)
+        {
+            DLArticulo objArt = new DLArticulo();
+
+            return objArt.BuscarArticulosUnity(Clave);
+        }
+
+        public void ListaUbicacionesR(ref System.Web.UI.WebControls.DropDownList ddl, bool IncluirValorInicial = true)
+        {
+            DLArticulo objArt = new DLArticulo();
+
+            ddl.DataSource = objArt.ListaUbicacionesR(IncluirValorInicial);
+            ddl.DataValueField = "Valor";
+            ddl.DataTextField = "Descripcion";
+            ddl.DataBind();
+
+            if (IncluirValorInicial)
+                ddl.Items[0].Text = "";
+        }
     }
 }

@@ -1,0 +1,95 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="InventarioHSC.Forms.Main" %>
+
+<!DOCTYPE html>
+<html lang="es">
+<head runat="server">
+    <title>Sistema Omega Ω</title>
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link href="../App_Themes/Menu/menu2.css" type="text/css" rel="Stylesheet" />
+    <style type="text/css">
+        html, body
+        {
+            font: Trebuchet MS;
+            font-size: small;
+        }
+        .footer
+        {
+            background-color: #1a5395;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+            line-height: normal;
+            margin: 0 0 30px 0;
+            font-size: small;
+            border-radius: 0 0 4px 4px;
+            -webkit-border-radius: 0 0 4px 4px;
+            -moz-border-radius: 0 0 4px 4px;
+            background-image: -o-linear-gradient(-90deg,rgba(255,255,255,0.38),rgba(255,255,255,0.16));
+            background-image: -moz-linear-gradient(-90deg,rgba(255,255,255,0.38),rgba(255,255,255,0.16));
+            background-image: -webkit-gradient(linear,50% 0%,50% 100%,from(rgba(255,255,255,0.38)),to(rgba(255,255,255,0.16)));
+            background-image: -webkit-linear-gradient(-90deg,rgba(255,255,255,0.38),rgba(255,255,255,0.16));
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="headMaster" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-image: url('<%=RutaFondoPagina %>'); background-repeat: repeat;
+    background-attachment: fixed">
+    <form id="form1" runat="server">
+    <div>
+        <div style="text-align: center; width: 1000px; margin-left: auto; margin-right: auto;">
+            <div style="float: left; height: 45px;">
+                <div style="float: left; width: 203px; height: 45px; text-align: left; background-image: url('<%=RutaLogoPagina %>');
+                    background-repeat: no-repeat;">
+                </div>
+                <div style="float: right; width: 576px; height: 45px; font-size: small; display: table-cell;
+                    vertical-align: top;">
+                    <asp:LoginView ID="LoginView2" runat="server" OnLoad="Page_Load">
+                        <LoggedInTemplate>
+                            <asp:PlaceHolder ID="MainPlaceHolder" runat="server"></asp:PlaceHolder>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </div>
+            </div>
+            <div style="float: right; width: 221px; height: 45px;">
+                <span style="height: 45px; font-size: smaller; display: table-cell; vertical-align: top;">
+                    <asp:Panel ID="pnlLogin" runat="server">
+                        <asp:LoginView ID="LoginView3" runat="server">
+                            <LoggedInTemplate>
+                                <strong>Bienvenido: </strong>
+                                <asp:Label ID="lblNombreCompletoUsuario" runat="server" Font-Bold="True" ForeColor="#1a5395"></asp:Label>
+                                <%--<strong>, (</strong>
+                                <asp:Label ID="lblNombreCompletoRol" runat="server" Font-Bold="True" ForeColor="#1a5395"></asp:Label>
+                                <strong>)</strong>--%>
+                            </LoggedInTemplate>
+                            <AnonymousTemplate>
+                                &nbsp;
+                            </AnonymousTemplate>
+                        </asp:LoginView>
+                        <asp:LoginView ID="LoginView1" runat="server">
+                            <LoggedInTemplate>
+                                <asp:LoginStatus ID="LoginStatus3" runat="server" LogoutText="Salir" Font-Bold="True"
+                                    ForeColor="#990000" BorderColor="White" LogoutAction="RedirectToLoginPage" LogoutPageUrl="~/Default.aspx"
+                                    OnLoggedOut="LoginStatus3_LoggedOut" />
+                            </LoggedInTemplate>
+                            <AnonymousTemplate>
+                                &nbsp;
+                            </AnonymousTemplate>
+                        </asp:LoginView>
+                    </asp:Panel>
+                </span>
+            </div>
+            <div style="width: 1000px;">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div style="width: 1000px; height: 50px;" class="footer">
+                Sistema Omega Ω
+                <br />
+                Copyright &copy; Hipotecaria Su Casita 2015
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

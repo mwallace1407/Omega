@@ -1845,5 +1845,86 @@ namespace InventarioHSC.DataLayer
 
             return MensajeBD;
         }
+
+        public string ReubicarEquipos(int idItem, int idUbicacion)
+        {
+            string MsjBD = "";
+            DataSet MensajeBD = new DataSet();
+            Database db = EnterpriseLibraryContainer.Current.GetInstance<Database>("Inventario");
+            StringBuilder sqlCommand = new StringBuilder();
+            DbCommand selectCommand = null;
+
+            try
+            {
+                selectCommand = db.GetSqlStringCommand("stpU_ArticulosReubicar");
+                selectCommand.CommandType = CommandType.StoredProcedure;
+
+                db.AddInParameter(selectCommand, "@idItem", DbType.Int32, idItem);
+                db.AddInParameter(selectCommand, "@idUbicacion", DbType.Int32, idUbicacion);
+
+                MensajeBD = db.ExecuteDataSet(selectCommand);
+            }
+            catch (Exception ex)
+            {
+                MsjBD = ex.Message;
+            }
+
+            return MsjBD;
+        }
+
+        public DataTable BuscarArticulosUnity(string Clave)
+        {
+            DataSet MensajeBD = new DataSet();
+            Database db = EnterpriseLibraryContainer.Current.GetInstance<Database>("Inventario");
+            StringBuilder sqlCommand = new StringBuilder();
+            DbCommand selectCommand = null;
+
+            try
+            {
+                selectCommand = db.GetSqlStringCommand("stpS_ArticulosBusqueda");
+                selectCommand.CommandType = CommandType.StoredProcedure;
+
+                db.AddInParameter(selectCommand, "@Clave", DbType.String, Clave);
+
+                MensajeBD = db.ExecuteDataSet(selectCommand);
+            }
+            catch { }
+
+            return MensajeBD.Tables[0];
+        }
+
+        public DataTable ListaUbicacionesR(bool IncluirValorInicial)
+        {
+            DataSet ds = new DataSet();
+            Database db = EnterpriseLibraryContainer.Current.GetInstance<Database>("Inventario");
+            StringBuilder sqlCommand = new StringBuilder();
+            DataTable Resultados = new DataTable();
+
+            sqlCommand.AppendLine("EXEC stpS_Catalogos");
+
+            if (IncluirValorInicial)
+                sqlCommand.AppendLine(((int)DatosGenerales.OpcionesCatalogosStored.Ubicaciones).ToString() + ", 1, 0, 0");
+            else
+                sqlCommand.AppendLine(((int)DatosGenerales.OpcionesCatalogosStored.Ubicaciones).ToString() + ", 0, 0, 0");
+
+            DbCommand selectCommand = null;
+            selectCommand = db.GetSqlStringCommand(sqlCommand.ToString());
+
+            try
+            {
+                ds = db.ExecuteDataSet(selectCommand);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    Resultados = ds.Tables[0];
+                }
+
+                return Resultados;
+            }
+            catch (DataException ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

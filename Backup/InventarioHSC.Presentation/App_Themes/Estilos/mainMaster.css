@@ -1,0 +1,94 @@
+﻿html,body
+{
+    height:92.0%;
+    width:100%;
+    margin: 0;
+    padding: 0px;
+    border:none;
+    vertical-align: top;
+    background-color: #fff;
+    font: 125%/1.75em Trebuchet MS;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+table.principal
+{
+width:100%;
+height:100%;
+padding:0px;
+border:1px solid gray;
+margin:0px;
+vertical-align:top;
+}
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+/* you can specify a greater or lesser percentage for the 
+page width. Or, you can specify an exact pixel width. */
+.page {
+    margin-left: auto;
+    margin-right: auto;
+}
+td.logo
+{
+    /*background-image: url('../imagenes/logo_horizontal.png'); */
+    background-position:center;
+    background-repeat:no-repeat;
+    width: 20%;
+}
+td.viewlogin
+{
+        background-color: #FFFFFF; 
+
+}
+
+header, #header {
+    position: relative;
+    color: #000;
+    padding: 1;
+    font-size: 10px;
+    background-color: #FFFFFF; 
+    top: -19px;
+    left: -5px;
+    height: 100px;
+    margin : 0px 10px 10px 10px; 
+    border-bottom: 1px dotted #B51032;
+    border-top: 3px solid #B51032;
+}
+
+header h1, #header h1 {
+    font-weight: bold;
+    padding: 5px 0;
+    margin: 0;
+    color: #fff;
+    border: none;
+    line-height: 2em;
+    font-size: 32px !important;
+    text-shadow: 1px 1px 2px #111;
+}
+
+#main
+{
+    clear: both;
+    padding: 30px 30px 15px 30px;
+    border-radius: 4px 0 0 0;
+    -webkit-border-radius: 4px 0 0 0;
+    -moz-border-radius: 4px 0 0 0;
+    width: 100%;
+    height: 95%;
+}
+
+footer, #footer {
+    background-color: #1A5395;
+    color: #FFFFFF;
+    padding: 10px 0;
+    text-align: center;
+    line-height: normal;
+    margin: 0 0 30px 0;
+    font-size: .5em;
+    border-radius: 0 0 4px 4px;
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+}

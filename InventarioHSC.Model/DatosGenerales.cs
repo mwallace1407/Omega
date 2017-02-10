@@ -190,7 +190,9 @@ namespace InventarioHSC.Model
         public static int LongitudBaseCampo = 50;
 
         public static int LongitudLlaveBoveda = 1024;
-        
+        public static string UserDec = "be5d512677858999b0be0253bbf4848343036b9a9d6b2ea43446de08b975f78fd8f15419ed616af1b29526f2102c4dae365223bbca35cbedda543c1ea6df7a1dab7a47fa37b34ae9c0b62da753e5bf0219dd44795e27fe22b62ccb7074907efd8c015f165c950ac726570b3acd5c35f4eeae870e4b5ca752d2b46d4fac6f295dc614b12307818ddc7bbf4b279409b7ff9f2d552b610bee6ce0806aab9052cb53d3225bb05bca62c33f67b82e6b51f63b8e7ec6bcd61206fd0e5dd7db96d7f58961b8b15019f11819d385894871e97fdd56577acb040a035a91d1ae9887b1f05d542fe3f5b729809e347df04b6e9463906e871c24e3c92af55cca71d3d54983de48796902bb299812c0a9c35741685712c14e315496e4562fa91039d8057cf89011be687c0b227277f225c605cdff55b34103367e4268e69ae2361bac0e7205bad6f36b238fbb42972d66eb56c4b03aeda92068d499e9f5704a9f1d733f840f72175fe56cec245d3afb5b54c8e4346bde5ae7da63cd53b7bcda72616f84e640cebb660de28c9582a98df0d651873ea833f2cecb6675eb2a1e64fd9ac287556b1adf5f5683ab87e15dd3dc633a5d34b6c1ca8a24fa695de595851834ed6b82e7a6cf8b51e5b6369f5ca2ff5c3fabefd4c965f9aa86fbf1a9cfce0ff2e254965d72c71dc2bf4ecfed48572cbe54d2f2be6281f16c375006d881d5b5ed179a870127";
+        public static string RutaSisCre = System.Web.Configuration.WebConfigurationManager.AppSettings["RutaSisCre"].ToString();
+
         public enum OpcionesInsertarServidoresStored
         {
             Insertar_Servidor = 1,
@@ -352,6 +354,25 @@ namespace InventarioHSC.Model
                     break;
                 case TiposMensaje.Informacion:
                     HttpContext.Current.Response.Redirect("../Mensaje.aspx?Tipo=" + "I" + "&Titulo=" + HttpContext.Current.Server.UrlEncode(Titulo) + "&Mensaje=" + HttpContext.Current.Server.UrlEncode(Descripcion), false);
+                    break;
+            }
+        }
+
+        public static void EnviaMensaje(string Descripcion, string Titulo, string Archivo, TiposMensaje Tipo)
+        {
+            Titulo = Convert.ToBase64String(Encoding.Unicode.GetBytes(Titulo));
+            Descripcion = Convert.ToBase64String(Encoding.Unicode.GetBytes(Descripcion));
+
+            switch (Tipo)
+            {
+                case TiposMensaje.Advertencia:
+                    HttpContext.Current.Response.Redirect("../MensajeA.aspx?Tipo=" + "A" + "&Titulo=" + HttpContext.Current.Server.UrlEncode(Titulo) + "&Mensaje=" + HttpContext.Current.Server.UrlEncode(Descripcion) + "&Archivo=" + HttpContext.Current.Server.UrlEncode(Archivo), false);
+                    break;
+                case TiposMensaje.Error:
+                    HttpContext.Current.Response.Redirect("../MensajeA.aspx?Tipo=" + "E" + "&Titulo=" + HttpContext.Current.Server.UrlEncode(Titulo) + "&Mensaje=" + HttpContext.Current.Server.UrlEncode(Descripcion) + "&Archivo=" + HttpContext.Current.Server.UrlEncode(Archivo), false);
+                    break;
+                case TiposMensaje.Informacion:
+                    HttpContext.Current.Response.Redirect("../MensajeA.aspx?Tipo=" + "I" + "&Titulo=" + HttpContext.Current.Server.UrlEncode(Titulo) + "&Mensaje=" + HttpContext.Current.Server.UrlEncode(Descripcion) + "&Archivo=" + HttpContext.Current.Server.UrlEncode(Archivo), false);
                     break;
             }
         }
@@ -991,6 +1012,13 @@ namespace InventarioHSC.Model
             return diff;
         }
         #endregion ManejoFechas
-
+        #region Constancias
+        public enum ConstanciasCatalogos
+        {
+            Administradoras = 1,
+            Portafolios_por_administradora = 2,
+            Portafolios_con_administradora = 3
+        }
+        #endregion Constancias
     }
 }
