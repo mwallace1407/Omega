@@ -484,5 +484,40 @@ namespace InventarioHSC.DataLayer
             return MsjBD;
         }
         #endregion Abanks
+        #region Intranet
+        public DataTable BuscarDocumentosIntranet(string CadenaBusqueda)
+        {
+            DataSet MensajeBD = new DataSet();
+            Database db = EnterpriseLibraryContainer.Current.GetInstance<Database>("Inventario");
+            StringBuilder sqlCommand = new StringBuilder();
+            DbCommand selectCommand = null;
+
+            try
+            {
+                selectCommand = db.GetSqlStringCommand("stpR_BuscarDocumentosIntranet");
+                selectCommand.CommandType = CommandType.StoredProcedure;
+
+                db.AddInParameter(selectCommand, "@CadenaBusqueda", DbType.String, CadenaBusqueda);
+
+                MensajeBD = db.ExecuteDataSet(selectCommand);
+            }
+            catch (Exception ex)
+            {
+                MensajeBD = new DataSet();
+                DataTable Errores = new DataTable("Error");
+                DataRow dr;
+
+                Errores.Columns.Add("Error");
+                dr = Errores.NewRow();
+                dr[0] = ex.Message;
+                Errores.Rows.Add(dr);
+                Errores.AcceptChanges();
+
+                MensajeBD.Tables.Add(Errores);
+            }
+
+            return MensajeBD.Tables[0];
+        }
+        #endregion Intranet
     }
 }

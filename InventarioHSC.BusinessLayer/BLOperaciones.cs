@@ -98,5 +98,13 @@ namespace InventarioHSC.BusinessLayer
             return obj.BuscarDocumentosSAB(CadenaBusqueda);
         }
         #endregion SAB
+        #region AAE
+        public DataTable BuscarDocumentosIntranet(string CadenaBusqueda)
+        {
+            DLOperaciones obj = new DLOperaciones();
+
+            return obj.BuscarDocumentosIntranet(CadenaBusqueda);
+        }
+        #endregion AAE
     }
 }

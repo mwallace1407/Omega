@@ -374,6 +374,7 @@
     <Content Include="Forms\Operacion\Op_Constancias_Carga.aspx" />
     <Content Include="Forms\Operacion\Op_Constancias_Generacion.aspx" />
     <Content Include="Forms\Operacion\Op_GenerarConstancia.aspx" />
+    <Content Include="Forms\Operacion\Op_Intranet_BuscarDocs.aspx" />
     <Content Include="Forms\Operacion\Op_SAB_BuscarDocumento.aspx" />
     <Content Include="Forms\Operacion\Op_SisCre.aspx" />
     <Content Include="Forms\Reportes\BuscarDocumentoSAP.aspx" />
@@ -963,6 +964,13 @@
     </Compile>
     <Compile Include="Forms\Operacion\Op_GenerarConstancia.aspx.designer.cs">
       <DependentUpon>Op_GenerarConstancia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Operacion\Op_Intranet_BuscarDocs.aspx.cs">
+      <DependentUpon>Op_Intranet_BuscarDocs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Operacion\Op_Intranet_BuscarDocs.aspx.designer.cs">
+      <DependentUpon>Op_Intranet_BuscarDocs.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Operacion\Op_SAB_BuscarDocumento.aspx.cs">
       <DependentUpon>Op_SAB_BuscarDocumento.aspx</DependentUpon>
