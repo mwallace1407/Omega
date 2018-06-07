@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.Common;
+using System.Text;
 using InventarioHSC.Model;
-using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace InventarioHSC.DataLayer
 {
@@ -14,7 +13,6 @@ namespace InventarioHSC.DataLayer
     {
         public DLRegion()
         {
-
         }
 
         public Region getRegionporID(int idRegion)
@@ -45,7 +43,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
 
@@ -88,7 +85,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
 
@@ -112,7 +108,7 @@ namespace InventarioHSC.DataLayer
             sqlCommand.AppendLine(" SELECT	  0 AS idRegion ");
             sqlCommand.AppendLine(" 		, '' AS Nombre ");
             sqlCommand.AppendLine(" 		, 'INACTIVO' as Estatus ");
-            sqlCommand.AppendLine(" UNION ");   
+            sqlCommand.AppendLine(" UNION ");
             sqlCommand.AppendLine("SELECT    idRegion ");
             sqlCommand.AppendLine("		   , Nombre ");
             sqlCommand.AppendLine("	       , CASE Estatus ");
@@ -121,7 +117,7 @@ namespace InventarioHSC.DataLayer
             sqlCommand.AppendLine("	         END AS Estatus");
             sqlCommand.AppendLine("FROM Region  ");
             sqlCommand.AppendLine("WHERE Estatus = 1 ");
-            sqlCommand.AppendLine("ORDER BY idRegion "); 
+            sqlCommand.AppendLine("ORDER BY idRegion ");
 
             DbCommand selectCommand = null;
             selectCommand = db.GetSqlStringCommand(sqlCommand.ToString());
@@ -133,12 +129,11 @@ namespace InventarioHSC.DataLayer
                 List<Region> lstRegion = new List<Region>();
                 if (ds.Tables[0].Rows.Count > 0)
                 {
-
                     foreach (DataRow dr in ds.Tables[0].Rows)
                     {
                         Region oRegion = new Region();
                         oRegion.idRegion = Convert.ToInt32(dr["idRegion"]);
-                        oRegion.nombre = dr["Nombre"].ToString(); 
+                        oRegion.nombre = dr["Nombre"].ToString();
                         lstRegion.Add(oRegion);
                     }
                 }
@@ -146,7 +141,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
         }

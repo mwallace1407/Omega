@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Practices.EnterpriseLibrary.Data;
-using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
 using System.Data;
 using System.Data.Common;
-using System.Data.SqlClient;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Data;
+
 namespace InventarioHSC.DataLayer
 {
     public class DLConstancias
@@ -26,7 +23,7 @@ namespace InventarioHSC.DataLayer
                 db.AddInParameter(selectCommand, "@Valor01", DbType.Int32, Valor01);
                 Tabla.Load(db.ExecuteReader(selectCommand));
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 DataRow dr;
 

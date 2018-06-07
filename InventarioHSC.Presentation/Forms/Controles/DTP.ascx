@@ -19,7 +19,6 @@
         font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
     }
 </style>
-
 <script type="text/javascript">
     function getDateTimePicker() {
         $('#datetimepicker').DateTimePickerNew({
@@ -29,13 +28,11 @@
         });
     }
 </script>
-
-<div id="datetimepicker" class="input-append date" style="width:205px;">
+<div id="datetimepicker" class="input-append date" style="width: 205px;">
     <asp:TextBox ID="txtDateTime" CssClass="textBoxDTP" runat="server"></asp:TextBox>
     <span class="add-on"><i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
     </span>
 </div>
-
 <script type="text/javascript">
     $('#datetimepicker').DateTimePickerNew({
         format: 'dd/MM/yyyy hh:mm',

@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Reporte de remuneración económica" Language="C#" MasterPageFile="~/Forms/Main.Master" AutoEventWireup="true" CodeBehind="RptRemuneracionEconomica.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptRemuneracionEconomica" %>
+﻿<%@ Page Title="Reporte de remuneración económica" Language="C#" MasterPageFile="~/Forms/Main.Master"
+    AutoEventWireup="true" CodeBehind="RptRemuneracionEconomica.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptRemuneracionEconomica" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headMaster" runat="server">

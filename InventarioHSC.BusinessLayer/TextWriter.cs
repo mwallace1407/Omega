@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace InventarioHSC.BusinessLayer
+﻿namespace InventarioHSC.BusinessLayer
 {
     public class TextWriter
     {
@@ -46,10 +41,12 @@ namespace InventarioHSC.BusinessLayer
         {
             return "<div>";
         }
+
         static public string MakeOpenDivid(string id)
         {
             return "<div id=" + "\"" + id + "\">";
         }
+
         static public string MakeCloseDiv()
         {
             return "</div>";
@@ -67,7 +64,6 @@ namespace InventarioHSC.BusinessLayer
         {
             string sOutput = string.Empty;
 
-
             sOutput = "<li><a href=" + "\"" + strRuta + "\"";
 
             if (strCss != null)
@@ -77,7 +73,6 @@ namespace InventarioHSC.BusinessLayer
 
             sOutput += " >";
             sOutput += "<span>" + strNombreOpcion + "</span></a>";
-
 
             return sOutput;
         }
@@ -141,7 +136,5 @@ namespace InventarioHSC.BusinessLayer
         {
             return "<b>" + s + "</b>";
         }
-
     } // end of class declaration
-
 }

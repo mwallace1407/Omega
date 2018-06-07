@@ -1,4 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Forms/Main.Master" AutoEventWireup="true" CodeBehind="AltaRelBD.aspx.cs" Inherits="InventarioHSC.Forms.Aplicaciones.AltaRelBD" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Forms/Main.Master" AutoEventWireup="true"
+    CodeBehind="AltaRelBD.aspx.cs" Inherits="InventarioHSC.Forms.Aplicaciones.AltaRelBD" %>
+
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Register Src="~/Forms/Controles/uscMsgBox.ascx" TagPrefix="uc1" TagName="uscMsgBox" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headMaster" runat="server">
@@ -42,8 +44,8 @@
                     Servidor BD:
                 </div>
                 <div style="width: 275px; float: right; text-align: left;">
-                    <asp:DropDownList ID="ddlServidor" runat="server" Width="202" 
-                        AutoPostBack="True" onselectedindexchanged="ddlServidor_SelectedIndexChanged">
+                    <asp:DropDownList ID="ddlServidor" runat="server" Width="202" AutoPostBack="True"
+                        OnSelectedIndexChanged="ddlServidor_SelectedIndexChanged">
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator ID="rfv_ddlServidor" runat="server" ErrorMessage="Campo requerido"
                         Display="None" ControlToValidate="ddlServidor" InitialValue="0" SetFocusOnError="True"></asp:RequiredFieldValidator>
@@ -63,8 +65,7 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator ID="rfv_ddlBD" runat="server" ErrorMessage="Campo requerido"
                         Display="None" ControlToValidate="ddlBD" InitialValue="0" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                    <asp:ValidatorCalloutExtender ID="rfve_ddlBD" runat="server" Enabled="True"
-                        TargetControlID="rfv_ddlBD">
+                    <asp:ValidatorCalloutExtender ID="rfve_ddlBD" runat="server" Enabled="True" TargetControlID="rfv_ddlBD">
                     </asp:ValidatorCalloutExtender>
                 </div>
             </div>

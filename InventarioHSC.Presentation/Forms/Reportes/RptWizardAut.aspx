@@ -41,7 +41,8 @@
                 Autorización de reportes dinámicos</div>
             <br />
             <div style="padding-left: 10px; width: 680px; height: 370px; overflow: auto;">
-                Los cambios son aplicados al momento de usar la casilla de verificación del registro correspondiente.
+                Los cambios son aplicados al momento de usar la casilla de verificación del registro
+                correspondiente.
                 <br />
                 <br />
                 <asp:GridView ID="grdDatos" runat="server" Width="660px" AutoGenerateColumns="False"

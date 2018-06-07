@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.Common;
+using System.Text;
 using InventarioHSC.Model;
-using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace InventarioHSC.DataLayer
 {
@@ -14,7 +13,6 @@ namespace InventarioHSC.DataLayer
     {
         public DLUsuario()
         {
-
         }
 
         public Usuario getUsuarioporID(int idUsuario)
@@ -41,7 +39,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
 
@@ -68,7 +65,7 @@ namespace InventarioHSC.DataLayer
             sqlCommand.AppendLine("SELECT idUsuario ");
             sqlCommand.AppendLine("		, Nombre ");
             sqlCommand.AppendLine("		, ISNULL(idPuesto, 0) AS idPuesto ");
-            sqlCommand.AppendLine("FROM Usuario "); 
+            sqlCommand.AppendLine("FROM Usuario ");
             sqlCommand.AppendLine("AND   Nombre = @Nombre");
 
             DbCommand selectCommand = null;
@@ -81,7 +78,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
 
@@ -127,7 +123,6 @@ namespace InventarioHSC.DataLayer
                 List<Usuario> lstUsuario = new List<Usuario>();
                 if (ds.Tables[0].Rows.Count > 0)
                 {
-
                     foreach (DataRow dr in ds.Tables[0].Rows)
                     {
                         Usuario oUsuario = new Usuario();
@@ -142,7 +137,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
         }
@@ -257,6 +251,7 @@ namespace InventarioHSC.DataLayer
         }
 
         #region Permisos_Usuario
+
         public List<Usuario> BuscarUsuarioPermisos(string strBusqueda)
         {
             DataSet MensajeBD = new DataSet();
@@ -363,6 +358,7 @@ namespace InventarioHSC.DataLayer
 
             return Resultados;
         }
+
         #endregion Permisos_Usuario
     }
 }

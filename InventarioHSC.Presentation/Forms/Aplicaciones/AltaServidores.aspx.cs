@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Data;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
 using InventarioHSC.Model;
-using System.Data;
 
 namespace InventarioHSC.Forms.Aplicaciones
 {
@@ -28,6 +25,7 @@ namespace InventarioHSC.Forms.Aplicaciones
         }
 
         #region Catalogos
+
         protected void CargaCatalogos()
         {
             objCatalogo.CargaSOAplicaciones(ref ddlSO);
@@ -35,8 +33,11 @@ namespace InventarioHSC.Forms.Aplicaciones
             objCatalogo.CargaServidoresAplicaciones(ref ddlEquipo);
             ddlEquipo.DataBind();
         }
+
         #endregion Catalogos
+
         #region CatalogosFijos
+
         protected void SiNoNull(ref DropDownList ddl)
         {
             DataTable Combo = new DataTable();
@@ -109,6 +110,7 @@ namespace InventarioHSC.Forms.Aplicaciones
             Combo.AcceptChanges();
 
             #region Letras
+
             row = Combo.NewRow();
             row[0] = "A";
             row[1] = "";
@@ -239,8 +241,8 @@ namespace InventarioHSC.Forms.Aplicaciones
             row[1] = "";
             Combo.Rows.Add(row);
 
-
             Combo.AcceptChanges();
+
             #endregion Letras
 
             return Combo;
@@ -259,6 +261,7 @@ namespace InventarioHSC.Forms.Aplicaciones
             ddl.DataSource = Combo;
             ddl.DataBind();
         }
+
         #endregion CatalogosFijos
 
         protected DataTable MinusDT(DataTable Tabla1, string ColT1, DataTable Tabla2, string ColT2)
@@ -426,7 +429,5 @@ namespace InventarioHSC.Forms.Aplicaciones
             else
                 DatosGenerales.EnviaMensaje(Resp, "Alta de servidores", DatosGenerales.TiposMensaje.Error);
         }
-
-        
     }
 }

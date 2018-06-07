@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Microsoft.Reporting.WebForms;
 using InventarioHSC.BusinessLayer;
-using InventarioHSC.Model;
+using Microsoft.Reporting.WebForms;
 
 namespace InventarioHSC
 {
     public partial class CatalogoSistemaOperativo : System.Web.UI.Page
     {
         public BLSistemaOperativo objSistema = new BLSistemaOperativo();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -66,7 +60,6 @@ namespace InventarioHSC
 
         //protected void gwvSistemaOperativo_RowCommand(object sender, GridViewCommandEventArgs e)
         //{
-            
         //    if (e.CommandName == "Eliminar")
         //    {
         //        int index = Convert.ToInt32(e.CommandArgument);
@@ -97,7 +90,6 @@ namespace InventarioHSC
         //    ActualizaGrid();
         //}
 
-
         //protected void ActualizaGrid()
         //{
         //    gwvSistemaOperativo.DataSource = objSistema.ObtieneSistemaAll();
@@ -106,14 +98,12 @@ namespace InventarioHSC
 
         protected void fnLimpiaControlDetalle()
         {
-
         }
 
         protected void btnSalir_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Forms/Inicio.aspx");
         }
-
 
         //protected void gwvSistemaOperativo_PageIndexChanging(object sender, GridViewPageEventArgs e)
         //{

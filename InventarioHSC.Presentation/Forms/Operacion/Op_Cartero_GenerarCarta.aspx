@@ -60,11 +60,10 @@
                         </div>
                         <div style="width: 215px; float: right; text-align: left;">
                             <asp:TextBox ID="txtFechaDocumento" runat="server" Width="92" MaxLength="10" autocomplete="off"></asp:TextBox>
-                            <asp:MaskedEditExtender ID="txtFechaDocumento_MaskedEditExtender" 
-                                runat="server" CultureAMPMPlaceholder="" CultureCurrencySymbolPlaceholder="" 
-                                CultureDateFormat="" CultureDatePlaceholder="" CultureDecimalPlaceholder="" 
-                                CultureThousandsPlaceholder="" CultureTimePlaceholder="" Enabled="True" 
-                                Mask="99/99/9999" MaskType="Date" TargetControlID="txtFechaDocumento">
+                            <asp:MaskedEditExtender ID="txtFechaDocumento_MaskedEditExtender" runat="server"
+                                CultureAMPMPlaceholder="" CultureCurrencySymbolPlaceholder="" CultureDateFormat=""
+                                CultureDatePlaceholder="" CultureDecimalPlaceholder="" CultureThousandsPlaceholder=""
+                                CultureTimePlaceholder="" Enabled="True" Mask="99/99/9999" MaskType="Date" TargetControlID="txtFechaDocumento">
                             </asp:MaskedEditExtender>
                             <asp:Button ID="btnRecalcular" runat="server" Text="Recalcular fecha" CssClass="boton"
                                 CausesValidation="False" OnClick="btnRecalcular_Click" />
@@ -116,11 +115,10 @@
                         </div>
                         <div style="width: 215px; float: right; text-align: left;">
                             <asp:TextBox ID="txtNumeroPrestamo" runat="server" Width="200" MaxLength="6"></asp:TextBox>
-                            <asp:MaskedEditExtender ID="txtNumeroPrestamo_MaskedEditExtender" 
-                                runat="server" CultureAMPMPlaceholder="" CultureCurrencySymbolPlaceholder="" 
-                                CultureDateFormat="" CultureDatePlaceholder="" CultureDecimalPlaceholder="" 
-                                CultureThousandsPlaceholder="" CultureTimePlaceholder="" Enabled="True" 
-                                Mask="999999" MaskType="None" TargetControlID="txtNumeroPrestamo">
+                            <asp:MaskedEditExtender ID="txtNumeroPrestamo_MaskedEditExtender" runat="server"
+                                CultureAMPMPlaceholder="" CultureCurrencySymbolPlaceholder="" CultureDateFormat=""
+                                CultureDatePlaceholder="" CultureDecimalPlaceholder="" CultureThousandsPlaceholder=""
+                                CultureTimePlaceholder="" Enabled="True" Mask="999999" MaskType="None" TargetControlID="txtNumeroPrestamo">
                             </asp:MaskedEditExtender>
                             <asp:RequiredFieldValidator ID="rfv_txtNumeroPrestamo" runat="server" ErrorMessage="Campo requerido"
                                 Display="None" ControlToValidate="txtNumeroPrestamo" InitialValue="" SetFocusOnError="True"></asp:RequiredFieldValidator>
@@ -213,11 +211,10 @@
                         <div style="width: 215px; float: right; text-align: left;">
                             <asp:TextBox ID="txtFechaFirmaEscritura" runat="server" Width="200" MaxLength="10"
                                 autocomplete="off"></asp:TextBox>
-                                <asp:MaskedEditExtender ID="txtFechaFirmaEscritura_MaskedEditExtender" 
-                                runat="server" CultureAMPMPlaceholder="" CultureCurrencySymbolPlaceholder="" 
-                                CultureDateFormat="" CultureDatePlaceholder="" CultureDecimalPlaceholder="" 
-                                CultureThousandsPlaceholder="" CultureTimePlaceholder="" Enabled="True" 
-                                Mask="99/99/9999" MaskType="Date" TargetControlID="txtFechaFirmaEscritura">
+                            <asp:MaskedEditExtender ID="txtFechaFirmaEscritura_MaskedEditExtender" runat="server"
+                                CultureAMPMPlaceholder="" CultureCurrencySymbolPlaceholder="" CultureDateFormat=""
+                                CultureDatePlaceholder="" CultureDecimalPlaceholder="" CultureThousandsPlaceholder=""
+                                CultureTimePlaceholder="" Enabled="True" Mask="99/99/9999" MaskType="Date" TargetControlID="txtFechaFirmaEscritura">
                             </asp:MaskedEditExtender>
                             <asp:CalendarExtender ID="txtFechaFirmaEscritura_CalendarExtender" runat="server"
                                 Enabled="True" FirstDayOfWeek="Monday" Format="dd/MM/yyyy" TargetControlID="txtFechaFirmaEscritura">
@@ -282,11 +279,10 @@
                         </div>
                         <div style="width: 215px; float: right; text-align: left;">
                             <asp:TextBox ID="txtFechaVigencia" runat="server" Width="200" MaxLength="10" autocomplete="off"></asp:TextBox>
-                            <asp:MaskedEditExtender ID="txtFechaVigencia_MaskedEditExtender" 
-                                runat="server" CultureAMPMPlaceholder="" CultureCurrencySymbolPlaceholder="" 
-                                CultureDateFormat="" CultureDatePlaceholder="" CultureDecimalPlaceholder="" 
-                                CultureThousandsPlaceholder="" CultureTimePlaceholder="" Enabled="True" 
-                                Mask="99/99/9999" MaskType="Date" TargetControlID="txtFechaVigencia">
+                            <asp:MaskedEditExtender ID="txtFechaVigencia_MaskedEditExtender" runat="server" CultureAMPMPlaceholder=""
+                                CultureCurrencySymbolPlaceholder="" CultureDateFormat="" CultureDatePlaceholder=""
+                                CultureDecimalPlaceholder="" CultureThousandsPlaceholder="" CultureTimePlaceholder=""
+                                Enabled="True" Mask="99/99/9999" MaskType="Date" TargetControlID="txtFechaVigencia">
                             </asp:MaskedEditExtender>
                             <asp:CalendarExtender ID="txtFechaVigencia_CalendarExtender" runat="server" Enabled="True"
                                 FirstDayOfWeek="Monday" Format="dd/MM/yyyy" TargetControlID="txtFechaVigencia">
@@ -331,7 +327,7 @@
                     <br />
                     <br />
                     <div style="width: 780px; height: 1px; text-align: center;">
-                    <asp:Button ID="btnLimpiarDatos" runat="server" Text="Limpiar datos" CssClass="boton"
+                        <asp:Button ID="btnLimpiarDatos" runat="server" Text="Limpiar datos" CssClass="boton"
                             OnClick="btnLimpiarDatos_Click" CausesValidation="False" />&nbsp&nbsp&nbsp
                         <asp:Button ID="btnVistaPrevia" runat="server" Text="Vista Previa" CssClass="boton"
                             OnClick="btnVistaPrevia_Click" CausesValidation="False" />&nbsp&nbsp&nbsp

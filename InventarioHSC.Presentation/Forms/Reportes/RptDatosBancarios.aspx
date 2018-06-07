@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Reporte de datos bancarios" Language="C#" MasterPageFile="~/Forms/Main.Master" AutoEventWireup="true" CodeBehind="RptDatosBancarios.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptDatosBancarios" %>
+﻿<%@ Page Title="Reporte de datos bancarios" Language="C#" MasterPageFile="~/Forms/Main.Master"
+    AutoEventWireup="true" CodeBehind="RptDatosBancarios.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptDatosBancarios" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headMaster" runat="server">

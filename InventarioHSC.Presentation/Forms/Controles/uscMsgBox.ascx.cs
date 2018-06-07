@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.ObjectModel;
-using System.Collections.Specialized;
 using System.Collections.Generic;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace YaBu.MessageBox
 {
@@ -16,6 +11,7 @@ namespace YaBu.MessageBox
             OK = 0,
             Cancel = 1
         }
+
         public enum enmMessageType
         {
             Error = 0,
@@ -37,6 +33,7 @@ namespace YaBu.MessageBox
         }
 
         public delegate void MsgBoxEventHandler(object sender, MsgBoxEventArgs e);
+
         public event MsgBoxEventHandler MsgBoxAnswered;
 
         public string Args
@@ -76,7 +73,6 @@ namespace YaBu.MessageBox
                 get { return _messageText; }
                 set { _messageText = value; }
             }
-
         }
 
         protected int MessageNumber
@@ -158,7 +154,7 @@ namespace YaBu.MessageBox
         }
 
         protected void btnPostOK_Click(object sender, EventArgs e)
-        {            
+        {
             if (MsgBoxAnswered != null)
             {
                 MsgBoxAnswered(this, new MsgBoxEventArgs(enmAnswer.OK, Args));
@@ -186,19 +182,19 @@ namespace YaBu.MessageBox
          uscMsgBox1.AddMessage("Unknown error occured. Please try again later.", YaBu.MessageBox.uscMsgBox.enmMessageType.Error);
          uscMsgBox1.AddMessage("You must enter the user name.", YaBu.MessageBox.uscMsgBox.enmMessageType.Attention);
          uscMsgBox1.AddMessage("The user saved successfully.", YaBu.MessageBox.uscMsgBox.enmMessageType.Success);
-         
+
          //Multiple
          uscMsgBox1.AddMessage("The user saved successfully.", YaBu.MessageBox.uscMsgBox.enmMessageType.Success);
          uscMsgBox1.AddMessage("The newly saved user account should be activated by an administrator within 3 days", YaBu.MessageBox.uscMsgBox.enmMessageType.Attention);
-         
+
          //Confirm
          uscMsgBox1.AddMessage("Do you confirm to save a new user?.", YaBu.MessageBox.uscMsgBox.enmMessageType.Attention, true, true, txtArg.Text);
-         
+
          protected void Page_Load(object sender, EventArgs e)
          {
             uscMsgBox1.MsgBoxAnswered += MessageAnswered;
          }
-         
+
          public void MessageAnswered(object sender, YaBu.MessageBox.uscMsgBox.MsgBoxEventArgs e)
          {
             if (e.Answer == YaBu.MessageBox.uscMsgBox.enmAnswer.OK)

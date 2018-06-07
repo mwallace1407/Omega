@@ -1,26 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.IO;
+using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Spreadsheet;
+using InventarioHSC.DataLayer;
+using A = DocumentFormat.OpenXml.Drawing;
+using A14 = DocumentFormat.OpenXml.Office2010.Drawing;
 using Ap = DocumentFormat.OpenXml.ExtendedProperties;
 using Vt = DocumentFormat.OpenXml.VariantTypes;
-using DocumentFormat.OpenXml;
-using DocumentFormat.OpenXml.Spreadsheet;
 using X14 = DocumentFormat.OpenXml.Office2010.Excel;
-using A = DocumentFormat.OpenXml.Drawing;
 using Xdr = DocumentFormat.OpenXml.Drawing.Spreadsheet;
-using A14 = DocumentFormat.OpenXml.Office2010.Drawing;
-using InventarioHSC.DataLayer;
 
 namespace InventarioHSC.Model
 {
-    
     public class BLXLSResponsiva
     {
         private List<Responsiva> oResponsiva = new List<Responsiva>();
         private DLResponsiva dlResponsiva = new DLResponsiva();
+
         // Creates a SpreadsheetDocument.
         public void CreatePackage(string filePath)
         {
@@ -470,7 +468,7 @@ namespace InventarioHSC.Model
             Cell cell55 = new Cell() { CellReference = "F10", StyleIndex = (UInt32Value)1U };
             Cell cell56 = new Cell() { CellReference = "G10", StyleIndex = (UInt32Value)1U };
             Cell cell57 = new Cell() { CellReference = "H10", StyleIndex = (UInt32Value)1U };
-            
+
             row8.Append(cell50);
             row8.Append(cell51);
             row8.Append(cell52);
@@ -627,7 +625,7 @@ namespace InventarioHSC.Model
 
             foreach (Responsiva itemResponsiva in oResponsiva)
             {
-                if (contadorEstilos == 1 && oResponsiva.Count != 1 )
+                if (contadorEstilos == 1 && oResponsiva.Count != 1)
                 {
                     SCA = 1;
                     SCB = 2;
@@ -730,6 +728,7 @@ namespace InventarioHSC.Model
             contadorRows++;
 
             #region Cambio  forma Dinamica (No funciona)
+
             ////Row row15 = new Row() { RowIndex = (UInt32Value)17U, Spans = new ListValue<StringValue>() { InnerText = "1:8" }, DyDescent = 0.25D };
             ////Cell cell102 = new Cell() { CellReference = "A17", StyleIndex = (UInt32Value)2U };
             ////Cell cell103 = new Cell() { CellReference = "B17", StyleIndex = (UInt32Value)3U };
@@ -923,8 +922,9 @@ namespace InventarioHSC.Model
             ////row25.Append(cell179);
             ////row25.Append(cell180);
             ////row25.Append(cell181);
-            ////row25.Append(cell182); 
-            #endregion
+            ////row25.Append(cell182);
+
+            #endregion Cambio  forma Dinamica (No funciona)
 
             Row row26 = new Row() { RowIndex = (UInt32Value)contadorRows, Spans = new ListValue<StringValue>() { InnerText = "1:8" }, DyDescent = 0.25D };
 
@@ -1205,7 +1205,6 @@ namespace InventarioHSC.Model
             contadorRows++;
             sheetData3.Append(row38);
 
-           
             MergeCells mergeCells1 = new MergeCells() { Count = (UInt32Value)Convert.ToUInt32(Margecells.Count()) };
 
             foreach (var item in Margecells)
@@ -1368,7 +1367,7 @@ namespace InventarioHSC.Model
 
             foreach (var item in oResponsiva)
             {
-                //observacionEquipo += item.observacion1 + " " + item.observacion2; 
+                //observacionEquipo += item.observacion1 + " " + item.observacion2;
                 observacionEquipo = item.ObservacionesResponsiva;
             }
 
@@ -1558,7 +1557,6 @@ namespace InventarioHSC.Model
             text29.Text = "Entrega equipo(s)";//parametros[4].par_Valor;    //***** TODO: 18
 
             sharedStringItem29.Append(text29);
-
 
             sharedStringTable1.Append(sharedStringItem1);
             sharedStringTable1.Append(sharedStringItem2);
@@ -2696,10 +2694,7 @@ namespace InventarioHSC.Model
             return new System.IO.MemoryStream(System.Convert.FromBase64String(base64String));
         }
 
-        #endregion
-
-
+        #endregion Binary Data
 
     }
 }
-

@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
 using InventarioHSC.Model;
 
@@ -12,13 +8,17 @@ namespace InventarioHSC.Forms.Servidores
     public partial class LecturaBoveda : System.Web.UI.Page
     {
         #region Variables
+
         protected const float Rec_x = 0;
         protected const float Rec_y = 0;
         protected const float Rec_width = 325.0F;
         protected const float Rec_height = 100.0F;
         protected const string ImagenBase = "BasePrincipalP.png";
+
         #endregion Variables
+
         #region Metodos
+
         protected void GeneraImagen(string Texto)
         {
             imgPass.Visible = false;
@@ -52,13 +52,16 @@ namespace InventarioHSC.Forms.Servidores
                 image.Dispose();
                 //System.IO.File.Delete(Archivo);
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 lblMsjP.Text = "No se pudo generar la imagen: " + ex.Message;
             }
         }
+
         #endregion Metodos
+
         #region Eventos
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -137,7 +140,6 @@ namespace InventarioHSC.Forms.Servidores
 
         protected void btnCargar_Click(object sender, EventArgs e)
         {
-
         }
 
         protected void ddlTipos_SelectedIndexChanged(object sender, EventArgs e)
@@ -193,8 +195,8 @@ namespace InventarioHSC.Forms.Servidores
 
         protected void btnExportar_Click(object sender, EventArgs e)
         {
-
         }
+
         #endregion Eventos
     }
 }

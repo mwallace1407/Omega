@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using iTextSharp.text;
 using System.IO;
-using iTextSharp.text.pdf;
-using iTextSharp.text.html.simpleparser;
-using System.Collections;
-using iTextSharp.text.html;
+using System.Text;
 using System.Text.RegularExpressions;
+using iTextSharp.text;
+using iTextSharp.text.html.simpleparser;
+using iTextSharp.text.pdf;
 
 namespace InventarioHSC.Forms.Operacion
 {
@@ -18,7 +16,6 @@ namespace InventarioHSC.Forms.Operacion
     /// </summary>
     public class HtmlToPdfBuilder
     {
-
         #region Constants
 
         private const string STYLE_DEFAULT_TYPE = "style";
@@ -30,7 +27,7 @@ namespace InventarioHSC.Forms.Operacion
         //amazing regular expression magic
         private const string REGEX_GET_STYLES = @"(?<selector>[^\{\s]+\w+(\s\[^\{\s]+)?)\s?\{(?<style>[^\}]*)\}";
 
-        #endregion
+        #endregion Constants
 
         #region Constructors
 
@@ -44,7 +41,7 @@ namespace InventarioHSC.Forms.Operacion
             this._Styles = new StyleSheet();
         }
 
-        #endregion
+        #endregion Constructors
 
         #region Delegates
 
@@ -58,7 +55,7 @@ namespace InventarioHSC.Forms.Operacion
         /// </summary>
         public event RenderEvent AfterRender;
 
-        #endregion
+        #endregion Delegates
 
         #region Properties
 
@@ -89,14 +86,14 @@ namespace InventarioHSC.Forms.Operacion
             }
         }
 
-        #endregion
+        #endregion Properties
 
         #region Members
 
         private List<HtmlPdfPage> _Pages;
         private StyleSheet _Styles;
 
-        #endregion
+        #endregion Members
 
         #region Working With The Document
 
@@ -131,7 +128,6 @@ namespace InventarioHSC.Forms.Operacion
         /// </summary>
         public void ImportStylesheet(string path)
         {
-
             //load the file
             string content = File.ReadAllText(path);
 
@@ -142,11 +138,9 @@ namespace InventarioHSC.Forms.Operacion
                 string style = match.Groups[HtmlToPdfBuilder.REGEX_GROUP_STYLE].Value;
                 this.AddStyle(selector, style);
             }
-
         }
 
-
-        #endregion
+        #endregion Working With The Document
 
         #region Document Navigation
 
@@ -172,8 +166,7 @@ namespace InventarioHSC.Forms.Operacion
                 page);
         }
 
-
-        #endregion
+        #endregion Document Navigation
 
         #region Rendering The Document
 
@@ -182,7 +175,6 @@ namespace InventarioHSC.Forms.Operacion
         /// </summary>
         public byte[] RenderPdf()
         {
-
             //Document is inbuilt class, available in iTextSharp
             MemoryStream file = new MemoryStream();
             Document document = new Document(this.PageSize);
@@ -225,7 +217,6 @@ namespace InventarioHSC.Forms.Operacion
                 reader.Dispose();
                 output.Dispose();
                 generate.Dispose();
-
             }
 
             //after rendering
@@ -237,14 +228,12 @@ namespace InventarioHSC.Forms.Operacion
             //return the rendered PDF
             document.Close();
             return file.ToArray();
-
         }
 
-        #endregion
-
+        #endregion Rendering The Document
     }
 
-    #endregion
+    #endregion HtmlToPdfBuilder Class
 
     #region HtmlPdfPage Class
 
@@ -253,7 +242,6 @@ namespace InventarioHSC.Forms.Operacion
     /// </summary>
     public class HtmlPdfPage
     {
-
         #region Constructors
 
         /// <summary>
@@ -264,14 +252,14 @@ namespace InventarioHSC.Forms.Operacion
             this._Html = new StringBuilder();
         }
 
-        #endregion
+        #endregion Constructors
 
         #region Fields
 
         //parts for generating the page
         internal StringBuilder _Html;
 
-        #endregion
+        #endregion Fields
 
         #region Working With The Html
 
@@ -283,11 +271,10 @@ namespace InventarioHSC.Forms.Operacion
             this._Html.AppendFormat(content, values);
         }
 
-        #endregion
-
+        #endregion Working With The Html
     }
 
-    #endregion
+    #endregion HtmlPdfPage Class
 
     #region Rendering Delegate
 
@@ -296,6 +283,5 @@ namespace InventarioHSC.Forms.Operacion
     /// </summary>
     public delegate void RenderEvent(PdfWriter writer, Document document);
 
-    #endregion
-
+    #endregion Rendering Delegate
 }

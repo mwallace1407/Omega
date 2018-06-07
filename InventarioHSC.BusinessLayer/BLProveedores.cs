@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.UI.WebControls;
-using InventarioHSC.Model;
 using InventarioHSC.DataLayer;
+using InventarioHSC.Model;
 
 namespace InventarioHSC.BusinessLayer
 {
@@ -12,7 +9,6 @@ namespace InventarioHSC.BusinessLayer
     {
         public BLProveedores()
         {
-        
         }
 
         public List<Proveedor> ObtieneProveedores()
@@ -27,7 +23,6 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
 
@@ -49,7 +44,6 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return objProveed.idProveedor;
@@ -70,11 +64,9 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return objProveed.idProveedor;
-
         }
 
         public int EliminaProveedor(int i_idProveedor)
@@ -93,17 +85,15 @@ namespace InventarioHSC.BusinessLayer
 
                 if (iTotal == 0)
                 {
-                    odlProv.UpdateProveedor(ref objProveed);    
-                }          
+                    odlProv.UpdateProveedor(ref objProveed);
+                }
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return iTotal;
         }
-
 
         public int ValidaEliminacion(int i_idProveedor)
         {
@@ -116,12 +106,10 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-                
                 throw ex;
             }
 
             return iTotal;
         }
-
     }
 }

@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace InventarioHSC.BusinessLayer
 {
-    class Util
+    internal class Util
     {
         public Util()
         {
@@ -87,7 +87,7 @@ namespace InventarioHSC.BusinessLayer
         /// <summary>
         /// convierte una fecha dd/mm/aaaa en aaaa/mm/dd
         /// </summary>
-        /// <param name="fecha">La fecha que se desea revisar</param> 
+        /// <param name="fecha">La fecha que se desea revisar</param>
         public static string convertDate(string fecha)
         {
             fecha = getDateWhitOutHour(fecha);
@@ -101,7 +101,7 @@ namespace InventarioHSC.BusinessLayer
         /// <summary>
         /// convierte una fecha aaaa/mm/dd en dd/mm/aaaa
         /// </summary>
-        /// <param name="fecha">La fecha que se desea revisar</param> 
+        /// <param name="fecha">La fecha que se desea revisar</param>
         public static string convertDateDayMonthYear(string fecha)
         {
             validateDateAAAAMMDD(fecha);
@@ -110,7 +110,6 @@ namespace InventarioHSC.BusinessLayer
             string fechaYearMonthDay = words[2] + "/" + words[1] + "/" + words[0];
             return fechaYearMonthDay;
         }
-
 
         /// <summary>
         /// Valida si un string es numerico.
@@ -164,7 +163,6 @@ namespace InventarioHSC.BusinessLayer
             }
         }
 
-
         /// <summary>
         /// Valida que un e-mail tenga formato correcto(user@domain.com)
         /// </summary>
@@ -188,7 +186,6 @@ namespace InventarioHSC.BusinessLayer
                 throw new ArgumentException("El Formato de " + menssage + " es incorrecto.");
             }
         }
-
 
         /// <summary>
         /// Valida un nuevo Password el nuevo password solo deve contener Letras y numeros

@@ -1,5 +1,5 @@
-﻿<%@ Page Title="Reporte de aplicaciones en un servidor" Language="C#" MasterPageFile="~/Forms/Main.Master" AutoEventWireup="true"
-    CodeBehind="RptRelSrvApp.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptRelSrvApp" %>
+﻿<%@ Page Title="Reporte de aplicaciones en un servidor" Language="C#" MasterPageFile="~/Forms/Main.Master"
+    AutoEventWireup="true" CodeBehind="RptRelSrvApp.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptRelSrvApp" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headMaster" runat="server">

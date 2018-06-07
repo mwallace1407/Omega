@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.Common;
+using System.Text;
 using InventarioHSC.Model;
-using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
-
+using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace InventarioHSC.DataLayer
 {
@@ -15,7 +13,6 @@ namespace InventarioHSC.DataLayer
     {
         public DLParametro()
         {
-
         }
 
         public Parametro getParaemetrobyID(int Par_ID)
@@ -41,7 +38,6 @@ namespace InventarioHSC.DataLayer
                         objParametro.par_ID = Convert.ToInt32(dr["Par_ID"]);
                         objParametro.par_Descripcion = dr["Par_Descripcion"].ToString();
                         objParametro.par_Valor = dr["Par_Valor"].ToString();
-
                     }
                 }
                 return objParametro;
@@ -84,6 +80,7 @@ namespace InventarioHSC.DataLayer
                 throw ex;
             }
         }
+
         public List<Parametro> getParaemetrobyDescripcionLike(string Par_Descripcion)
         {
             string sMensaje = string.Empty;
@@ -110,7 +107,6 @@ namespace InventarioHSC.DataLayer
                         objParametro.par_Descripcion = dr["Par_Descripcion"].ToString();
                         objParametro.par_Valor = dr["Par_Valor"].ToString();
                         objParametros.Add(objParametro);
-
                     }
                 }
                 return objParametros;

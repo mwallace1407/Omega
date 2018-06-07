@@ -1,19 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.UI.WebControls;
-using InventarioHSC.Model;
 using InventarioHSC.DataLayer;
+using InventarioHSC.Model;
 
 namespace InventarioHSC.BusinessLayer
 {
     public class BLMenu
     {
         public DLMenu odlMenu = new DLMenu();
+
         public BLMenu()
         {
-
         }
 
         public List<sysMenu> ObtieneOpcionesporPerfil(int idPerfil)
@@ -56,12 +53,10 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
 
             return oSysMenu;
-
         }
 
         public List<sysMenu> ObtieneHijosPorID(int idPerfil, int idMenuItem)
@@ -74,13 +69,10 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-                
                 throw ex;
             }
 
             return oSysMenu;
-
         }
-
     }
 }

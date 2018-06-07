@@ -13,7 +13,7 @@
         {
             width: 600px;
         }
-        
+
         .style3
         {
             width: 550px;

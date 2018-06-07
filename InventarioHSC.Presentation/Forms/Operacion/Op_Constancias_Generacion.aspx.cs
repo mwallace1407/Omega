@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
@@ -12,10 +9,14 @@ namespace InventarioHSC.Forms.Operacion
     public partial class Op_Constancias_Generacion : System.Web.UI.Page
     {
         #region Variables
-        BLConstancias objCon = new BLConstancias();
+
+        private BLConstancias objCon = new BLConstancias();
         protected const int CeldaId = 1;
+
         #endregion Variables
+
         #region Metodos
+
         protected string ArmadoCadena(CheckBoxList chkl)
         {
             string Resultados = "";
@@ -70,8 +71,11 @@ namespace InventarioHSC.Forms.Operacion
             else
                 return TipoReg.ToString() + "|" + ConsReg.ToString().PadLeft(8, '0') + "|" + NumRegDet.ToString().PadLeft(8, '0') + "|" + TipoDeclaracion.ToString() + "|||";
         }
+
         #endregion Metodos
+
         #region Eventos
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -190,11 +194,11 @@ namespace InventarioHSC.Forms.Operacion
                 lblMensaje.Text += "No ha seleccionado ningún elemento de la lista<br />";
                 return;
             }
-            
+
             int ConsReg = 0;
             int.TryParse(txtConsecutivoReg.Text, out ConsReg);
 
-            if(ConsReg <= 0) { ConsReg = 1; }
+            if (ConsReg <= 0) { ConsReg = 1; }
 
             if (!string.IsNullOrWhiteSpace(Lotes))
             {
@@ -236,6 +240,7 @@ namespace InventarioHSC.Forms.Operacion
                 DatosGenerales.EnviaMensaje("Se ha creado el archivo para envío al SAT. Puede descargarlo ahora. Para algunos navegadores se recomienda dar clic secundario sobre 'Descargar' y seleccionar 'Guardar enlace como...'.", "Proceso finalizado", System.IO.Path.GetFileName(Archivo), DatosGenerales.TiposMensaje.Informacion);
             }
         }
+
         #endregion Eventos
     }
 }

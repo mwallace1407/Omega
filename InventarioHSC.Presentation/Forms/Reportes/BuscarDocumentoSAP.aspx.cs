@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
-using InventarioHSC.Model;
 
 namespace InventarioHSC.Forms.Reportes
 {
@@ -44,20 +40,23 @@ namespace InventarioHSC.Forms.Reportes
             grdDatos.DataSource = null;
             grdDatos.DataBind();
 
-            switch(ddlTipo.SelectedValue)
+            switch (ddlTipo.SelectedValue)
             {
                 case "C":
                     pnlG1.Visible = true;
                     pnlG2.Visible = false;
                     break;
+
                 case "F":
                     pnlG1.Visible = true;
                     pnlG2.Visible = false;
                     break;
+
                 case "R":
                     pnlG1.Visible = false;
                     pnlG2.Visible = true;
                     break;
+
                 default:
                     pnlG1.Visible = false;
                     pnlG2.Visible = false;
@@ -70,7 +69,7 @@ namespace InventarioHSC.Forms.Reportes
             BLReportes rep = new BLReportes();
             int Anio;
 
-            lblNoRegs.Visible=false;
+            lblNoRegs.Visible = false;
             lblNoRegs.Text = "No se encontraron registros";
             int.TryParse(ddlAnio.SelectedValue, out Anio);
 

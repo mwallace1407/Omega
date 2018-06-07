@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using InventarioHSC.Model;
 using InventarioHSC.DataLayer;
+using InventarioHSC.Model;
 
 namespace InventarioHSC.BusinessLayer
 {
@@ -14,8 +12,8 @@ namespace InventarioHSC.BusinessLayer
 
         public BLSoftware()
         {
-
         }
+
         public BLSoftware(Software oSoftware)
         {
             objectSoftware = oSoftware;
@@ -30,7 +28,7 @@ namespace InventarioHSC.BusinessLayer
 
             if (valSoftware.Count > 0)
             {
-                sMensaje = "Validación: Ya existe un software con la descripción '" + objectSoftware.Descripcion + "'";    
+                sMensaje = "Validación: Ya existe un software con la descripción '" + objectSoftware.Descripcion + "'";
             }
 
             return sMensaje;
@@ -76,10 +74,8 @@ namespace InventarioHSC.BusinessLayer
                 }
                 catch (Exception ex)
                 {
-
                     throw ex;
                 }
-
             }
             else
             {
@@ -96,7 +92,7 @@ namespace InventarioHSC.BusinessLayer
             return alstSoftware;
         }
 
-        public List<Software> OntieneFiltroSoftware(string NombreLicencia, string version , int? cantidad)
+        public List<Software> OntieneFiltroSoftware(string NombreLicencia, string version, int? cantidad)
         {
             List<Software> alstSoftware = new List<Software>();
             alstSoftware = DataLayerSoftware.getSoftware(NombreLicencia, version, cantidad);
@@ -151,8 +147,8 @@ namespace InventarioHSC.BusinessLayer
             //Initialize <chart> element
             if (totales.Count > 0)
             {
-                xmlData = "<chart caption='Resumen de Totales " + titulo  + "' xAxisName='Motivo' showValues='0' yAxisName='Porcentaje' formatNumberScale='0' showBorder='0' >";
-                //Convert data to XML and append 
+                xmlData = "<chart caption='Resumen de Totales " + titulo + "' xAxisName='Motivo' showValues='0' yAxisName='Porcentaje' formatNumberScale='0' showBorder='0' >";
+                //Convert data to XML and append
 
                 foreach (TotalesSoftware itemSoftware in totales)
                 {
@@ -232,7 +228,9 @@ namespace InventarioHSC.BusinessLayer
 
             return odlSoftware.InsertaGrupoSoftware(ref objSoftware);
         }
+
         #region Aplicaciones
+
         public void HistoricoApp(string Pagina, string UserId, string HApp_Tipo, int HApp_IdModificado, int HApp_IdModificado2 = 0)
         {
             DLSoftware odlSoftware = new DLSoftware();
@@ -243,7 +241,7 @@ namespace InventarioHSC.BusinessLayer
         public string InsertarServidorApp(Servidores server, System.Data.DataTable Discos, string Srv_Observaciones)
         {
             DLSoftware odlSoftware = new DLSoftware();
-            
+
             return odlSoftware.InsertarServidorApp(server, Discos, Srv_Observaciones);
         }
 
@@ -457,12 +455,12 @@ namespace InventarioHSC.BusinessLayer
             }
         }
 
-        public string ActualizarApp(int App_Id, int AppSt_Id, int AppT_Id, string App_Nombre, string App_Descripcion, 
+        public string ActualizarApp(int App_Id, int AppSt_Id, int AppT_Id, string App_Nombre, string App_Descripcion,
                                     bool App_EnTFS, bool App_Productiva, string App_Observaciones, string App_Ubicacion)
         {
             DLSoftware odlSoftware = new DLSoftware();
 
-            return odlSoftware.ActualizarApp(App_Id, AppSt_Id, AppT_Id, App_Nombre, App_Descripcion, 
+            return odlSoftware.ActualizarApp(App_Id, AppSt_Id, AppT_Id, App_Nombre, App_Descripcion,
                                              App_EnTFS, App_Productiva, App_Observaciones, App_Ubicacion);
         }
 
@@ -505,14 +503,18 @@ namespace InventarioHSC.BusinessLayer
 
             return Info;
         }
+
         #endregion Aplicaciones
+
         #region MaxImage
+
         public System.Data.DataTable BuscarDocumentoMI(string Tipo, int Numero_Prestamo = 0, int Codigo_Cliente = 0, string Numero_Jit = "", string Nombre = "")
         {
             DLSoftware odlSoftware = new DLSoftware();
 
             return odlSoftware.BuscarDocumentoMI(Tipo, Numero_Prestamo, Codigo_Cliente, Numero_Jit, Nombre);
         }
+
         #endregion MaxImage
     }
 }

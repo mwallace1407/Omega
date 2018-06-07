@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Data;
+using System.Text;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using AjaxControlToolkit;
 using InventarioHSC.BusinessLayer;
 using InventarioHSC.Model;
-using System.Text;
-using InfoSoftGlobal;
-using System.Data;
-using AjaxControlToolkit;
 
 namespace InventarioHSC.Forms.Software
 {
@@ -147,7 +144,6 @@ namespace InventarioHSC.Forms.Software
                 BLSoftware oblSoftware = new BLSoftware();
                 gvwSoftware.DataSource = oblSoftware.ObtieneSoftware();
                 gvwSoftware.DataBind();
-
 
                 List<TotalesSoftware> totalesSoftware =
                     oblSoftware.ObtieneTotalesSoftware(0);
@@ -634,7 +630,6 @@ namespace InventarioHSC.Forms.Software
 
         protected void ExportaExcelConDetalle_Click(object sender, ImageClickEventArgs e)
         {
-
         }
 
         private void LimpiaPanelDetalle()
@@ -792,7 +787,6 @@ namespace InventarioHSC.Forms.Software
             vceKeyD.Enabled = false;
             TableDetalle.Controls[3].Visible = false;
             TableDetalle.Controls[1].Visible = true;
-            
 
             if (oblAsiganacionSoftware.ObtieneAsignacionSoftware(cveSoftware).Count == 0)
             {

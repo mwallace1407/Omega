@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using Microsoft.Reporting.WebForms;
 using InventarioHSC.BusinessLayer;
 using InventarioHSC.Model;
-
+using Microsoft.Reporting.WebForms;
 
 namespace InventarioHSC
 {
@@ -154,7 +150,6 @@ namespace InventarioHSC
 
             //oblCatalogos.CargaUsuarioAlta(ref ddlUsuarioAsignado);
             //ddlUsuarioAsignado.DataBind();
-
         }
 
         protected void fnLimpiaControlesMain()
@@ -165,7 +160,6 @@ namespace InventarioHSC
 
         protected void fnLimpiaControlDetalle()
         {
-
         }
 
         protected void gwvArticuloAsignado_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -203,7 +197,7 @@ namespace InventarioHSC
                         e.Row.Cells[0].ToolTip = "Quitar Articulo";
 
                         //if (hdnNuevaResponsiva.Value.Equals("1"))
-                            e.Row.Cells[0].Attributes.Add("OnClick", "javascript:__doPostBack('gwvArticuloAsignado','Eliminar$" + (e.Row.RowIndex).ToString().Trim() + "')");
+                        e.Row.Cells[0].Attributes.Add("OnClick", "javascript:__doPostBack('gwvArticuloAsignado','Eliminar$" + (e.Row.RowIndex).ToString().Trim() + "')");
                     }
                 }
             }
@@ -244,7 +238,6 @@ namespace InventarioHSC
         {
             lstAgregar = (List<Articulo>)Session["GridAdd"];
             lstQuitar = (List<Articulo>)Session["GridDell"];
-          
 
             if (lstAgregar != null)
             {
@@ -261,7 +254,7 @@ namespace InventarioHSC
                 Session["GridDell"] = lstQuitar;
                 lstAgregar.Clear();
                 gwvArticuloAsignado.DataSource = lstAgregar;
-                gwvArticuloAsignado.DataBind(); 
+                gwvArticuloAsignado.DataBind();
             }
         }
 

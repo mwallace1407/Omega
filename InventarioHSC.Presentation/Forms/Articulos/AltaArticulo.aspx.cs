@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
+using AjaxControlToolkit;
 using InventarioHSC.BusinessLayer;
 using InventarioHSC.Model;
-using AjaxControlToolkit;
-
 
 namespace InventarioHSC
 {
@@ -16,9 +10,9 @@ namespace InventarioHSC
     {
         public Articulo Params = new Articulo();
         public DetalleServidor obDetalleServidor = new DetalleServidor();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (!IsPostBack)
             {
                 Session["isServer"] = 0;
@@ -137,7 +131,6 @@ namespace InventarioHSC
 
         protected void CargaValores()
         {
-
             Params.idItem = 0;
             Params.noSerie = txtNoSerie.Text;
             Params.idTipoEquipo = Convert.ToInt32(ddlTipoArticulo.SelectedValue);
@@ -269,7 +262,7 @@ namespace InventarioHSC
                     tCell1.HorizontalAlign = HorizontalAlign.Right;
                     TableCell tCell2 = new TableCell();
                     tCell1.HorizontalAlign = HorizontalAlign.Left;
-                    Label lblDiscoTamanio= new Label();
+                    Label lblDiscoTamanio = new Label();
                     lblDiscoTamanio.ID = "lblDiscoTamanio" + i;
                     lblDiscoTamanio.Text = "Tamaño disco " + (i - 2) + ":";
                     TextBox txtTamDisco2 = new TextBox();
@@ -293,7 +286,6 @@ namespace InventarioHSC
                     tCell2.Controls.Add(txtTamDisco2);
                     tCell2.Controls.Add(rfvKeyD2);
                     tCell2.Controls.Add(vceKeyD2);
-
 
                     TableCell tCell3 = new TableCell();
                     TableCell tCell4 = new TableCell();
@@ -330,6 +322,7 @@ namespace InventarioHSC
                     Session["isServer"] = 1;
                     //hdnGeneracionDeControles.Value = "1";
                     break;
+
                 case "PC":
                 case "NOTEBOOK":
                 case "MAC BOOK":
@@ -343,9 +336,10 @@ namespace InventarioHSC
                     //hdnGeneracionDeControles.Value = "0";
                     Session["isServer"] = 2;
                     break;
+
                 default:
                     //Panel1.Visible = false;
-                    //pnlDetallePCServidor.Visible = false;                    
+                    //pnlDetallePCServidor.Visible = false;
                     //lblDiscoDuroPC.Visible = false;
                     //txtDiscoDuro.Visible = false;
                     //lblProcePC.Visible = false;
@@ -353,7 +347,7 @@ namespace InventarioHSC
                     //tblDetalleServidor.Visible = false;
                     Session["isServer"] = 0;
                     //hdnGeneracionDeControles.Value = "0";
-                break;
+                    break;
             }
         }
 
@@ -422,6 +416,5 @@ namespace InventarioHSC
                 chkIgnorarSerie.Checked = false;
             }
         }
-        
     }
 }

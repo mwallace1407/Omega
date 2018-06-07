@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using InventarioHSC.Model;
+﻿using System.Collections.Generic;
 using InventarioHSC.DataLayer;
+using InventarioHSC.Model;
 
 namespace InventarioHSC.BusinessLayer
 {
@@ -15,7 +11,6 @@ namespace InventarioHSC.BusinessLayer
 
         public BLResponsiva()
         {
-
         }
 
         public List<Responsiva> ObtieneDatosResponsiva(string sResponsive)
@@ -37,6 +32,7 @@ namespace InventarioHSC.BusinessLayer
             lstParametro.Add(oParametro);
             return lstParametro;
         }
+
         public List<Parametro> ObtieneResponsivaValorClausula1()
         {
             List<Parametro> lstParametro = new List<Parametro>();

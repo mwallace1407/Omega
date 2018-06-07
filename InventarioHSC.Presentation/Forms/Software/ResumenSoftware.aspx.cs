@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
@@ -21,7 +18,7 @@ namespace InventarioHSC.Forms.Software
 
                 if (chklEmpresas.Items.Count > 0)
                     chklEmpresas.Items[0].Selected = true;
-                
+
                 if (chklGrupos.Items.Count > 1)
                     chklGrupos.Items[1].Selected = true;
 

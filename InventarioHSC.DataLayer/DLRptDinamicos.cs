@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using InventarioHSC.Model;
-using Microsoft.Practices.EnterpriseLibrary.Data;
-using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
 using System.Data;
 using System.Data.Common;
-using System.Data.SqlClient;
+using System.Text;
+using InventarioHSC.Model;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace InventarioHSC.DataLayer
 {
@@ -17,7 +15,7 @@ namespace InventarioHSC.DataLayer
         {
             Database db = EnterpriseLibraryContainer.Current.GetInstance<Database>("Inventario");
             DbCommand selectCommand = null;
-            
+
             try
             {
                 selectCommand = db.GetSqlStringCommand("stpU_RptDinamicosCatTipoDato");
@@ -37,7 +35,7 @@ namespace InventarioHSC.DataLayer
             DataSet MensajeBD = new DataSet();
             Database db = EnterpriseLibraryContainer.Current.GetInstance<Database>("Inventario");
             DbCommand selectCommand = null;
-            
+
             try
             {
                 selectCommand = db.GetSqlStringCommand("stpI_RptDinamicosCatalogo");
@@ -121,7 +119,7 @@ namespace InventarioHSC.DataLayer
                 db.AddInParameter(selectCommand, "@RDE_Id", DbType.Int32, RDE_Id);
                 Tabla.Load(db.ExecuteReader(selectCommand));
             }
-            catch 
+            catch
             {
                 Tabla = new DataTable("Error");
                 Tabla.Columns.Add("Valor");
@@ -476,6 +474,7 @@ namespace InventarioHSC.DataLayer
         }
 
         #region Permisos_Usuario
+
         public List<Usuario> BuscarUsuarioPermisos(string strBusqueda)
         {
             DataSet MensajeBD = new DataSet();
@@ -582,6 +581,7 @@ namespace InventarioHSC.DataLayer
 
             return Resultados;
         }
+
         #endregion Permisos_Usuario
     }
 }

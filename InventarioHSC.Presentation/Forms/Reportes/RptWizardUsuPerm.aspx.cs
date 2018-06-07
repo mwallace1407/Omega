@@ -1,25 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
-using InventarioHSC.Model;
 
 namespace InventarioHSC.Forms.Reportes
 {
     public partial class RptWizardUsuPerm : System.Web.UI.Page
     {
         #region Variables
+
         public BLReportes objRpt = new BLReportes();
         protected const int CeldaId = 0;
         protected const int CeldaAutorizado = 1;
         protected const int CeldaConexion = 2;
         protected const int CeldaReporte = 3;
-        System.Data.DataTable Resultados = new System.Data.DataTable();
+        private System.Data.DataTable Resultados = new System.Data.DataTable();
+
         #endregion Variables
+
         #region Metodos
+
         protected void CrearJS()
         {
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
@@ -44,8 +44,11 @@ namespace InventarioHSC.Forms.Reportes
             btnBuscar.Attributes.Add("onmousedown", "Busca();");
             txtUsuario.Attributes.Add("onkeypress", "catchEnter(event);");
         }
+
         #endregion Metodos
+
         #region Eventos
+
         protected void Page_Load(object sender, EventArgs e)
         {
             CrearJS();
@@ -193,6 +196,7 @@ namespace InventarioHSC.Forms.Reportes
                 Model.DatosGenerales.EnviaMensaje(ex.Message, "Ha ocurrido un error al seleccionar el usuario", Model.DatosGenerales.TiposMensaje.Error);
             }
         }
+
         #endregion Eventos
     }
 }

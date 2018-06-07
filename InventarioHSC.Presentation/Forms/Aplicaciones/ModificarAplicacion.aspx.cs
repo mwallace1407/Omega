@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Data;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
 using InventarioHSC.Model;
-using System.Data;
 
 namespace InventarioHSC.Forms.Aplicaciones
 {
@@ -30,7 +26,6 @@ namespace InventarioHSC.Forms.Aplicaciones
             ddlEstado.DataBind();
             objCatalogo.ListaTiposApp(ref ddlTipo);
             ddlTipo.DataBind();
-
         }
 
         protected void btnProcesar_Click(object sender, EventArgs e)
@@ -98,7 +93,6 @@ namespace InventarioHSC.Forms.Aplicaciones
                 if (ddlEstado.Items.Count > 0) { ddlEstado.SelectedIndex = 0; }
                 if (ddlTipo.Items.Count > 0) { ddlTipo.SelectedIndex = 0; }
             }
-
         }
     }
 }

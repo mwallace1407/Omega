@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
 using InventarioHSC.Model;
-
 
 namespace InventarioHSC.Forms.Reportes
 {
@@ -132,7 +129,7 @@ namespace InventarioHSC.Forms.Reportes
             SelAnio = chkAnios.Items.Cast<ListItem>().Count(li => li.Selected);
             SelSoc = chkSociedades.Items.Cast<ListItem>().Count(li => li.Selected);
             SelCue = chkCuentas.Items.Cast<ListItem>().Count(li => li.Selected);
-            
+
             if (chkAnios.SelectedIndex == 0 || SelAnio >= chkAnios.Items.Count - 1) { TotSel++; }
             if (chkSociedades.SelectedIndex == 0 || SelSoc >= chkSociedades.Items.Count - 1) { TotSel++; }
             if (chkCuentas.SelectedIndex == 0 || SelCue >= chkCuentas.Items.Count - 1) { TotSel++; }
@@ -283,6 +280,5 @@ namespace InventarioHSC.Forms.Reportes
                     chkCuentas.Items[0].Selected = true;
             }
         }
-
     }
 }

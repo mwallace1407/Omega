@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Reporte de contrato laboral" Language="C#" MasterPageFile="~/Forms/Main.Master" AutoEventWireup="true" CodeBehind="RptContratoLaboral.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptContratoLaboral" %>
+﻿<%@ Page Title="Reporte de contrato laboral" Language="C#" MasterPageFile="~/Forms/Main.Master"
+    AutoEventWireup="true" CodeBehind="RptContratoLaboral.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptContratoLaboral" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headMaster" runat="server">

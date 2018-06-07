@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.Common;
+using System.Text;
 using InventarioHSC.Model;
-using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
-using System.Data.SqlClient;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace InventarioHSC.DataLayer
 {
@@ -15,7 +13,6 @@ namespace InventarioHSC.DataLayer
     {
         public DLArticulo()
         {
-
         }
 
         #region Consultas
@@ -78,7 +75,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
 
@@ -117,7 +113,7 @@ namespace InventarioHSC.DataLayer
                     oArticulo.TipoEquipo = dr["TipoEquipo"].ToString();
                     oArticulo.Marca = dr["Marca"].ToString();
                     oArticulo.Ubicacion = dr["Ubicacion"].ToString();
-                    oArticulo.IdUsuarioAnterior = dr["idUsuarioAnterior"] == DBNull.Value ? 
+                    oArticulo.IdUsuarioAnterior = dr["idUsuarioAnterior"] == DBNull.Value ?
                         respo : Convert.ToInt32(dr["idUsuarioAnterior"]);
                     oArticulo.ResponsivaAnterior = dr["ResponsivaAnterior"].ToString();
 
@@ -180,7 +176,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
 
@@ -308,7 +303,7 @@ namespace InventarioHSC.DataLayer
                 sqlCommand.Append("and t1.NoSerie = 'S/N'");
             }
 
-            if(Ilegible)
+            if (Ilegible)
             {
                 sqlCommand.AppendLine("union");
                 sqlCommand.Append(Consulta);
@@ -317,7 +312,7 @@ namespace InventarioHSC.DataLayer
 
             DbCommand selectCommand = null;
             selectCommand = db.GetSqlStringCommand(sqlCommand.ToString());
-            
+
             if (idTipoEquipo != 0)
                 db.AddInParameter(selectCommand, "@idTipoEquipo", DbType.Int32, idTipoEquipo);
 
@@ -382,7 +377,6 @@ namespace InventarioHSC.DataLayer
                         oArticulo.IdUsuarioAnterior = dr["idUsuarioAnterior"] == DBNull.Value ?
                         respo : Convert.ToInt32(dr["idUsuarioAnterior"]);
 
-
                         oArticulo.ResponsivaAnterior = dr["ResponsivaAnterior"].ToString();
 
                         lstArticulo.Add(oArticulo);
@@ -442,7 +436,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
             List<Articulo> lstArticulo = new List<Articulo>();
@@ -540,7 +533,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
             List<Articulo> lstArticulo = new List<Articulo>();
@@ -584,7 +576,6 @@ namespace InventarioHSC.DataLayer
                         if (dr["FechaMovimiento"] != DBNull.Value)
                             oArticulo.fechaMovimiento = Convert.ToDateTime(dr["FechaMovimiento"]);
 
-
                         oArticulo.IdUsuarioAnterior = dr["idUsuarioAnterior"] == DBNull.Value ?
                                                respo : Convert.ToInt32(dr["idUsuarioAnterior"]);
                         oArticulo.ResponsivaAnterior = dr["ResponsivaAnterior"].ToString();
@@ -624,7 +615,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
 
@@ -792,7 +782,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
             List<Articulo> lstArticulo = new List<Articulo>();
@@ -936,7 +925,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
             List<Articulo> lstArticulo = new List<Articulo>();
@@ -966,7 +954,7 @@ namespace InventarioHSC.DataLayer
                         oArticulo.responsiva = dr["Responsiva"] == DBNull.Value ? respo : Convert.ToInt32(dr["Responsiva"]);
 
                         if (dr["ResponsivaAnterior"] == DBNull.Value)
-                        oArticulo.ResponsivaAnterior = dr["ResponsivaAnterior"].ToString();
+                            oArticulo.ResponsivaAnterior = dr["ResponsivaAnterior"].ToString();
                         //oArticulo.valorPesos = Convert.ToDouble(dr["ValorPesos"]);
                         //oArticulo.valorUSD = Convert.ToDouble(dr["ValorUSD"]);
                         //oArticulo.stock = dr["Stock"].ToString();
@@ -1051,7 +1039,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
             List<Articulo> lstArticulo = new List<Articulo>();
@@ -1145,7 +1132,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
             List<Articulo> lstArticulo = new List<Articulo>();
@@ -1239,7 +1225,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
             List<Articulo> lstArticulo = new List<Articulo>();
@@ -1372,7 +1357,6 @@ namespace InventarioHSC.DataLayer
 
             try
             {
-
                 ds = db.ExecuteDataSet(dbCommand);
             }
             catch (DataException ex)
@@ -1421,7 +1405,6 @@ namespace InventarioHSC.DataLayer
 
             try
             {
-
                 ds = db.ExecuteDataSet(dbCommand);
             }
             catch (DataException ex)
@@ -1445,11 +1428,9 @@ namespace InventarioHSC.DataLayer
             return lstTotal;
         }
 
-        #endregion
-
+        #endregion Consultas
 
         #region insert
-
 
         public void InsertArticulo(ref Articulo oArticulo)
         {
@@ -1501,9 +1482,11 @@ namespace InventarioHSC.DataLayer
                 throw ex;
             }
         }
-        #endregion
+
+        #endregion insert
 
         #region Updates
+
         public void UpdateArticulo(Articulo oArticulo)
         {
             Database db = EnterpriseLibraryContainer.Current.GetInstance<Database>("Inventario");
@@ -1548,14 +1531,11 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
         }
 
-        #endregion
-
-
+        #endregion Updates
 
         public void InsertArticuloHistorico(Articulo oArticulo)
         {

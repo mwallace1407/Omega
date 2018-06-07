@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using InventarioHSC.Model;
 using InventarioHSC.BusinessLayer;
+using InventarioHSC.Model;
 
 namespace InventarioHSC.Forms.Articulos
 {

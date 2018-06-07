@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace InventarioHSC.Model
+﻿namespace InventarioHSC.Model
 {
     public class Total
     {
@@ -14,6 +9,7 @@ namespace InventarioHSC.Model
             get { return _Id; }
             set { _Id = value; }
         }
+
         private string _Concepto;
 
         public string concepto
@@ -21,6 +17,7 @@ namespace InventarioHSC.Model
             get { return _Concepto; }
             set { _Concepto = value; }
         }
+
         private int _Conteo;
 
         public int conteo

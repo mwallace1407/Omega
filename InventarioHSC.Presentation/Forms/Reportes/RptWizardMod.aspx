@@ -24,7 +24,7 @@
             width: 600px;
             height: 450px;
         }
-        
+
         .modal
         {
             position: fixed;

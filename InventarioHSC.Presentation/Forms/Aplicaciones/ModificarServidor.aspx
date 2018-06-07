@@ -189,8 +189,7 @@
                     </div>
                     <div style="width: 275px; float: right; text-align: left;">
                         <asp:Button ID="btnCintas" runat="server" Text="Registrar cinta" CssClass="boton" />
-                        <asp:Label ID="lblMsj" runat="server" Text="" ForeColor="#990000"
-                            Visible="False"></asp:Label>
+                        <asp:Label ID="lblMsj" runat="server" Text="" ForeColor="#990000" Visible="False"></asp:Label>
                     </div>
                 </div>
                 <br />
@@ -209,11 +208,13 @@
                 <div style="border: medium ridge #ffffff; width: 410px;">
                     <asp:Panel ID="pnlDiscos" runat="server" DefaultButton="btnProcesarD">
                         <%--Ingrese las unidades de almacenamiento del equipo.--%>
-                        Información de discos. Para modificar debe ir a la página de administración de discos duros 
+                        Información de discos. Para modificar debe ir a la página de administración de discos
+                        duros
                         <asp:HyperLink ID="lnkDiscos" runat="server" Target="_blank">aquí</asp:HyperLink>.
                         <br />
                         <br />
-                        <div style="height: 30px; background-color: rgba(73,114,158,0.5); text-align: left; display: none;">
+                        <div style="height: 30px; background-color: rgba(73,114,158,0.5); text-align: left;
+                            display: none;">
                             Unidad:
                             <asp:DropDownList ID="ddlUnidad" runat="server" Width="50" AutoPostBack="True" OnSelectedIndexChanged="ddlUnidad_SelectedIndexChanged">
                             </asp:DropDownList>

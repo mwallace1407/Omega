@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
-using InventarioHSC.Model;
 using InventarioHSC.BusinessLayer;
+using InventarioHSC.Model;
 
 namespace InventarioHSC.Forms.Reportes
 {
@@ -23,6 +21,7 @@ namespace InventarioHSC.Forms.Reportes
         protected const int CeldaDescripcion = 10;
 
         #region Metodos
+
         protected void CargaCatalogos()
         {
             //Cargar lista de conecciones
@@ -52,6 +51,7 @@ namespace InventarioHSC.Forms.Reportes
         }
 
         #region Paso02
+
         protected void Limpieza02(bool Completa = false)
         {
             lblMsj02.Text = "";
@@ -129,9 +129,13 @@ namespace InventarioHSC.Forms.Reportes
 
             return HayError;
         }
+
         #endregion Paso02
+
         #region Paso04
+
         #region Stored
+
         protected void CargaStored()
         {
             BLCatalogos objCat = new BLCatalogos();
@@ -274,8 +278,11 @@ namespace InventarioHSC.Forms.Reportes
 
             pnlStoredC.Visible = true;
         }
+
         #endregion Stored
+
         #region Query
+
         private IEnumerable<string> AnalizarScript(string Script)
         {
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
@@ -430,7 +437,6 @@ namespace InventarioHSC.Forms.Reportes
 
             txtNombreReporteQ.Text = ddlReportesTexto.SelectedItem.Text;
 
-
             if (PreviamenteCargado)
             {
                 txtScriptPaso04.Text = Resultados.Rows[0]["RD_Script"].ToString();
@@ -482,10 +488,15 @@ namespace InventarioHSC.Forms.Reportes
 
             pnlTextoC.Visible = true;
         }
+
         #endregion Query
+
         #endregion Paso04
+
         #endregion Metodos
+
         #region Eventos
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -495,6 +506,7 @@ namespace InventarioHSC.Forms.Reportes
         }
 
         #region Paso01
+
         protected void btnProcesar01_Click(object sender, EventArgs e)
         {
             lblMsj01.Text = "";
@@ -517,8 +529,11 @@ namespace InventarioHSC.Forms.Reportes
             pnlPaso03.Visible = true;
             hddPasoAnterior01.Value = "1";
         }
+
         #endregion Paso01
+
         #region Paso02
+
         protected void btnValidar02_Click(object sender, EventArgs e)
         {
             Validar02();
@@ -567,8 +582,11 @@ namespace InventarioHSC.Forms.Reportes
             pnlPaso01.Visible = true;
             pnlPaso02.Visible = false;
         }
+
         #endregion Paso02
+
         #region Paso03
+
         protected void btnProcesar03_Click(object sender, EventArgs e)
         {
             lblMsj03.Text = "";
@@ -592,11 +610,13 @@ namespace InventarioHSC.Forms.Reportes
                         pnlTexto.Visible = true;
                         objCat.ListaReportes(ref ddlReportesTexto, (int)DatosGenerales.TiposScript.Texto, ddlCnx.SelectedValue);
                         break;
+
                     case (int)DatosGenerales.TiposScript.Stored:
                         pnlStored.Visible = true;
                         objCat.ListaReportes(ref ddlReportesStored, (int)DatosGenerales.TiposScript.Stored, ddlCnx.SelectedValue);
                         CargaStored();
                         break;
+
                     case (int)DatosGenerales.TiposScript.Paquete:
                         pnlSSIS.Visible = true;
                         break;
@@ -629,9 +649,13 @@ namespace InventarioHSC.Forms.Reportes
 
             pnlPaso03.Visible = false;
         }
+
         #endregion Paso03
+
         #region Paso04
+
         #region Stored
+
         protected void grdParams_RowSelected(object sender, EventArgs e)
         {
             if (grdParams.SelectedIndex != -1)
@@ -902,8 +926,11 @@ namespace InventarioHSC.Forms.Reportes
             if (RD_Id > 0)
                 CompararDatos(RD_Id);
         }
-        #endregion Sotred
+
+        #endregion Stored
+
         #region Query
+
         protected void grdParamsQ_RowSelected(object sender, EventArgs e)
         {
             if (grdParamsQ.SelectedIndex != -1)
@@ -1057,7 +1084,6 @@ namespace InventarioHSC.Forms.Reportes
 
         protected void btnIngresarQ_Click(object sender, EventArgs e)
         {
-
         }
 
         protected void ddlTipo04Q_SelectedIndexChanged(object sender, EventArgs e)
@@ -1206,7 +1232,9 @@ namespace InventarioHSC.Forms.Reportes
             if (RD_Id > 0)
                 CompararDatosQ(RD_Id);
         }
+
         #endregion Query
+
         #endregion Paso04
 
         #endregion Eventos

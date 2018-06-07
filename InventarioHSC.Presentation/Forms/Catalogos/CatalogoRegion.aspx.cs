@@ -1,21 +1,15 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Microsoft.Reporting.WebForms;
 using InventarioHSC.BusinessLayer;
-using InventarioHSC.Model;
-
-
+using Microsoft.Reporting.WebForms;
 
 namespace InventarioHSC
 {
     public partial class CatalogoRegion : System.Web.UI.Page
     {
         public BLRegion objRegion = new BLRegion();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -50,7 +44,6 @@ namespace InventarioHSC
 
         protected void gwvRegion_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            
             if (e.CommandName == "Eliminar")
             {
                 int index = Convert.ToInt32(e.CommandArgument);
@@ -76,7 +69,6 @@ namespace InventarioHSC
                     sb.Append(@"</script>");
                     ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "alert", sb.ToString(), false);
                 }
-
             }
             ActualizaGrid();
         }
@@ -105,12 +97,9 @@ namespace InventarioHSC
             gwvRegion.DataBind();
         }
 
-
         protected void fnLimpiaControlDetalle()
         {
-
         }
-
 
         protected void btnSalir_Click(object sender, EventArgs e)
         {

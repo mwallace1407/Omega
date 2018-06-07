@@ -61,7 +61,6 @@
                     </div>
                 </div>
                 <div style="width: 410px; height: 100px; float: right;">
-                    
                 </div>
             </div>
             <br />

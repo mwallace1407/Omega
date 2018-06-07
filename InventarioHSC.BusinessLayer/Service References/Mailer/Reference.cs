@@ -8,76 +8,78 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace InventarioHSC.BusinessLayer.Mailer {
-    using System.Runtime.Serialization;
-    using System;
-    
-    
+namespace InventarioHSC.BusinessLayer.Mailer
+{
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.CollectionDataContractAttribute(Name="ArrayOfString", Namespace="http://tempuri.org/", ItemName="string")]
+    [System.Runtime.Serialization.CollectionDataContractAttribute(Name = "ArrayOfString", Namespace = "http://tempuri.org/", ItemName = "string")]
     [System.SerializableAttribute()]
-    public class ArrayOfString : System.Collections.Generic.List<string> {
+    public class ArrayOfString : System.Collections.Generic.List<string>
+    {
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="Mailer.MailerServiceSoap")]
-    public interface MailerServiceSoap {
-        
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName = "Mailer.MailerServiceSoap")]
+    public interface MailerServiceSoap
+    {
         // CODEGEN: Generating message contract since element name From from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SendMail", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/SendMail", ReplyAction = "*")]
         InventarioHSC.BusinessLayer.Mailer.SendMailResponse SendMail(InventarioHSC.BusinessLayer.Mailer.SendMailRequest request);
-        
+
         // CODEGEN: Generating message contract since element name From from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SendMailAttTxt", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/SendMailAttTxt", ReplyAction = "*")]
         InventarioHSC.BusinessLayer.Mailer.SendMailAttTxtResponse SendMailAttTxt(InventarioHSC.BusinessLayer.Mailer.SendMailAttTxtRequest request);
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SendMailRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SendMail", Namespace="http://tempuri.org/", Order=0)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped = false)]
+    public partial class SendMailRequest
+    {
+        [System.ServiceModel.MessageBodyMemberAttribute(Name = "SendMail", Namespace = "http://tempuri.org/", Order = 0)]
         public InventarioHSC.BusinessLayer.Mailer.SendMailRequestBody Body;
-        
-        public SendMailRequest() {
+
+        public SendMailRequest()
+        {
         }
-        
-        public SendMailRequest(InventarioHSC.BusinessLayer.Mailer.SendMailRequestBody Body) {
+
+        public SendMailRequest(InventarioHSC.BusinessLayer.Mailer.SendMailRequestBody Body)
+        {
             this.Body = Body;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class SendMailRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace = "http://tempuri.org/")]
+    public partial class SendMailRequestBody
+    {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue = false, Order = 0)]
         public string From;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue = false, Order = 1)]
         public string To;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue = false, Order = 2)]
         public InventarioHSC.BusinessLayer.Mailer.ArrayOfString CC;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue = false, Order = 3)]
         public string Subject;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue = false, Order = 4)]
         public string Body;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 5)]
         public bool isHTML;
-        
-        public SendMailRequestBody() {
+
+        public SendMailRequestBody()
+        {
         }
-        
-        public SendMailRequestBody(string From, string To, InventarioHSC.BusinessLayer.Mailer.ArrayOfString CC, string Subject, string Body, bool isHTML) {
+
+        public SendMailRequestBody(string From, string To, InventarioHSC.BusinessLayer.Mailer.ArrayOfString CC, string Subject, string Body, bool isHTML)
+        {
             this.From = From;
             this.To = To;
             this.CC = CC;
@@ -86,92 +88,100 @@ namespace InventarioHSC.BusinessLayer.Mailer {
             this.isHTML = isHTML;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SendMailResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SendMailResponse", Namespace="http://tempuri.org/", Order=0)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped = false)]
+    public partial class SendMailResponse
+    {
+        [System.ServiceModel.MessageBodyMemberAttribute(Name = "SendMailResponse", Namespace = "http://tempuri.org/", Order = 0)]
         public InventarioHSC.BusinessLayer.Mailer.SendMailResponseBody Body;
-        
-        public SendMailResponse() {
+
+        public SendMailResponse()
+        {
         }
-        
-        public SendMailResponse(InventarioHSC.BusinessLayer.Mailer.SendMailResponseBody Body) {
+
+        public SendMailResponse(InventarioHSC.BusinessLayer.Mailer.SendMailResponseBody Body)
+        {
             this.Body = Body;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class SendMailResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace = "http://tempuri.org/")]
+    public partial class SendMailResponseBody
+    {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue = false, Order = 0)]
         public string SendMailResult;
-        
-        public SendMailResponseBody() {
+
+        public SendMailResponseBody()
+        {
         }
-        
-        public SendMailResponseBody(string SendMailResult) {
+
+        public SendMailResponseBody(string SendMailResult)
+        {
             this.SendMailResult = SendMailResult;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SendMailAttTxtRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SendMailAttTxt", Namespace="http://tempuri.org/", Order=0)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped = false)]
+    public partial class SendMailAttTxtRequest
+    {
+        [System.ServiceModel.MessageBodyMemberAttribute(Name = "SendMailAttTxt", Namespace = "http://tempuri.org/", Order = 0)]
         public InventarioHSC.BusinessLayer.Mailer.SendMailAttTxtRequestBody Body;
-        
-        public SendMailAttTxtRequest() {
+
+        public SendMailAttTxtRequest()
+        {
         }
-        
-        public SendMailAttTxtRequest(InventarioHSC.BusinessLayer.Mailer.SendMailAttTxtRequestBody Body) {
+
+        public SendMailAttTxtRequest(InventarioHSC.BusinessLayer.Mailer.SendMailAttTxtRequestBody Body)
+        {
             this.Body = Body;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class SendMailAttTxtRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace = "http://tempuri.org/")]
+    public partial class SendMailAttTxtRequestBody
+    {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue = false, Order = 0)]
         public string From;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue = false, Order = 1)]
         public string To;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue = false, Order = 2)]
         public InventarioHSC.BusinessLayer.Mailer.ArrayOfString CC;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue = false, Order = 3)]
         public string Subject;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue = false, Order = 4)]
         public string Body;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(Order = 5)]
         public bool isHTML;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=6)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue = false, Order = 6)]
         public string Att;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=7)]
+
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue = false, Order = 7)]
         public string Archivo;
-        
-        public SendMailAttTxtRequestBody() {
+
+        public SendMailAttTxtRequestBody()
+        {
         }
-        
-        public SendMailAttTxtRequestBody(string From, string To, InventarioHSC.BusinessLayer.Mailer.ArrayOfString CC, string Subject, string Body, bool isHTML, string Att, string Archivo) {
+
+        public SendMailAttTxtRequestBody(string From, string To, InventarioHSC.BusinessLayer.Mailer.ArrayOfString CC, string Subject, string Body, bool isHTML, string Att, string Archivo)
+        {
             this.From = From;
             this.To = To;
             this.CC = CC;
@@ -182,74 +192,86 @@ namespace InventarioHSC.BusinessLayer.Mailer {
             this.Archivo = Archivo;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class SendMailAttTxtResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="SendMailAttTxtResponse", Namespace="http://tempuri.org/", Order=0)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped = false)]
+    public partial class SendMailAttTxtResponse
+    {
+        [System.ServiceModel.MessageBodyMemberAttribute(Name = "SendMailAttTxtResponse", Namespace = "http://tempuri.org/", Order = 0)]
         public InventarioHSC.BusinessLayer.Mailer.SendMailAttTxtResponseBody Body;
-        
-        public SendMailAttTxtResponse() {
+
+        public SendMailAttTxtResponse()
+        {
         }
-        
-        public SendMailAttTxtResponse(InventarioHSC.BusinessLayer.Mailer.SendMailAttTxtResponseBody Body) {
+
+        public SendMailAttTxtResponse(InventarioHSC.BusinessLayer.Mailer.SendMailAttTxtResponseBody Body)
+        {
             this.Body = Body;
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class SendMailAttTxtResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace = "http://tempuri.org/")]
+    public partial class SendMailAttTxtResponseBody
+    {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue = false, Order = 0)]
         public string SendMailAttTxtResult;
-        
-        public SendMailAttTxtResponseBody() {
+
+        public SendMailAttTxtResponseBody()
+        {
         }
-        
-        public SendMailAttTxtResponseBody(string SendMailAttTxtResult) {
+
+        public SendMailAttTxtResponseBody(string SendMailAttTxtResult)
+        {
             this.SendMailAttTxtResult = SendMailAttTxtResult;
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface MailerServiceSoapChannel : InventarioHSC.BusinessLayer.Mailer.MailerServiceSoap, System.ServiceModel.IClientChannel {
+    public interface MailerServiceSoapChannel : InventarioHSC.BusinessLayer.Mailer.MailerServiceSoap, System.ServiceModel.IClientChannel
+    {
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class MailerServiceSoapClient : System.ServiceModel.ClientBase<InventarioHSC.BusinessLayer.Mailer.MailerServiceSoap>, InventarioHSC.BusinessLayer.Mailer.MailerServiceSoap {
-        
-        public MailerServiceSoapClient() {
+    public partial class MailerServiceSoapClient : System.ServiceModel.ClientBase<InventarioHSC.BusinessLayer.Mailer.MailerServiceSoap>, InventarioHSC.BusinessLayer.Mailer.MailerServiceSoap
+    {
+        public MailerServiceSoapClient()
+        {
         }
-        
-        public MailerServiceSoapClient(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
+
+        public MailerServiceSoapClient(string endpointConfigurationName) :
+            base(endpointConfigurationName)
+        {
         }
-        
-        public MailerServiceSoapClient(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+
+        public MailerServiceSoapClient(string endpointConfigurationName, string remoteAddress) :
+            base(endpointConfigurationName, remoteAddress)
+        {
         }
-        
-        public MailerServiceSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
+
+        public MailerServiceSoapClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) :
+            base(endpointConfigurationName, remoteAddress)
+        {
         }
-        
-        public MailerServiceSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
+
+        public MailerServiceSoapClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) :
+            base(binding, remoteAddress)
+        {
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InventarioHSC.BusinessLayer.Mailer.SendMailResponse InventarioHSC.BusinessLayer.Mailer.MailerServiceSoap.SendMail(InventarioHSC.BusinessLayer.Mailer.SendMailRequest request) {
+        InventarioHSC.BusinessLayer.Mailer.SendMailResponse InventarioHSC.BusinessLayer.Mailer.MailerServiceSoap.SendMail(InventarioHSC.BusinessLayer.Mailer.SendMailRequest request)
+        {
             return base.Channel.SendMail(request);
         }
-        
-        public string SendMail(string From, string To, InventarioHSC.BusinessLayer.Mailer.ArrayOfString CC, string Subject, string Body, bool isHTML) {
+
+        public string SendMail(string From, string To, InventarioHSC.BusinessLayer.Mailer.ArrayOfString CC, string Subject, string Body, bool isHTML)
+        {
             InventarioHSC.BusinessLayer.Mailer.SendMailRequest inValue = new InventarioHSC.BusinessLayer.Mailer.SendMailRequest();
             inValue.Body = new InventarioHSC.BusinessLayer.Mailer.SendMailRequestBody();
             inValue.Body.From = From;
@@ -261,13 +283,15 @@ namespace InventarioHSC.BusinessLayer.Mailer {
             InventarioHSC.BusinessLayer.Mailer.SendMailResponse retVal = ((InventarioHSC.BusinessLayer.Mailer.MailerServiceSoap)(this)).SendMail(inValue);
             return retVal.Body.SendMailResult;
         }
-        
+
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        InventarioHSC.BusinessLayer.Mailer.SendMailAttTxtResponse InventarioHSC.BusinessLayer.Mailer.MailerServiceSoap.SendMailAttTxt(InventarioHSC.BusinessLayer.Mailer.SendMailAttTxtRequest request) {
+        InventarioHSC.BusinessLayer.Mailer.SendMailAttTxtResponse InventarioHSC.BusinessLayer.Mailer.MailerServiceSoap.SendMailAttTxt(InventarioHSC.BusinessLayer.Mailer.SendMailAttTxtRequest request)
+        {
             return base.Channel.SendMailAttTxt(request);
         }
-        
-        public string SendMailAttTxt(string From, string To, InventarioHSC.BusinessLayer.Mailer.ArrayOfString CC, string Subject, string Body, bool isHTML, string Att, string Archivo) {
+
+        public string SendMailAttTxt(string From, string To, InventarioHSC.BusinessLayer.Mailer.ArrayOfString CC, string Subject, string Body, bool isHTML, string Att, string Archivo)
+        {
             InventarioHSC.BusinessLayer.Mailer.SendMailAttTxtRequest inValue = new InventarioHSC.BusinessLayer.Mailer.SendMailAttTxtRequest();
             inValue.Body = new InventarioHSC.BusinessLayer.Mailer.SendMailAttTxtRequestBody();
             inValue.Body.From = From;

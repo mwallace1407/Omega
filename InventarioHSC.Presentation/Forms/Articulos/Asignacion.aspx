@@ -13,7 +13,6 @@
             alert("Has hecho clic");
         });
 
-
         function ValidaUsuarioNoResponsiva_Cliente(source, clientside_arguments) {
             clientside_arguments.IsValid = false;
             var value2 = $("#<%= ddlUsuarioAsignado.ClientID %>").val();
@@ -41,8 +40,7 @@
             if (args.get_error() != undefined) {
                 args.set_errorHandled(true);
             }
-        } 
-
+        }
     </script>
     <script src="../../Scripts/jquery-1.3.2.min.js" type="text/javascript"></script>
     <link href="../../App_Themes/Estilos/Redmon/jquery-ui-1.7.2.custom.css" type="text/css"

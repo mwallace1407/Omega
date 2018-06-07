@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace InventarioHSC.Forms
 {
@@ -15,7 +11,6 @@ namespace InventarioHSC.Forms
         {
             if (!Page.IsPostBack)
             {
-
                 if (Session.Count > 0)
                 {
                     hddPagina.Value = "";
@@ -41,9 +36,11 @@ namespace InventarioHSC.Forms
                         case "I":
                             imgMensaje.ImageUrl = "~/App_Themes/Imagenes/info.png";
                             break;
+
                         case "A":
                             imgMensaje.ImageUrl = "~/App_Themes/Imagenes/warning.png";
                             break;
+
                         case "E":
                             imgMensaje.ImageUrl = "~/App_Themes/Imagenes/error.png";
                             break;

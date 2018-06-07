@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.Common;
+using System.Text;
 using InventarioHSC.Model;
-using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
-
+using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace InventarioHSC.DataLayer
 {
@@ -15,7 +13,6 @@ namespace InventarioHSC.DataLayer
     {
         public DLReporteGeneral()
         {
-
         }
 
         public List<ReporteGeneral> getReporteGeneral()
@@ -24,9 +21,6 @@ namespace InventarioHSC.DataLayer
             Database db = EnterpriseLibraryContainer.Current.GetInstance<Database>("Inventario");
             //Database db = DatabaseFactory.CreateDatabase();
             StringBuilder sqlCommand = new StringBuilder();
-
-
-
 
             sqlCommand.AppendLine("SELECT ");
             sqlCommand.AppendLine("	  A.idItem AS id ");
@@ -84,7 +78,6 @@ namespace InventarioHSC.DataLayer
                 List<ReporteGeneral> lstReporteGeneral = new List<ReporteGeneral>();
                 if (ds.Tables[0].Rows.Count > 0)
                 {
-
                     foreach (DataRow dr in ds.Tables[0].Rows)
                     {
                         ReporteGeneral oReporteGeneral = new ReporteGeneral();
@@ -124,8 +117,6 @@ namespace InventarioHSC.DataLayer
                         oReporteGeneral.cambioRYS = dr["CambioRYS"].ToString();
                         oReporteGeneral.fechaMovimiento = dr["FechaMovimiento"].ToString();
 
-
-
                         lstReporteGeneral.Add(oReporteGeneral);
                     }
                 }
@@ -133,11 +124,8 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
         }
-
-
     }
 }

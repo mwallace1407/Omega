@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using InventarioHSC.Model;
 
 namespace InventarioHSC.Forms.Servidores
@@ -11,6 +7,7 @@ namespace InventarioHSC.Forms.Servidores
     public partial class MonitoreoRemotoSW : System.Web.UI.Page
     {
         #region Eventos
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -47,6 +44,7 @@ namespace InventarioHSC.Forms.Servidores
 
             Response.Redirect("../Reportes/DocumentosUsuario.aspx");
         }
+
         #endregion Eventos
     }
 }

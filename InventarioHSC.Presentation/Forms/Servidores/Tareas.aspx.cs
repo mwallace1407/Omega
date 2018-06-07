@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
@@ -19,7 +16,6 @@ namespace InventarioHSC.Forms.Servidores
                     CargaDatos(Session["UserNameLogin"].ToString(), DateTime.Now, true);
                 else
                     Response.Redirect("~/Forms/sessionTimeout.html", false);
-
             }
         }
 
@@ -152,12 +148,13 @@ namespace InventarioHSC.Forms.Servidores
             ddlTareas.Items.Clear();
             LimpiarCampos();
 
-            switch(ddlAccion.SelectedValue)
+            switch (ddlAccion.SelectedValue)
             {
                 case "1": //Crear
                     pnlDatos.Visible = true;
                     btnProcesar.Text = "Registrar tarea";
                     break;
+
                 case "2": //Editar
                     BLCatalogos objCat = new BLCatalogos();
 
@@ -166,10 +163,12 @@ namespace InventarioHSC.Forms.Servidores
                     objCat.ObtenerTareasDeUsuario(ref ddlTareas, hddUsuario.Value);
                     ddlTareas.DataBind();
                     break;
+
                 case "3": //Visualizar
                     btnProcesar.Text = "Visualizar tareas";
                     pnlUsuario.Visible = true;
                     break;
+
                 default:
                     break;
             }
@@ -191,7 +190,6 @@ namespace InventarioHSC.Forms.Servidores
                 {
                     if (ds.Tables[0].TableName != "Error")
                     {
-
                         if (ds.Tables[0].Rows.Count > 0)
                         {
                             pnlTarea.Visible = false;
@@ -428,7 +426,7 @@ namespace InventarioHSC.Forms.Servidores
 
                 int.TryParse(ddlCategoria.SelectedValue, out Categoria);
 
-                switch(ddlAccion.SelectedValue)
+                switch (ddlAccion.SelectedValue)
                 {
                     case "1":
                         if (Categoria <= 0 || !EsFecha(dtpIni.DateTime) || !EsFecha(dtpFin.DateTime) || string.IsNullOrWhiteSpace(txtDescripcion.Text))
@@ -467,6 +465,7 @@ namespace InventarioHSC.Forms.Servidores
                         }
 
                         break;
+
                     case "2":
                         if (Categoria <= 0 || !EsFecha(dtpIni.DateTime) || !EsFecha(dtpFin.DateTime) || string.IsNullOrWhiteSpace(txtDescripcion.Text))
                         {

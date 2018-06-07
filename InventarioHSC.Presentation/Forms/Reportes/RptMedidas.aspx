@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Reporte de medidas" Language="C#" MasterPageFile="~/Forms/Main.Master" AutoEventWireup="true" CodeBehind="RptMedidas.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptMedidas" %>
+﻿<%@ Page Title="Reporte de medidas" Language="C#" MasterPageFile="~/Forms/Main.Master"
+    AutoEventWireup="true" CodeBehind="RptMedidas.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptMedidas" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headMaster" runat="server">

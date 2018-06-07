@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace InventarioHSC
+﻿namespace InventarioHSC
 {
     public static class Constantes
     {
-        
         public enum UbicacionInvalida
         {
-           Sotano3 = 7,
-           Faltante = 8
+            Sotano3 = 7,
+            Faltante = 8
         }
 
         public enum UsuarioValido
@@ -21,7 +15,7 @@ namespace InventarioHSC
 
         public enum EstadoConservacion
         {
-            BuenEstado = 1, 
+            BuenEstado = 1,
             MalEstado = 2
         }
 
@@ -29,8 +23,6 @@ namespace InventarioHSC
         {
             Vacio = 0
         }
-
-
 
     }
 }

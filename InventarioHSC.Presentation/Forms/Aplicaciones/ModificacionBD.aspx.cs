@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Data;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
 using InventarioHSC.Model;
-using System.Data;
 
 namespace InventarioHSC.Forms.Aplicaciones
 {
@@ -21,6 +17,7 @@ namespace InventarioHSC.Forms.Aplicaciones
         }
 
         #region Catalogos
+
         protected void CargaCatalogos()
         {
             BLCatalogos objCatalogo = new BLCatalogos();
@@ -46,6 +43,7 @@ namespace InventarioHSC.Forms.Aplicaciones
         {
             CargaInstancias();
         }
+
         #endregion Catalogos
 
         protected void ddlBD_SelectedIndexChanged(object sender, EventArgs e)
@@ -69,15 +67,15 @@ namespace InventarioHSC.Forms.Aplicaciones
                 if (Info.Rows.Count > 0)
                 {
                     if (Info.Columns.Contains("Srv_Id")) { ddlServidor.SelectedValue = Info.Rows[0]["Srv_Id"].ToString(); }
-                    
+
                     CargaInstancias();
-                    
+
                     if (Info.Columns.Contains("AppSB_Id")) { ddlInstanciaBD.SelectedValue = Info.Rows[0]["AppSB_Id"].ToString(); }
 
                     if (Info.Columns.Contains("AppBD_Nombre")) { txtNombre.Text = Info.Rows[0]["AppBD_Nombre"].ToString(); }
 
                     if (Info.Columns.Contains("AppBD_Activa")) { if (Info.Rows[0]["AppBD_Activa"].ToString() == "S") { chkActiva.Checked = true; } else { chkActiva.Checked = false; } }
-                    
+
                     if (Info.Columns.Contains("AppBD_Productiva")) { if (Info.Rows[0]["AppBD_Productiva"].ToString() == "S") { chkProductiva.Checked = true; } else { chkProductiva.Checked = false; } }
 
                     if (Info.Columns.Contains("AppBD_FechaBaja"))
@@ -142,7 +140,6 @@ namespace InventarioHSC.Forms.Aplicaciones
                 objGrupoSoftware.HistoricoApp(this.Page.ToString().Substring(4, this.Page.ToString().Substring(4).Length - 5) + ".aspx", Session["UserNameLogin"].ToString(), "U", AppSB_Id);
 
                 DatosGenerales.EnviaMensaje("Proceso finalizado", "Modificación de BD", DatosGenerales.TiposMensaje.Informacion);
-                
             }
         }
 

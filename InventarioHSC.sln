@@ -1,8 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
-MinimumVisualStudioVersion = 10.0.40219.1
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventarioHSC.DataLayer", "InventarioHSC.DataLayer\InventarioHSC.DataLayer.csproj", "{E1F30B6B-D785-4564-AECB-EAED8668E14E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventarioHSC.Presentation", "InventarioHSC.Presentation\InventarioHSC.Presentation.csproj", "{4C8AE0DC-2E8A-4D16-9B3C-7AD12B47F835}"

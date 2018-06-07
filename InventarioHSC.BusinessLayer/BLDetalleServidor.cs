@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.UI.WebControls;
-using InventarioHSC.Model;
 using InventarioHSC.DataLayer;
+using InventarioHSC.Model;
 
 namespace InventarioHSC.BusinessLayer
 {
@@ -12,7 +8,6 @@ namespace InventarioHSC.BusinessLayer
     {
         public BLDetalleServidor()
         {
-
         }
 
         public DetalleServidor ObtieneDetalleServidor(int idItem)
@@ -20,14 +15,12 @@ namespace InventarioHSC.BusinessLayer
             DetalleServidor oDetalleServidor = new DetalleServidor();
             DLDetalleServidor oDataDetalleServidor = new DLDetalleServidor();
 
-
             try
             {
                 oDetalleServidor = oDataDetalleServidor.getDetalleServidorporID(idItem);
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
 
@@ -36,9 +29,8 @@ namespace InventarioHSC.BusinessLayer
 
         public void InsertaDetalleServidor(long i_idItem, int i_CantidadProcesadores, string s_TipoProcesador, int i_CantidadDiscos, string s_CapacidadDiscos, string s_NombreServidor, string s_DireccionIP)
         {
-            DetalleServidor  objDetalleServidor = new DetalleServidor();
+            DetalleServidor objDetalleServidor = new DetalleServidor();
             DLDetalleServidor odlDetalleServidor = new DLDetalleServidor();
-
 
             objDetalleServidor.idItem = i_idItem;
             objDetalleServidor.cantidadProcesadores = i_CantidadProcesadores;

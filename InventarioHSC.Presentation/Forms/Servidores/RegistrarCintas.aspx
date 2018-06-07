@@ -99,8 +99,8 @@
                         <asp:TextBox ID="txtObservacionesCinta" runat="server" Width="200" MaxLength="150"
                             autocomplete="off" Enabled="False" Height="75px" TextMode="MultiLine"></asp:TextBox>
                         <br />
-                        <asp:Label ID="lblMsj" runat="server" Text="Datos incorrectos" 
-                            ForeColor="#990000" Visible="False"></asp:Label>
+                        <asp:Label ID="lblMsj" runat="server" Text="Datos incorrectos" ForeColor="#990000"
+                            Visible="False"></asp:Label>
                     </div>
                 </div>
                 <br />

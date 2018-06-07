@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Web;
 using System.Web.UI;
 using De_CryptDLL;
-using System.Configuration;
 using InventarioHSC.Model;
 
 namespace InventarioHSC.Forms.Operacion
 {
     public partial class Op_SisCre : System.Web.UI.Page
     {
-        
-
         private string Codificar(string Texto)
         {
             De_Crypt cr = new De_Crypt();
@@ -32,7 +28,7 @@ namespace InventarioHSC.Forms.Operacion
                 }
             }
         }
-        
+
         protected void btnRedirect_Click(object sender, EventArgs e)
         {
             De_Crypt cr = new De_Crypt();
@@ -41,6 +37,5 @@ namespace InventarioHSC.Forms.Operacion
             //Response.Redirect(DatosGenerales.RutaSisCre + "Default.aspx?cred=" + HttpContext.Current.Server.UrlEncode(Convert.ToBase64String(System.Text.Encoding.Unicode.GetBytes(Usuario))));
             Response.Redirect("http://hoperaciones:84/SisCredApp/SisCreWin.application");
         }
-
     }
 }

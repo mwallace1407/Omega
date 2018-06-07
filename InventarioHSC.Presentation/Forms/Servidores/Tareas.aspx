@@ -79,8 +79,8 @@
                             </asp:DropDownList>
                             <br />
                             <br />
-                            <asp:Button ID="btnExportar" runat="server" Text="Exportar a Excel" 
-                                CssClass="boton" onclick="btnExportar_Click" />
+                            <asp:Button ID="btnExportar" runat="server" Text="Exportar a Excel" CssClass="boton"
+                                OnClick="btnExportar_Click" />
                         </div>
                     </div>
                     <br />

@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
-using Microsoft.Practices.EnterpriseLibrary.Data;
+using System.Data.Common;
+using System.Text;
 using InventarioHSC.Model;
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
-using System.Data.Common;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace InventarioHSC.DataLayer
 {
@@ -53,7 +52,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
             List<Asignacion_Software> lstAsignacionSoftware = new List<Asignacion_Software>();
@@ -73,10 +71,10 @@ namespace InventarioHSC.DataLayer
                     oAsignacionSoftware.Cve_Asignacion = Convert.ToInt32(dr["Cve_Asignacion"]);
                     oAsignacionSoftware.Dolares = dr["Dolares"] != DBNull.Value ? Convert.ToDecimal(dr["Dolares"]) : valueDecimal;
                     oAsignacionSoftware.Fecha_Compra = dr["Fecha_Compra"] != DBNull.Value ? Convert.ToDateTime(dr["Fecha_Compra"]) : value;
-                    oAsignacionSoftware.Fecha_Vencimiento = dr["Fecha_Vencimiento"] != DBNull.Value ? Convert.ToDateTime(dr["Fecha_Vencimiento"]): value;
+                    oAsignacionSoftware.Fecha_Vencimiento = dr["Fecha_Vencimiento"] != DBNull.Value ? Convert.ToDateTime(dr["Fecha_Vencimiento"]) : value;
                     oAsignacionSoftware.Incluido_Responsiva = dr["Incluido_Responsiva"].ToString();
                     oAsignacionSoftware.Key = dr["Serial"].ToString();
-                    oAsignacionSoftware.Lenguaje =dr["Lenguaje"].ToString();
+                    oAsignacionSoftware.Lenguaje = dr["Lenguaje"].ToString();
                     oAsignacionSoftware.Lote_Code = dr["Lote_Code"].ToString();
                     oAsignacionSoftware.Material = dr["Material"].ToString();
                     oAsignacionSoftware.Nombre_Usuario = dr["Nombre_Usuario"].ToString();
@@ -181,7 +179,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
 
@@ -280,7 +277,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
 
@@ -356,7 +352,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
             List<Asignacion_Software> lstAsignacionSoftware = new List<Asignacion_Software>();

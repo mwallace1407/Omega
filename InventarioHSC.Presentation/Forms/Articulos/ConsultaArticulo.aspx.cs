@@ -1,11 +1,4 @@
-﻿
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using System;
 using InventarioHSC.BusinessLayer;
 using InventarioHSC.Model;
 
@@ -14,7 +7,7 @@ namespace InventarioHSC
     public partial class ConsultaArticulo : System.Web.UI.Page
     {
         public Articulo objectArticulo = new Articulo();
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -85,8 +78,8 @@ namespace InventarioHSC
         protected void btnBuscar_Click(object sender, EventArgs e)
         {
             fnBuscaArticuloporSerie();
-
         }
+
         protected void fnBuscaArticuloporSerie()
         {
             BLArticulo bloArticulo = new BLArticulo();
@@ -160,7 +153,6 @@ namespace InventarioHSC
                 {
                     this.RegisterStartupScript("Alertas", Clientscript);
                 }
-
             }
         }
 
@@ -174,8 +166,8 @@ namespace InventarioHSC
             int? respon = null;
             int responsi;
 
-            if(!string.IsNullOrEmpty(txtResponsiva.Text.Trim()))
-                int.TryParse(txtResponsiva.Text,out responsi);
+            if (!string.IsNullOrEmpty(txtResponsiva.Text.Trim()))
+                int.TryParse(txtResponsiva.Text, out responsi);
             else
                 responsi = 0;
 

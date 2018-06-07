@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Forms/Main.Master" AutoEventWireup="true" CodeBehind="Op_Intranet_BuscarDocs.aspx.cs" Inherits="InventarioHSC.Forms.Operacion.Op_Intranet_BuscarDocs" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Forms/Main.Master" AutoEventWireup="true"
+    CodeBehind="Op_Intranet_BuscarDocs.aspx.cs" Inherits="InventarioHSC.Forms.Operacion.Op_Intranet_BuscarDocs" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headMaster" runat="server">
@@ -66,7 +67,8 @@
                                 <ItemStyle Width="1px" />
                             </asp:BoundField>
                         </Columns>
-                        <HeaderStyle Width="550px" BackColor="#5D7B9D" Font-Bold="True" ForeColor="White"></HeaderStyle>
+                        <HeaderStyle Width="550px" BackColor="#5D7B9D" Font-Bold="True" ForeColor="White">
+                        </HeaderStyle>
                         <RowStyle CssClass="GridItem" />
                         <AlternatingRowStyle CssClass="GridAltItem" />
                     </asp:GridView>

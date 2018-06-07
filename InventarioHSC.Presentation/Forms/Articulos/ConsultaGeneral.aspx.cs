@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
-using InventarioHSC.Model;
 
 namespace InventarioHSC
 {
     public partial class ConsultaGeneral : System.Web.UI.Page
     {
         public BLReporteGeneral oblReporteGeneral = new BLReporteGeneral();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -26,7 +23,6 @@ namespace InventarioHSC
         {
             gvwReporteGeneral.DataSource = oblReporteGeneral.ObtieneReporteGeneral();
             gvwReporteGeneral.DataBind();
-
         }
 
         //protected void gvwArticulos_RowDataBound(object sender, GridViewRowEventArgs e)

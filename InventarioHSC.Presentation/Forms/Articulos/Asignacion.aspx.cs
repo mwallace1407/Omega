@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Microsoft.Reporting.WebForms;
 using InventarioHSC.BusinessLayer;
 using InventarioHSC.Model;
-
+using Microsoft.Reporting.WebForms;
 
 namespace InventarioHSC
 {
@@ -16,9 +14,11 @@ namespace InventarioHSC
     {
         public BLArticulo bloArticulo = new BLArticulo();
         public List<Articulo> lstAgregar = new List<Articulo>();
+
         //public List<Articulo> lstQuitar = new List<Articulo>();
         //public List<Articulo> lstArticuloShow = new List<Articulo>();
         public BLResponsiva objectResponsiva = new BLResponsiva();
+
         public BLXLSResponsiva oDocResponsiva = new BLXLSResponsiva();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -95,7 +95,6 @@ namespace InventarioHSC
             {
                 CambiaEstadoNotificacion("Info", false, string.Empty);
                 CambiaEstadoNotificacion("Warning", false, string.Empty);
-
 
                 if (!ddlUsuarioAsignado.SelectedItem.Value.Equals("1191"))
                 {
@@ -277,9 +276,9 @@ namespace InventarioHSC
 
             List<Articulo> oFindArticulo = new List<Articulo>();
             BLArticulo oblArticulo = new BLArticulo();
-            int idMarca = ddlMarca.Items.Count == 0? 0: Convert.ToInt32(ddlMarca.SelectedItem.Value);
+            int idMarca = ddlMarca.Items.Count == 0 ? 0 : Convert.ToInt32(ddlMarca.SelectedItem.Value);
 
-            oFindArticulo = 
+            oFindArticulo =
                 oblArticulo.getFiltroArticulo
                 (Convert.ToInt32(ddlTipoArticulo.SelectedItem.Value),
                     idMarca,
@@ -297,7 +296,6 @@ namespace InventarioHSC
 
             //if (oFindArticulo.idItem != null && oFindArticulo.idItem != Convert.ToInt16(Constantes.CantidadElementos.Vacio))
             //{
-
             if (oFindArticulo.Count > 0)
             {
                 grvFiltroArticulos.DataSource = oFindArticulo;
@@ -333,7 +331,7 @@ namespace InventarioHSC
             //        fnLimpiaControlDetalle();
             //        CambiaEstadoNotificacion("Info", true, val.message);
             //        CambiaEstadoNotificacion("Warning", false, string.Empty);
-            //    } 
+            //    }
             //}
             //}
             //else
@@ -345,9 +343,8 @@ namespace InventarioHSC
 
         //protected void btnAgregar_Click(object sender, EventArgs e)
         //{
-
         //}
-        
+
         protected void ActualizaGrid()
         {
             lstAgregar = (List<Articulo>)Session["GridAdd"];
@@ -435,7 +432,7 @@ namespace InventarioHSC
 
         protected void fnLimpiaControlesMain()
         {
-            ddlUsuarioAsignado.SelectedValue= "1191";
+            ddlUsuarioAsignado.SelectedValue = "1191";
             txtPuesto.Text = string.Empty;
         }
 
@@ -517,8 +514,8 @@ namespace InventarioHSC
                         e.Row.Cells[0].Attributes.Add("onmousemove", "this.style.cursor='hand';");
                         e.Row.Cells[0].Attributes.Add("onmouseleave", "this.style.cursor='default';");
                         e.Row.Cells[0].ToolTip = "Quitar Articulo";
-                        
-                        if(hdnNuevaResponsiva.Value.Equals("1"))
+
+                        if (hdnNuevaResponsiva.Value.Equals("1"))
                             e.Row.Cells[0].Attributes.Add("OnClick", "javascript:__doPostBack('gwvArticuloAsignado','Eliminar$" + (e.Row.RowIndex).ToString().Trim() + "')");
                     }
                 }
@@ -552,7 +549,7 @@ namespace InventarioHSC
                 string s_idItem = gwvArticuloAsignado.DataKeys[index].Values["idItem"].ToString();
                 Articulo ArticuloAquitar = bloArticulo.BuscaArticuloPorID(Convert.ToInt64(s_idItem));
                 lstAgregar.RemoveAll(x => x.idItem == ArticuloAquitar.idItem);
-                
+
                 Session["GridAdd"] = lstAgregar;
 
                 ActualizaGrid();
@@ -577,7 +574,7 @@ namespace InventarioHSC
                         oValida.validate = false;
                         oValida.message = "El Artículo con Serie " + objArt.noSerie + " ya está asignado a esa responsiva.";
                     }
-                } 
+                }
             }
 
             return oValida;
@@ -587,7 +584,7 @@ namespace InventarioHSC
         {
             Response.Redirect("~/Forms/Inicio.aspx");
         }
-            
+
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             try
@@ -621,7 +618,7 @@ namespace InventarioHSC
                     NumeroResponsiva = objectResponsiva.GeneraNoResponsiva();
 
                     foreach (Articulo ArAdd in lstAgregar)
-                    {   
+                    {
                         Articulo articuloHistorico = (Articulo)ArAdd.Clone();
                         ArAdd.idUbicacion = Convert.ToInt32(ddlUbicacion.SelectedValue);
                         ArAdd.idUsuario = Convert.ToInt32(ddlUsuarioAsignado.SelectedValue);
@@ -727,7 +724,6 @@ namespace InventarioHSC
 
                 string sFinalMsg = string.Empty;
 
-
                 List<Articulo> responsivasAnterioresList =
                         bloArticulo.getResponsivasAnteriores(Convert.ToInt32(ddlUsuarioAsignado.SelectedValue));
 
@@ -800,7 +796,7 @@ namespace InventarioHSC
             }
             string sRutaArchivo = Server.MapPath(@"~\Docs\Responsiva\") + NombreArc;
             oDocResponsiva.CreatePackage(sRutaArchivo, txtResponsiva.Text);
-            Response.Redirect("hdlDescargaExcel.ashx?sRuta=" + Server.MapPath(Path) + "&sNomArch=" + NombreArc); 
+            Response.Redirect("hdlDescargaExcel.ashx?sRuta=" + Server.MapPath(Path) + "&sNomArch=" + NombreArc);
         }
 
         protected void btnNueva_Click(object sender, EventArgs e)
@@ -928,13 +924,13 @@ namespace InventarioHSC
 
         protected void ddlTipoArticulo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(!ddlTipoArticulo.SelectedItem.Value.Equals("0"))
+            if (!ddlTipoArticulo.SelectedItem.Value.Equals("0"))
             {
                 ddlMarca.Items.Clear();
-                ddlMarca.Items.Add(new ListItem("","0"));
+                ddlMarca.Items.Add(new ListItem("", "0"));
                 ddlMarca.Enabled = true;
                 BLCatalogos blCatalogos = new BLCatalogos();
-                blCatalogos.CargaMarcaporTipoEquipo(ref ddlMarca,Convert.ToInt32(ddlTipoArticulo.SelectedItem.Value));
+                blCatalogos.CargaMarcaporTipoEquipo(ref ddlMarca, Convert.ToInt32(ddlTipoArticulo.SelectedItem.Value));
             }
             else
             {

@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.UI.WebControls;
-using InventarioHSC.Model;
 using InventarioHSC.DataLayer;
+using InventarioHSC.Model;
 
 namespace InventarioHSC.BusinessLayer
 {
@@ -12,7 +9,6 @@ namespace InventarioHSC.BusinessLayer
     {
         public BLMarca()
         {
-
         }
 
         public List<Marca> ObtieneMarcaAll()
@@ -27,7 +23,6 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
 
@@ -49,7 +44,6 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return objMarca.idMarca;
@@ -70,7 +64,6 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return objMarca.idMarca;
@@ -91,11 +84,9 @@ namespace InventarioHSC.BusinessLayer
                 {
                     odlMar.UpdateMarca(ref objMarca);
                 }
-
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return TotalMarcasAsignadas;
@@ -103,7 +94,6 @@ namespace InventarioHSC.BusinessLayer
 
         public int ValidaAsignacionMarca(int i_idMarca)
         {
-
             int TotalAignados;
             DLMarca odlMarca = new DLMarca();
 
@@ -113,12 +103,10 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
 
             return TotalAignados;
-
         }
     }
 }

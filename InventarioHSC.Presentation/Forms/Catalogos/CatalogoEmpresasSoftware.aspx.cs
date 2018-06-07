@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
-using InventarioHSC.Model;
 
 namespace InventarioHSC.Forms.Catalogos
 {
@@ -13,7 +7,6 @@ namespace InventarioHSC.Forms.Catalogos
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)

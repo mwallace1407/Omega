@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
 using InventarioHSC.Model;
 
@@ -13,7 +9,6 @@ namespace InventarioHSC.Forms.Operacion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void btnValidar_Click(object sender, EventArgs e)
@@ -23,7 +18,7 @@ namespace InventarioHSC.Forms.Operacion
 
             BLOperaciones obj = new BLOperaciones();
             BLOperaciones.FolioCartero folio;
-            
+
             if (txtReferencia.Text.Length == 16)
             {
                 int SolId = 0;
@@ -61,8 +56,8 @@ namespace InventarioHSC.Forms.Operacion
                 string Msj = "";
 
                 Msj = obj.LiberarCarta(lblFolioCartero.Text, lblFolioCastorTel.Text, Session["UserNameLogin"].ToString());
-                
-                if(Msj == "OK")
+
+                if (Msj == "OK")
                     DatosGenerales.EnviaMensaje("Proceso finalizado", "Liberación de Carta", DatosGenerales.TiposMensaje.Informacion);
                 else
                     DatosGenerales.EnviaMensaje(Msj, "Alta de BD", DatosGenerales.TiposMensaje.Error);

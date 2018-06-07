@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Data;
-using InventarioHSC.Model;
-using Microsoft.Practices.EnterpriseLibrary.Data;
-using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
 using System.Data.Common;
+using System.Text;
+using InventarioHSC.Model;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace InventarioHSC.DataLayer
 {
@@ -34,7 +34,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
             List<Software> lstSoftware = new List<Software>();
@@ -54,9 +53,9 @@ namespace InventarioHSC.DataLayer
             return lstSoftware;
         }
 
-        public List<Software> getSoftware(string NombreLicencia = null, string version = null,int? Cantidad = null )
+        public List<Software> getSoftware(string NombreLicencia = null, string version = null, int? Cantidad = null)
         {
-        DataSet ds = new DataSet();
+            DataSet ds = new DataSet();
 
             Database db = EnterpriseLibraryContainer.Current.GetInstance<Database>("Inventario");
             StringBuilder sqlCommand = new StringBuilder();
@@ -94,7 +93,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
             List<Software> lstSoftware = new List<Software>();
@@ -137,7 +135,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
             List<Software> lstSoftware = new List<Software>();
@@ -184,7 +181,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
             List<Software> lstSoftware = new List<Software>();
@@ -246,7 +242,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
             List<Software> lstSoftware = new List<Software>();
@@ -311,7 +306,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
         }
@@ -371,12 +365,12 @@ namespace InventarioHSC.DataLayer
                 condicion = " and NoLicencias = " + Cantidad;
             }
 
-            string sqlCommand = @"select (SELECT COUNT(Cve_Asignacion) 
+            string sqlCommand = @"select (SELECT COUNT(Cve_Asignacion)
                                   FROM [BD_INVENTARIOHSC].[dbo].[Asignacion_Software] t2
                                   inner join software t1 on t2.cve_Software = t1.Cve_Software
                                   where Nombre_Usuario = 'Disponible' and Serial = 'Sin licencia' " + condicion + @") as [Disponible Sin Licencia]
                                   ,
-                                  (SELECT COUNT(Cve_Asignacion) 
+                                  (SELECT COUNT(Cve_Asignacion)
                                   FROM [BD_INVENTARIOHSC].[dbo].[Asignacion_Software] t2
                                   inner join software t1 on t2.cve_Software = t1.Cve_Software
                                   where Nombre_Usuario = 'Disponible' and Serial <> 'Sin licencia' " + condicion + @") as [Disponible Con Licencia]
@@ -386,12 +380,10 @@ namespace InventarioHSC.DataLayer
                                   inner join software t1 on t2.cve_Software = t1.Cve_Software
                                   where Nombre_Usuario <> 'Disponible' and Serial <> 'Sin licencia' " + condicion + @") as [Asignado Con Licencia]
                                   ,
-                                  (SELECT COUNT(Cve_Asignacion) 
+                                  (SELECT COUNT(Cve_Asignacion)
                                   FROM [BD_INVENTARIOHSC].[dbo].[Asignacion_Software] t2
                                   inner join software t1 on t2.cve_Software = t1.Cve_Software
                                   where Nombre_Usuario <> 'Disponible' and Serial = 'Sin licencia' " + condicion + @") as [Asignado Sin Licencia]";
-
-            
 
             DbCommand selectCommand = null;
             selectCommand = db.GetSqlStringCommand(sqlCommand.ToString());
@@ -402,10 +394,8 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
-          
 
             List<TotalesSoftware> totales = new List<TotalesSoftware>();
 
@@ -444,7 +434,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
 
@@ -925,6 +914,7 @@ namespace InventarioHSC.DataLayer
         }
 
         #region Aplicaciones
+
         public void HistoricoApp(string Pagina, string UserId, string HApp_Tipo, int HApp_IdModificado, int HApp_IdModificado2)
         {
             DataSet MensajeBD = new DataSet();
@@ -1533,7 +1523,6 @@ namespace InventarioHSC.DataLayer
                 db.AddInParameter(selectCommand, "@AppSB_Nombre", DbType.String, AppSB_Nombre);
 
                 MensajeBD = db.ExecuteDataSet(selectCommand);
-
             }
             catch (Exception ex)
             {
@@ -2502,7 +2491,6 @@ namespace InventarioHSC.DataLayer
                 db.AddInParameter(selectCommand, "@AppBD_FechaBaja", DbType.DateTime, AppBD_FechaBaja);
 
                 MensajeBD = db.ExecuteDataSet(selectCommand);
-
             }
             catch (Exception ex)
             {
@@ -2533,7 +2521,7 @@ namespace InventarioHSC.DataLayer
             return MensajeBD;
         }
 
-        public string ActualizarApp(int App_Id, int AppSt_Id, int AppT_Id, string App_Nombre, string App_Descripcion, 
+        public string ActualizarApp(int App_Id, int AppSt_Id, int AppT_Id, string App_Nombre, string App_Descripcion,
                                     bool App_EnTFS, bool App_Productiva, string App_Observaciones, string App_Ubicacion)
         {
             string MsjBD = "";
@@ -2558,7 +2546,6 @@ namespace InventarioHSC.DataLayer
                 db.AddInParameter(selectCommand, "@App_Ubicacion", DbType.String, App_Ubicacion);
 
                 MensajeBD = db.ExecuteDataSet(selectCommand);
-
             }
             catch (Exception ex)
             {
@@ -2677,8 +2664,11 @@ namespace InventarioHSC.DataLayer
                 throw ex;
             }
         }
+
         #endregion Aplicaciones
+
         #region MaxImage
+
         public DataTable ListaTiposFiltroMaxI(bool IncluirValorInicial = true)
         {
             DataSet ds = new DataSet();
@@ -2737,8 +2727,11 @@ namespace InventarioHSC.DataLayer
 
             return MensajeBD.Tables[0];
         }
+
         #endregion MaxImage
+
         #region Servidores
+
         public DataTable ListaTiposRespaldo(bool IncluirValorInicial = true)
         {
             DataSet ds = new DataSet();
@@ -2793,6 +2786,7 @@ namespace InventarioHSC.DataLayer
 
             return MensajeBD.Tables[0];
         }
+
         #endregion Servidores
     }
 }

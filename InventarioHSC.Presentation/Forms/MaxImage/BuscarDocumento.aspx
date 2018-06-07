@@ -88,12 +88,14 @@
                                     <asp:HyperLink ID="HyperLink1" runat="server">HyperLink</asp:HyperLink>
                                 </EditItemTemplate>
                                 <ItemTemplate>
-                                    <asp:HyperLink ID="lnkRuta" runat="server" Text="Descargar" CssClass="HyperLink" Target="_blank">Descargar</asp:HyperLink>
+                                    <asp:HyperLink ID="lnkRuta" runat="server" Text="Descargar" CssClass="HyperLink"
+                                        Target="_blank">Descargar</asp:HyperLink>
                                 </ItemTemplate>
                                 <HeaderStyle Width="70px" />
                                 <ItemStyle Width="70px" />
                             </asp:TemplateField>
-                            <asp:BoundField DataField="Ruta" HeaderText="Ruta" HeaderStyle-CssClass="GridColumnHide" ItemStyle-CssClass="GridColumnHide">
+                            <asp:BoundField DataField="Ruta" HeaderText="Ruta" HeaderStyle-CssClass="GridColumnHide"
+                                ItemStyle-CssClass="GridColumnHide">
                                 <HeaderStyle Width="1px" />
                                 <ItemStyle Width="1px" />
                             </asp:BoundField>

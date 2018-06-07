@@ -1,5 +1,4 @@
-﻿
-namespace InventarioHSC.Model
+﻿namespace InventarioHSC.Model
 {
     public class Software
     {

@@ -5,11 +5,13 @@ using System.Text;
 using System.Web.UI.WebControls;
 
 #region Comentarios
+
 //-- =============================================
 //-- Autor:		            Julio Cesar Barron Galindo
 //-- Fecha Modificacion:	21/06/2012
 //-- =============================================
-#endregion
+
+#endregion Comentarios
 
 namespace InventarioHSC.BusinessLayer
 {
@@ -30,7 +32,6 @@ namespace InventarioHSC.BusinessLayer
                                 if (x.Rows.Count > 0)
                                     listGridFiltrados.Add(x);
                     });
-
                 });
             }
             else
@@ -91,7 +92,6 @@ namespace InventarioHSC.BusinessLayer
                             if (x.Rows.Count > 0)
                                 listGridFiltrados.Add(x);
                 });
-
             });
 
             return listGridFiltrados;
@@ -124,7 +124,6 @@ namespace InventarioHSC.BusinessLayer
 
             foreach (char caracter in texto)
             {
-
             }
             return textoSinAcentos.ToString();
         }
@@ -152,7 +151,7 @@ namespace InventarioHSC.BusinessLayer
 
         public static string ConvertirAcentosHTML(this String texto)
         {
-            string[] HTMLconsignos = new string[] { "&#193;", "&#225;", "&#201;", "&#233;", "&#205;", "&#237;", "&#211;", "&#243;", "&#218;", "&#250;", "&#241;", "&#209;", "&#165;" , "&#42;" };
+            string[] HTMLconsignos = new string[] { "&#193;", "&#225;", "&#201;", "&#233;", "&#205;", "&#237;", "&#211;", "&#243;", "&#218;", "&#250;", "&#241;", "&#209;", "&#165;", "&#42;" };
             string[] consignos = new string[] { "Á", "á", "É", "é", "Í", "í", "Ó", "ó", "Ú", "ú", "ñ", "Ñ", "¥", "*" };
             string NuevaCadena = texto;
 
@@ -167,7 +166,6 @@ namespace InventarioHSC.BusinessLayer
 
                 indexConAcento++;
             });
-
 
             return NuevaCadena.ToString();
         }

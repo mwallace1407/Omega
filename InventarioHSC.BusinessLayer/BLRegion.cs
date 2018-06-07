@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.UI.WebControls;
-using InventarioHSC.Model;
 using InventarioHSC.DataLayer;
+using InventarioHSC.Model;
 
 namespace InventarioHSC.BusinessLayer
 {
@@ -12,7 +9,6 @@ namespace InventarioHSC.BusinessLayer
     {
         public BLRegion()
         {
-
         }
 
         public List<Region> ObtieneRegionAll()
@@ -27,7 +23,6 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
 
@@ -49,7 +44,6 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return objRegion.idRegion;
@@ -70,7 +64,6 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return objRegion.idRegion;
@@ -92,11 +85,9 @@ namespace InventarioHSC.BusinessLayer
                 {
                     odlReg.UpdateRegion(ref objRegion);
                 }
-
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return TotalSucursales;
@@ -104,7 +95,6 @@ namespace InventarioHSC.BusinessLayer
 
         public int ValidaAsignacionRegion(int i_idRegion)
         {
-
             int TotalAignados;
             DLRegion odlReg = new DLRegion();
 
@@ -114,12 +104,10 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
 
             return TotalAignados;
-
         }
 
         public Region OntenRegionXID(int id_Region)

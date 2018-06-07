@@ -1,5 +1,5 @@
-﻿<%@ Page Title="Reporte de balanzas" Language="C#" MasterPageFile="~/Forms/Main.Master" AutoEventWireup="true"
-    CodeBehind="RptBalanzas.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptBalanzas"
+﻿<%@ Page Title="Reporte de balanzas" Language="C#" MasterPageFile="~/Forms/Main.Master"
+    AutoEventWireup="true" CodeBehind="RptBalanzas.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptBalanzas"
     MaintainScrollPositionOnPostback="true" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>

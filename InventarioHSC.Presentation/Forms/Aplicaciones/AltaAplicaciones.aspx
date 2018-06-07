@@ -61,7 +61,8 @@
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator ID="rfv_ddlServidorP" runat="server" ErrorMessage="Campo requerido"
                         Display="None" ControlToValidate="ddlServidorP" InitialValue="0" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                    <asp:ValidatorCalloutExtender ID="rfve_ddlServidorP" runat="server" Enabled="True" TargetControlID="rfv_ddlServidorP">
+                    <asp:ValidatorCalloutExtender ID="rfve_ddlServidorP" runat="server" Enabled="True"
+                        TargetControlID="rfv_ddlServidorP">
                     </asp:ValidatorCalloutExtender>
                 </div>
             </div>
@@ -72,12 +73,13 @@
                     Servidor BD:
                 </div>
                 <div style="width: 275px; float: right; text-align: left;">
-                    <asp:DropDownList ID="ddlServidor" runat="server" Width="202" 
-                        AutoPostBack="True" onselectedindexchanged="ddlServidor_SelectedIndexChanged">
+                    <asp:DropDownList ID="ddlServidor" runat="server" Width="202" AutoPostBack="True"
+                        OnSelectedIndexChanged="ddlServidor_SelectedIndexChanged">
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator ID="rfv_ddlServidor" runat="server" ErrorMessage="Campo requerido"
                         Display="None" ControlToValidate="ddlServidor" InitialValue="0" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                    <asp:ValidatorCalloutExtender ID="rfve_ddlServidor" runat="server" Enabled="True" TargetControlID="rfv_ddlServidor">
+                    <asp:ValidatorCalloutExtender ID="rfve_ddlServidor" runat="server" Enabled="True"
+                        TargetControlID="rfv_ddlServidor">
                     </asp:ValidatorCalloutExtender>
                 </div>
             </div>
@@ -117,7 +119,8 @@
                     Descripción:
                 </div>
                 <div style="width: 275px; float: right; text-align: left; height: 58px;">
-                    <asp:TextBox ID="txtDescripcion" runat="server" Width="200" MaxLength="500" autocomplete="off" TextMode="MultiLine"></asp:TextBox>
+                    <asp:TextBox ID="txtDescripcion" runat="server" Width="200" MaxLength="500" autocomplete="off"
+                        TextMode="MultiLine"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="rfv_txtDescripcion" runat="server" ErrorMessage="Campo requerido"
                         Display="None" ControlToValidate="txtDescripcion" InitialValue="" SetFocusOnError="True"></asp:RequiredFieldValidator>
                     <asp:ValidatorCalloutExtender ID="rfve_txtDescripcion" runat="server" Enabled="True"
@@ -163,12 +166,14 @@
                     Observaciones:
                 </div>
                 <div style="width: 275px; float: right; text-align: left;">
-                    <asp:TextBox ID="txtObservaciones" runat="server" Width="200" MaxLength="1000" autocomplete="off" TextMode="MultiLine"></asp:TextBox>
+                    <asp:TextBox ID="txtObservaciones" runat="server" Width="200" MaxLength="1000" autocomplete="off"
+                        TextMode="MultiLine"></asp:TextBox>
                 </div>
             </div>
             <br />
             <br />
-            <br /><br />
+            <br />
+            <br />
             <br />
             <uc1:uscMsgBox ID="MsgBoxU" runat="server" />
             <asp:Button ID="btnProcesar" runat="server" Text="Procesar" CssClass="boton" OnClick="btnProcesar_Click" />

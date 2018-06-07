@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Web.UI.WebControls;
-using InventarioHSC.Model;
 using InventarioHSC.DataLayer;
+using InventarioHSC.Model;
 
 namespace InventarioHSC.BusinessLayer
 {
@@ -12,7 +10,6 @@ namespace InventarioHSC.BusinessLayer
     {
         public BLSistemaOperativo()
         {
-
         }
 
         public List<SistemaOperativo> ObtieneSistemaAll()
@@ -28,7 +25,6 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
 
@@ -51,7 +47,6 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return objSistema.idSistema;
@@ -73,7 +68,6 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return objSistema.idSistema;
@@ -95,11 +89,9 @@ namespace InventarioHSC.BusinessLayer
                 {
                     odlSistema.UpdateSistemaOperativo(ref objSistema);
                 }
-
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return TotalArticulos;
@@ -107,7 +99,6 @@ namespace InventarioHSC.BusinessLayer
 
         public int ValidaSistemaAsignado(int i_idSistema)
         {
-
             int TotalArticulos;
             DLSistemaOperativo odlSis = new DLSistemaOperativo();
 
@@ -117,13 +108,10 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
 
             return TotalArticulos;
-
         }
-
     }
 }

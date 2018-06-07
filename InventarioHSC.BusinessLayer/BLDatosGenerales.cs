@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Data;
 using System.Text;
 using InventarioHSC.DataLayer;
-using System.Data;
 using InventarioHSC.Model;
-using System.Web.UI.WebControls;
 
 namespace InventarioHSC.BusinessLayer
 {
     public class BLDatosGenerales
     {
         public BLDatosGenerales()
-        { 
+        {
         }
+
         public void ObtieneDatosGenerales(string[] sParametros)
         {
             DLDatosGenerales datosGenerales = new DLDatosGenerales();
@@ -21,6 +20,7 @@ namespace InventarioHSC.BusinessLayer
 
             List<DatosGenerales> lstDatosGenerales = datosGenerales.getDatosGenerales(sParametros);
         }
+
         public DataView ObtieneDatosGrid(string sTipoActivo)
         {
             DLDatosGenerales datosGenerales = new DLDatosGenerales();
@@ -52,9 +52,9 @@ namespace InventarioHSC.BusinessLayer
 
         public string EliminarArchivo(string DocU_Nombre)
         {
-             DLDatosGenerales datosGenerales = new DLDatosGenerales();
+            DLDatosGenerales datosGenerales = new DLDatosGenerales();
 
-             return datosGenerales.EliminarArchivo(DocU_Nombre); 
+            return datosGenerales.EliminarArchivo(DocU_Nombre);
         }
 
         public DataTable TestScript(string Query, string Cnx)

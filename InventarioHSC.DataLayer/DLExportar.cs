@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
-using System.Data.Common;
+using System.Linq;
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
@@ -13,8 +11,9 @@ namespace InventarioHSC.DataLayer
     public class DLExportar
     {
         #region OpenXml
+
         static private int rowsPerSheet = 250000;
-        DataTable ResultsData = new DataTable();
+        private DataTable ResultsData = new DataTable();
 
         public string GenerarExcel(IDataReader reader, string RutaArchivos)
         {
@@ -73,7 +72,7 @@ namespace InventarioHSC.DataLayer
 
         private string ExportToOxml(bool firstTime, string fileName, string RutaArchivos)
         {
-            //Check if the file exists. 
+            //Check if the file exists.
             if (firstTime)
             {
                 Random rnd = new Random();
@@ -103,10 +102,8 @@ namespace InventarioHSC.DataLayer
                 var sheetData = new SheetData();
                 worksheetPart.Worksheet = new Worksheet(sheetData);
 
-
                 var bold1 = new Bold();
                 CellFormat cf = new CellFormat();
-
 
                 // Add Sheets to the Workbook.
                 Sheets sheets;
@@ -228,6 +225,7 @@ namespace InventarioHSC.DataLayer
 
             return fileName;
         }
+
         #endregion OpenXml
     }
 }

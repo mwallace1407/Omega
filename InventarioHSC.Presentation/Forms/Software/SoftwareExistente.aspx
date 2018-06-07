@@ -242,7 +242,6 @@
                     <asp:Panel runat="server" ID="ActualizaDatos" Width="250px" Height="170px" Style="display: none;">
                         <asp:UpdatePanel ID="UpdatePanel6" runat="server">
                             <ContentTemplate>
-                                
                             </ContentTemplate>
                         </asp:UpdatePanel>
                     </asp:Panel>
@@ -578,7 +577,7 @@
                         </asp:TableRow>
                         <asp:TableRow>
                             <asp:TableCell>
-                                &nbsp;&nbsp;&nbsp;                                
+                                &nbsp;&nbsp;&nbsp;
                             </asp:TableCell>
                             <asp:TableCell>
                                 &nbsp;&nbsp;&nbsp;

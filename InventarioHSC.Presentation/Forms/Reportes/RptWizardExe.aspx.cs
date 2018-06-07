@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using InventarioHSC.Model;
 using InventarioHSC.BusinessLayer;
-using System.Data.SqlClient;
-using System.Data;
+using InventarioHSC.Model;
 
 namespace InventarioHSC.Forms.Reportes
 {
@@ -192,6 +187,7 @@ namespace InventarioHSC.Forms.Reportes
                             txt.Visible = false;
                             chkv.Visible = true;
                             break;
+
                         case "datetime":
                             AjaxControlToolkit.MaskedEditExtender mask = (AjaxControlToolkit.MaskedEditExtender)grdParams.Rows[Registro].FindControl("txtValor_MaskedEditExtender");
                             AjaxControlToolkit.CalendarExtender cal = (AjaxControlToolkit.CalendarExtender)grdParams.Rows[Registro].FindControl("txtValor_CalendarExtender");
@@ -199,6 +195,7 @@ namespace InventarioHSC.Forms.Reportes
                             cal.Enabled = true;
                             txt.Style["text-align"] = "center";
                             break;
+
                         case "decimal":
                         case "double":
                         case "single":
@@ -206,6 +203,7 @@ namespace InventarioHSC.Forms.Reportes
                             filter.FilterType = AjaxControlToolkit.FilterTypes.Numbers | AjaxControlToolkit.FilterTypes.Custom;
                             filter.ValidChars = "-.";
                             break;
+
                         case "int16":
                         case "int32":
                         case "int64":
@@ -213,6 +211,7 @@ namespace InventarioHSC.Forms.Reportes
                             filter.FilterType = AjaxControlToolkit.FilterTypes.Numbers | AjaxControlToolkit.FilterTypes.Custom;
                             filter.ValidChars = "-";
                             break;
+
                         case "byte":
                             filter.Enabled = true;
                             filter.FilterType = AjaxControlToolkit.FilterTypes.Numbers;
@@ -220,6 +219,7 @@ namespace InventarioHSC.Forms.Reportes
                     }
 
                     break;
+
                 case "txtm":
                     txtm.Visible = true;
 
@@ -228,14 +228,17 @@ namespace InventarioHSC.Forms.Reportes
 
                     txtm.MaxLength = Longitud;
                     break;
+
                 case "chk":
                     chkv.Visible = true;
                     break;
+
                 case "lchk":
                     pnl.Visible = true;
                     chkl.Visible = true;
                     CargaCatalogoChk(ref chkl, hdd2.Value, hddConexion.Value);
                     break;
+
                 case "lst":
                     ddl.Visible = true;
                     CargaCatalogoLst(ref ddl, hdd2.Value, hddConexion.Value);
@@ -299,6 +302,7 @@ namespace InventarioHSC.Forms.Reportes
                                     else
                                         hddValor.Value = txt.Text.Trim();
                                     break;
+
                                 case "decimal":
                                 case "double":
                                 case "single":
@@ -309,6 +313,7 @@ namespace InventarioHSC.Forms.Reportes
                                     else
                                         hddValor.Value = txt.Text.Trim();
                                     break;
+
                                 case "int16":
                                 case "int32":
                                 case "int64":
@@ -319,6 +324,7 @@ namespace InventarioHSC.Forms.Reportes
                                     else
                                         hddValor.Value = txt.Text.Trim();
                                     break;
+
                                 case "byte":
                                     byte testB = 0;
 
@@ -327,12 +333,14 @@ namespace InventarioHSC.Forms.Reportes
                                     else
                                         hddValor.Value = txt.Text.Trim();
                                     break;
+
                                 case "boolean":
                                     if (chkv.Checked)
                                         hddValor.Value = "1";
                                     else
                                         hddValor.Value = "0";
                                     break;
+
                                 default:
                                     if (string.IsNullOrWhiteSpace(txt.Text))
                                     {
@@ -353,18 +361,21 @@ namespace InventarioHSC.Forms.Reportes
                                     break;
                             }
                             break;
+
                         case "txtm":
                             if (string.IsNullOrWhiteSpace(txtm.Text))
                                 Errores += "Filtro #" + w.ToString().PadLeft(2, Convert.ToChar("0")) + ": Filtro vacío." + "<br/>";
                             else
                                 hddValor.Value = txtm.Text.Trim();
                             break;
+
                         case "chk":
                             if (chkv.Checked)
                                 hddValor.Value = "1";
                             else
                                 hddValor.Value = "0";
                             break;
+
                         case "lchk":
                             string Cadena = ArmadoCadena(chkl);
 
@@ -373,6 +384,7 @@ namespace InventarioHSC.Forms.Reportes
                             else
                                 hddValor.Value = Cadena;
                             break;
+
                         case "lst":
                             if (ddl.SelectedIndex > 0)
                                 hddValor.Value = ddl.SelectedValue;
@@ -400,6 +412,7 @@ namespace InventarioHSC.Forms.Reportes
                                             else
                                                 hddValor.Value = txt.Text.Trim();
                                             break;
+
                                         case "decimal":
                                         case "double":
                                         case "single":
@@ -410,6 +423,7 @@ namespace InventarioHSC.Forms.Reportes
                                             else
                                                 hddValor.Value = txt.Text.Trim();
                                             break;
+
                                         case "int16":
                                         case "int32":
                                         case "int64":
@@ -420,6 +434,7 @@ namespace InventarioHSC.Forms.Reportes
                                             else
                                                 hddValor.Value = txt.Text.Trim();
                                             break;
+
                                         case "byte":
                                             byte testB = 0;
 
@@ -428,12 +443,14 @@ namespace InventarioHSC.Forms.Reportes
                                             else
                                                 hddValor.Value = txt.Text.Trim();
                                             break;
+
                                         case "boolean":
                                             if (chkv.Checked)
                                                 hddValor.Value = "1";
                                             else
                                                 hddValor.Value = "0";
                                             break;
+
                                         default:
                                             if (string.IsNullOrWhiteSpace(txt.Text))
                                                 hddValor.Value = "";
@@ -455,18 +472,21 @@ namespace InventarioHSC.Forms.Reportes
                                     }
                                 }
                                 break;
+
                             case "txtm":
                                 if (string.IsNullOrWhiteSpace(txtm.Text))
                                     hddValor.Value = "";
                                 else
                                     hddValor.Value = txtm.Text.Trim();
                                 break;
+
                             case "chk":
                                 if (chkv.Checked)
                                     hddValor.Value = "1";
                                 else
                                     hddValor.Value = "0";
                                 break;
+
                             case "lchk":
                                 string Cadena = ArmadoCadena(chkl);
 
@@ -475,6 +495,7 @@ namespace InventarioHSC.Forms.Reportes
                                 else
                                     hddValor.Value = Cadena;
                                 break;
+
                             case "lst":
                                 if (ddl.SelectedIndex > 0)
                                     hddValor.Value = ddl.SelectedValue;
@@ -508,7 +529,6 @@ namespace InventarioHSC.Forms.Reportes
         //        hddNombre = (HiddenField)grdParams.Rows[w].FindControl("hddNombre");
         //        hddLongitud = (HiddenField)grdParams.Rows[w].FindControl("hddLongitud");
         //        int.TryParse(hddLongitud.Value, out Longitud);
-
 
         //        Params[w] = new string[] { hddNombre.Value, hddValor.Value, hddTipoDato.Value.ToLowerInvariant(), Longitud.ToString() };
         //    }

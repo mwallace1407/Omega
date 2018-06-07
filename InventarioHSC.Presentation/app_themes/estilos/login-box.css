@@ -8,12 +8,11 @@
     padding: 5px;
     font-weight: bold;
 }
-.Textbox:focus 
+.Textbox:focus
 {
     background: transparent url('../Imagenes/inputloginOrange.png') no-repeat left top;
 }
-.Textbox:active 
+.Textbox:active
 {
     background: transparent url('../Imagenes/inputloginOrange.png') no-repeat left top;
 }
-

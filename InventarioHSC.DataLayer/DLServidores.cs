@@ -1,23 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
-using System.Data;
-using InventarioHSC.Model;
-using Microsoft.Practices.EnterpriseLibrary.Data;
-using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
-using System.Data.Common;
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
+using InventarioHSC.Model;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace InventarioHSC.DataLayer
 {
     public class DLServidores
     {
         #region OpenXml
+
         static private int rowsPerSheet = 250000;
-        DataTable ResultsData = new DataTable();
+        private DataTable ResultsData = new DataTable();
 
         public string GenerarExcel(IDataReader reader, string RutaArchivos)
         {
@@ -76,7 +77,7 @@ namespace InventarioHSC.DataLayer
 
         private string ExportToOxml(bool firstTime, string fileName, string RutaArchivos)
         {
-            //Check if the file exists. 
+            //Check if the file exists.
             if (firstTime)
             {
                 Random rnd = new Random();
@@ -106,10 +107,8 @@ namespace InventarioHSC.DataLayer
                 var sheetData = new SheetData();
                 worksheetPart.Worksheet = new Worksheet(sheetData);
 
-
                 var bold1 = new Bold();
                 CellFormat cf = new CellFormat();
-
 
                 // Add Sheets to the Workbook.
                 Sheets sheets;
@@ -231,6 +230,7 @@ namespace InventarioHSC.DataLayer
 
             return fileName;
         }
+
         #endregion OpenXml
 
         public string RegistrarCinta(DatosGenerales.TiposRespaldoCintas Tipo, int Obj_Id, string RC_Cinta, string RC_Observaciones, DateTime RC_FechaRespaldo)
@@ -253,7 +253,6 @@ namespace InventarioHSC.DataLayer
                 db.AddInParameter(selectCommand, "@RC_FechaRespaldo", DbType.DateTime, RC_FechaRespaldo);
 
                 MensajeBD = db.ExecuteDataSet(selectCommand);
-
             }
             catch (Exception ex)
             {
@@ -283,7 +282,6 @@ namespace InventarioHSC.DataLayer
                 db.AddInParameter(selectCommand, "@RC_FechaRespaldo", DbType.DateTime, RC_FechaRespaldo);
 
                 MensajeBD = db.ExecuteDataSet(selectCommand);
-
             }
             catch (Exception ex)
             {
@@ -438,7 +436,6 @@ namespace InventarioHSC.DataLayer
                 db.AddInParameter(selectCommand, "@SrvCT_Descripcion", DbType.String, SrvCT_Descripcion);
 
                 MensajeBD = db.ExecuteDataSet(selectCommand);
-
             }
             catch (Exception ex)
             {
@@ -465,7 +462,6 @@ namespace InventarioHSC.DataLayer
                 db.AddInParameter(selectCommand, "@UserName", DbType.String, UserName);
 
                 MensajeBD = db.ExecuteDataSet(selectCommand);
-
             }
             catch (Exception ex)
             {
@@ -482,7 +478,7 @@ namespace InventarioHSC.DataLayer
             Database db = EnterpriseLibraryContainer.Current.GetInstance<Database>("Inventario");
             StringBuilder sqlCommand = new StringBuilder();
             DbCommand selectCommand = null;
-            
+
             try
             {
                 selectCommand = db.GetSqlStringCommand("sptI_RegistrarTarea");

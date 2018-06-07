@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
@@ -122,7 +120,7 @@ namespace InventarioHSC.Forms.Reportes
                                       ArmadoCadena(chkEmpleados));
 
             Response.Redirect("DocumentosUsuario.aspx");
-           
+
             //btnProcesar.Enabled = true;
             //LimpiarControles(false);
         }

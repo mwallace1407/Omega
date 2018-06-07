@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace InventarioHSC.Model
+﻿namespace InventarioHSC.Model
 {
     public class ReporteGeneral
     {
@@ -14,6 +9,7 @@ namespace InventarioHSC.Model
             get { return _id; }
             set { _id = value; }
         }
+
         private string _NoSerie;
 
         public string noSerie
@@ -21,6 +17,7 @@ namespace InventarioHSC.Model
             get { return _NoSerie; }
             set { _NoSerie = value; }
         }
+
         private int _idTipoEquipo;
 
         public int idTipoEquipo
@@ -28,6 +25,7 @@ namespace InventarioHSC.Model
             get { return _idTipoEquipo; }
             set { _idTipoEquipo = value; }
         }
+
         private string _TipoEquipo;
 
         public string tipoEquipo
@@ -35,6 +33,7 @@ namespace InventarioHSC.Model
             get { return _TipoEquipo; }
             set { _TipoEquipo = value; }
         }
+
         private int _idMarca;
 
         public int idMarca
@@ -42,6 +41,7 @@ namespace InventarioHSC.Model
             get { return _idMarca; }
             set { _idMarca = value; }
         }
+
         private string _Marca;
 
         public string marca
@@ -49,6 +49,7 @@ namespace InventarioHSC.Model
             get { return _Marca; }
             set { _Marca = value; }
         }
+
         private string _Modelo;
 
         public string modelo
@@ -56,6 +57,7 @@ namespace InventarioHSC.Model
             get { return _Modelo; }
             set { _Modelo = value; }
         }
+
         private string _Procesador;
 
         public string procesador
@@ -63,6 +65,7 @@ namespace InventarioHSC.Model
             get { return _Procesador; }
             set { _Procesador = value; }
         }
+
         private string _RAM;
 
         public string rAM
@@ -70,6 +73,7 @@ namespace InventarioHSC.Model
             get { return _RAM; }
             set { _RAM = value; }
         }
+
         private string _DiscoDuro;
 
         public string discoDuro
@@ -77,6 +81,7 @@ namespace InventarioHSC.Model
             get { return _DiscoDuro; }
             set { _DiscoDuro = value; }
         }
+
         private int _idSistema;
 
         public int idSistema
@@ -84,6 +89,7 @@ namespace InventarioHSC.Model
             get { return _idSistema; }
             set { _idSistema = value; }
         }
+
         private string _SistemaOperativo;
 
         public string sistemaOperativo
@@ -91,6 +97,7 @@ namespace InventarioHSC.Model
             get { return _SistemaOperativo; }
             set { _SistemaOperativo = value; }
         }
+
         private int _idProveedor;
 
         public int idProveedor
@@ -98,6 +105,7 @@ namespace InventarioHSC.Model
             get { return _idProveedor; }
             set { _idProveedor = value; }
         }
+
         private string _Proveedor;
 
         public string proveedor
@@ -105,6 +113,7 @@ namespace InventarioHSC.Model
             get { return _Proveedor; }
             set { _Proveedor = value; }
         }
+
         private string _Factura;
 
         public string factura
@@ -112,6 +121,7 @@ namespace InventarioHSC.Model
             get { return _Factura; }
             set { _Factura = value; }
         }
+
         private string _FechaCompra;
 
         public string fechaCompra
@@ -119,6 +129,7 @@ namespace InventarioHSC.Model
             get { return _FechaCompra; }
             set { _FechaCompra = value; }
         }
+
         private string _Requisicion;
 
         public string requisicion
@@ -126,6 +137,7 @@ namespace InventarioHSC.Model
             get { return _Requisicion; }
             set { _Requisicion = value; }
         }
+
         private string _CentroCostosAdquisicion;
 
         public string centroCostosAdquisicion
@@ -133,6 +145,7 @@ namespace InventarioHSC.Model
             get { return _CentroCostosAdquisicion; }
             set { _CentroCostosAdquisicion = value; }
         }
+
         private string _Responsiva;
 
         public string responsiva
@@ -140,6 +153,7 @@ namespace InventarioHSC.Model
             get { return _Responsiva; }
             set { _Responsiva = value; }
         }
+
         private string _ValorPesos;
 
         public string valorPesos
@@ -147,6 +161,7 @@ namespace InventarioHSC.Model
             get { return _ValorPesos; }
             set { _ValorPesos = value; }
         }
+
         private string _ValorUSD;
 
         public string valorUSD
@@ -154,6 +169,7 @@ namespace InventarioHSC.Model
             get { return _ValorUSD; }
             set { _ValorUSD = value; }
         }
+
         private string _Stock;
 
         public string stock
@@ -161,6 +177,7 @@ namespace InventarioHSC.Model
             get { return _Stock; }
             set { _Stock = value; }
         }
+
         private string _CodigoCastor;
 
         public string codigoCastor
@@ -168,6 +185,7 @@ namespace InventarioHSC.Model
             get { return _CodigoCastor; }
             set { _CodigoCastor = value; }
         }
+
         private int _idUsuario;
 
         public int idUsuario
@@ -175,6 +193,7 @@ namespace InventarioHSC.Model
             get { return _idUsuario; }
             set { _idUsuario = value; }
         }
+
         private string _UsuarioAsignado;
 
         public string usuarioAsignado
@@ -182,6 +201,7 @@ namespace InventarioHSC.Model
             get { return _UsuarioAsignado; }
             set { _UsuarioAsignado = value; }
         }
+
         private int _idUbicacion;
 
         public int idUbicacion
@@ -189,6 +209,7 @@ namespace InventarioHSC.Model
             get { return _idUbicacion; }
             set { _idUbicacion = value; }
         }
+
         private string _Ubicacion;
 
         public string ubicacion
@@ -196,6 +217,7 @@ namespace InventarioHSC.Model
             get { return _Ubicacion; }
             set { _Ubicacion = value; }
         }
+
         private int _idEstado;
 
         public int idEstado
@@ -203,6 +225,7 @@ namespace InventarioHSC.Model
             get { return _idEstado; }
             set { _idEstado = value; }
         }
+
         private string _EstadoConservacion;
 
         public string estadoConservacion
@@ -210,6 +233,7 @@ namespace InventarioHSC.Model
             get { return _EstadoConservacion; }
             set { _EstadoConservacion = value; }
         }
+
         private string _Observacion1;
 
         public string observacion1
@@ -217,6 +241,7 @@ namespace InventarioHSC.Model
             get { return _Observacion1; }
             set { _Observacion1 = value; }
         }
+
         private string _Observacion2;
 
         public string observacion2
@@ -224,6 +249,7 @@ namespace InventarioHSC.Model
             get { return _Observacion2; }
             set { _Observacion2 = value; }
         }
+
         private string _Observacion3;
 
         public string observacion3
@@ -231,6 +257,7 @@ namespace InventarioHSC.Model
             get { return _Observacion3; }
             set { _Observacion3 = value; }
         }
+
         private bool _PosibleFaltanteFlag;
 
         public bool posibleFaltanteFlag
@@ -238,6 +265,7 @@ namespace InventarioHSC.Model
             get { return _PosibleFaltanteFlag; }
             set { _PosibleFaltanteFlag = value; }
         }
+
         private string _CambioRYS;
 
         public string cambioRYS
@@ -245,6 +273,7 @@ namespace InventarioHSC.Model
             get { return _CambioRYS; }
             set { _CambioRYS = value; }
         }
+
         private string _FechaMovimiento;
 
         public string fechaMovimiento

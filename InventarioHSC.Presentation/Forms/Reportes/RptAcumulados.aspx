@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Reporte de acumulados" Language="C#" MasterPageFile="~/Forms/Main.Master" AutoEventWireup="true" CodeBehind="RptAcumulados.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptAcumulados" %>
+﻿<%@ Page Title="Reporte de acumulados" Language="C#" MasterPageFile="~/Forms/Main.Master"
+    AutoEventWireup="true" CodeBehind="RptAcumulados.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptAcumulados" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Register Src="~/Forms/Controles/uscMsgBox.ascx" TagPrefix="uc1" TagName="uscMsgBox" %>
@@ -174,4 +175,3 @@
     </div>
     <uc1:uscMsgBox ID="uscMsgBox1" runat="server" />
 </asp:Content>
-

@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.Common;
+using System.Text;
 using InventarioHSC.Model;
-using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace InventarioHSC.DataLayer
 {
@@ -24,7 +23,7 @@ namespace InventarioHSC.DataLayer
             sqlCommand.AppendLine("      USR.UserName AS UserName ");
             sqlCommand.AppendLine("    , USR.Comment AS NombreCompleto ");
             sqlCommand.AppendLine("    , USR.IsLockedOut AS EstaBloqueado ");
-            
+
             sqlCommand.AppendLine("FROM ");
             sqlCommand.AppendLine("    vw_aspnet_MembershipUsers	USR ");
             sqlCommand.AppendLine("LEFT JOIN ");
@@ -44,7 +43,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
 
@@ -95,7 +93,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
 
@@ -146,7 +143,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
 

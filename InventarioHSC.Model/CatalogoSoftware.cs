@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace InventarioHSC.Model
+﻿namespace InventarioHSC.Model
 {
     public class CatalogoSoftware
     {
-        int _id;
-        int _idEmpresa;
-        int _idGrupo;
-        string _descripcion;
-        string _version;
-        bool _estatus;
+        private int _id;
+        private int _idEmpresa;
+        private int _idGrupo;
+        private string _descripcion;
+        private string _version;
+        private bool _estatus;
 
         public int id
         {

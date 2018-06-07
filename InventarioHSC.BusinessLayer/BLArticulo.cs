@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using InventarioHSC.Model;
 using InventarioHSC.DataLayer;
-using System.Web.UI.WebControls;
-
-
+using InventarioHSC.Model;
 
 namespace InventarioHSC.BusinessLayer
 {
@@ -20,8 +15,8 @@ namespace InventarioHSC.BusinessLayer
 
         public BLArticulo()
         {
-
         }
+
         public BLArticulo(Articulo oArticulo)
         {
             objectArticulo = oArticulo;
@@ -54,7 +49,6 @@ namespace InventarioHSC.BusinessLayer
                 {
                     sMensaje = validaRequeridosAlta();
                 }
-
             }
             else
             {
@@ -82,7 +76,6 @@ namespace InventarioHSC.BusinessLayer
                 {
                     sMensaje = validaRequeridosAlta();
                 }
-
             }
             else
             {
@@ -212,7 +205,6 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
 
@@ -296,7 +288,7 @@ namespace InventarioHSC.BusinessLayer
             int iIDUsuario = Convert.ToInt32(a_Params[2]);
             int iIDUbicacion = Convert.ToInt32(a_Params[3]);
             int iIDTipoEquipo = Convert.ToInt32(a_Params[4]);
-            
+
             List<Total> l_lstTotal = new List<Total>();
             l_lstTotal = DataLayerArticulo.getTotalesFiltered(sNoSerie, sResponsiva, iIDUsuario, iIDUbicacion, iIDTipoEquipo, i_id);
 
@@ -307,10 +299,8 @@ namespace InventarioHSC.BusinessLayer
         //{
         //    List<ArticuloHeader> lstHeader = new List<ArticuloHeader>();
 
-
         //    foreach (DataKey dk in grvSource.DataKeys)
         //    {
-                
         //    }
         //    //foreach (GridViewRow grvs in grvSource.Rows)
         //    //{
@@ -318,7 +308,6 @@ namespace InventarioHSC.BusinessLayer
 
         //    //}
         //}
-
 
         public List<Articulo> getResponsivaAnterior(int responsi, int idUsuario)
         {

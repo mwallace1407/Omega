@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.Common;
+using System.Text;
 using InventarioHSC.Model;
-using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace InventarioHSC.DataLayer
 {
@@ -14,7 +13,6 @@ namespace InventarioHSC.DataLayer
     {
         public DLProveedor()
         {
-
         }
 
         public Proveedor getProveedorID(int idProveedor)
@@ -40,7 +38,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
 
@@ -78,7 +75,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
 
@@ -121,9 +117,8 @@ namespace InventarioHSC.DataLayer
                 ds = db.ExecuteDataSet(selectCommand);
 
                 List<Proveedor> lstProveedor = new List<Proveedor>();
-                if (ds.Tables[0].Rows.Count > 0)   
+                if (ds.Tables[0].Rows.Count > 0)
                 {
-
                     foreach (DataRow dr in ds.Tables[0].Rows)
                     {
                         Proveedor oProveedor = new Proveedor();
@@ -136,11 +131,9 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
         }
-
 
         public void InsertProveedor(ref Proveedor oProveedor)
         {
@@ -177,7 +170,7 @@ namespace InventarioHSC.DataLayer
             DbCommand dbCommand = db.GetSqlStringCommand(sqlCommand.ToString());
 
             db.AddInParameter(dbCommand, "@pDescripcion", DbType.String, oProveedor.descripcion);
-            db.AddInParameter(dbCommand, "@pEstatus", DbType.Boolean, oProveedor.estatus =="ACTIVO"?1:0);
+            db.AddInParameter(dbCommand, "@pEstatus", DbType.Boolean, oProveedor.estatus == "ACTIVO" ? 1 : 0);
             db.AddInParameter(dbCommand, "@pidProveedor", DbType.Int32, oProveedor.idProveedor);
 
             try

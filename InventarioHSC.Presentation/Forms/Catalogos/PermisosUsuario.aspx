@@ -89,8 +89,8 @@
                     <br />
                     <asp:Button ID="btnProcesar" runat="server" Text="Procesar" CssClass="boton" OnClick="btnProcesar_Click"
                         Enabled="False" />&nbsp&nbsp
-                        <br />
-                        <asp:Button ID="btnNueva" runat="server" Text="Nueva búsqueda" CssClass="boton" OnClick="btnNueva_Click"
+                    <br />
+                    <asp:Button ID="btnNueva" runat="server" Text="Nueva búsqueda" CssClass="boton" OnClick="btnNueva_Click"
                         Enabled="False" />&nbsp&nbsp
                 </div>
             </div>

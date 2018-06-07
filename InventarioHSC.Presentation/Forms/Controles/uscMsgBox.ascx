@@ -46,8 +46,8 @@
             <asp:Panel ID="pnlMsgHD" runat="server" CssClass="mpHd" HorizontalAlign="Center">
                 Mensaje
             </asp:Panel>
-            <asp:GridView ID="grvMsg" runat="server" ShowHeader="false" Width="100%" 
-                AutoGenerateColumns="false" BorderWidth="0px">
+            <asp:GridView ID="grvMsg" runat="server" ShowHeader="false" Width="100%" AutoGenerateColumns="false"
+                BorderWidth="0px">
                 <Columns>
                     <asp:TemplateField>
                         <ItemTemplate>
@@ -69,7 +69,8 @@
                 </Columns>
             </asp:GridView>
             <div class="mpClose">
-                <asp:Button ID="btnOK" runat="server" Text="OK" OnClick="btnOK_Click" CausesValidation="false" Width="60px" />
+                <asp:Button ID="btnOK" runat="server" Text="OK" OnClick="btnOK_Click" CausesValidation="false"
+                    Width="60px" />
                 <asp:Button ID="btnPostOK" runat="server" Text="OK" CausesValidation="false" OnClick="btnPostOK_Click"
                     Visible="false" Width="60px" />
                 <asp:Button ID="btnPostCancel" runat="server" Text="Cancel" CausesValidation="false"

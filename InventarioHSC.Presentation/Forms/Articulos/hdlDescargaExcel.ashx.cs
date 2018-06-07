@@ -1,22 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Services;
 using System.IO;
 using System.Text;
+using System.Web;
+using System.Web.Services;
 
 namespace InventarioHSC.Forms.Articulos
 {
     /// <summary>
     /// Summary description for hdlDescargaExcel
     /// </summary>
-    /// 
+    ///
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     public class hdlDescargaExcel : IHttpHandler
     {
-
         public void ProcessRequest(HttpContext context)
         {
             try
@@ -41,7 +38,7 @@ namespace InventarioHSC.Forms.Articulos
                 context.Response.ContentType = "application/xlsx";
                 context.Response.AddHeader("Content-Disposition", "attachment;filename=" + sNomArch);
                 context.Response.Charset = "UTF-8"; //"UTF-8" "ISO-8859-1"
-                context.Response.ContentEncoding = Encoding.GetEncoding("UTF-8"); //"UTF-8" "ISO-8859-1"          
+                context.Response.ContentEncoding = Encoding.GetEncoding("UTF-8"); //"UTF-8" "ISO-8859-1"
                 context.Response.OutputStream.Write(bArray, 0, bArray.Length);
                 context.Response.End();
             }

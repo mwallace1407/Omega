@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using InventarioHSC.Model;
 using InventarioHSC.BusinessLayer;
 
 namespace InventarioHSC.Forms.Reportes
@@ -29,7 +25,6 @@ namespace InventarioHSC.Forms.Reportes
             grdDatos.Columns[CeldaConexion].Visible = false;
             grdDatos.Columns[CeldaScript].Visible = false;
             grdDatos.Columns[CeldaAutorizado].Visible = false;
-
         }
 
         protected void Page_Load(object sender, EventArgs e)

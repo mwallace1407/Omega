@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Forms/Main.Master" AutoEventWireup="true" CodeBehind="CatalogoGruposSoftware.aspx.cs" Inherits="InventarioHSC.Forms.Catalogos.CatalogoGruposSoftware" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Forms/Main.Master" AutoEventWireup="true"
+    CodeBehind="CatalogoGruposSoftware.aspx.cs" Inherits="InventarioHSC.Forms.Catalogos.CatalogoGruposSoftware" %>
 
 <%@ Register Src="~/Forms/Controles/uscMsgBox.ascx" TagPrefix="uc" TagName="uscMsgBox" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
@@ -41,7 +42,7 @@
                         <br />
                         <div style="width: 355px; text-align: right;">
                             <asp:Button ID="btnAgregar" runat="server" CssClass="boton" Text="Agregar" Width="120px"
-                                CausesValidation="true" onclick="btnAgregar_Click" />
+                                CausesValidation="true" OnClick="btnAgregar_Click" />
                         </div>
                     </ContentTemplate>
                 </asp:UpdatePanel>
@@ -50,7 +51,7 @@
             <br />
             <div id="Div1" style="text-align: center;">
                 <asp:Button ID="btnSalir" runat="server" CssClass="boton" Text="Salir" Width="120px"
-                    CausesValidation="false" onclick="btnSalir_Click" />
+                    CausesValidation="false" OnClick="btnSalir_Click" />
             </div>
             <br />
         </div>

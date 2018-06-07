@@ -1,5 +1,5 @@
-﻿<%@ Page Title="Reporte para el inventario de software" Language="C#" MasterPageFile="~/Forms/Main.Master" AutoEventWireup="true"
-    CodeBehind="RptInventarioSW.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptInventarioSW" %>
+﻿<%@ Page Title="Reporte para el inventario de software" Language="C#" MasterPageFile="~/Forms/Main.Master"
+    AutoEventWireup="true" CodeBehind="RptInventarioSW.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptInventarioSW" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Register Src="~/Forms/Controles/uscMsgBox.ascx" TagPrefix="uc1" TagName="uscMsgBox" %>

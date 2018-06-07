@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace InventarioHSC.Model
+﻿namespace InventarioHSC.Model
 {
     public class TipoMovimiento
     {
@@ -16,11 +11,13 @@ namespace InventarioHSC.Model
             get { return _idTipoMovimiento; }
             set { _idTipoMovimiento = value; }
         }
+
         public string descripcion
         {
             get { return _descripcion; }
             set { _descripcion = value; }
         }
+
         public bool estatus
         {
             get { return _estatus; }

@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Reporte de horario laboral" Language="C#" MasterPageFile="~/Forms/Main.Master" AutoEventWireup="true" CodeBehind="RptHorarioLaboral.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptHorarioLaboral" %>
+﻿<%@ Page Title="Reporte de horario laboral" Language="C#" MasterPageFile="~/Forms/Main.Master"
+    AutoEventWireup="true" CodeBehind="RptHorarioLaboral.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptHorarioLaboral" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headMaster" runat="server">

@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
@@ -248,8 +246,6 @@ namespace InventarioHSC.Forms.Reportes
                     chkCuentas.Items[0].Selected = false;
                 else
                     chkCuentas.Items[0].Selected = true;
-
-                
             }
         }
     }

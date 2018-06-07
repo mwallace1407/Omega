@@ -27,8 +27,8 @@
                     Servidor:
                 </div>
                 <div style="width: 275px; float: right; text-align: left;">
-                    <asp:DropDownList ID="ddlServidor" runat="server" Width="202" 
-                        OnSelectedIndexChanged="ddlServidor_SelectedIndexChanged" AutoPostBack="True">
+                    <asp:DropDownList ID="ddlServidor" runat="server" Width="202" OnSelectedIndexChanged="ddlServidor_SelectedIndexChanged"
+                        AutoPostBack="True">
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator ID="rfv_ddlServidor" runat="server" ErrorMessage="Campo requerido"
                         Display="None" ControlToValidate="ddlServidor" InitialValue="0" SetFocusOnError="True"></asp:RequiredFieldValidator>

@@ -158,8 +158,8 @@
                                 <br />
                                 <asp:RadioButton ID="rbMultiple" runat="server" Text="Carga masiva" GroupName="opt" />
                                 &nbsp (<asp:HyperLink ID="lnkDown" runat="server" NavigateUrl="~/Forms/Servidores/Ejemplo.xlsx">Descargar plantilla</asp:HyperLink>)
-                                <asp:ImageButton ID="btnHelp" runat="server" Height="16px" 
-                                    ImageUrl="~/App_Themes/Imagenes/Question.png" Width="16px" />
+                                <asp:ImageButton ID="btnHelp" runat="server" Height="16px" ImageUrl="~/App_Themes/Imagenes/Question.png"
+                                    Width="16px" />
                                 <br />
                                 <br />
                                 <asp:Button ID="btnSiguiente" runat="server" Text="Siguiente" CssClass="boton" OnClick="btnSiguiente_Click" />

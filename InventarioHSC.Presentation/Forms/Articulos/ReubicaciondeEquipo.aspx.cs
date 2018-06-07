@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
 using InventarioHSC.Model;
@@ -13,7 +11,7 @@ namespace InventarioHSC
     public partial class ReubicaciondeEquipo : System.Web.UI.Page
     {
         public BLArticulo oblArticulo = new BLArticulo();
-        List<Articulo> lstAgregar = new List<Articulo>();
+        private List<Articulo> lstAgregar = new List<Articulo>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -42,12 +40,12 @@ namespace InventarioHSC
 
             oblCatalogos.CargaUbicacionBodegas(ref ddlUbicacionDestino);
             ddlUbicacionDestino.DataBind();
-
         }
+
         //no serie Usuario ubicación tipo equipo
         protected void chklstFiltros_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //ubicación 
+            //ubicación
             if (chklstFiltros.Items[0].Selected)
             {
                 ddlUbicacion.Enabled = true;
@@ -60,7 +58,7 @@ namespace InventarioHSC
                 ddlUbicacion.SelectedIndex = 0;
             }
 
-            //Usuario 
+            //Usuario
             if (chklstFiltros.Items[1].Selected)
             {
                 ddlUsuario.Enabled = true;
@@ -120,7 +118,7 @@ namespace InventarioHSC
                     CambiaEstadoNotificacion("Warning", true, "Se debe seleccionar un usuario válido.");
                     return;
                 }
-                
+
                 if (chklstFiltros.Items[2].Selected && ddlTipoArticulo.SelectedItem.Text.Trim() == string.Empty)
                 {
                     CambiaEstadoNotificacion("Warning", true, "Se debe seleccionar un Tipo de Articulo válido.");
@@ -251,8 +249,6 @@ namespace InventarioHSC
                 }
                 //else
                 //{
-                    
-
                 //    foreach (int item in lstUsuario)
                 //    {
                 //        string NumeroResponsiva = objectResponsiva.GeneraNoResponsiva();
@@ -277,7 +273,7 @@ namespace InventarioHSC
                 //            BLArticulo oblArticulo = new BLArticulo(itemArticulo);
                 //            sMensaje = oblArticulo.actualizaArticulo();
                 //            articuloHistorico.IdUsuarioNuevo = itemArticulo.idUsuario;
-                //            oblArticulo.InsertArticuloHistorico(articuloHistorico); 
+                //            oblArticulo.InsertArticuloHistorico(articuloHistorico);
                 //        }
                 //    }
                 //}
@@ -310,6 +306,5 @@ namespace InventarioHSC
                 LabelInfo.Text = Mensaje;
             }
         }
-
     }
 }

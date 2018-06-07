@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using InventarioHSC.Model;
@@ -44,7 +41,7 @@ namespace InventarioHSC.Forms.Operacion
                     binWriter.Write(Datos);
                     binWriter.Close();
                     ltlDescarga.Text = "<a href='" + DatosGenerales.RutaReportesDinamicos + System.IO.Path.GetFileName(Archivo) + "' class='HyperLink'>Descargar archivo</a>";
-                    
+
                     WS_Excel.ExportarSoapClient exportar = new WS_Excel.ExportarSoapClient();
 
                     exportar.RegistrarArchivoTempGeneral((int)DatosGenerales.TiposDocumentos.Constancias, Session["UserNameLogin"].ToString(), System.IO.Path.GetFileName(Archivo), true);
@@ -80,7 +77,7 @@ namespace InventarioHSC.Forms.Operacion
                     WS_PDF.GenerarSoapClient wsGenerarPDF = new WS_PDF.GenerarSoapClient();
                     WS_PDF.Archivo archivoPDF;
 
-                    if(ddlTipoCliente.SelectedItem.Text == "Acreditado")
+                    if (ddlTipoCliente.SelectedItem.Text == "Acreditado")
                         archivoPDF = wsGenerarPDF.GenerarPDF(Numero_Prestamo, WS_PDF.TipoPDF.Acreditado, Anno, 100, "1", chkForzar.Checked);
                     else
                         archivoPDF = wsGenerarPDF.GenerarPDF(Numero_Prestamo, WS_PDF.TipoPDF.Coacreditado, Anno, 100, "1", chkForzar.Checked);

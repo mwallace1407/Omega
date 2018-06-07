@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Web.UI.WebControls;
-using InventarioHSC.Model;
 using InventarioHSC.DataLayer;
+using InventarioHSC.Model;
 
 namespace InventarioHSC.BusinessLayer
 {
@@ -12,7 +11,6 @@ namespace InventarioHSC.BusinessLayer
     {
         public BLUsuario()
         {
-
         }
 
         public List<Usuario> ObtieneUsuarioAll()
@@ -29,7 +27,6 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
 
@@ -75,7 +72,6 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return objUsuario.idUsuario;
@@ -105,11 +101,9 @@ namespace InventarioHSC.BusinessLayer
                 {
                     odlUsuario.UpdateUsuario(ref objUsuario);
                 }
-
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return TotalArticulos;
@@ -126,13 +120,13 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return TotalArticulos;
         }
 
         #region Permisos_Usuarios
+
         public void BuscarUsuarioPermisos(ref DropDownList oddlUsu, string strBusqueda)
         {
             DLUsuario odlUsuario = new DLUsuario();
@@ -155,6 +149,7 @@ namespace InventarioHSC.BusinessLayer
 
             return odlUsuario.ActualizaPermisosUsuario(UserId, idMenu, Usu_Autorizado);
         }
+
         #endregion Permisos_Usuarios
     }
 }

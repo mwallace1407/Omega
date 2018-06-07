@@ -24,12 +24,10 @@
     <br />
     <br />
     <div id="contenidoLogueado2" runat="server">
-        <div class="ui-state-error" id="Warning" runat="server" visible="false" 
-            style="text-align: left">
+        <div class="ui-state-error" id="Warning" runat="server" visible="false" style="text-align: left">
             <span class="ui-icon ui-icon-alert" style="float: left"></span><strong>
                 <asp:Label ID="LabelError" runat="server" Text=""></asp:Label></strong></div>
-        <div class="ui-state-highlight" id="Info" runat="server" visible="false" 
-            style="text-align: left">
+        <div class="ui-state-highlight" id="Info" runat="server" visible="false" style="text-align: left">
             <span class="ui-icon ui-icon-info" style="float: left"></span><strong>
                 <asp:Label ID="LabelInfo" runat="server" Text=""></asp:Label></strong></div>
         <div id="space" class="MainDiv">
@@ -79,7 +77,7 @@
                 </asp:UpdatePanel>
             </div>
             <br />
-            <div id="Botones" >
+            <div id="Botones">
                 <asp:Button ID="btnSalir" runat="server" CssClass="ui-corner-all ui-state-default cancel"
                     Text="Salir" Width="120px" OnClick="btnSalir_Click" CausesValidation="false" />
                 &nbsp;

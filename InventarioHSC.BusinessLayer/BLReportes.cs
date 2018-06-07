@@ -1,20 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using InventarioHSC.DataLayer;
-using InventarioHSC.Model;
-using System.Web.UI.WebControls;
-using Microsoft.Reporting.WebForms;
 using System.Data;
 using System.Threading;
+using System.Web.UI.WebControls;
+using InventarioHSC.DataLayer;
+using InventarioHSC.Model;
 
 namespace InventarioHSC.BusinessLayer
 {
     public class BLReportes
     {
         public BLReportes()
-        { 
+        {
         }
 
         public string RegresaIndexTipoActivo()
@@ -26,7 +23,7 @@ namespace InventarioHSC.BusinessLayer
 
             List<TipoEquipo> lstTipoEquipo = oTipoActivo.getTipoEquipoAll();
 
-            foreach(TipoEquipo sTipoActivo in lstTipoEquipo)
+            foreach (TipoEquipo sTipoActivo in lstTipoEquipo)
             {
                 sRegresa += sTipoActivo.idTipoEquipo + "|" + sTipoActivo.descripcion + "|" + iCont + "@";
                 iCont += 1;
@@ -36,6 +33,7 @@ namespace InventarioHSC.BusinessLayer
         }
 
         #region Equipos
+
         public DataTable ReporteInventarioEquipo(string idTipoEquipo, string idMarca, string idUbicacion, string idUsuario, string Responsiva, string Modelo, string NoSerie, string FechaMovimientoIni, string FechaMovimientoFin, string idEstado)
         {
             DLArticulo Reporte = new DLArticulo();
@@ -78,8 +76,11 @@ namespace InventarioHSC.BusinessLayer
 
             return Reporte.InventarioEquipos(idTipoEquipo, idMarca, idUbicacion, idUsuario, Responsiva, Modelo, NoSerie, FechaIni, FechaFin, idEstado);
         }
+
         #endregion Equipos
+
         #region Aplicaciones
+
         public DataSet ReporteInventarioSW(string SWE_Id, string SWG_Id, string SW_Descripcion, string SW_Version, string SWEx_NoParte, string SWEx_Llave, string SWEx_Ubicacion, string SWEx_Observaciones, string SWEx_EnExistencia, bool IncluirEstadisticas)
         {
             DLSoftware Reporte = new DLSoftware();
@@ -253,9 +254,13 @@ namespace InventarioHSC.BusinessLayer
 
             return sw.ReporteDiscosSrv(Srv_Id, RutaArchivos + "\\");
         }
+
         #endregion Aplicaciones
+
         #region SAP
+
         #region FICO
+
         public DataTable Balanzas(string Sociedad, string Ejercicio, string Cuenta_Mayor, string RutaArchivos)
         {
             DLSAP sap = new DLSAP();
@@ -364,8 +369,11 @@ namespace InventarioHSC.BusinessLayer
 
             return Res;
         }
+
         #endregion FICO
+
         #region RH
+
         public DataTable IngresoEmpleados(string Empleados, string RutaArchivos)
         {
             DLSAP sap = new DLSAP();
@@ -519,7 +527,7 @@ namespace InventarioHSC.BusinessLayer
 
             return Res;
         }
-        
+
         public DataTable RemuneracionEconomica(string Empleados, string RutaArchivos)
         {
             DLSAP sap = new DLSAP();
@@ -585,6 +593,7 @@ namespace InventarioHSC.BusinessLayer
 
             return Res;
         }
+
         //Acumulados(string Anio,string No_Pers, string Concepto_Nomina, string RutaArchivos)
         public DataTable Acumulados(string Anio, string Empleados, string Concepto_Nomina, string RutaArchivos)
         {
@@ -623,9 +632,13 @@ namespace InventarioHSC.BusinessLayer
 
             return sap.Documentos(Rep_Tipo, Rep_SubTipo, Rep_Anno, Rep_Clave);
         }
+
         #endregion RH
+
         #endregion SAP
+
         #region Operacion
+
         public DataTable ReporteCartasGeneradas(int? NumeroPrestamo, string NombreAcreditado, bool AplicaRangoFechas, DateTime Fechaini, DateTime Fechafin)
         {
             DLOperaciones objOp = new DLOperaciones();
@@ -662,8 +675,11 @@ namespace InventarioHSC.BusinessLayer
 
             return objOp.ReporteCartasGeneradas(NumeroPrestamo, NombreAcreditado, FechaIni, FechaFin);
         }
+
         #endregion Operacion
+
         #region Abanks
+
         public DataTable ReportePolizas(DateTime FechaIni, DateTime FechaFin, int NumeroMovimiento, string Cuenta, string DescripcionCuenta, string DescripcionEncabezado, int Moneda, bool BusquedaEstricta, string RutaArchivos)
         {
             DLOperaciones objOp = new DLOperaciones();
@@ -711,8 +727,11 @@ namespace InventarioHSC.BusinessLayer
 
             return Tabla;
         }
+
         #endregion Abanks
+
         #region Dinamicos
+
         public string InsertarCatalogo(DatosGenerales.EstiloReportesDinamicos Estilo, string Descripcion, string Script, string Conexion, bool Autorizado, string TipoDato)
         {
             DLRptDinamicos objRpt = new DLRptDinamicos();
@@ -810,9 +829,9 @@ namespace InventarioHSC.BusinessLayer
 
         public DataTable ObtenerReportesAutorizaciones(bool? Autorizado = null)
         {
-             DLRptDinamicos objRpt = new DLRptDinamicos();
+            DLRptDinamicos objRpt = new DLRptDinamicos();
 
-             return objRpt.ObtenerReportesAutorizaciones(Autorizado);
+            return objRpt.ObtenerReportesAutorizaciones(Autorizado);
         }
 
         public void ActualizarAutorizacionReporte(int Id, bool Autorizado, bool EsCat)
@@ -847,6 +866,7 @@ namespace InventarioHSC.BusinessLayer
         }
 
         #region Permisos_Usuarios
+
         public void BuscarUsuarioPermisos(ref DropDownList oddlUsu, string strBusqueda)
         {
             DLRptDinamicos odlRpt = new DLRptDinamicos();
@@ -869,6 +889,7 @@ namespace InventarioHSC.BusinessLayer
 
             return odlRpt.ActualizaPermisosUsuario(UserId, RD_Id, Usu_Autorizado);
         }
+
         #endregion Permisos_Usuarios
 
         public struct RptDinamicosParametro
@@ -902,7 +923,7 @@ namespace InventarioHSC.BusinessLayer
                 Label lblN = (Label)row.FindControl("lblNull");
                 Label lblB = (Label)row.FindControl("lblBAprox");
                 Label lblD = (Label)row.FindControl("lblDesc");
-                
+
                 Nombre = row.Cells[CeldaNombre].Text;
                 Tipo = row.Cells[CeldaTipo].Text;
                 TipoDato = row.Cells[CeldaTipoDato].Text;
@@ -927,6 +948,7 @@ namespace InventarioHSC.BusinessLayer
                 Descripcion = lblD.Text;
             }
         }
+
         #endregion Dinamicos
     }
 }

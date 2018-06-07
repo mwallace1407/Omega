@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
-using InventarioHSC.Model;
 
 namespace InventarioHSC.Forms.Operacion
 {
@@ -47,16 +43,19 @@ namespace InventarioHSC.Forms.Operacion
                     ftxt_txtFiltro.FilterType = AjaxControlToolkit.FilterTypes.Numbers;
                     lblFiltro.Text = "Crédito:";
                     break;
+
                 case "NJ":
                     txtFiltro.MaxLength = 16;
                     ftxt_txtFiltro.FilterType = AjaxControlToolkit.FilterTypes.Numbers;
                     lblFiltro.Text = "Número JIT:";
                     break;
+
                 case "NC":
                     txtFiltro.MaxLength = 6;
                     ftxt_txtFiltro.FilterType = AjaxControlToolkit.FilterTypes.Numbers;
                     lblFiltro.Text = "Número de cliente:";
                     break;
+
                 case "CL":
                     txtFiltro.MaxLength = 300;
                     ftxt_txtFiltro.FilterType = AjaxControlToolkit.FilterTypes.LowercaseLetters | AjaxControlToolkit.FilterTypes.Custom;
@@ -102,12 +101,15 @@ namespace InventarioHSC.Forms.Operacion
                     case "CR":
                         grdDatos.DataSource = objOp.BuscarCartaSHF(ddlFiltro.SelectedValue, Numero_Prestamo: Convert.ToInt32(txtFiltro.Text));
                         break;
+
                     case "NJ":
                         grdDatos.DataSource = objOp.BuscarCartaSHF(ddlFiltro.SelectedValue, Numero_Jit: txtFiltro.Text);
                         break;
+
                     case "NC":
                         grdDatos.DataSource = objOp.BuscarCartaSHF(ddlFiltro.SelectedValue, Codigo_Cliente: Convert.ToInt32(txtFiltro.Text));
                         break;
+
                     case "CL":
                         grdDatos.DataSource = objOp.BuscarCartaSHF(ddlFiltro.SelectedValue, Nombre: txtFiltro.Text);
                         break;

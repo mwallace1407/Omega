@@ -1,19 +1,16 @@
-﻿using InventarioHSC.Model;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using InventarioHSC.DataLayer;
+using InventarioHSC.Model;
 
 namespace InventarioHSC.BusinessLayer
 {
     public class BLSeguridad
     {
-        DLSeguridad objSeg = new DLSeguridad();
+        private DLSeguridad objSeg = new DLSeguridad();
 
         public bool ValidaUsuario(string sNombre, string sContraseña)
         {
-
             return objSeg.ValidaUsuario(sNombre, sContraseña);
         }
 
@@ -22,7 +19,6 @@ namespace InventarioHSC.BusinessLayer
             UsuarioSeguridad oUsuario = new UsuarioSeguridad();
 
             oUsuario = objSeg.getUserByID(UsuarioId);
-
 
             return oUsuario.nombreCompleto;
         }
@@ -33,23 +29,21 @@ namespace InventarioHSC.BusinessLayer
 
             lstRoles = objSeg.getRolesUserByID(UsuarioId);
 
-
             return lstRoles.First().RolDescripcion.ToString();
         }
+
         public List<RolSeguridad> RolesDelUsuario(string UsuarioId)
         {
             List<RolSeguridad> lstRoles = new List<RolSeguridad>();
 
             lstRoles = objSeg.getRolesUserByID(UsuarioId);
 
-
             return lstRoles;
         }
+
         public string GrupoDelUsuario(string UsuarioId)
         {
-
             return objSeg.getGrupoByUserID(UsuarioId);
-
         }
 
         public static bool AccesoPermitido(string UserId, string Pagina)
@@ -85,7 +79,7 @@ namespace InventarioHSC.BusinessLayer
         {
             DLSeguridad dlSeg = new DLSeguridad();
 
-            return dlSeg.CrearUsuario(Usuario, Email, Nombre); 
+            return dlSeg.CrearUsuario(Usuario, Email, Nombre);
         }
     }
 }

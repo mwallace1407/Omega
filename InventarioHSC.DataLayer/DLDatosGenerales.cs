@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using InventarioHSC.Model;
-using Microsoft.Practices.EnterpriseLibrary.Data;
-using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
+using System.Text;
+using InventarioHSC.Model;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace InventarioHSC.DataLayer
 {
@@ -16,6 +15,7 @@ namespace InventarioHSC.DataLayer
         public DLDatosGenerales()
         {
         }
+
         public List<DatosGenerales> getDatosGenerales(string[] sParametros)
         {
             DataSet ds = new DataSet();
@@ -105,19 +105,23 @@ namespace InventarioHSC.DataLayer
                                 sqlCommand.AppendLine("WHERE ART.idUbicacion = @idUbicacion ");
                                 sqlCommand.AppendLine("ORDER BY USU.Nombre, ART.NoSerie, JCB.NoSerie, AC.NoSerie ");
                                 break;
+
                             case "2":
                                 sqlCommand.AppendLine("WHERE USU.Nombre = @Nombre ");
                                 sqlCommand.AppendLine("ORDER BY USU.Nombre, ART.NoSerie, JCB.NoSerie, AC.NoSerie ");
                                 break;
+
                             case "3":
                                 sqlCommand.AppendLine("WHERE ART.Responsiva = @Responsiva ");
                                 sqlCommand.AppendLine("ORDER BY USU.Nombre, ART.NoSerie, JCB.NoSerie, AC.NoSerie");
                                 break;
+
                             case "4":
                                 sqlCommand.AppendLine("WHERE ART.idTipoEquipo = @idTipoEquipo ");
                                 sqlCommand.AppendLine("AND ART.idUbicacion = @idUbicacion ");
                                 sqlCommand.AppendLine("ORDER BY USU.Nombre, ART.NoSerie, JCB.NoSerie, AC.NoSerie ");
                                 break;
+
                             case "5":
                                 //sqlCommand.Remove(0, sqlCommand.Length - 1);
                                 sqlCommand.AppendLine("SELECT ");
@@ -202,6 +206,7 @@ namespace InventarioHSC.DataLayer
                                 sqlCommand.AppendLine("	ART.idSistema = SO.idSistema");
                                 sqlCommand.AppendLine("WHERE ART.NoSerie = @NoSerie");
                                 break;
+
                             case "6":
                                 //sqlCommand.Remove(0, sqlCommand.Length - 1);
                                 sqlCommand.AppendLine("	SELECT ");
@@ -314,6 +319,7 @@ namespace InventarioHSC.DataLayer
                                 break;
                         }
                         break;
+
                     case "DatosGenerales":
                         if (sParametros.Length > 1)
                         {
@@ -408,7 +414,6 @@ namespace InventarioHSC.DataLayer
                 List<DatosGenerales> lstDatosGenerales = new List<DatosGenerales>();
                 if (ds.Tables[0].Rows.Count > 0)
                 {
-
                     foreach (DataRow dr in ds.Tables[0].Rows)
                     {
                         DatosGenerales oDatosGenerales = new DatosGenerales();
@@ -432,10 +437,10 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
         }
+
         public DataView getDatosGenerales(string sTipoActivo)
         {
             DataView dvDG = new DataView();
@@ -527,7 +532,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
         }
@@ -583,7 +587,7 @@ namespace InventarioHSC.DataLayer
             SqlConnection cn = null;
             SqlCommand cmd = null;
             DataTable Tabla = new DataTable();
-            SqlTransaction trans; 
+            SqlTransaction trans;
 
             try
             {
@@ -620,6 +624,7 @@ namespace InventarioHSC.DataLayer
         }
 
         #region Documentos
+
         public DataTable ObtenerDocumentosUsuario(string UserName, Int16 Finalizado)
         {
             DataSet MensajeBD = new DataSet();
@@ -709,6 +714,7 @@ namespace InventarioHSC.DataLayer
 
             return MsjBD;
         }
+
         #endregion Documentos
     }
 }

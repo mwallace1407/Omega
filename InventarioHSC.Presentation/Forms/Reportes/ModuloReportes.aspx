@@ -89,7 +89,6 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    
     <div id="header">
         <table style="width: 100%; height: 97px;">
             <tr style="width: 100%">
@@ -143,159 +142,148 @@
                             </td>
                         </tr>
                     </table>
-                        <asp:Panel runat="server" ID="pnlReportes" EnableTheming="True">
-                            <asp:Panel runat="server" ID="pnlUbicacion" Visible="false">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <asp:Label ID="lblUbicacion" Text="Ubicación:" runat="server" ></asp:Label>
-                                        </td>
-                                        <td>
-                                            <asp:DropDownList ID="ddlUbicacion" runat="server" >
-                                            </asp:DropDownList>    
-                                        </td>
-                                    </tr>
-                                </table>
-                            </asp:Panel>
-                            <asp:Panel runat="server" ID="pnlUsuario" Visible="false">
-                                <table>
-                                    <tr>
-                                        <td align="left">
-                                            <asp:Label ID="lblUsuario" runat="server" Text="Usuario:" ></asp:Label>
-                                        </td>
-                                        <td align="right">
-                                            <asp:DropDownList ID="ddlUsuario" runat="server" >
-                                            </asp:DropDownList>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </asp:Panel>
-                            <asp:Panel runat="server" ID="pnlTipoActivoC" Visible="false">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <asp:Label ID="lblTipoActivo" runat="server" Text="Tipo de Activo:" ></asp:Label>
-                                        </td>
-                                        <td>
-                                            <asp:Button ID="btnTipoActivo" runat="server" CssClass="button2" Text="Tipo Activo" />
-                                            <asp:ModalPopupExtender ID="ModalPopupExtender1" runat="server" X="250" Y="20" CancelControlID="btnCancel"
-                                                OkControlID="btnOkay" TargetControlID="btnTipoActivo" PopupControlID="pnlTipoActivo"
-                                                PopupDragHandleControlID="PopupHeader" Drag="true" BackgroundCssClass="ModalPopupBG">
-                                            </asp:ModalPopupExtender>
-                                            <asp:Panel ID="pnlTipoActivo" Style="display: none" runat="server">
-                                                <div class="Popup" style="overflow: auto; height: 500px;">
-                                                    <div class="PopupBody">
-                                                        <asp:CheckBoxList ID="chkTipoActivo" runat="server" RepeatColumns="3" RepeatDirection="Horizontal"
-                                                            CellSpacing="5">
-                                                        </asp:CheckBoxList>
-                                                    </div>
-                                                    <div class="Controls">
-                                                        <table width="100%">
-                                                            <tr>
-                                                                <td align="center">
-                                                                    <input id="btnOkay" type="button" class="ui-corner-all ui-state-default cancel" value="Aceptar"
-                                                                        onclick="VerificaSeleccionados();" />
-                                                                </td>
-                                                                <td align="center">
-                                                                    <input id="btnCancel" type="button" class="ui-corner-all ui-state-default cancel"
-                                                                        value="Cancelar" />
-                                                                </td>
-                                                            </tr>
-                                                        </table>
-                                                    </div>
+                    <asp:Panel runat="server" ID="pnlReportes" EnableTheming="True">
+                        <asp:Panel runat="server" ID="pnlUbicacion" Visible="false">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <asp:Label ID="lblUbicacion" Text="Ubicación:" runat="server"></asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:DropDownList ID="ddlUbicacion" runat="server">
+                                        </asp:DropDownList>
+                                    </td>
+                                </tr>
+                            </table>
+                        </asp:Panel>
+                        <asp:Panel runat="server" ID="pnlUsuario" Visible="false">
+                            <table>
+                                <tr>
+                                    <td align="left">
+                                        <asp:Label ID="lblUsuario" runat="server" Text="Usuario:"></asp:Label>
+                                    </td>
+                                    <td align="right">
+                                        <asp:DropDownList ID="ddlUsuario" runat="server">
+                                        </asp:DropDownList>
+                                    </td>
+                                </tr>
+                            </table>
+                        </asp:Panel>
+                        <asp:Panel runat="server" ID="pnlTipoActivoC" Visible="false">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <asp:Label ID="lblTipoActivo" runat="server" Text="Tipo de Activo:"></asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:Button ID="btnTipoActivo" runat="server" CssClass="button2" Text="Tipo Activo" />
+                                        <asp:ModalPopupExtender ID="ModalPopupExtender1" runat="server" X="250" Y="20" CancelControlID="btnCancel"
+                                            OkControlID="btnOkay" TargetControlID="btnTipoActivo" PopupControlID="pnlTipoActivo"
+                                            PopupDragHandleControlID="PopupHeader" Drag="true" BackgroundCssClass="ModalPopupBG">
+                                        </asp:ModalPopupExtender>
+                                        <asp:Panel ID="pnlTipoActivo" Style="display: none" runat="server">
+                                            <div class="Popup" style="overflow: auto; height: 500px;">
+                                                <div class="PopupBody">
+                                                    <asp:CheckBoxList ID="chkTipoActivo" runat="server" RepeatColumns="3" RepeatDirection="Horizontal"
+                                                        CellSpacing="5">
+                                                    </asp:CheckBoxList>
                                                 </div>
-                                            </asp:Panel>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </asp:Panel>
-                            <asp:Panel runat="server" ID="pnlResponsiva" Visible="false">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <asp:Label ID="lblResponsiva" Text="Responsiva:" runat="server" ></asp:Label>
-                                        </td>
-                                        <td>
-                                            <asp:TextBox ID="txtResponsiva" runat="server" ></asp:TextBox>    
-                                        </td>
-                                    </tr>
-                                </table>
-                            </asp:Panel>
-                            <asp:Panel runat="server" ID="pnlNumeroSerie" Visible="false">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <asp:Label ID="lblNoSerie" runat="server" Text="No. Serie:" ></asp:Label>    
-                                        </td>
-                                        <td>
-                                            <asp:TextBox ID="txtNoSerie" runat="server" ></asp:TextBox>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </asp:Panel>
-                            <asp:Panel runat="server" width="100%">
-                                <table width="100%">
-                                    <tr>
-                                        <td align="center">
-                                            <asp:Button ID="btnEjecutar" runat="server" CssClass="ui-corner-all ui-state-default cancel" OnClick="btnEjecutar_Click" Text="Ejecutar" />
-                                        </td>
-                                    </tr>
-                                </table>
-                            </asp:Panel>
-                            <asp:Panel runat="server" ID="pnlVisualizadorReportes" style="text-align:center;">
-                                <rsweb:ReportViewer ID="rvReportes" runat="server" Width="95%" >
-                                        </rsweb:ReportViewer>
-                            </asp:Panel>
-                           <%-- <table class="page" width="100%" style="font-size: large;">
+                                                <div class="Controls">
+                                                    <table width="100%">
+                                                        <tr>
+                                                            <td align="center">
+                                                                <input id="btnOkay" type="button" class="ui-corner-all ui-state-default cancel" value="Aceptar"
+                                                                    onclick="VerificaSeleccionados();" />
+                                                            </td>
+                                                            <td align="center">
+                                                                <input id="btnCancel" type="button" class="ui-corner-all ui-state-default cancel"
+                                                                    value="Cancelar" />
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </asp:Panel>
+                                    </td>
+                                </tr>
+                            </table>
+                        </asp:Panel>
+                        <asp:Panel runat="server" ID="pnlResponsiva" Visible="false">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <asp:Label ID="lblResponsiva" Text="Responsiva:" runat="server"></asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="txtResponsiva" runat="server"></asp:TextBox>
+                                    </td>
+                                </tr>
+                            </table>
+                        </asp:Panel>
+                        <asp:Panel runat="server" ID="pnlNumeroSerie" Visible="false">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <asp:Label ID="lblNoSerie" runat="server" Text="No. Serie:"></asp:Label>
+                                    </td>
+                                    <td>
+                                        <asp:TextBox ID="txtNoSerie" runat="server"></asp:TextBox>
+                                    </td>
+                                </tr>
+                            </table>
+                        </asp:Panel>
+                        <asp:Panel runat="server" Width="100%">
+                            <table width="100%">
+                                <tr>
+                                    <td align="center">
+                                        <asp:Button ID="btnEjecutar" runat="server" CssClass="ui-corner-all ui-state-default cancel"
+                                            OnClick="btnEjecutar_Click" Text="Ejecutar" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </asp:Panel>
+                        <asp:Panel runat="server" ID="pnlVisualizadorReportes" Style="text-align: center;">
+                            <rsweb:ReportViewer ID="rvReportes" runat="server" Width="95%">
+                            </rsweb:ReportViewer>
+                        </asp:Panel>
+                        <%-- <table class="page" width="100%" style="font-size: large;">
                                 <tr>
                                     <td align="right" class="style2">
-                                        
                                     </td>
                                     <td align="left" class="style3">
-                                        
                                     </td>
                                     <td align="right" valign="top" class="style1">
-                                        
                                     </td>
                                     <td align="left">
-                                        
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align="right" class="style2">
-                                        
                                     </td>
                                     <td align="left" class="style3" colspan="3">
                                         RepositionMode="RepositionOnWindowResizeAndScroll"
-                                        
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align="right" class="style2">
-                                        
                                     </td>
                                     <td align="left" class="style3">
-                                        
                                     </td>
                                     <td align="right" class="style1">
-                                        
                                     </td>
                                     <td align="left">
-                                        
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="4" align="center">
-                                        
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="4" align="center">
-                                        
                                     </td>
                                 </tr>
                             </table>--%>
-                        </asp:Panel>
+                    </asp:Panel>
                     <asp:HiddenField ID="hdnIndicesChk" runat="server" />
                     <asp:HiddenField ID="hdnRespuesta" runat="server" />
                 </ContentTemplate>

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
 using InventarioHSC.Model;
@@ -11,8 +8,8 @@ namespace InventarioHSC.Forms
 {
     public partial class Sitio : System.Web.UI.MasterPage
     {
-        
         public string imgPath = string.Empty;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.IsAuthenticated)
@@ -30,16 +27,15 @@ namespace InventarioHSC.Forms
                 }
                 else
                 {
-                    try 
-                    { 
+                    try
+                    {
                         Session.Clear();
                         System.Web.Security.FormsAuthentication.SignOut();
-                        
+
                         if ((this.Page.ToString().Substring(4, this.Page.ToString().Substring(4).Length - 5) + ".aspx").Trim().ToLower() != "acceso.aspx")
                             Response.Redirect("~/Forms/sessionTimeout.html");
                     }
                     catch { Response.Redirect("~/Forms/sessionTimeout.html"); }
-                    
                 }
             }
             else
@@ -53,12 +49,11 @@ namespace InventarioHSC.Forms
             BLMenu oBLMenu = new BLMenu();
             List<sysMenu> lMenu = new List<sysMenu>();
             Literal lit = new Literal();
-         
+
             lMenu = oBLMenu.ObtieneHijosPorID(1, 1);
 
             PlaceHolder MainPlaceHolder = new PlaceHolder();
             MainPlaceHolder = (PlaceHolder)this.LoginView2.Controls[0].FindControl("MainPlaceHolder");
-
 
             lit = new Literal();
             lit.Text = TextWriter.MakeOpenDivid("menu");
@@ -68,11 +63,9 @@ namespace InventarioHSC.Forms
             Session["Cadenota"] += lit.Text;
             MainPlaceHolder.Controls.Add(lit);
 
-
             foreach (sysMenu oMenu in lMenu)
             {
                 fnGeneraOpcionMenu(1, oMenu);
-
             }
 
             //lit = new Literal();
@@ -89,9 +82,7 @@ namespace InventarioHSC.Forms
 
         protected void LoginStatus3_LoggedOut(object sender, EventArgs e)
         {
-
         }
-
 
         protected void fnGeneraOpcionMenu(int idrolv, sysMenu oItemMenu)
         {
@@ -144,6 +135,5 @@ namespace InventarioHSC.Forms
             MainPlaceHolder1.Controls.Add(lit);
             return lit;
         }
-           
     }
 }

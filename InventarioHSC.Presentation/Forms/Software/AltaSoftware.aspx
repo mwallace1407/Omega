@@ -152,8 +152,8 @@
             <br />
             <br />
             <div id="Div1" style="text-align: center;">
-                <asp:Button ID="btnSalir" runat="server" CssClass="boton"
-                    Text="Salir" Width="120px" OnClick="btnSalir_Click" CausesValidation="false" />
+                <asp:Button ID="btnSalir" runat="server" CssClass="boton" Text="Salir" Width="120px"
+                    OnClick="btnSalir_Click" CausesValidation="false" />
                 &nbsp;
             </div>
             <br />

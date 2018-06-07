@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-//.
+﻿//.
 namespace InventarioHSC.Model
 {
     public class RolSeguridad
@@ -15,6 +11,7 @@ namespace InventarioHSC.Model
             get { return _RolNombre; }
             set { _RolNombre = value; }
         }
+
         public string RolDescripcion
         {
             get { return _RolDescripcion; }

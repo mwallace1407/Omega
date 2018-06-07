@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.Common;
+using System.Text;
 using InventarioHSC.Model;
-using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace InventarioHSC.DataLayer
 {
@@ -14,7 +13,6 @@ namespace InventarioHSC.DataLayer
     {
         public DLMarca()
         {
-
         }
 
         public Marca getMarcaporID(int idMarca)
@@ -40,7 +38,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
 
@@ -78,7 +75,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
 
@@ -118,7 +114,6 @@ namespace InventarioHSC.DataLayer
                 List<Marca> lstMarca = new List<Marca>();
                 if (ds.Tables[0].Rows.Count > 0)
                 {
-
                     foreach (DataRow dr in ds.Tables[0].Rows)
                     {
                         Marca oMarca = new Marca();
@@ -131,7 +126,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
         }
@@ -236,7 +230,7 @@ namespace InventarioHSC.DataLayer
             {
                 throw ex;
             }
-            
+
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 Marca oMarca = new Marca();

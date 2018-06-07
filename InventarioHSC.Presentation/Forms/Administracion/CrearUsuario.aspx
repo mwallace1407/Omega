@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Forms/Main.Master" AutoEventWireup="true" CodeBehind="CrearUsuario.aspx.cs" Inherits="InventarioHSC.Forms.Administracion.CrearUsuario" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Forms/Main.Master" AutoEventWireup="true"
+    CodeBehind="CrearUsuario.aspx.cs" Inherits="InventarioHSC.Forms.Administracion.CrearUsuario" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headMaster" runat="server">
@@ -28,7 +29,8 @@
                         <asp:TextBox ID="txtUsuario" runat="server" Width="200" MaxLength="20" autocomplete="off"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfv_txtUsuario" runat="server" ErrorMessage="Campo requerido"
                             Display="None" ControlToValidate="txtUsuario" InitialValue="" SetFocusOnError="True"></asp:RequiredFieldValidator>
-                        <asp:ValidatorCalloutExtender ID="rfve_txtUsuario" runat="server" Enabled="True" TargetControlID="rfv_txtUsuario">
+                        <asp:ValidatorCalloutExtender ID="rfve_txtUsuario" runat="server" Enabled="True"
+                            TargetControlID="rfv_txtUsuario">
                         </asp:ValidatorCalloutExtender>
                     </div>
                 </div>
@@ -63,7 +65,8 @@
                 <br />
                 <br />
                 <div style="width: 780px; height: 1px; text-align: center;">
-                    <asp:Button ID="btnProcesar" runat="server" Text="Crear Usuario" CssClass="boton" OnClick="btnProcesar_Click" />&nbsp&nbsp
+                    <asp:Button ID="btnProcesar" runat="server" Text="Crear Usuario" CssClass="boton"
+                        OnClick="btnProcesar_Click" />&nbsp&nbsp
                 </div>
                 <br />
                 <br />

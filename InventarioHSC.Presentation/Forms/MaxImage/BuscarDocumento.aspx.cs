@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
-using InventarioHSC.Model;
 
 namespace InventarioHSC.Forms.MaxImage
 {
@@ -40,23 +36,26 @@ namespace InventarioHSC.Forms.MaxImage
             grdDatos.DataBind();
             ftxt_txtFiltro.ValidChars = "";
 
-            switch(ddlFiltro.SelectedValue)
+            switch (ddlFiltro.SelectedValue)
             {
                 case "CR":
                     txtFiltro.MaxLength = 6;
                     ftxt_txtFiltro.FilterType = AjaxControlToolkit.FilterTypes.Numbers;
                     lblFiltro.Text = "Crédito:";
                     break;
+
                 case "NJ":
                     txtFiltro.MaxLength = 16;
                     ftxt_txtFiltro.FilterType = AjaxControlToolkit.FilterTypes.Numbers;
                     lblFiltro.Text = "Número JIT:";
                     break;
+
                 case "NC":
                     txtFiltro.MaxLength = 6;
                     ftxt_txtFiltro.FilterType = AjaxControlToolkit.FilterTypes.Numbers;
                     lblFiltro.Text = "Número de cliente:";
                     break;
+
                 case "CL":
                     txtFiltro.MaxLength = 300;
                     ftxt_txtFiltro.FilterType = AjaxControlToolkit.FilterTypes.LowercaseLetters | AjaxControlToolkit.FilterTypes.Custom;
@@ -103,12 +102,15 @@ namespace InventarioHSC.Forms.MaxImage
                     case "CR":
                         grdDatos.DataSource = objGrupoSoftware.BuscarDocumentoMI(ddlFiltro.SelectedValue, Numero_Prestamo: Convert.ToInt32(txtFiltro.Text));
                         break;
+
                     case "NJ":
                         grdDatos.DataSource = objGrupoSoftware.BuscarDocumentoMI(ddlFiltro.SelectedValue, Numero_Jit: txtFiltro.Text);
                         break;
+
                     case "NC":
                         grdDatos.DataSource = objGrupoSoftware.BuscarDocumentoMI(ddlFiltro.SelectedValue, Codigo_Cliente: Convert.ToInt32(txtFiltro.Text));
                         break;
+
                     case "CL":
                         grdDatos.DataSource = objGrupoSoftware.BuscarDocumentoMI(ddlFiltro.SelectedValue, Nombre: txtFiltro.Text);
                         break;

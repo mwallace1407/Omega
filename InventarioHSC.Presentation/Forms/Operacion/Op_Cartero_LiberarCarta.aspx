@@ -28,9 +28,8 @@
                         </div>
                         <div style="width: 575px; float: right; text-align: left;">
                             <asp:TextBox ID="txtReferencia" runat="server" Width="200" MaxLength="16"></asp:TextBox>
-                            <asp:FilteredTextBoxExtender ID="txtReferencia_FilteredTextBoxExtender" 
-                                runat="server" Enabled="True" FilterType="Numbers" 
-                                TargetControlID="txtReferencia">
+                            <asp:FilteredTextBoxExtender ID="txtReferencia_FilteredTextBoxExtender" runat="server"
+                                Enabled="True" FilterType="Numbers" TargetControlID="txtReferencia">
                             </asp:FilteredTextBoxExtender>
                             <asp:RequiredFieldValidator ID="rfv_txtReferencia" runat="server" ErrorMessage="Campo requerido"
                                 Display="None" ControlToValidate="txtReferencia" InitialValue="" SetFocusOnError="True"></asp:RequiredFieldValidator>

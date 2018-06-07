@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace InventarioHSC.Model
+﻿namespace InventarioHSC.Model
 {
     public class Region
     {
@@ -28,6 +23,5 @@ namespace InventarioHSC.Model
             get { return _status; }
             set { _status = value; }
         }
-
     }
 }

@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using System.Diagnostics;
-using System.Management;
 using System.Drawing;
 using System.Globalization;
 
@@ -18,7 +12,7 @@ namespace InventarioHSC
             DateTime dt;
             CultureInfo culture = CultureInfo.GetCultureInfoByIetfLanguageTag("es-MX");
             DateTimeStyles styles = DateTimeStyles.None;
-            DateTime.TryParse(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"),culture, styles, out dt);
+            DateTime.TryParse(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), culture, styles, out dt);
 
             lblFecha.Text = dt.ToLongDateString() + " a las " + dt.ToLongTimeString();
             lblSrv.Text = Environment.MachineName;
@@ -68,7 +62,7 @@ namespace InventarioHSC
             double PorcentajeUtilizado = Math.Round(CounterSample.Calculate(cs1, cs2), 2);
             double PorcentajeLibre = 100 - PorcentajeUtilizado;
 
-            double[] yValues = { PorcentajeUtilizado, PorcentajeLibre  };
+            double[] yValues = { PorcentajeUtilizado, PorcentajeLibre };
             string[] xValues = { "Utilizado: " + PorcentajeUtilizado.ToString() + "%", "Disponible: " + PorcentajeLibre.ToString() + "%" };
 
             chartProc.Series["Default"].Points.DataBindXY(xValues, yValues);
@@ -122,7 +116,7 @@ namespace InventarioHSC
                 System.IO.DriveInfo driveInfo = new System.IO.DriveInfo(Unidad);
 
                 EspacioLibre = driveInfo.AvailableFreeSpace;
-                EspacioUtilizado = Math.Round(((Convert.ToDouble(driveInfo.TotalSize - EspacioLibre) / 1024) /1024) /1024, 2);
+                EspacioUtilizado = Math.Round(((Convert.ToDouble(driveInfo.TotalSize - EspacioLibre) / 1024) / 1024) / 1024, 2);
                 EspacioLibre = Math.Round(((EspacioLibre / 1024) / 1024) / 1024, 2);
             }
             catch (System.IO.IOException errorMesage)

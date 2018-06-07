@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Reporte de BD en un servidor" Language="C#" MasterPageFile="~/Forms/Main.Master" AutoEventWireup="true" CodeBehind="RptRelSrvBD.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptRelSrvBD" %>
+﻿<%@ Page Title="Reporte de BD en un servidor" Language="C#" MasterPageFile="~/Forms/Main.Master"
+    AutoEventWireup="true" CodeBehind="RptRelSrvBD.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptRelSrvBD" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headMaster" runat="server">

@@ -1,140 +1,149 @@
-BODY 
+BODY
 {
-	PADDING-RIGHT: 0px;
-	PADDING-LEFT: 0px;
-	FONT-SIZE: 20px;
-	PADDING-BOTTOM: 0px;
-	MARGIN: 0px;
-	COLOR: #000000;
-	PADDING-TOP: 0px;
-	FONT-FAMILY: Trebuchet MS;
-	text-align: justify;
-
+    padding-right: 0px;
+    padding-left: 0px;
+    font-size: 20px;
+    padding-bottom: 0px;
+    margin: 0px;
+    color: #000000;
+    padding-top: 0px;
+    font-family: Trebuchet MS;
+    text-align: justify;
 }
 
 A:link
 {
-    FONT-SIZE: 11px;
-    BACKGROUND: none transparent scroll repeat 0% 0%;
-    COLOR: #000000;
-    FONT-FAMILY: Trebuchet MS;
-    TEXT-DECORATION: none
+    font-size: 11px;
+    background: none transparent scroll repeat 0% 0%;
+    color: #000000;
+    font-family: Trebuchet MS;
+    text-decoration: none;
 }
 
 A:active
 {
-    FONT-SIZE: 11px;
-    BACKGROUND: none transparent scroll repeat 0% 0%;
-    COLOR: #000000;
-    FONT-FAMILY: Trebuchet MS;
-    TEXT-DECORATION: none
+    font-size: 11px;
+    background: none transparent scroll repeat 0% 0%;
+    color: #000000;
+    font-family: Trebuchet MS;
+    text-decoration: none;
 }
 
 A:visited
 {
-    FONT-SIZE: 11px;
-    BACKGROUND: none transparent scroll repeat 0% 0%;
-    COLOR: #000000;
-    FONT-FAMILY: Trebuchet MS;
-    TEXT-DECORATION: none
+    font-size: 11px;
+    background: none transparent scroll repeat 0% 0%;
+    color: #000000;
+    font-family: Trebuchet MS;
+    text-decoration: none;
 }
 
 A:hover
 {
-	FONT-SIZE: 11px;
-	FONT-FAMILY: Trebuchet MS;
-	TEXT-DECORATION: none;
+    font-size: 11px;
+    font-family: Trebuchet MS;
+    text-decoration: none;
 }
 #cajatext
 {
-WIDTH: 450px;
-HEIGHT: 150px;
-MARGIN-LEFT: 50px;
-FONT-SIZE: 11px;
-COLOR: #000000;
-FONT-FAMILY: Trebuchet MS;
-line-height: 16px;
-BORDER-BOTTOM: 1px dotted #333;
+    width: 450px;
+    height: 150px;
+    margin-left: 50px;
+    font-size: 11px;
+    color: #000000;
+    font-family: Trebuchet MS;
+    line-height: 16px;
+    border-bottom: 1px dotted #333;
 }
 .subtitulo
- {
- FONT-WEIGHT: bold;
- list-style-type:none;
- color:#333;
- background-color: #FFF;
- background:  url(../imagenes/arrow.png) no-repeat;
- background-position: 0 .3em;
- padding-left: 15px;
- } 
-
-TD 
 {
-	FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Trebuchet MS; line-height: 16px;
+    font-weight: bold;
+    list-style-type: none;
+    color: #333;
+    background-color: #FFF;
+    background: url(../imagenes/arrow.png) no-repeat;
+    background-position: 0 .3em;
+    padding-left: 15px;
 }
 
-INPUT {
-	FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Trebuchet MS
+TD
+{
+    font-size: 11px;
+    color: #000000;
+    font-family: Trebuchet MS;
+    line-height: 16px;
 }
 
-INPUT.button {
-	FONT-WEIGHT: bold;
-	FONT-SIZE: 12px;
-	CURSOR: hand;
-	COLOR: #FFFFFF;
-	FONT-FAMILY: Trebuchet MS;
-	background-color: #456071;
-	border: 1px solid #000000;
-
+INPUT
+{
+    font-size: 11px;
+    color: #000000;
+    font-family: Trebuchet MS;
 }
 
-Select {
-	FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Trebuchet MS; background-color: #EFEBEF;
+INPUT.button
+{
+    font-weight: bold;
+    font-size: 12px;
+    cursor: hand;
+    color: #FFFFFF;
+    font-family: Trebuchet MS;
+    background-color: #456071;
+    border: 1px solid #000000;
 }
 
+Select
+{
+    font-size: 11px;
+    color: #000000;
+    font-family: Trebuchet MS;
+    background-color: #EFEBEF;
+}
 
-.estilotabla{ 
-    border-style:solid; 
-    border-color:666666; 
-    border-width:1px; 
-} 
+.estilotabla
+{
+    border-style: solid;
+    border-color: 666666;
+    border-width: 1px;
+}
 
 .estilotabla2
 {
-	border-style:solid;
-	border-color:666666;
-	border-width:1px;
-	background-color: #FFFFFF;
+    border-style: solid;
+    border-color: 666666;
+    border-width: 1px;
+    background-color: #FFFFFF;
+}
 
-} 
-
-ul{
+ul
+{
     padding-left: 10px;
     margin-left: 10px;
     list-style-type: disc;
 }
 
-ul li 
+ul li
 {
     padding-left: 0px;
     margin-bottom: 1em;
 }
 
-.jutifica 
+.jutifica
 {
-	text-align: justify;
+    text-align: justify;
 }
 
 .textFondo:hover
 {
-    FONT-SIZE: 11px;
+    font-size: 11px;
     background-color: #192158;
-    COLOR: #FFFFFF;
-    FONT-FAMILY: Trebuchet MS;
-    TEXT-DECORATION: none
+    color: #FFFFFF;
+    font-family: Trebuchet MS;
+    text-decoration: none;
 }
 .floatleft
 {
-float: left;
-padding: 2px;
-margin: 4px;
+    float: left;
+    padding: 2px;
+    margin: 4px;
 }

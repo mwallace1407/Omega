@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
 using InventarioHSC.Model;
 
@@ -12,6 +8,7 @@ namespace InventarioHSC.Forms.Servidores
     public partial class AltaBoveda : System.Web.UI.Page
     {
         #region Metodos
+
         protected string IngresarContrasenna(string Hash, int Tipo, string UserName, string Objeto, string vLogin, string Pass)
         {
             BLBovedaContra objBov = new BLBovedaContra();
@@ -90,9 +87,11 @@ namespace InventarioHSC.Forms.Servidores
 
             return Errores;
         }
+
         #endregion Metodos
 
         #region Eventos
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -245,7 +244,6 @@ namespace InventarioHSC.Forms.Servidores
 
         protected void btnCargar_Click(object sender, EventArgs e)
         {
-
         }
 
         protected void btnSiguiente_Click(object sender, EventArgs e)
@@ -293,6 +291,7 @@ namespace InventarioHSC.Forms.Servidores
         {
             pnlDatosM.Visible = true;
         }
+
         #endregion Eventos
     }
 }

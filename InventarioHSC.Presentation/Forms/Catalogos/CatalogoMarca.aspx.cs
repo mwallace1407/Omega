@@ -1,21 +1,15 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Microsoft.Reporting.WebForms;
 using InventarioHSC.BusinessLayer;
-using InventarioHSC.Model;
-
-
+using Microsoft.Reporting.WebForms;
 
 namespace InventarioHSC
 {
     public partial class CatalogoMarca : System.Web.UI.Page
     {
         public BLMarca objMarca = new BLMarca();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -68,14 +62,13 @@ namespace InventarioHSC
 
         protected void gwvMarca_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            
             if (e.CommandName == "Eliminar")
             {
                 int index = Convert.ToInt32(e.CommandArgument);
                 string s_idItem = gwvMarca.DataKeys[index].Values["idMarca"].ToString();
                 int countSucursal = 0;
                 countSucursal = objMarca.EliminaMarca(Convert.ToInt32(s_idItem));
-                   
+
                 if (countSucursal == 0)
                 {
                     string cleanMessage = "La Marca se eliminó correctamente.";
@@ -94,11 +87,9 @@ namespace InventarioHSC
                     sb.Append(@"</script>");
                     ScriptManager.RegisterClientScriptBlock(this.Page, this.Page.GetType(), "alert", sb.ToString(), false);
                 }
-
             }
             ActualizaGrid();
         }
-
 
         protected void ActualizaGrid()
         {
@@ -106,23 +97,17 @@ namespace InventarioHSC
             gwvMarca.DataBind();
         }
 
-
         protected void fnLimpiaControlDetalle()
         {
-
         }
-
 
         protected void btnSalir_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Forms/Inicio.aspx");
         }
 
-
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-
-
         }
 
         protected void gwvMarca_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -141,7 +126,6 @@ namespace InventarioHSC
                 CambiaEstadoNotificacion("Warning", false, string.Empty);
                 ActualizaGrid();
             }
-
         }
     }
 }

@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.Common;
+using System.Text;
 using InventarioHSC.Model;
-using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace InventarioHSC.DataLayer
 {
@@ -14,7 +13,6 @@ namespace InventarioHSC.DataLayer
     {
         public DLTipoEquipo()
         {
-
         }
 
         public TipoEquipo getTipoEquipoporID(int iidTipoEquipo)
@@ -40,7 +38,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
             //db.AddInParameter("@id", DbType.Int32, idArea);
@@ -79,7 +76,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
             //db.AddInParameter("@id", DbType.Int32, idArea);
@@ -121,7 +117,6 @@ namespace InventarioHSC.DataLayer
                 List<TipoEquipo> lstTipoEquipo = new List<TipoEquipo>();
                 if (ds.Tables[0].Rows.Count > 0)
                 {
-
                     foreach (DataRow dr in ds.Tables[0].Rows)
                     {
                         TipoEquipo oTipoEquipo = new TipoEquipo();
@@ -134,7 +129,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
         }

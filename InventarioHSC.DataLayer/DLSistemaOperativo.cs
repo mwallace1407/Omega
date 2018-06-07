@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.Common;
+using System.Text;
 using InventarioHSC.Model;
-using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace InventarioHSC.DataLayer
 {
@@ -14,7 +13,6 @@ namespace InventarioHSC.DataLayer
     {
         public DLSistemaOperativo()
         {
-
         }
 
         public SistemaOperativo getSistemaOperativoporID(int idSistema)
@@ -42,7 +40,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
 
@@ -72,7 +69,7 @@ namespace InventarioHSC.DataLayer
 
             //sqlCommand.AppendLine("SELECT	  idSistema ");
             //sqlCommand.AppendLine("		    , Descripcion ");
-            //sqlCommand.AppendLine("FROM SistemaOperativo "); 
+            //sqlCommand.AppendLine("FROM SistemaOperativo ");
             //sqlCommand.AppendLine("WHERE   Descripcion = @Descripcion");
             sqlCommand.AppendLine("SELECT idSistema,");
             sqlCommand.AppendLine("       Descripcion,");
@@ -98,7 +95,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
 
@@ -163,7 +159,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
         }
@@ -246,6 +241,5 @@ namespace InventarioHSC.DataLayer
 
             return total;
         }
-
     }
 }

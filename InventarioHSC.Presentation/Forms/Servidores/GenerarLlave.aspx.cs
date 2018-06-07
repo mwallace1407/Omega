@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
 using InventarioHSC.Model;
 
@@ -38,7 +34,7 @@ namespace InventarioHSC.Forms.Servidores
                     Errores = "No es un correo válido";
             }
 
-            if(Errores == "")
+            if (Errores == "")
                 DatosGenerales.EnviaMensaje("Revise su correo para obtenerla. Puede tardar unos minutos.", "Llave generada", DatosGenerales.TiposMensaje.Informacion);
             else
                 DatosGenerales.EnviaMensaje(Errores, "Proceso interrumpido", DatosGenerales.TiposMensaje.Error);

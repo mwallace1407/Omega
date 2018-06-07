@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.UI.WebControls;
-using InventarioHSC.Model;
 using InventarioHSC.DataLayer;
+using InventarioHSC.Model;
 
 namespace InventarioHSC.BusinessLayer
 {
@@ -12,7 +9,6 @@ namespace InventarioHSC.BusinessLayer
     {
         public BLPuesto()
         {
-
         }
 
         public Puesto ObtienePuesto(int id_Puesto)
@@ -33,7 +29,6 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
 
@@ -55,7 +50,6 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return objPuesto.idPuesto;
@@ -76,11 +70,9 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return objPuesto.idPuesto;
-
         }
 
         public int EliminaPuesto(int i_idPuesto)
@@ -99,11 +91,9 @@ namespace InventarioHSC.BusinessLayer
                 {
                     odlPto.UpdatePuesto(ref objPuesto);
                 }
-
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return Total;
@@ -120,12 +110,10 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
 
             return TotalC;
         }
-
     }
 }

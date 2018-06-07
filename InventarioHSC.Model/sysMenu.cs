@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace InventarioHSC.Model
+﻿namespace InventarioHSC.Model
 {
     public class sysMenu
     {
@@ -14,6 +9,7 @@ namespace InventarioHSC.Model
             get { return _idMenu; }
             set { _idMenu = value; }
         }
+
         private string _fcMenuClave;
 
         public string fcMenuClave
@@ -21,6 +17,7 @@ namespace InventarioHSC.Model
             get { return _fcMenuClave; }
             set { _fcMenuClave = value; }
         }
+
         private string _fcMenuNombre;
 
         public string fcMenuNombre
@@ -28,6 +25,7 @@ namespace InventarioHSC.Model
             get { return _fcMenuNombre; }
             set { _fcMenuNombre = value; }
         }
+
         private string _fcMenuRuta;
 
         public string fcMenuRuta
@@ -35,6 +33,7 @@ namespace InventarioHSC.Model
             get { return _fcMenuRuta; }
             set { _fcMenuRuta = value; }
         }
+
         private int _idMenuPadre;
 
         public int idMenuPadre
@@ -42,6 +41,7 @@ namespace InventarioHSC.Model
             get { return _idMenuPadre; }
             set { _idMenuPadre = value; }
         }
+
         private string _fcCss;
 
         public string fcCss

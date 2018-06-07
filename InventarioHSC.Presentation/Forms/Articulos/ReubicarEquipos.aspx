@@ -113,8 +113,8 @@
                             <asp:DropDownList ID="ddlUbicaciones" runat="server" Width="202">
                             </asp:DropDownList>
                             <asp:RequiredFieldValidator ID="rfv_ddlUbicaciones" runat="server" ErrorMessage="Campo requerido"
-                                Display="None" ControlToValidate="ddlUbicaciones" InitialValue="0" 
-                                SetFocusOnError="True" ValidationGroup="G02"></asp:RequiredFieldValidator>
+                                Display="None" ControlToValidate="ddlUbicaciones" InitialValue="0" SetFocusOnError="True"
+                                ValidationGroup="G02"></asp:RequiredFieldValidator>
                             <asp:ValidatorCalloutExtender ID="rfve_ddlUbicaciones" runat="server" Enabled="True"
                                 TargetControlID="rfv_ddlUbicaciones">
                             </asp:ValidatorCalloutExtender>
@@ -123,8 +123,8 @@
                     <br />
                     <br />
                     <div style="width: 880px; text-align: center;">
-                        <asp:Button ID="btnProcesar" runat="server" Text="Reubicar equipos" 
-                            CssClass="boton" onclick="btnProcesar_Click" ValidationGroup="G02" />
+                        <asp:Button ID="btnProcesar" runat="server" Text="Reubicar equipos" CssClass="boton"
+                            OnClick="btnProcesar_Click" ValidationGroup="G02" />
                     </div>
                 </asp:Panel>
             </div>

@@ -1,20 +1,15 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Microsoft.Reporting.WebForms;
 using InventarioHSC.BusinessLayer;
-using InventarioHSC.Model;
-
+using Microsoft.Reporting.WebForms;
 
 namespace InventarioHSC
 {
     public partial class CatalogoPuesto : System.Web.UI.Page
     {
         public BLPuesto objPuesto = new BLPuesto();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -97,25 +92,20 @@ namespace InventarioHSC
             ActualizaGrid();
         }
 
-
         protected void ActualizaGrid()
         {
             gwvPuesto.DataSource = objPuesto.ObtienePuestos();
             gwvPuesto.DataBind();
         }
 
-
         protected void fnLimpiaControlDetalle()
         {
-
         }
-
 
         protected void btnSalir_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Forms/Inicio.aspx");
         }
-
 
         protected void gwvPuesto_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {

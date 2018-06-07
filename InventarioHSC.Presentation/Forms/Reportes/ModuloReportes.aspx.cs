@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Configuration;
+using System.Text;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Configuration;
-using Microsoft.Reporting.WebForms;
-using System.Text;
 using InventarioHSC.BusinessLayer;
+using Microsoft.Reporting.WebForms;
 
 namespace InventarioHSC.Forms.Reportes
 {
@@ -62,7 +59,7 @@ namespace InventarioHSC.Forms.Reportes
             string sSel = ObtieneSeleccionados();
 
             switch (rbReportes.SelectedValue)
-            { 
+            {
                 case "1":
                     if (ddlUbicacion.SelectedValue != "" || ddlUbicacion.SelectedValue != "0")
                     {
@@ -78,6 +75,7 @@ namespace InventarioHSC.Forms.Reportes
                         rvReportes.Visible = true;
                     }
                     break;
+
                 case "2":
                     if (ddlUsuario.SelectedValue != "" || ddlUsuario.SelectedValue != "0")
                     {
@@ -91,6 +89,7 @@ namespace InventarioHSC.Forms.Reportes
                         rvReportes.LocalReport.Refresh();
                     }
                     break;
+
                 case "3":
                     if (txtResponsiva.Text != string.Empty || txtResponsiva.Text != "")
                     {
@@ -104,6 +103,7 @@ namespace InventarioHSC.Forms.Reportes
                         rvReportes.LocalReport.Refresh();
                     }
                     break;
+
                 case "4":
                     dsReportes = new SqlDataSource(strConnString, GeneraConsultaDataSource(rbReportes.SelectedValue));
                     if (ddlUbicacion.SelectedValue != "" || ddlUbicacion.SelectedValue != "0" &&
@@ -118,6 +118,7 @@ namespace InventarioHSC.Forms.Reportes
                     rvReportes.LocalReport.DataSources.Add(rdsReporteXTipoActivo);
                     rvReportes.LocalReport.Refresh();
                     break;
+
                 case "5":
                     if (txtNoSerie.Text != string.Empty || txtNoSerie.Text != "")
                     {
@@ -131,6 +132,7 @@ namespace InventarioHSC.Forms.Reportes
                         rvReportes.LocalReport.Refresh();
                     }
                     break;
+
                 case "6":
                     if (txtNoSerie.Text != string.Empty || txtNoSerie.Text != "")
                     {
@@ -146,7 +148,8 @@ namespace InventarioHSC.Forms.Reportes
                     break;
             }
         }
-        void rbReportes_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void rbReportes_SelectedIndexChanged(object sender, EventArgs e)
         {
             BLCatalogos Catalogos = new BLCatalogos();
 
@@ -155,7 +158,7 @@ namespace InventarioHSC.Forms.Reportes
             rvReportes.LocalReport.Refresh();
 
             switch (rbReportes.SelectedValue)
-            { 
+            {
                 case "1":
                     Catalogos.CargaUbicacion(ref ddlUbicacion);
                     ddlUbicacion.DataBind();
@@ -165,6 +168,7 @@ namespace InventarioHSC.Forms.Reportes
                     pnlNumeroSerie.Visible = false;
                     pnlResponsiva.Visible = false;
                     break;
+
                 case "2":
                     Catalogos.CargaUsuario(ref ddlUsuario);
                     ddlUsuario.DataBind();
@@ -174,6 +178,7 @@ namespace InventarioHSC.Forms.Reportes
                     pnlNumeroSerie.Visible = false;
                     pnlResponsiva.Visible = false;
                     break;
+
                 case "3":
                     pnlUbicacion.Visible = false;
                     pnlTipoActivoC.Visible = false;
@@ -181,6 +186,7 @@ namespace InventarioHSC.Forms.Reportes
                     pnlNumeroSerie.Visible = false;
                     pnlResponsiva.Visible = true;
                     break;
+
                 case "4":
                     Catalogos.CargaUbicacion(ref ddlUbicacion);
                     Catalogos.CargaTipoEquipo(ref chkTipoActivo);
@@ -192,6 +198,7 @@ namespace InventarioHSC.Forms.Reportes
                     pnlNumeroSerie.Visible = false;
                     pnlResponsiva.Visible = false;
                     break;
+
                 case "5":
                     txtNoSerie.Text = string.Empty;
                     pnlUbicacion.Visible = false;
@@ -200,6 +207,7 @@ namespace InventarioHSC.Forms.Reportes
                     pnlNumeroSerie.Visible = true;
                     pnlResponsiva.Visible = false;
                     break;
+
                 case "6":
                     txtNoSerie.Text = string.Empty;
                     pnlUbicacion.Visible = false;
@@ -210,6 +218,7 @@ namespace InventarioHSC.Forms.Reportes
                     break;
             }
         }
+
         private string GeneraConsultaDataSource(string Reporte)
         {
             StringBuilder strB = new StringBuilder();
@@ -277,19 +286,22 @@ namespace InventarioHSC.Forms.Reportes
             strB.AppendLine("	ART.idSistema = SO.idSistema ");
 
             switch (Reporte)
-            { 
+            {
                 case "1":
                     strB.AppendLine("WHERE ART.idUbicacion = @idUbicacion ");
                     strB.AppendLine("ORDER BY USU.Nombre, ART.NoSerie");
                     break;
+
                 case "2":
                     strB.AppendLine("WHERE USU.Nombre = @Nombre ");
                     strB.AppendLine("ORDER BY USU.Nombre, ART.NoSerie ");
                     break;
+
                 case "3":
                     strB.AppendLine("WHERE ART.Responsiva = @Responsiva ");
                     strB.AppendLine("ORDER BY USU.Nombre, ART.NoSerie ");
                     break;
+
                 case "4":
                     if (ddlUbicacion.SelectedValue != "" || ddlUbicacion.SelectedValue != "0")
                     {
@@ -298,6 +310,7 @@ namespace InventarioHSC.Forms.Reportes
                         strB.AppendLine("ORDER BY USU.Nombre, ART.NoSerie ");
                     }
                     break;
+
                 case "5":
                     strB.Remove(0, strB.Length - 1);
                     strB.AppendLine("SELECT ");
@@ -382,6 +395,7 @@ namespace InventarioHSC.Forms.Reportes
                     strB.AppendLine("	ART.idSistema = SO.idSistema");
                     strB.AppendLine("WHERE ART.NoSerie = @NoSerie");
                     break;
+
                 case "6":
                     strB.Remove(0, strB.Length - 1);
                     strB.AppendLine("	SELECT ");
@@ -495,12 +509,14 @@ namespace InventarioHSC.Forms.Reportes
             }
             return strB.ToString();
         }
+
         internal void LlenaIndices()
         {
             BLReportes rpTipoActivoLista = new BLReportes();
 
             hdnIndicesChk.Value += rpTipoActivoLista.RegresaIndexTipoActivo();
         }
+
         internal string ObtieneSeleccionados()
         {
             string sSeleccion = string.Empty;

@@ -6,7 +6,7 @@ Copyright 2006 (c) Milonic Solutions Limited. All Rights Reserved.
 This is a commercial software product, please visit http://www.milonic.com/ for more information.
 See http://www.milonic.com/license.php for Commercial License Agreement
 All Copyright statements must always remain in place in all files at all times
-*******  PLEASE NOTE: THIS IS NOT FREE SOFTWARE, IT MUST BE LICENSED FOR ALL USE  ******* 
+*******  PLEASE NOTE: THIS IS NOT FREE SOFTWARE, IT MUST BE LICENSED FOR ALL USE  *******
 
 License Number: 1000 for Unlicensed
 

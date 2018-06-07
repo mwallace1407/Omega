@@ -1,18 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Data;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
-using InventarioHSC.Model;
-using System.Data;
 
 namespace InventarioHSC.Forms.Aplicaciones
 {
     public partial class ModificarDiscos : System.Web.UI.Page
     {
         #region Variables
+
         public static DataTable USel = new DataTable();
 
         protected const int SrvD_Unidad = 1;
@@ -30,9 +27,11 @@ namespace InventarioHSC.Forms.Aplicaciones
         protected const string AccionModificar = "1";
         protected const int TipoEquipoDesconocido = 1;
         protected const int TipoEquipoInterno = 2;
+
         #endregion Variables
 
         #region Catalogos
+
         protected void CargaCatalogos()
         {
             BLCatalogos objCatalogo = new BLCatalogos();
@@ -65,6 +64,7 @@ namespace InventarioHSC.Forms.Aplicaciones
             Combo.AcceptChanges();
 
             #region Letras
+
             row = Combo.NewRow();
             row[0] = "A";
             row[1] = "";
@@ -195,8 +195,8 @@ namespace InventarioHSC.Forms.Aplicaciones
             row[1] = "";
             Combo.Rows.Add(row);
 
-
             Combo.AcceptChanges();
+
             #endregion Letras
 
             return Combo;
@@ -215,9 +215,11 @@ namespace InventarioHSC.Forms.Aplicaciones
             ddl.DataSource = Combo;
             ddl.DataBind();
         }
+
         #endregion Catalogos
 
         #region Metodos
+
         protected void EsconderColumnas() //Llamar siempre después de cada DataBind a grdDiscos
         {
             grdDiscos.Columns[SrvTA_Id].Visible = false;
@@ -342,9 +344,11 @@ namespace InventarioHSC.Forms.Aplicaciones
                 ddlEquipo.DataBind();
             }
         }
+
         #endregion Metodos
 
         #region Eventos
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -564,7 +568,7 @@ namespace InventarioHSC.Forms.Aplicaciones
             LlenaEquipos(idTipoEquipo, false);
             mp1.Show();
         }
-        #endregion Eventos
 
+        #endregion Eventos
     }
 }

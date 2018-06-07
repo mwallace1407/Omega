@@ -1,5 +1,5 @@
-﻿<%@ Page Title="Reporte de auxiliares" Language="C#" MasterPageFile="~/Forms/Main.Master" AutoEventWireup="true"
-    CodeBehind="RptAuxiliares.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptAuxiliares"
+﻿<%@ Page Title="Reporte de auxiliares" Language="C#" MasterPageFile="~/Forms/Main.Master"
+    AutoEventWireup="true" CodeBehind="RptAuxiliares.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptAuxiliares"
     MaintainScrollPositionOnPostback="true" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>

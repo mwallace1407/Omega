@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
-using InventarioHSC.Model;
 using InventarioHSC.DataLayer;
 
 namespace InventarioHSC.BusinessLayer
@@ -11,6 +7,7 @@ namespace InventarioHSC.BusinessLayer
     public class BLOperaciones
     {
         #region Cartero
+
         public struct FolioCartero
         {
             public string FolioCastorTel;
@@ -81,30 +78,40 @@ namespace InventarioHSC.BusinessLayer
 
             return odlSoftware.BuscarCartaSHF(Tipo, Numero_Prestamo, Codigo_Cliente, Numero_Jit, Nombre);
         }
+
         #endregion Cartero
+
         #region AAE
+
         public DataTable BuscarDocumentosAAE(string CadenaBusqueda)
         {
             DLOperaciones obj = new DLOperaciones();
 
             return obj.BuscarDocumentosAAE(CadenaBusqueda);
         }
+
         #endregion AAE
+
         #region SAB
+
         public DataTable BuscarDocumentosSAB(string CadenaBusqueda)
         {
             DLOperaciones obj = new DLOperaciones();
 
             return obj.BuscarDocumentosSAB(CadenaBusqueda);
         }
+
         #endregion SAB
+
         #region AAE
+
         public DataTable BuscarDocumentosIntranet(string CadenaBusqueda)
         {
             DLOperaciones obj = new DLOperaciones();
 
             return obj.BuscarDocumentosIntranet(CadenaBusqueda);
         }
+
         #endregion AAE
     }
 }

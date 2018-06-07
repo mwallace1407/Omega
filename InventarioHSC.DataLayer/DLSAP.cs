@@ -1,23 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.Common;
-using Microsoft.Practices.EnterpriseLibrary.Data;
-using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using System.Linq;
+using System.Text;
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using InventarioHSC.Model;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace InventarioHSC.DataLayer
 {
     public class DLSAP
     {
         #region OpenXml
+
         static private int rowsPerSheet = 250000;
-        DataTable ResultsData = new DataTable();
+        private DataTable ResultsData = new DataTable();
 
         public string GenerarExcel(IDataReader reader, string RutaArchivos)
         {
@@ -76,7 +77,7 @@ namespace InventarioHSC.DataLayer
 
         private string ExportToOxml(bool firstTime, string fileName, string RutaArchivos)
         {
-            //Check if the file exists. 
+            //Check if the file exists.
             if (firstTime)
             {
                 Random rnd = new Random();
@@ -106,10 +107,8 @@ namespace InventarioHSC.DataLayer
                 var sheetData = new SheetData();
                 worksheetPart.Worksheet = new Worksheet(sheetData);
 
-
                 var bold1 = new Bold();
                 CellFormat cf = new CellFormat();
-
 
                 // Add Sheets to the Workbook.
                 Sheets sheets;
@@ -231,9 +230,11 @@ namespace InventarioHSC.DataLayer
 
             return fileName;
         }
+
         #endregion OpenXml
 
         #region EPPlus
+
         //public void Test_EPP(string Archivo, string Reg)
         //{
         //    string Query = "";
@@ -307,7 +308,6 @@ namespace InventarioHSC.DataLayer
         //                    Row += Chunk;
         //                    Chunk = 0;
 
-
         //                    Tabla = new DataTable();
 
         //                    for (int index = 0; index < reader.FieldCount; index++)
@@ -371,9 +371,11 @@ namespace InventarioHSC.DataLayer
         //        pck.Save();
         //    }
         //}
+
         #endregion EPPlus
 
         #region BD
+
         public DataTable Catalogos(DatosGenerales.OpcionesCatalogosSAP Catalogo, int Id, bool IncluirValorInicial)
         {
             DataTable Resultados = new DataTable();
@@ -402,6 +404,7 @@ namespace InventarioHSC.DataLayer
         }
 
         #region FICO
+
         public string Balanzas(string Sociedad, string Ejercicio, string Cuenta_Mayor, string RutaArchivos)
         {
             string MsjBD = "";
@@ -500,8 +503,11 @@ namespace InventarioHSC.DataLayer
 
             return MsjBD;
         }
+
         #endregion FICO
+
         #region RH
+
         public string IngresoEmpleados(string No_pers, string RutaArchivos)
         {
             string MsjBD = "";
@@ -732,7 +738,7 @@ namespace InventarioHSC.DataLayer
             return MsjBD;
         }
 
-        public string Acumulados(string Anio,string No_Pers, string Concepto_Nomina, string RutaArchivos)
+        public string Acumulados(string Anio, string No_Pers, string Concepto_Nomina, string RutaArchivos)
         {
             string MsjBD = "";
             Database db = EnterpriseLibraryContainer.Current.GetInstance<Database>("SAP");
@@ -779,7 +785,9 @@ namespace InventarioHSC.DataLayer
 
             return Resultados;
         }
+
         #endregion RH
+
         #endregion BD
     }
 }

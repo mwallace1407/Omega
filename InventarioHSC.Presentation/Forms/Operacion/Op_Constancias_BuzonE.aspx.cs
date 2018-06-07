@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
@@ -12,10 +9,14 @@ namespace InventarioHSC.Forms.Operacion
     public partial class Op_Constancias_BuzonE : System.Web.UI.Page
     {
         #region Variables
-        BLConstancias objCon = new BLConstancias();
+
+        private BLConstancias objCon = new BLConstancias();
         protected const int CeldaId = 1;
+
         #endregion Variables
+
         #region Metodos
+
         protected string ArmadoCadena(CheckBoxList chkl)
         {
             string Resultados = "";
@@ -57,8 +58,11 @@ namespace InventarioHSC.Forms.Operacion
             ClientScript.RegisterClientScriptBlock(GetType(), "Permisos", sb.ToString());
             btnAplicarFiltro.Attributes.Add("onmousedown", "Busca();");
         }
+
         #endregion Metodos
+
         #region Eventos
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -109,7 +113,6 @@ namespace InventarioHSC.Forms.Operacion
 
         protected void grdDatos_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-
         }
 
         protected void btnGenerar_Click(object sender, EventArgs e)
@@ -117,7 +120,7 @@ namespace InventarioHSC.Forms.Operacion
             int Entero = 0;
             bool HayError = false;
             lblMensaje.Text = "";
-            
+
             int.TryParse(txtEjercicio.Text, out Entero);
 
             if (Entero < 2015 || Entero > DateTime.Now.Year)
@@ -165,7 +168,7 @@ namespace InventarioHSC.Forms.Operacion
 
                 tw = new System.IO.StreamWriter(Archivo, false, System.Text.Encoding.UTF8);
                 int.TryParse(txtEjercicio.Text, out Ejercicio);
-                
+
                 //GenerarTXT
                 System.Data.DataTable Tabla = new System.Data.DataTable();
 
@@ -181,6 +184,7 @@ namespace InventarioHSC.Forms.Operacion
                 DatosGenerales.EnviaMensaje("Se ha creado el archivo para envío a BuzonE. Puede descargarlo ahora. Para algunos navegadores se recomienda dar clic secundario sobre 'Descargar' y seleccionar 'Guardar enlace como...'.", "Proceso finalizado", System.IO.Path.GetFileName(Archivo), DatosGenerales.TiposMensaje.Informacion);
             }
         }
+
         #endregion Eventos
     }
 }

@@ -27,7 +27,8 @@
                         <div style="width: 300px; float: left">
                             <fieldset>
                                 <legend>Limpiar archivos temporales antiguos:</legend>
-                                <asp:Button ID="btnLimpiaReportes" runat="server" Text="Limpiar" CssClass="boton" OnClick="btnLimpiaReportes_Click" />
+                                <asp:Button ID="btnLimpiaReportes" runat="server" Text="Limpiar" CssClass="boton"
+                                    OnClick="btnLimpiaReportes_Click" />
                                 <br />
                                 <asp:Label ID="lblLimpiaReportes" runat="server" Text=""></asp:Label>
                             </fieldset>

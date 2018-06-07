@@ -1,14 +1,12 @@
-
 /*BODY {
     PADDING-RIGHT: 0px;
     PADDING-LEFT: 0px;
     FONT-SIZE: 12px;
     PADDING-BOTTOM: 0px;
-    MARGIN: 0px; 
+    MARGIN: 0px;
     /*COLOR: #000000;
     PADDING-TOP: 0px;
-    FONT-FAMILY: Trebuchet MS; 
-
+    FONT-FAMILY: Trebuchet MS;
 }
 */
 .MainDiv
@@ -16,12 +14,12 @@
     width: 980px;
 }
 
-textarea 
+textarea
 {
     resize: none;
 }
 
-input.passwordEntry 
+input.passwordEntry
 {
     width: 320px;
     border: 1px solid #ccc;
@@ -42,7 +40,6 @@ TH {
     FONT-SIZE: 12px;
     FONT-FAMILY: Trebuchet MS;
     text-align:left;
-
 }
 
 INPUT {
@@ -62,18 +59,18 @@ INPUT.button {
     BORDER-BOTTOM: #92a0af 2px double;
 }
 
-.button2 
+.button2
 {
-    background: #FF5C00 url('URL_overlay.png') repeat-x;  
-    display: inline-block;     
-    color: #FFF;  
-    text-decoration: none;  
-    -moz-border-radius: 6px;  
-    -webkit-border-radius: 6px;  
-    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.6);  
-    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.6);  
-    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);  
-    position: relative;  
+    background: #FF5C00 url('URL_overlay.png') repeat-x;
+    display: inline-block;
+    color: #FFF;
+    text-decoration: none;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    position: relative;
     cursor:pointer;
     top: 0px;
     left: 0px;
@@ -84,11 +81,11 @@ INPUT.button {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
-    border: 1px solid #c5dbec; 
-    background: #dfeffc url(../Imagenes/button.png) 50% 50% repeat-x; 
-    font-weight: bold; 
-    color: #2e6e9e; 
-    outline: none; 
+    border: 1px solid #c5dbec;
+    background: #dfeffc url(../Imagenes/button.png) 50% 50% repeat-x;
+    font-weight: bold;
+    color: #2e6e9e;
+    outline: none;
 }
 .boton:hover
 {
@@ -115,63 +112,62 @@ Select {
     FONT-FAMILY: Trebuchet MS; /*background-color: #EFEBEF;*/
 }
 
-.nobr { 
+.nobr {
     border-width:0px;
-} 
+}
 
-td { 
-    border-style:solid; 
+td {
+    border-style:solid;
     border-width:1px;
-    height:20px; 
+    height:20px;
     border-style:none;
     margin-left: 40px;
-} 
+}
 
-.tabla { 
+.tabla {
     /*background-color: #FFFFFF;*/
-    border-style:none; 
-    border-color:none; 
+    border-style:none;
+    border-color:none;
     border-width:0;
-    height:30; 
-} 
+    height:30;
+}
 
-.tablaW { 
+.tablaW {
     background-color: #FFFFFF;
-    border-style:none; 
-    border-color:none; 
+    border-style:none;
+    border-color:none;
     border-width:0;
-    height:30; 
-} 
+    height:30;
+}
 
-.tablaNBG 
+.tablaNBG
 {
     background-color: #F7F3F7;
-    border-style:none; 
-    border-color:none; 
+    border-style:none;
+    border-color:none;
     border-width:0;
 }
 
-.tablaNC { 
+.tablaNC {
     background-color: none;
-    border-style:none; 
-   
+    border-style:none;
+
     border-width:0;
     height:6px;
-    
 }
 
-.tablaNC1 
+.tablaNC1
 {
     font-family:Trebuchet MS;
     background-color: none;
-    border-style:none; 
-  
+    border-style:none;
+
     border-width:0;
     height:5px;
-    text-align: left; 
+    text-align: left;
 }
 
-/*.fondobg 
+/*.fondobg
 {
     border-style:none;
     background-image: url(../Images/buscador/mapa.jpg);
@@ -185,17 +181,15 @@ td {
     COLOR:#000000;
     /*background-color:  #FFFFFF;*/
     text-align: left;
-    border-style:none; 
-
+    border-style:none;
 }
 
 .CeldaDetalleNota
 {
-    
     background-color: #FFFFFF;
     height:22;
     border-width:0;
-    FONT-SIZE: 10px;	
+    FONT-SIZE: 10px;
 }
 
 .CeldaDetalleB
@@ -205,7 +199,6 @@ td {
     background-color: #deddf3;
     height:22;
     border-width:0;
-
 }
 
 .CeldaDetA
@@ -217,11 +210,10 @@ td {
 
 .CeldaDetB
 {
-    /*FONT-WEIGHT: bold;*/	
+    /*FONT-WEIGHT: bold;*/
     COLOR:#FFFFFF;
     background-color: #deddf3;
 }
-
 
 .CeldaResultado
 {
@@ -232,11 +224,10 @@ background-color: #D8E4ED;
 {
     FONT-WEIGHT: bold;
     background-color: #FFFFFF;
-    border-style:none; 
-    border-color:none; 
+    border-style:none;
+    border-color:none;
     border-width:0;
-    height:30; 
-
+    height:30;
 }
 
 .CeldaTituloE
@@ -253,9 +244,7 @@ background-color: #D8E4ED;
     background: -ms-linear-gradient(top,  rgba(255,34,9,1) 0%,rgba(196,4,4,1) 100%); /* IE10+ */
     background: linear-gradient(top,  rgba(255,34,9,1) 0%,rgba(196,4,4,1) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff2209', endColorstr='#c40404',GradientType=0 ); /* IE6-9 */
-
 }
-
 
 .CeldaTitulo
 {
@@ -264,7 +253,6 @@ background-color: #D8E4ED;
     background-color: #275DA7;
     FONT-SIZE: 12px;
     text-align: center;
-
 }
 
 .CeldaTitulo2
@@ -274,7 +262,6 @@ background-color: #D8E4ED;
     background-color: #6394D7;
     FONT-SIZE: 12px;
     text-align: center;
-
 }
 
 .CeldaTitulo3
@@ -284,7 +271,6 @@ background-color: #D8E4ED;
     background-color: #2255AA;
     FONT-SIZE: 12px;
     text-align: center;
-
 }
 
 .CeldaTitulo4
@@ -303,7 +289,6 @@ background-color: #D8E4ED;
     FONT-SIZE: 5px;
     text-align: center;
     height : 5px;
-
 }
 
 .CeldaReg
@@ -313,7 +298,6 @@ background-color: #D8E4ED;
     background-color: #024358;
     FONT-SIZE: 12px;
     text-align: center;
-
 }
 
 .CeldaImagenAzul
@@ -358,8 +342,6 @@ background-color: #D8E4ED;
     background: linear-gradient(top,  rgba(195,217,255,1) 0%,rgba(177,200,239,1) 41%,rgba(152,176,217,1) 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c3d9ff', endColorstr='#98b0d9',GradientType=0 ); /* IE6-9 */
 
-
-
     FONT-SIZE: 12px;
     text-align: left;
     vertical-align:middle;
@@ -387,7 +369,7 @@ background-color: #D8E4ED;
     FONT-WEIGHT: bold;
     COLOR:#003063;
     FONT-SIZE: 16px;
-    border-style:none; 
+    border-style:none;
 }
 
 .CeldaTituloReg
@@ -411,7 +393,6 @@ background-color: #D8E4ED;
     FONT-SIZE: 10px;
 }
 
-
 /*
 .CeldaTitulo
 {
@@ -420,7 +401,6 @@ background-color: #D8E4ED;
     background-color: #456071;
     FONT-SIZE: 12px;
     text-align: center;
-
 }
 
 .Titulo
@@ -431,15 +411,13 @@ background-color: #D8E4ED;
 }
 */
 
+.hand{
+  cursor: hand;
+}
 
-.hand{ 
-  cursor: hand; 
-} 
-
-td.fondobnr 
+td.fondobnr
 {
-    
-    border-style:none; 
+    border-style:none;
     border-width:0;
     /*background-color: #FFFFFF;*/
     /*background-image: url(imagenes/cyc_encabezado.jpg);*/
@@ -448,10 +426,9 @@ td.fondobnr
     background-position: left top;
 }
 
-
 /*menu izq*/
 
-.buttonscontainer1 
+.buttonscontainer1
 {
     width: 222px;
 /*	background-color:#fdfbf6;
@@ -484,7 +461,7 @@ td.fondobnr
  color: #000374;
 }
 
-.buttons3 
+.buttons3
 {
  width: 222px;
  background: #e5e5e5 url(../Images/sub2menu_bg.gif) left top no-repeat;
@@ -494,9 +471,8 @@ td.fondobnr
  text-decoration: none;
 }
 
-.buttons3 a 
+.buttons3 a
 {
-
 font-family:Trebuchet MS;
 font-size: 10px;
 text-decoration: none;
@@ -508,7 +484,7 @@ text-decoration: none;
 /*border-bottom: 1px solid #848284;*/
 }
 
-.buttons3 a:hover 
+.buttons3 a:hover
 {
 font-family:Trebuchet MS;
 font-size: 10px;
@@ -519,24 +495,23 @@ font-weight: bold;
 text-decoration: none;
 }
 
+.cajas {     width: 223px;
+    background-image: url(../Images/buscador/v_bordes_centro.jpg);
+    background-repeat: repeat-y;
+}
 
-.cajas {     width: 223px; 
-    background-image: url(../Images/buscador/v_bordes_centro.jpg); 
-    background-repeat: repeat-y; 
-} 
+.cajaarribas {
+    background-image: url(../Images/buscador/bordes_sup.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+}
 
-.cajaarribas { 
-    background-image: url(../Images/buscador/bordes_sup.jpg); 
-    background-position: top center; 
-    background-repeat: no-repeat; 
-} 
-
-.cajaabajos { 
-    background-image: url(../Images/buscador/bordes_inf.jpg); 
-    background-position: bottom left; 
-    background-repeat: no-repeat; 
-    padding: 15px 15px 15px 15px; 
-} 
+.cajaabajos {
+    background-image: url(../Images/buscador/bordes_inf.jpg);
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    padding: 15px 15px 15px 15px;
+}
 
 td.fondoB
 {
@@ -548,26 +523,26 @@ td.fondoTops
     background-color:#deddf3;
 }
 
-td.bordesT { 
-    border-style:solid; 
-    border-color:666666; 
+td.bordesT {
+    border-style:solid;
+    border-color:666666;
     border-width:1px;
     FONT-WEIGHT: bold;
     COLOR:#FFFFFF;
     background-color: #deddf3;
     FONT-SIZE: 13px;
-    text-align: center; 
-} 
+    text-align: center;
+}
 
-td.bordesCA { 
-    border-style:solid; 
-    border-color:666666; 
+td.bordesCA {
+    border-style:solid;
+    border-color:666666;
     border-width:1px;
     background-color: #ffffff;
-} 
-td.bordesCB { 
-    border-style:solid; 
-    border-color:666666; 
+}
+td.bordesCB {
+    border-style:solid;
+    border-color:666666;
     border-width:1px;
     background-color: #deddf3;
 }
@@ -582,7 +557,7 @@ td.bordesCB {
 /*
 .fondobg {
     background-color: #FFFFFF;
-    border-style:none; 
+    border-style:none;
 }
 */
 .editViewHeaderBG
@@ -603,15 +578,15 @@ td.bordesCB {
 
 div#content { margin: 15px 30px 15px 30px; }
 div#contenidoLogueado { margin:50px 25px 25px 25px;}
-div#top 
+div#top
 {
     /*margin: 0px; height:80px;*/
     border-bottom: 1px dotted #B51032;
     border-top: 3px solid #B51032;
 }
-div#toplogin 
+div#toplogin
 {
-    margin: 0px 10px 10px 10px; 
+    margin: 0px 10px 10px 10px;
     border-bottom: 1px dotted #B51032;
     border-top: 3px solid #B51032;
 }
@@ -715,7 +690,6 @@ margin:3px 0;
 cursor:help;
 }
 
-
 input[type=text], textarea, select, [type=password]
 {
     border: thin solid #99CCFF;
@@ -738,28 +712,28 @@ input[type=text][disabled]:active, select, [type=password]
 }
 
 /*Estilo scrollbar
-::-webkit-scrollbar 
+::-webkit-scrollbar
 {
-     width: 10px; 
-} 
+     width: 10px;
+}
 
-::-webkit-scrollbar-track 
+::-webkit-scrollbar-track
 {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-    -webkit-border-radius: 10px; 
-    border-radius: 10px; 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb
-{ 
-    -webkit-border-radius: 10px; 
-    border-radius: 10px; 
+{
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
     background-color: SteelBlue;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-} 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
 
-::-webkit-scrollbar-thumb:window-inactive 
-{ 
+::-webkit-scrollbar-thumb:window-inactive
+{
     background-color: LightGray;
 }*/
 /*Header*/

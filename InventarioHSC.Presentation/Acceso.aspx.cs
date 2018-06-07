@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web.Security;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
+
 namespace InventarioHSC.Forms
 {
     public partial class Acceso : System.Web.UI.Page
@@ -34,12 +31,10 @@ namespace InventarioHSC.Forms
             //            jScript.Append("</Script>" + Environment.NewLine);
             //            ClientScript.RegisterStartupScript(this.GetType(), "Bookmark", jScript.ToString());
             //}
-
         }
 
         protected void Login1_LoginError(object sender, EventArgs e)
         {
-
         }
 
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
@@ -72,7 +67,6 @@ namespace InventarioHSC.Forms
             //        FormsAuthentication.Authenticate(Login1.UserName.ToString().ToUpper(), "SuCasita_123");
             //    }
             //}
-
         }
     }
 }

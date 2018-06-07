@@ -1,20 +1,15 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Microsoft.Reporting.WebForms;
 using InventarioHSC.BusinessLayer;
-using InventarioHSC.Model;
-
+using Microsoft.Reporting.WebForms;
 
 namespace InventarioHSC
 {
     public partial class CatalogoProveedor : System.Web.UI.Page
     {
         public BLProveedores objProveedor = new BLProveedores();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -80,17 +75,14 @@ namespace InventarioHSC
             ActualizaGrid();
         }
 
-
         protected void ActualizaGrid()
         {
             gwvProveedor.DataSource = objProveedor.ObtieneProveedores();
             gwvProveedor.DataBind();
         }
 
-
         protected void fnLimpiaControlDetalle()
         {
-
         }
 
         public void CambiaEstadoNotificacion(string TipoEtiqueta, bool Accion, string Mensaje)
@@ -126,7 +118,7 @@ namespace InventarioHSC
         {
             int idProveedor = objProveedor.InsertaProveedor(0, txtDescripcion.Text.ToUpper(), "ACTIVO");
             txtDescripcion.Text = string.Empty;
-            
+
             if (idProveedor != 0)
             {
                 CambiaEstadoNotificacion("Info", true, "El proveedor fue dado de alta correctamente.");

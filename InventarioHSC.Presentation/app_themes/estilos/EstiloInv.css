@@ -1,49 +1,49 @@
 ﻿/*Check In A Produccion.*/
- .Headers
+.Headers
 {
-    border: 1px solid #c5dbec; 
-    background: #dfeffc url(images/ui-bg_glass_85_dfeffc_1x400.png) 50% 50% repeat-x; 
-    font-weight: bold; 
-    color: #2e6e9e; 
-    outline: none; 
-    height:30px;
-    text-align:center;
+    border: 1px solid #c5dbec;
+    background: #dfeffc url(images/ui-bg_glass_85_dfeffc_1x400.png) 50% 50% repeat-x;
+    font-weight: bold;
+    color: #2e6e9e;
+    outline: none;
+    height: 30px;
+    text-align: center;
 }
 .Encabezado
 {
-    text-align:center;    
+    text-align: center;
 }
 
 .Entrada
 {
-  width:350px;
-  font-family:Arial;
-  font-size:smaller;
+    width: 350px;
+    font-family: Arial;
+    font-size: smaller;
 }
 .CssCapturado
 {
-  background-color:#FFFFFF;
-  text-align:center;
+    background-color: #FFFFFF;
+    text-align: center;
 }
 .CssProceso
 {
-  background-color:#FFF31C;
-  text-align:center;
+    background-color: #FFF31C;
+    text-align: center;
 }
 .CssRechCor
 {
-  background-color:#FF8800;
-  text-align:center;
+    background-color: #FF8800;
+    text-align: center;
 }
 .CssAprobado
 {
-    background-color:#4CFF00;
-    text-align:center;
+    background-color: #4CFF00;
+    text-align: center;
 }
 .CssRechazado
 {
-    background-color:#B20000;
-    text-align:center;
+    background-color: #B20000;
+    text-align: center;
 }
 .style1
 {
@@ -51,77 +51,76 @@
     height: 324px;
 }
 
-INPUT.button 
+INPUT.button
 {
-    BORDER-RIGHT: #92a0af 2px double;
-    BORDER-TOP: #cccccc 2px double;
-    BACKGROUND: url(btn_back.jpg) #ffffff repeat-x;
-    FONT: 12px Arial,sans-serif;
-    BORDER-LEFT: #cccccc 2px double;
-    WIDTH: 130px;
-    COLOR: #990000;
-    BORDER-BOTTOM: #92a0af 2px double;
-    HEIGHT: 28px
-
+    border-right: #92a0af 2px double;
+    border-top: #cccccc 2px double;
+    background: url(btn_back.jpg) #ffffff repeat-x;
+    font: 12px Arial,sans-serif;
+    border-left: #cccccc 2px double;
+    width: 130px;
+    color: #990000;
+    border-bottom: #92a0af 2px double;
+    height: 28px;
 }
 
 .WaterMarkedTextBox
 {
-    padding: 2px 2px 2px 2px;            
+    padding: 2px 2px 2px 2px;
     border: 1px solid #BEBEBE;
     background-color: #F0F8FF;
-    text-align: left;            
-}   
-
-.modalBackground 
-{
-    background-color:White;
-    filter:alpha(opacity=35);
-    opacity:0.6;
-    z-index:-1;
+    text-align: left;
 }
 
-.modalBackgroundP 
+.modalBackground
 {
-    position:absolute;
-    size:portrait;
+    background-color: White;
+    filter: alpha(opacity=35);
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.modalBackgroundP
+{
+    position: absolute;
+    size: portrait;
     background-color: #6D7B8D;
-    filter:alpha(opacity=50);
-    opacity:0.5;
-    z-index:1000;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    z-index: 1000;
 }
 
 .Contenedor
 {
-    background-color:White;
+    background-color: White;
     border-width: 5px;
     border-style: outset;
     border-color: Black;
     padding: 20px;
-    vertical-align:middle;
+    vertical-align: middle;
 }
 
 .Lista
 {
-  width:350px;
-  height:100px;
-  font-family:Arial;
-  font-size:smaller;      
+    width: 350px;
+    height: 100px;
+    font-family: Arial;
+    font-size: smaller;
 }
 
-.button2 
+.button2
 {
-    background: #FF5C00 url('URL_overlay.png') repeat-x;  
-    display: inline-block;     
-    color: #FFF;  
-    text-decoration: none;  
-    -moz-border-radius: 6px;  
-    -webkit-border-radius: 6px;  
-    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.6);  
-    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.6);  
-    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);  
-    position: relative;  
-    cursor:pointer;
+    background: #FF5C00 url('URL_overlay.png') repeat-x;
+    display: inline-block;
+    color: #FFF;
+    text-decoration: none;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.6);
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+    position: relative;
+    cursor: pointer;
     top: 0px;
     left: 0px;
 }

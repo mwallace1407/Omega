@@ -9,7 +9,8 @@
     <link href="../../App_Themes/Estilos/estilo1.css" type="text/css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptGlobalization="True" AsyncPostBackTimeout="600">
+    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server" EnableScriptGlobalization="True"
+        AsyncPostBackTimeout="600">
     </asp:ToolkitScriptManager>
     <uc1:uscMsgBox ID="uscMsgBox1" runat="server" />
     <br />
@@ -228,9 +229,9 @@
                 </asp:UpdatePanel>
                 <asp:UpdateProgress ID="UPrg" runat="server" DisplayAfter="0" AssociatedUpdatePanelID="UPnl">
                     <ProgressTemplate>
-                        <div id="divProgress" style="top: 0px; height: 100%; background-color: Gray; opacity: 0.9; filter: alpha(opacity=90);
-                            vertical-align: middle; left: 0px; z-index: 999999; width: 100%; position: absolute;
-                            text-align: center;">
+                        <div id="divProgress" style="top: 0px; height: 100%; background-color: Gray; opacity: 0.9;
+                            filter: alpha(opacity=90); vertical-align: middle; left: 0px; z-index: 999999;
+                            width: 100%; position: absolute; text-align: center;">
                             <div style="text-align: center; width: 100px; height: 120px; position: absolute;
                                 left: 46%; top: 42%; color: #DDDDDD; font-size: large; font-weight: bold;">
                                 <img src="../../App_Themes/Imagenes/gears_animated.gif" alt="Procesando..." style="border-width: 0px;

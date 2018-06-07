@@ -31,14 +31,14 @@
             background-image: -webkit-gradient(linear,50% 0%,50% 100%,from(rgba(255,255,255,0.38)),to(rgba(255,255,255,0.16)));
             background-image: -webkit-linear-gradient(-90deg,rgba(255,255,255,0.38),rgba(255,255,255,0.16));
         }
-        
+
         img.grayscale
         {
-            filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+            filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\' /></filter></svg>#grayscale"); /* Firefox 3.5+ */
             filter: gray; /* IE6-9 */
             -webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
         }
-        
+
         img.grayscale:hover
         {
             filter: none;

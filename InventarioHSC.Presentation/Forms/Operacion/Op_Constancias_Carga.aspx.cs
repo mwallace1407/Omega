@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
 using InventarioHSC.Model;
 
@@ -12,9 +9,13 @@ namespace InventarioHSC.Forms.Operacion
     public partial class Op_Constancias_Carga : System.Web.UI.Page
     {
         #region Variables
-        BLConstancias objCon = new BLConstancias();
+
+        private BLConstancias objCon = new BLConstancias();
+
         #endregion Variables
+
         #region Metodos
+
         protected bool ExisteConstanciaPrevia(int ConA_Id, int ConP_Id, DateTime Fecha)
         {
             bool Res;
@@ -92,7 +93,6 @@ namespace InventarioHSC.Forms.Operacion
 
                 //UsoFuturo (Campo vacío)
                 if (DatosCabecera[CUsoFuturo].Trim().Length != 0) { Validaciones += "Encabezado\tCampo reservado para uso futuro, debe estar vacío.\t1" + Environment.NewLine; }
-
             }
             else
             {
@@ -224,7 +224,7 @@ namespace InventarioHSC.Forms.Operacion
                 if (DatosDetalle[CDomInm].Trim().Length > MaxDomInm || DatosDetalle[CDomInm].Trim().Length < 1) { Validaciones += "Detalle\tDomicilio del inmueble hipotecado con longitud incorrecta." + "\t" + NoLinea.ToString() + Environment.NewLine; }
 
                 //Crédito derivado de fideicomiso (S|N)
-                if(DatosDetalle[CCredDerFide].Trim().Length > 1) { Validaciones += "Detalle\tCrédito derivado de fideicomiso incorrecto" + "\t" + NoLinea.ToString() + Environment.NewLine; }
+                if (DatosDetalle[CCredDerFide].Trim().Length > 1) { Validaciones += "Detalle\tCrédito derivado de fideicomiso incorrecto" + "\t" + NoLinea.ToString() + Environment.NewLine; }
 
                 //Destino del credito (A|C|R|P|O)
                 if (DatosDetalle[CCredDestino].Trim().Length > 1) { Validaciones += "Detalle\tDestino del credito incorrecto" + "\t" + NoLinea.ToString() + Environment.NewLine; }
@@ -333,15 +333,17 @@ namespace InventarioHSC.Forms.Operacion
                 DatosGenerales.EnviaMensaje(ResLote, "Error al insertar el lote", DatosGenerales.TiposMensaje.Error);
             }
         }
+
         #endregion Metodos
+
         #region Eventos
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
                 txtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
                 objCon.ObtenerCatalogos(ref ddlAdministradora, (int)DatosGenerales.ConstanciasCatalogos.Administradoras, 0, true, "Seleccionar administradora");
-
             }
 
             if (IsPostBack)
@@ -516,8 +518,8 @@ namespace InventarioHSC.Forms.Operacion
 
         protected void btnValidar_Click(object sender, EventArgs e)
         {
-            
         }
+
         #endregion Eventos
     }
 }

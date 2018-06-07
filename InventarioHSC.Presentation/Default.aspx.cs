@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.Security;
 using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
 using InventarioHSC.Model;
-using System.IO;
 
 namespace InventarioHSC
 {
@@ -15,17 +12,14 @@ namespace InventarioHSC
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
         }
 
         protected void Login1_LoggedIn(object sender, EventArgs e)
         {
-
         }
 
         protected void Login1_LoginError(object sender, EventArgs e)
         {
-
         }
 
         protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
@@ -60,7 +54,7 @@ namespace InventarioHSC
 
                 if (DatosGenerales.CalculateDateDiff(DatosGenerales.ObtieneFechaHora(objGen.ObtenerParametroSistema(DatosGenerales.ParamMtto)), DateTime.Now).TotalDays > Convert.ToDouble(DatosGenerales.VigenciaEstandarDocumentos))
                 {
-                    LimpiaTemporales(Server.MapPath("Forms/Reportes/" + DatosGenerales.RutaLocalReportesDinamicos));                    
+                    LimpiaTemporales(Server.MapPath("Forms/Reportes/" + DatosGenerales.RutaLocalReportesDinamicos));
                 }
             }
             catch { }

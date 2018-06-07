@@ -12,25 +12,25 @@
               <DbSource ConnectionRef="hdbqa08.BD_INVENTARIOHSC.dbo" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill_ReporteGeneral" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData_ReporteGeneral" GeneratorSourceName="Fill_ReporteGeneral" GetMethodModifier="Public" GetMethodName="GetData_ReporteGeneral" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData_ReporteGeneral" UserSourceName="Fill_ReporteGeneral">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT 
-		USU.Nombre Usuario, 
-		UBI.Descripcion Ubicacion, 
-		REG.Nombre Region, 
-		TEQ.Descripcion TipoActivo, 
-		ART.NoSerie, 
-		ART.CodigoCastor, 
+                    <CommandText>SELECT
+		USU.Nombre Usuario,
+		UBI.Descripcion Ubicacion,
+		REG.Nombre Region,
+		TEQ.Descripcion TipoActivo,
+		ART.NoSerie,
+		ART.CodigoCastor,
 		ART.Observacion1,
-		ART.Observacion2, 
-		ART.Observacion3, 
-		'MODELO:' + LTRIM(RTRIM(ART.Modelo)) + 
-		', PROCESADOR: ' + ART.Procesador + 
-		', RAM: ' + ART.RAM + 
-		', DISCO DURO: ' + ART.DiscoDuro + 
-		', SISTEMA OPERATIVO: ' + SO.Descripcion + 
-		', MARCA: ' + MAR.Descripcion + 
+		ART.Observacion2,
+		ART.Observacion3,
+		'MODELO:' + LTRIM(RTRIM(ART.Modelo)) +
+		', PROCESADOR: ' + ART.Procesador +
+		', RAM: ' + ART.RAM +
+		', DISCO DURO: ' + ART.DiscoDuro +
+		', SISTEMA OPERATIVO: ' + SO.Descripcion +
+		', MARCA: ' + MAR.Descripcion +
 		', PROVEEDOR: ' + PRO.Descripcion AS Observacion,
 		ART.Responsiva,
-		CASE 
+		CASE
 			WHEN ISNULL(JCB.NoSerie, '') = '' THEN
 				'JCB'
 			WHEN ISNULL(AC.NoSerie, '') = '' THEN
@@ -39,31 +39,31 @@
 				'HSC'
 		END Tipo
 FROM Articulo ART
-LEFT JOIN 
+LEFT JOIN
 	ArticuloJCB JCB ON
 	ART.NoSerie = JCB.NoSerie
-LEFT JOIN 
+LEFT JOIN
 	ArticuloCorporativo AC ON
 	ART.NoSerie = AC.NoSerie
-INNER JOIN 
+INNER JOIN
 	TipoEquipo TEQ ON
 	ART.idTipoEquipo = TEQ.idTipoEquipo
-LEFT JOIN 
+LEFT JOIN
 	Usuario USU ON
-	ART.idUsuario = USU.idUsuario	
-LEFT JOIN 
+	ART.idUsuario = USU.idUsuario
+LEFT JOIN
 	Ubicacion UBI ON
 	ART.idUbicacion = UBI.idUbicacion
-LEFT JOIN 
+LEFT JOIN
 	Region REG ON
 	UBI.idRegion = REG.idRegion
-LEFT JOIN 
-	Marca MAR ON 
+LEFT JOIN
+	Marca MAR ON
 	ART.idMarca = MAR.idMarca
-LEFT JOIN 
+LEFT JOIN
 	Proveedor PRO ON
 	ART.idProveedor = PRO.idProveedor
-LEFT JOIN 
+LEFT JOIN
 	SistemaOperativo SO ON
 	ART.idSistema = SO.idSistema
 WHERE ART.idUbicacion = @idUbicacion
@@ -93,25 +93,25 @@ ORDER BY USU.Nombre, ART.NoSerie, JCB.NoSerie, AC.NoSerie</CommandText>
               <DbSource ConnectionRef="hdbqa08.BD_INVENTARIOHSC.dbo" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy_PorUsuario" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy_PorUsuario" GeneratorSourceName="FillBy_PorUsuario" GetMethodModifier="Public" GetMethodName="GetDataBy_PorUsuario" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy_PorUsuario" UserSourceName="FillBy_PorUsuario">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT 
-		USU.Nombre Usuario, 
-		UBI.Descripcion Ubicacion, 
-		REG.Nombre Region, 
-		TEQ.Descripcion TipoActivo, 
-		ART.NoSerie, 
-		ART.CodigoCastor, 
+                    <CommandText>SELECT
+		USU.Nombre Usuario,
+		UBI.Descripcion Ubicacion,
+		REG.Nombre Region,
+		TEQ.Descripcion TipoActivo,
+		ART.NoSerie,
+		ART.CodigoCastor,
 		ART.Observacion1,
-		ART.Observacion2, 
-		ART.Observacion3, 
-		'MODELO:' + LTRIM(RTRIM(ART.Modelo)) + 
-		', PROCESADOR: ' + ART.Procesador + 
-		', RAM: ' + ART.RAM + 
-		', DISCO DURO: ' + ART.DiscoDuro + 
-		', SISTEMA OPERATIVO: ' + SO.Descripcion + 
-		', MARCA: ' + MAR.Descripcion + 
+		ART.Observacion2,
+		ART.Observacion3,
+		'MODELO:' + LTRIM(RTRIM(ART.Modelo)) +
+		', PROCESADOR: ' + ART.Procesador +
+		', RAM: ' + ART.RAM +
+		', DISCO DURO: ' + ART.DiscoDuro +
+		', SISTEMA OPERATIVO: ' + SO.Descripcion +
+		', MARCA: ' + MAR.Descripcion +
 		', PROVEEDOR: ' + PRO.Descripcion AS Observacion,
 		ART.Responsiva,
-		CASE 
+		CASE
 			WHEN ISNULL(JCB.NoSerie, '') = '' THEN
 				'JCB'
 			WHEN ISNULL(AC.NoSerie, '') = '' THEN
@@ -120,31 +120,31 @@ ORDER BY USU.Nombre, ART.NoSerie, JCB.NoSerie, AC.NoSerie</CommandText>
 				'HSC'
 		END Tipo
 FROM Articulo ART
-LEFT JOIN 
+LEFT JOIN
 	ArticuloJCB JCB ON
 	ART.NoSerie = JCB.NoSerie
-LEFT JOIN 
+LEFT JOIN
 	ArticuloCorporativo AC ON
 	ART.NoSerie = AC.NoSerie
-INNER JOIN 
+INNER JOIN
 	TipoEquipo TEQ ON
 	ART.idTipoEquipo = TEQ.idTipoEquipo
-LEFT JOIN 
+LEFT JOIN
 	Usuario USU ON
-	ART.idUsuario = USU.idUsuario	
-LEFT JOIN 
+	ART.idUsuario = USU.idUsuario
+LEFT JOIN
 	Ubicacion UBI ON
 	ART.idUbicacion = UBI.idUbicacion
-LEFT JOIN 
+LEFT JOIN
 	Region REG ON
 	UBI.idRegion = REG.idRegion
-LEFT JOIN 
-	Marca MAR ON 
+LEFT JOIN
+	Marca MAR ON
 	ART.idMarca = MAR.idMarca
-LEFT JOIN 
+LEFT JOIN
 	Proveedor PRO ON
 	ART.idProveedor = PRO.idProveedor
-LEFT JOIN 
+LEFT JOIN
 	SistemaOperativo SO ON
 	ART.idSistema = SO.idSistema
 WHERE USU.Nombre = @Nombre
@@ -162,31 +162,31 @@ ORDER BY USU.Nombre, ART.NoSerie, JCB.NoSerie, AC.NoSerie</CommandText>
               <DbSource ConnectionRef="hdbqa08.BD_INVENTARIOHSC.dbo" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill_ReporteMovimientos" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData_ReporteMovimientos" GeneratorSourceName="Fill_ReporteMovimientos" GetMethodModifier="Public" GetMethodName="GetData_ReporteMovimientos" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData_ReporteMovimientos" UserSourceName="Fill_ReporteMovimientos">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT 
-		USU.Nombre Usuario, 
-		UBI.Descripcion Ubicacion, 
-		REG.Nombre Region, 
-		TEQ.Descripcion TipoActivo, 
-		ART.NoSerie, 
-		ART.CodigoCastor, 
+                    <CommandText>SELECT
+		USU.Nombre Usuario,
+		UBI.Descripcion Ubicacion,
+		REG.Nombre Region,
+		TEQ.Descripcion TipoActivo,
+		ART.NoSerie,
+		ART.CodigoCastor,
 		ART.Observacion1,
-		ART.Observacion2, 
-		ART.Observacion3, 
-		CASE 
-			WHEN ART.idTipoEquipo  = 1 OR ART.idTipoEquipo  = 2 OR ART.idTipoEquipo = 3 THEN 
-				'MODELO:' + ISNULL(LTRIM(RTRIM(ART.Modelo)), '') + 
-				', PROCESADOR: ' + ISNULL(ART.Procesador, '') + 
-				', RAM: ' + ISNULL(ART.RAM, '') + 
-				', DISCO DURO: ' + ISNULL(ART.DiscoDuro, '') + 
-				', SISTEMA OPERATIVO: ' + ISNULL(SO.Descripcion, '') + 
-				', MARCA: ' + ISNULL(MAR.Descripcion, '') + 
-				', PROVEEDOR: ' + ISNULL(PRO.Descripcion, '') 
-			ELSE 
-				'MARCA: ' + ISNULL(MAR.Descripcion, '') + 
-				', PROVEEDOR: ' + ISNULL(PRO.Descripcion, '') 
-		END AS Observacion, 
-		ART.Responsiva, 
-		CASE 
+		ART.Observacion2,
+		ART.Observacion3,
+		CASE
+			WHEN ART.idTipoEquipo  = 1 OR ART.idTipoEquipo  = 2 OR ART.idTipoEquipo = 3 THEN
+				'MODELO:' + ISNULL(LTRIM(RTRIM(ART.Modelo)), '') +
+				', PROCESADOR: ' + ISNULL(ART.Procesador, '') +
+				', RAM: ' + ISNULL(ART.RAM, '') +
+				', DISCO DURO: ' + ISNULL(ART.DiscoDuro, '') +
+				', SISTEMA OPERATIVO: ' + ISNULL(SO.Descripcion, '') +
+				', MARCA: ' + ISNULL(MAR.Descripcion, '') +
+				', PROVEEDOR: ' + ISNULL(PRO.Descripcion, '')
+			ELSE
+				'MARCA: ' + ISNULL(MAR.Descripcion, '') +
+				', PROVEEDOR: ' + ISNULL(PRO.Descripcion, '')
+		END AS Observacion,
+		ART.Responsiva,
+		CASE
 			WHEN ISNULL(JCB.NoSerie, '') = '' THEN 'JCB'
 			WHEN ISNULL(AC.NoSerie, '') = '' THEN 'CORP'
 			WHEN ISNULL(ART.NoSerie, '') = '' THEN 'HSC'
@@ -195,40 +195,40 @@ ORDER BY USU.Nombre, ART.NoSerie, JCB.NoSerie, AC.NoSerie</CommandText>
 		CONVERT(VARCHAR(10), HM.fechaMovimiento, 103) FechaMov,
 		CONVERT(VARCHAR(10), HM.fechaTransaccion, 103) FechaTran
 FROM Articulo ART
-LEFT JOIN 
+LEFT JOIN
 	ArticuloCorporativo AC ON
 	ART.NoSerie = AC.NoSerie
-LEFT JOIN 
+LEFT JOIN
 	ArticuloJCB JCB ON
 	ART.NoSerie = JCB.NoSerie
-INNER JOIN 
+INNER JOIN
 	Historico_Movimiento HM ON
 	HM.idItem = ART.idItem
 INNER JOIN
 	TipoMovimiento TM ON
 	HM.idTipoMovimiento = tm.idTipoMovimiento
-LEFT JOIN 
-	TipoEquipo TEQ ON 
-	ART.idTipoEquipo = TEQ.idTipoEquipo 
-LEFT JOIN 
-	Usuario USU ON 
-	ART.idUsuario = USU.idUsuario 
-LEFT JOIN 
-	Ubicacion UBI ON 
-	ART.idUbicacion = UBI.idUbicacion 
-AND UBI.Estatus = 1 
-LEFT JOIN 
-	Region REG ON 
-	UBI.idRegion = REG.idRegion 
-AND REG.Estatus = 1 
-LEFT JOIN 
-	Marca MAR ON 
-	ART.idMarca = MAR.idMarca 
-LEFT JOIN 
-	Proveedor PRO ON 
-	ART.idProveedor = PRO.idProveedor 
-LEFT JOIN 
-	SistemaOperativo SO ON 
+LEFT JOIN
+	TipoEquipo TEQ ON
+	ART.idTipoEquipo = TEQ.idTipoEquipo
+LEFT JOIN
+	Usuario USU ON
+	ART.idUsuario = USU.idUsuario
+LEFT JOIN
+	Ubicacion UBI ON
+	ART.idUbicacion = UBI.idUbicacion
+AND UBI.Estatus = 1
+LEFT JOIN
+	Region REG ON
+	UBI.idRegion = REG.idRegion
+AND REG.Estatus = 1
+LEFT JOIN
+	Marca MAR ON
+	ART.idMarca = MAR.idMarca
+LEFT JOIN
+	Proveedor PRO ON
+	ART.idProveedor = PRO.idProveedor
+LEFT JOIN
+	SistemaOperativo SO ON
 	ART.idSistema = SO.idSistema
 WHERE ART.NoSerie = @NoSerie
 ORDER BY ART.NoSerie

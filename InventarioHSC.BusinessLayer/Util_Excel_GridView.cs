@@ -1,25 +1,29 @@
 ﻿#region Importaciones
+
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using DocumentFormat.OpenXml.Spreadsheet;
-using System.Data;
 using SpreadsheetGear;
-#endregion
+
+#endregion Importaciones
 
 #region Comentarios
+
 //-- =============================================
 //-- Autor:		            Julio Cesar Barron Galindo
 //-- Fecha Modificacion:	21/06/2012
 //-- =============================================
-#endregion
+
+#endregion Comentarios
 
 namespace InventarioHSC.BusinessLayer
 {
     /// <summary>
-    /// Clase que genera un Excel Por medio de los gridView que contiene una pagina 
+    /// Clase que genera un Excel Por medio de los gridView que contiene una pagina
     /// </summary>
     public class Util_Excel_GridView
     {
@@ -74,7 +78,7 @@ namespace InventarioHSC.BusinessLayer
 
                 CreaEncabezadosExcel(itemTable);
                 CreaCuerpoExcel(itemTable);
-                //} 
+                //}
             }
 
             workbook.SaveAs(ruta + NombreArchivo, SpreadsheetGear.FileFormat.OpenXMLWorkbook);
@@ -164,7 +168,6 @@ namespace InventarioHSC.BusinessLayer
                 rowIndex++;
         }
 
-
         private void CreaHoja(string nombreHoja)
         {
             worksheet = workbook.Worksheets.Add();
@@ -217,6 +220,7 @@ namespace InventarioHSC.BusinessLayer
                                         DataBoundLiteralControl objDBLC = (DataBoundLiteralControl)tCell.Controls[k];
                                         cells[headerColumns[x - j] + rowIndex.ToString()].Value = objDBLC.Text.removerAcentos().Replace("&nbsp;", "");
                                         break;
+
                                     case "System.Web.UI.WebControls.CheckBox":
                                         CheckBox objCheckBox = (CheckBox)tCell.Controls[k];
                                         string strSIoNO = string.Empty;
@@ -226,6 +230,7 @@ namespace InventarioHSC.BusinessLayer
                                             strSIoNO = "No";
                                         cells[headerColumns[x - j] + rowIndex.ToString()].Value = strSIoNO;
                                         break;
+
                                     case "System.Web.UI.WebControls.DataControlLinkButton":
                                         LinkButton objLinkButton = (LinkButton)tCell.Controls[k];
                                         cells[headerColumns[x - j] + rowIndex.ToString()].Value = objLinkButton.Text.removerAcentos().Replace("&nbsp;", "");
@@ -272,11 +277,8 @@ namespace InventarioHSC.BusinessLayer
                 {
                     string valor = item[x].ToString().ConvertirAcentosHTML().Replace("&nbsp;", "").Trim();
 
-
                     //if (valor.StartsWith("="))
                     //{
-
-
                     //     //cells[headerColumns[x] + rowIndex.ToString()].Formula = "'" + valor;
 
                     //    string valorReplace = valor.Replace("=CONCATENAR(\"", "");
@@ -664,7 +666,7 @@ namespace InventarioHSC.BusinessLayer
         public string Ruta { get; set; }
         public string NombreArchivo { get; set; }
         private string[] arrDatakeys;
-        List<int> lstIndOmitir = new List<int>();
+        private List<int> lstIndOmitir = new List<int>();
         private string[] arrOmitir;
 
         public List<int> LstIndOmitir

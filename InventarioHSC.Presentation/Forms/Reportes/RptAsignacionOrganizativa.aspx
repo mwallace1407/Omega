@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Reporte de asignación organizativa" Language="C#" MasterPageFile="~/Forms/Main.Master" AutoEventWireup="true" CodeBehind="RptAsignacionOrganizativa.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptAsignacionOrganizativa" %>
+﻿<%@ Page Title="Reporte de asignación organizativa" Language="C#" MasterPageFile="~/Forms/Main.Master"
+    AutoEventWireup="true" CodeBehind="RptAsignacionOrganizativa.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptAsignacionOrganizativa" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headMaster" runat="server">

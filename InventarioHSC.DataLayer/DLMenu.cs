@@ -1,28 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.Common;
+using System.Text;
 using InventarioHSC.Model;
-using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Data;
+
 namespace InventarioHSC.DataLayer
 {
     public class DLMenu
     {
         public DLMenu()
         {
-
         }
-        
+
         public List<sysMenu> getMenuporRol(int idRol)
         {
             string sMensaje = string.Empty;
 
-
             DataSet ds = new DataSet();
-
 
             Database db = EnterpriseLibraryContainer.Current.GetInstance<Database>("Inventario");
             StringBuilder sqlCommand = new StringBuilder();
@@ -55,22 +52,18 @@ namespace InventarioHSC.DataLayer
                     }
                 }
                 return lstMenu;
-
             }
             catch (DataException ex)
             {
                 throw ex;
             }
-
         }
 
         public List<sysMenu> getMenuporUsuario(string UserId)
         {
             string sMensaje = string.Empty;
 
-
             DataSet ds = new DataSet();
-
 
             Database db = EnterpriseLibraryContainer.Current.GetInstance<Database>("Inventario");
             StringBuilder sqlCommand = new StringBuilder();
@@ -103,13 +96,11 @@ namespace InventarioHSC.DataLayer
                     }
                 }
                 return lstMenu;
-
             }
             catch (DataException ex)
             {
                 throw ex;
             }
-
         }
 
         public List<sysMenu> getMenuHijosRolN(string UserName, int idMenuPadre, bool EsTopMenu, string NivelRuta)
@@ -152,13 +143,11 @@ namespace InventarioHSC.DataLayer
                     }
                 }
                 return lstMenu;
-
             }
             catch (DataException ex)
             {
                 throw ex;
             }
-
         }
 
         public List<sysMenu> getMenuHijosRol(int idRol, int idMenuPadre)
@@ -199,14 +188,11 @@ namespace InventarioHSC.DataLayer
                     }
                 }
                 return lstMenu;
-
             }
             catch (DataException ex)
             {
                 throw ex;
             }
-
         }
-
     }
 }

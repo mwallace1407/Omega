@@ -1,18 +1,18 @@
-﻿using InventarioHSC.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
-using System.Linq;
-using System.Text;
 using System.DirectoryServices;
-using Microsoft.Practices.EnterpriseLibrary.Data;
+using System.Text;
+using InventarioHSC.Model;
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Data;
+
 namespace InventarioHSC.DataLayer
 {
     public class DLSeguridad
     {
-        DLConstantes CONSTANTES = new DLConstantes();
+        private DLConstantes CONSTANTES = new DLConstantes();
 
         public UsuarioSeguridad getUserByID(string idUsuario)
         {
@@ -35,9 +35,8 @@ namespace InventarioHSC.DataLayer
         public string getGrupoByUserID(string UsuarioId)
         {
             DLSeguridadUsuario objUsrSeg = new DLSeguridadUsuario();
-            
-            return objUsrSeg.getGrupoByUserID(UsuarioId);
 
+            return objUsrSeg.getGrupoByUserID(UsuarioId);
         }
 
         public bool ValidaUsuario(string sNombre, string sContraseña)
@@ -45,14 +44,13 @@ namespace InventarioHSC.DataLayer
             bool Esta_Autenticado = false;
 
             try
-            {	//Bind to the native AdsObject to force authentication.			
+            {	//Bind to the native AdsObject to force authentication.
                 if (sNombre == "Administrador" && sContraseña == "SuCasita_123")
                 {
                     Esta_Autenticado = true;
                 }
                 else
                 {
-                    
                     DirectoryEntry entry = new DirectoryEntry("LDAP://consorcio.sucasita.com.mx", sNombre, sContraseña);
                     DirectorySearcher uno = new DirectorySearcher(entry);
                     uno.Filter = "(SAMAccountName=" + sNombre + ")";

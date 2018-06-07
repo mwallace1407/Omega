@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace InventarioHSC.Model
 {
@@ -21,31 +18,37 @@ namespace InventarioHSC.Model
             get { return _IdItem; }
             set { _IdItem = value; }
         }
+
         public int? responsiva
         {
             get { return _Responsiva; }
             set { _Responsiva = value; }
         }
+
         public string noSerie
         {
             get { return _NoSerie; }
             set { _NoSerie = value; }
         }
+
         public int idTipoEquipo
         {
             get { return _IdTipoEquipo; }
             set { _IdTipoEquipo = value; }
         }
+
         public string tipoEquipo
         {
             get { return _TipoEquipo; }
             set { _TipoEquipo = value; }
         }
+
         public string ubicacion
         {
             get { return _Ubicacion; }
             set { _Ubicacion = value; }
         }
+
         public string usuarioAsignado
         {
             get { return _UsuarioAsignado; }
@@ -57,6 +60,5 @@ namespace InventarioHSC.Model
             get { return _Puesto; }
             set { _Puesto = value; }
         }
-        
     }
 }

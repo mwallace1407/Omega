@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.Common;
+using System.Text;
 using InventarioHSC.Model;
-using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace InventarioHSC.DataLayer
 {
@@ -14,7 +12,6 @@ namespace InventarioHSC.DataLayer
     {
         public DLDetalleServidor()
         {
-
         }
 
         public DetalleServidor getDetalleServidorporID(int idItem)
@@ -25,7 +22,6 @@ namespace InventarioHSC.DataLayer
             Database db = EnterpriseLibraryContainer.Current.GetInstance<Database>("Inventario");
             StringBuilder sqlCommand = new StringBuilder();
 
-
             DbCommand selectCommand = null;
             sqlCommand.Append("stpS_DetalleServidor");
             DbCommand dbCommand = db.GetSqlStringCommand(sqlCommand.ToString());
@@ -35,11 +31,9 @@ namespace InventarioHSC.DataLayer
             try
             {
                 ds = db.ExecuteDataSet(selectCommand);
-
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
 
@@ -58,7 +52,6 @@ namespace InventarioHSC.DataLayer
             }
             return oDetalleServidor;
         }
-
 
         public void InsertDetalleServidor(ref DetalleServidor oDetalleServidor)
         {
@@ -113,6 +106,5 @@ namespace InventarioHSC.DataLayer
                 throw ex;
             }
         }
-
     }
 }

@@ -155,8 +155,8 @@
                             <br />
                         </div>
                         <div style="width: 202px; text-align: right;">
-                            <asp:Button ID="btnExportar" runat="server" Text="Exportar a Excel" 
-                                CssClass="boton" onclick="btnExportar_Click"/>
+                            <asp:Button ID="btnExportar" runat="server" Text="Exportar a Excel" CssClass="boton"
+                                OnClick="btnExportar_Click" />
                         </div>
                     </asp:Panel>
                 </div>

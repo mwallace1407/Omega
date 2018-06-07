@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace InventarioHSC.Model
+﻿namespace InventarioHSC.Model
 {
     public class TipoEquipo
     {
@@ -16,6 +11,7 @@ namespace InventarioHSC.Model
             get { return _idTipoEquipo; }
             set { _idTipoEquipo = value; }
         }
+
         public string descripcion
         {
             get { return _descripcion; }

@@ -1,5 +1,5 @@
-﻿<%@ Page Title="Modificar datos de una aplicación" Language="C#" MasterPageFile="~/Forms/Main.Master" AutoEventWireup="true"
-    CodeBehind="ModificarAplicacion.aspx.cs" Inherits="InventarioHSC.Forms.Aplicaciones.ModificarAplicacion" %>
+﻿<%@ Page Title="Modificar datos de una aplicación" Language="C#" MasterPageFile="~/Forms/Main.Master"
+    AutoEventWireup="true" CodeBehind="ModificarAplicacion.aspx.cs" Inherits="InventarioHSC.Forms.Aplicaciones.ModificarAplicacion" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Register Src="~/Forms/Controles/uscMsgBox.ascx" TagPrefix="uc1" TagName="uscMsgBox" %>
@@ -27,8 +27,7 @@
                     Aplicación:
                 </div>
                 <div style="width: 275px; float: right; text-align: left;">
-                    <asp:DropDownList ID="ddlApp" runat="server" Width="202" AutoPostBack="True" 
-                        onselectedindexchanged="ddlApp_SelectedIndexChanged">
+                    <asp:DropDownList ID="ddlApp" runat="server" Width="202" AutoPostBack="True" OnSelectedIndexChanged="ddlApp_SelectedIndexChanged">
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator ID="rfv_ddlApp" runat="server" ErrorMessage="Campo requerido"
                         Display="None" ControlToValidate="ddlApp" InitialValue="0" SetFocusOnError="True"></asp:RequiredFieldValidator>

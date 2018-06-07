@@ -102,20 +102,13 @@
                         OnRowDataBound="grdDatos_RowDataBound" ForeColor="#333333" OnPageIndexChanging="grdDatos_PageIndexChanging"
                         GridLines="None" AllowPaging="True">
                         <Columns>
-                            <asp:BoundField HeaderText="Cart_Id" DataField="Cart_Id">
-                            </asp:BoundField>
-                            <asp:BoundField HeaderText="Préstamo" DataField="Cart_NumeroPrestamo">
-                            </asp:BoundField>
-                            <asp:BoundField HeaderText="Acreditado" DataField="Cart_NombreAcreditado">
-                            </asp:BoundField>
-                            <asp:BoundField HeaderText="Referencia" DataField="Cart_Referencia">
-                            </asp:BoundField>
-                            <asp:BoundField HeaderText="Fecha Documento" DataField="Cart_FechaDocumento">
-                            </asp:BoundField>
-                            <asp:BoundField HeaderText="Fecha Creación" DataField="Cart_FechaCreacion">
-                            </asp:BoundField>
-                            <asp:BoundField HeaderText="Usuario" DataField="Usuario">
-                            </asp:BoundField>
+                            <asp:BoundField HeaderText="Cart_Id" DataField="Cart_Id"></asp:BoundField>
+                            <asp:BoundField HeaderText="Préstamo" DataField="Cart_NumeroPrestamo"></asp:BoundField>
+                            <asp:BoundField HeaderText="Acreditado" DataField="Cart_NombreAcreditado"></asp:BoundField>
+                            <asp:BoundField HeaderText="Referencia" DataField="Cart_Referencia"></asp:BoundField>
+                            <asp:BoundField HeaderText="Fecha Documento" DataField="Cart_FechaDocumento"></asp:BoundField>
+                            <asp:BoundField HeaderText="Fecha Creación" DataField="Cart_FechaCreacion"></asp:BoundField>
+                            <asp:BoundField HeaderText="Usuario" DataField="Usuario"></asp:BoundField>
                             <asp:TemplateField HeaderText="Archivo">
                                 <EditItemTemplate>
                                     <asp:HyperLink ID="HyperLink1" runat="server">HyperLink</asp:HyperLink>

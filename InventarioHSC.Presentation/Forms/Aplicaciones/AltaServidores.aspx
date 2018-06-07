@@ -134,9 +134,9 @@
                 </div>
                 <div style="width: 275px; float: right; text-align: left;">
                     <asp:TextBox ID="txtRAM" runat="server" Width="200" MaxLength="10" autocomplete="off"></asp:TextBox>
-                        <asp:FilteredTextBoxExtender ID="ftxt_txtRAM" runat="server" Enabled="True" FilterType="Numbers"
-                            TargetControlID="txtRAM">
-                        </asp:FilteredTextBoxExtender>
+                    <asp:FilteredTextBoxExtender ID="ftxt_txtRAM" runat="server" Enabled="True" FilterType="Numbers"
+                        TargetControlID="txtRAM">
+                    </asp:FilteredTextBoxExtender>
                 </div>
             </div>
             <br />
@@ -156,7 +156,8 @@
                     Observaciones:
                 </div>
                 <div style="width: 275px; float: right; text-align: left;">
-                    <asp:TextBox ID="txtObservaciones" runat="server" Width="200" MaxLength="1000" TextMode="MultiLine" Height="100"></asp:TextBox>
+                    <asp:TextBox ID="txtObservaciones" runat="server" Width="200" MaxLength="1000" TextMode="MultiLine"
+                        Height="100"></asp:TextBox>
                 </div>
             </div>
             <br />
@@ -172,9 +173,9 @@
                         </asp:DropDownList>
                         &nbsp&nbsp&nbsp&nbsp Capacidad (En MB):
                         <asp:TextBox ID="txtCapacidad" autocomplete="off" runat="server" Width="50" MaxLength="10"></asp:TextBox>
-                            <asp:FilteredTextBoxExtender ID="ftxt_txtCapacidad" runat="server" Enabled="True"
-                                FilterType="Numbers" TargetControlID="txtCapacidad">
-                            </asp:FilteredTextBoxExtender>
+                        <asp:FilteredTextBoxExtender ID="ftxt_txtCapacidad" runat="server" Enabled="True"
+                            FilterType="Numbers" TargetControlID="txtCapacidad">
+                        </asp:FilteredTextBoxExtender>
                         &nbsp&nbsp&nbsp&nbsp
                         <asp:Button ID="btnProcesarD" runat="server" Text="Agregar" CssClass="boton" OnClick="btnProcesarD_Click"
                             CausesValidation="False" />

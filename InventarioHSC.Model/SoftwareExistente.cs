@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace InventarioHSC.Model
+﻿namespace InventarioHSC.Model
 {
     public class SoftwareExistente
     {
-        int _SWEX_Id;
-        int _SW_Id;
-        string _Descripcion;
-        string _NoParte;
-        string _Llave;
-        string _Ubicacion;
-        string _Observaciones;
-        bool _EnExistencia;
+        private int _SWEX_Id;
+        private int _SW_Id;
+        private string _Descripcion;
+        private string _NoParte;
+        private string _Llave;
+        private string _Ubicacion;
+        private string _Observaciones;
+        private bool _EnExistencia;
 
         public int SW_Id
         {

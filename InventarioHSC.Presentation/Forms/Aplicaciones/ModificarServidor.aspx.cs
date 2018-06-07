@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Data;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
 using InventarioHSC.Model;
-using System.Data;
 
 namespace InventarioHSC.Forms.Aplicaciones
 {
     public partial class ModificarServidor : System.Web.UI.Page
     {
-        
         public static DataTable USel = new DataTable();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -28,6 +24,7 @@ namespace InventarioHSC.Forms.Aplicaciones
         }
 
         #region Catalogos
+
         protected void CargaCatalogos()
         {
             BLCatalogos objCatalogo = new BLCatalogos();
@@ -39,8 +36,11 @@ namespace InventarioHSC.Forms.Aplicaciones
             objCatalogo.ListaServidoresCompletaApp(ref ddlServidor);
             ddlServidor.DataBind();
         }
+
         #endregion Catalogos
+
         #region CatalogosFijos
+
         protected void SiNoNull(ref DropDownList ddl)
         {
             DataTable Combo = new DataTable();
@@ -113,6 +113,7 @@ namespace InventarioHSC.Forms.Aplicaciones
             Combo.AcceptChanges();
 
             #region Letras
+
             row = Combo.NewRow();
             row[0] = "A";
             row[1] = "";
@@ -243,8 +244,8 @@ namespace InventarioHSC.Forms.Aplicaciones
             row[1] = "";
             Combo.Rows.Add(row);
 
-
             Combo.AcceptChanges();
+
             #endregion Letras
 
             return Combo;
@@ -263,6 +264,7 @@ namespace InventarioHSC.Forms.Aplicaciones
             ddl.DataSource = Combo;
             ddl.DataBind();
         }
+
         #endregion CatalogosFijos
 
         protected DataTable MinusDT(DataTable Tabla1, string ColT1, DataTable Tabla2, string ColT2)
@@ -389,7 +391,7 @@ namespace InventarioHSC.Forms.Aplicaciones
 
             Resp = objGrupoSoftware.ActualizarServidorApp(server, USel, txtObservaciones.Text.Trim());
             objGrupoSoftware.HistoricoApp(this.Page.ToString().Substring(4, this.Page.ToString().Substring(4).Length - 5) + ".aspx", Session["UserNameLogin"].ToString(), "U", server.id);
-            
+
             SiNoNull(ref ddlEsVirtual);
             Estado(ref ddlEstado);
             DatosGenerales.TipoEquipo(ref ddlTipo);

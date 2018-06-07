@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Web.UI.WebControls;
-using InventarioHSC.Model;
 using InventarioHSC.DataLayer;
+using InventarioHSC.Model;
 
 namespace InventarioHSC.BusinessLayer
 {
@@ -12,7 +10,6 @@ namespace InventarioHSC.BusinessLayer
     {
         public BLCatalogos()
         {
-
         }
 
         public void CargaTipoEquipo(ref DropDownList oddlTipoEquipo)
@@ -39,6 +36,7 @@ namespace InventarioHSC.BusinessLayer
             ochkTipoEquipo.DataValueField = "idTipoEquipo";
             ochkTipoEquipo.DataTextField = "Descripcion";
         }
+
         public void CargaMarca(ref DropDownList oddlMarca)
         {
             DLMarca DataLayerMarca = new DLMarca();
@@ -93,7 +91,6 @@ namespace InventarioHSC.BusinessLayer
             oddlUsuario.DataSource = usu;
             oddlUsuario.DataValueField = "idUsuario";
             oddlUsuario.DataTextField = "Nombre";
-
         }
 
         public void CargaUsuarioAlta(ref DropDownList oddlUsuario)
@@ -133,9 +130,9 @@ namespace InventarioHSC.BusinessLayer
 
         public void CargaUbicacionBodegas(ref DropDownList oddlUbicacion)
         {
-            //int[] Arreglo = {9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 
+            //int[] Arreglo = {9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,
             //                  24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41,
-            //                    42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 
+            //                    42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61,
             //                        62, 63, 64, 65, 66, 67, 68, 69, 74, 75, 76, 77, 78, 79};
 
             List<Ubicacion> lstUbi = new List<Ubicacion>();
@@ -353,6 +350,7 @@ namespace InventarioHSC.BusinessLayer
         }
 
         #region Aplicaciones
+
         public void CargaSOAplicaciones(ref DropDownList oddlSO, bool IncluirValorInicial = true)
         {
             DLSoftware DataLayerSoftware = new DLSoftware();
@@ -442,7 +440,7 @@ namespace InventarioHSC.BusinessLayer
             oddlBD.DataValueField = "Valor";
             oddlBD.DataTextField = "Descripcion";
         }
-        
+
         public void ObtenerInstanciaBD(ref DropDownList oddlInst, int Srv_Id)
         {
             DLSoftware DataLayerSoftware = new DLSoftware();
@@ -542,7 +540,7 @@ namespace InventarioHSC.BusinessLayer
         public System.Data.DataTable ListaBDConServerInstancia(bool IncluirValorInicial = true)
         {
             DLSoftware DataLayerSoftware = new DLSoftware();
-            
+
             return DataLayerSoftware.ListaBDConServerInstancia(IncluirValorInicial);
         }
 
@@ -570,8 +568,11 @@ namespace InventarioHSC.BusinessLayer
             oddlBD.DataValueField = "Valor";
             oddlBD.DataTextField = "Descripcion";
         }
+
         #endregion Aplicaciones
+
         #region MaxImage
+
         public void ListaTiposFiltroMaxI(ref DropDownList oddlF, bool IncluirValorInicial = true)
         {
             DLSoftware DataLayerSoftware = new DLSoftware();
@@ -579,7 +580,9 @@ namespace InventarioHSC.BusinessLayer
             oddlF.DataValueField = "Valor";
             oddlF.DataTextField = "Descripcion";
         }
+
         #endregion MaxImage
+
         #region SAP
 
         private System.Data.DataTable Catalogos(DatosGenerales.OpcionesCatalogosSAP Catalogo, int Id, bool IncluirValorInicial = true)
@@ -684,8 +687,11 @@ namespace InventarioHSC.BusinessLayer
             chk.DataValueField = "Valor";
             chk.DataTextField = "Descripcion";
         }
+
         #endregion SAP
+
         #region Servidores
+
         public void ListaTiposRespaldo(ref DropDownList oddlF, bool IncluirValorInicial = true)
         {
             DLSoftware DataLayerSoftware = new DLSoftware();
@@ -721,8 +727,11 @@ namespace InventarioHSC.BusinessLayer
             oddlF.DataValueField = "Valor";
             oddlF.DataTextField = "Descripcion";
         }
+
         #endregion Servidores
+
         #region Abanks
+
         public void ObtenerMonedasAbanks(ref DropDownList oddlF, bool IncluirValorInicial = true)
         {
             DLOperaciones dlObj = new DLOperaciones();
@@ -731,8 +740,11 @@ namespace InventarioHSC.BusinessLayer
             oddlF.DataValueField = "Valor";
             oddlF.DataTextField = "Descripcion";
         }
+
         #endregion Abanks
+
         #region ReportesDinamicos
+
         public void ListaTiposScript(ref DropDownList oddlT, bool IncluirValorInicial = true)
         {
             DLRptDinamicos dlObj = new DLRptDinamicos();
@@ -792,6 +804,7 @@ namespace InventarioHSC.BusinessLayer
                 oddlT.Items.Insert(0, itm);
             }
         }
+
         #endregion ReportesDinamicos
     }
 }

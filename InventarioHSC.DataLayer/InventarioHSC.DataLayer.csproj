@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="BD_INVENTARIOHSC.cs">
       <DependentUpon>BD_INVENTARIOHSC.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="BD_INVENTARIOHSC.designer.cs">
       <DependentUpon>BD_INVENTARIOHSC.cs</DependentUpon>

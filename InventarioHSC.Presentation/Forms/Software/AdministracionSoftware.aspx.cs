@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
 using InventarioHSC.Model;
@@ -62,7 +60,7 @@ namespace InventarioHSC.Forms.Software
                 pnlNuevoUsuario.Visible = false;
                 pnlUsuarioAsignado.Visible = true;
 
-                List<DetalleAsignacionSoftware> detalleAsignacion = 
+                List<DetalleAsignacionSoftware> detalleAsignacion =
                     asinacionSoftware.DetalleAsignacionSoftware(ddlUsuarioAsignado.SelectedItem.Value);
 
                 gvwSoftwareAsignado.DataSource = detalleAsignacion;
@@ -130,7 +128,7 @@ namespace InventarioHSC.Forms.Software
                     if (chkSeleccionado.Checked)
                     {
                         string s_idImte = gdvSoftware.DataKeys[gr.RowIndex].Values["Cve_Asignacion"].ToString();
-                        
+
                         Asignacion_Software asignacionSoftware = new Asignacion_Software();
                         BLAsignacion_Software blAsignacionSoftware = new BLAsignacion_Software(asignacionSoftware);
                         asignacionSoftware.Cve_Asignacion = Convert.ToInt32(s_idImte);
@@ -139,7 +137,7 @@ namespace InventarioHSC.Forms.Software
                         if (hdnNuevoUsuario.Value.Equals("1"))
                         {
                             asignacionSoftware.Nombre_Usuario = txtUsuarioNuevo.Text;
-                            asignacionSoftware.Area_Solicita = dplAreaSolicita.SelectedItem.Value; 
+                            asignacionSoftware.Area_Solicita = dplAreaSolicita.SelectedItem.Value;
                         }
                         else
                         {
@@ -178,10 +176,10 @@ namespace InventarioHSC.Forms.Software
 
                             blAsignacionSoftware = new BLAsignacion_Software(asignacionSoftware);
                             mensaje = blAsignacionSoftware.ActualiaAsignacionSoftware();
-                        } 
+                        }
                     }
 
-                    HttpContext.Current.Session["idSelectedSess"] = null; 
+                    HttpContext.Current.Session["idSelectedSess"] = null;
                 }
 
                 if (mensaje.Equals("La Asignacion de software fue actualizado correctamente"))
@@ -249,13 +247,13 @@ namespace InventarioHSC.Forms.Software
         {
             string NombreUsuario = string.Empty;
 
-            if(hdnNuevoUsuario.Value.Equals("1"))
+            if (hdnNuevoUsuario.Value.Equals("1"))
                 NombreUsuario = txtUsuarioNuevo.Text;
             else
                 NombreUsuario = ddlUsuarioAsignado.SelectedItem.Value;
 
             BLAsignacion_Software blAsignacionSoftware = new BLAsignacion_Software();
-           
+
             SelectionManager.KeepSelection((GridView)sender);
 
             gvLiberacionSoftware.DataSource = blAsignacionSoftware.DetalleAsignacionSoftware(NombreUsuario);
@@ -284,7 +282,7 @@ namespace InventarioHSC.Forms.Software
 
                         Asignacion_Software asignacionSoftware = new Asignacion_Software();
                         asignacionSoftware.Cve_Asignacion = Convert.ToInt32(s_idImte);
-                        
+
                         BLAsignacion_Software blAsignacionSoftware = new BLAsignacion_Software(asignacionSoftware);
                         asignacionSoftware = blAsignacionSoftware.ObtenAsignacionSoftware();
                         asignacionSoftware.Nombre_Usuario = "Disponible";
@@ -311,7 +309,7 @@ namespace InventarioHSC.Forms.Software
 
                         blAsignacionSoftware = new BLAsignacion_Software(asignacionSoftware);
                         blAsignacionSoftware.ActualiaAsignacionSoftware();
-                    } 
+                    }
                 }
 
                 HttpContext.Current.Session["idSelectedSess"] = null;
@@ -366,6 +364,5 @@ namespace InventarioHSC.Forms.Software
                 LabelInfo.Text = Mensaje;
             }
         }
-
     }
 }

@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.Common;
+using System.Text;
 using InventarioHSC.Model;
-using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace InventarioHSC.DataLayer
 {
@@ -14,11 +13,11 @@ namespace InventarioHSC.DataLayer
     {
         public DLTipoMovimiento()
         {
-
         }
+
         public TipoMovimiento getTipoMovimientoporID(int idTipoMovimiento)
         {
-            TipoMovimiento oTipoMovimiento= new TipoMovimiento();
+            TipoMovimiento oTipoMovimiento = new TipoMovimiento();
             DataSet ds = new DataSet();
 
             Database db = EnterpriseLibraryContainer.Current.GetInstance<Database>("Inventario");
@@ -41,7 +40,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
 
@@ -51,7 +49,7 @@ namespace InventarioHSC.DataLayer
                 {
                     oTipoMovimiento.idTipoMovimiento = Convert.ToInt32(dr["idTipoMovimiento"]);
                     oTipoMovimiento.descripcion = dr["Descripcion"].ToString();
-                    oTipoMovimiento.estatus = Convert.ToBoolean(dr["Estatus"]);                    
+                    oTipoMovimiento.estatus = Convert.ToBoolean(dr["Estatus"]);
                 }
             }
             return oTipoMovimiento;
@@ -69,7 +67,7 @@ namespace InventarioHSC.DataLayer
             sqlCommand.AppendLine("		, Descripcion ");
             sqlCommand.AppendLine("		, Estatus ");
             sqlCommand.AppendLine("FROM TipoMovimiento ");
-            sqlCommand.AppendLine("WHERE Estatus = 1 "); 
+            sqlCommand.AppendLine("WHERE Estatus = 1 ");
             sqlCommand.AppendLine("AND   Descripcion = @Descripcion");
 
             DbCommand selectCommand = null;
@@ -82,7 +80,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
 
@@ -93,7 +90,6 @@ namespace InventarioHSC.DataLayer
                     oTipoMovimiento.idTipoMovimiento = Convert.ToInt32(dr["idTipoMovimiento"]);
                     oTipoMovimiento.descripcion = dr["Descripcion"].ToString();
                     oTipoMovimiento.estatus = Convert.ToBoolean(dr["Estatus"]);
-
                 }
             }
             return oTipoMovimiento;
@@ -109,7 +105,7 @@ namespace InventarioHSC.DataLayer
             sqlCommand.AppendLine("		, Descripcion ");
             sqlCommand.AppendLine("		, Estatus ");
             sqlCommand.AppendLine("FROM TipoMovimiento ");
-            sqlCommand.AppendLine("WHERE Estatus = 1 "); 
+            sqlCommand.AppendLine("WHERE Estatus = 1 ");
 
             DbCommand selectCommand = null;
             selectCommand = db.GetSqlStringCommand(sqlCommand.ToString());
@@ -121,7 +117,6 @@ namespace InventarioHSC.DataLayer
                 List<TipoMovimiento> lstTipoMovimiento = new List<TipoMovimiento>();
                 if (ds.Tables[0].Rows.Count > 0)
                 {
-
                     foreach (DataRow dr in ds.Tables[0].Rows)
                     {
                         TipoMovimiento oTipoMovimiento = new TipoMovimiento();
@@ -135,10 +130,8 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
         }
-
     }
 }

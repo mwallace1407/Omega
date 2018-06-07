@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using InventarioHSC.Model;
-using Microsoft.Practices.EnterpriseLibrary.Data;
-using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
 using System.Data;
 using System.Data.Common;
+using System.Text;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace InventarioHSC.DataLayer
 {
@@ -29,7 +26,7 @@ namespace InventarioHSC.DataLayer
 
                 db.ExecuteDataSet(selectCommand);
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 Errores = ex.Message;
             }

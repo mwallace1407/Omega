@@ -121,7 +121,6 @@
             opt.value = value;
             ddl.options.add(opt);
         }
-
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -155,11 +154,13 @@
             <div style="padding-left: 10px; width: 880px;">
                 <asp:Panel ID="pnlReportes" runat="server" DefaultButton="btnCargar">
                     Filtrar lista:<br />
-                    <asp:TextBox ID="txtSearch" runat="server" onkeyup="FilterItems(this.value)" Width="248px" autocomplete="off"></asp:TextBox><br />
+                    <asp:TextBox ID="txtSearch" runat="server" onkeyup="FilterItems(this.value)" Width="248px"
+                        autocomplete="off"></asp:TextBox><br />
                     <asp:DropDownList ID="ddlReportes" runat="server" Width="250" AutoPostBack="True"
                         OnSelectedIndexChanged="ddlReportes_SelectedIndexChanged">
                     </asp:DropDownList>
-                    <asp:Button ID="btnCargar" runat="server" Text="Cargar reporte" CssClass="boton" OnClick="btnCargar_Click" />
+                    <asp:Button ID="btnCargar" runat="server" Text="Cargar reporte" CssClass="boton"
+                        OnClick="btnCargar_Click" />
                     <br />
                     <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
                     <br />

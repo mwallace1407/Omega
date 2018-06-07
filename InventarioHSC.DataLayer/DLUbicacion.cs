@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.Common;
+using System.Text;
 using InventarioHSC.Model;
-using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace InventarioHSC.DataLayer
 {
@@ -14,7 +13,6 @@ namespace InventarioHSC.DataLayer
     {
         public DLUbicacion()
         {
-
         }
 
         public Ubicacion getUbicacionporID(int idUbicacion)
@@ -24,7 +22,6 @@ namespace InventarioHSC.DataLayer
 
             Database db = EnterpriseLibraryContainer.Current.GetInstance<Database>("Inventario");
             StringBuilder sqlCommand = new StringBuilder();
-
 
             sqlCommand.AppendLine("SELECT    idUbicacion ");
             sqlCommand.AppendLine("		, Descripcion ");
@@ -44,7 +41,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
 
@@ -87,7 +83,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
 
@@ -109,7 +104,6 @@ namespace InventarioHSC.DataLayer
             DataSet ds = new DataSet();
             Database db = EnterpriseLibraryContainer.Current.GetInstance<Database>("Inventario");
             StringBuilder sqlCommand = new StringBuilder();
-
 
             sqlCommand.AppendLine(" SELECT	  0 AS idUbicacion ");
             sqlCommand.AppendLine(" 		, '' AS Descripcion ");
@@ -135,7 +129,6 @@ namespace InventarioHSC.DataLayer
                 List<Ubicacion> lstUbicacion = new List<Ubicacion>();
                 if (ds.Tables[0].Rows.Count > 0)
                 {
-
                     foreach (DataRow dr in ds.Tables[0].Rows)
                     {
                         Ubicacion oUbicacion = new Ubicacion();
@@ -150,7 +143,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
         }
@@ -160,7 +152,6 @@ namespace InventarioHSC.DataLayer
             DataSet ds = new DataSet();
             Database db = EnterpriseLibraryContainer.Current.GetInstance<Database>("Inventario");
             StringBuilder sqlCommand = new StringBuilder();
-
 
             sqlCommand.AppendLine(" SELECT	  0 AS idUbicacion ");
             sqlCommand.AppendLine(" 		, '' AS Descripcion ");
@@ -173,8 +164,8 @@ namespace InventarioHSC.DataLayer
             sqlCommand.AppendLine("		, R.Nombre ");
             sqlCommand.AppendLine(" FROM Ubicacion U ");
             sqlCommand.AppendLine(" INNER JOIN Region R ON U.idRegion = R.idRegion ");
-            
-            if(VisibleAltaArticulo)
+
+            if (VisibleAltaArticulo)
                 sqlCommand.AppendLine(" WHERE U.Estatus = 1 AND U.VisibleAltaArticulos = 1");
             else
                 sqlCommand.AppendLine(" WHERE U.Estatus = 1 AND U.VisibleAltaArticulos = 0");
@@ -191,7 +182,6 @@ namespace InventarioHSC.DataLayer
                 List<Ubicacion> lstUbicacion = new List<Ubicacion>();
                 if (ds.Tables[0].Rows.Count > 0)
                 {
-
                     foreach (DataRow dr in ds.Tables[0].Rows)
                     {
                         Ubicacion oUbicacion = new Ubicacion();
@@ -206,7 +196,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
         }

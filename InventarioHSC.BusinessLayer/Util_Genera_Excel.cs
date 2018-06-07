@@ -1,18 +1,22 @@
 ﻿#region Importaciones
-using DocumentFormat.OpenXml.Packaging;
-using ap = DocumentFormat.OpenXml.ExtendedProperties;
-using vt = DocumentFormat.OpenXml.VariantTypes;
+
 using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Spreadsheet;
 using a = DocumentFormat.OpenXml.Drawing;
-#endregion
+using ap = DocumentFormat.OpenXml.ExtendedProperties;
+using vt = DocumentFormat.OpenXml.VariantTypes;
+
+#endregion Importaciones
 
 #region Comentarios
+
 //-- =============================================
 //-- Autor:		            Julio Cesar Barron Galindo
 //-- Fecha Modificacion:	21/06/2012
 //-- =============================================
-#endregion
+
+#endregion Comentarios
 
 namespace InventarioHSC.BusinessLayer
 {
@@ -388,4 +392,3 @@ namespace InventarioHSC.BusinessLayer
         }
     }
 }
-

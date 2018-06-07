@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
@@ -26,6 +23,7 @@ namespace InventarioHSC.Forms.Reportes
                         case "p":
                             tab01.ActiveTabIndex = 1;
                             break;
+
                         default:
                             tab01.ActiveTabIndex = 0;
                             break;

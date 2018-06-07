@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace InventarioHSC.BusinessLayer
+﻿namespace InventarioHSC.BusinessLayer
 {
     public class BLFormatSQL
     {
         #region HTML
+
         public string FormatTSqlToHTML(string inputString)
         {
             return FormatTSqlWithOptionsToHTML(
@@ -110,8 +106,11 @@ namespace InventarioHSC.BusinessLayer
             PoorMansTSqlFormatterLib.SqlFormattingManager fullFormatter = new PoorMansTSqlFormatterLib.SqlFormattingManager(new PoorMansTSqlFormatterLib.Formatters.HtmlPageWrapper(formatter));
             return fullFormatter.Format(inputString);
         }
+
         #endregion HTML
+
         #region SimpleText
+
         public string FormatTSqlToString(string inputString)
         {
             var options = new PoorMansTSqlFormatterLib.Formatters.TSqlStandardFormatterOptions
@@ -139,6 +138,7 @@ namespace InventarioHSC.BusinessLayer
 
             return formattingManager.Format(inputString, ref parsingError);
         }
+
         #endregion SimpleText
     }
 }

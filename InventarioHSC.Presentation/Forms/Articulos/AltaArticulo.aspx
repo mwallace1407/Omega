@@ -135,8 +135,8 @@
                             <br />
                             <br />
                             <div style="width: 405px; text-align: left;">
-                                <asp:CheckBox ID="chkIgnorarSerie" runat="server" Checked="True" 
-                                    Text="Ignorar series duplicadas" Visible="False" />
+                                <asp:CheckBox ID="chkIgnorarSerie" runat="server" Checked="True" Text="Ignorar series duplicadas"
+                                    Visible="False" />
                             </div>
                             <br />
                             <br />

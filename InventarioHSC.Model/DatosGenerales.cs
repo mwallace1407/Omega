@@ -1,10 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.UI.WebControls;
-using System.Collections;
 
 namespace InventarioHSC.Model
 {
@@ -349,9 +349,11 @@ namespace InventarioHSC.Model
                 case TiposMensaje.Advertencia:
                     HttpContext.Current.Response.Redirect("../Mensaje.aspx?Tipo=" + "A" + "&Titulo=" + HttpContext.Current.Server.UrlEncode(Titulo) + "&Mensaje=" + HttpContext.Current.Server.UrlEncode(Descripcion), false);
                     break;
+
                 case TiposMensaje.Error:
                     HttpContext.Current.Response.Redirect("../Mensaje.aspx?Tipo=" + "E" + "&Titulo=" + HttpContext.Current.Server.UrlEncode(Titulo) + "&Mensaje=" + HttpContext.Current.Server.UrlEncode(Descripcion), false);
                     break;
+
                 case TiposMensaje.Informacion:
                     HttpContext.Current.Response.Redirect("../Mensaje.aspx?Tipo=" + "I" + "&Titulo=" + HttpContext.Current.Server.UrlEncode(Titulo) + "&Mensaje=" + HttpContext.Current.Server.UrlEncode(Descripcion), false);
                     break;
@@ -368,9 +370,11 @@ namespace InventarioHSC.Model
                 case TiposMensaje.Advertencia:
                     HttpContext.Current.Response.Redirect("../MensajeA.aspx?Tipo=" + "A" + "&Titulo=" + HttpContext.Current.Server.UrlEncode(Titulo) + "&Mensaje=" + HttpContext.Current.Server.UrlEncode(Descripcion) + "&Archivo=" + HttpContext.Current.Server.UrlEncode(Archivo), false);
                     break;
+
                 case TiposMensaje.Error:
                     HttpContext.Current.Response.Redirect("../MensajeA.aspx?Tipo=" + "E" + "&Titulo=" + HttpContext.Current.Server.UrlEncode(Titulo) + "&Mensaje=" + HttpContext.Current.Server.UrlEncode(Descripcion) + "&Archivo=" + HttpContext.Current.Server.UrlEncode(Archivo), false);
                     break;
+
                 case TiposMensaje.Informacion:
                     HttpContext.Current.Response.Redirect("../MensajeA.aspx?Tipo=" + "I" + "&Titulo=" + HttpContext.Current.Server.UrlEncode(Titulo) + "&Mensaje=" + HttpContext.Current.Server.UrlEncode(Descripcion) + "&Archivo=" + HttpContext.Current.Server.UrlEncode(Archivo), false);
                     break;
@@ -399,9 +403,11 @@ namespace InventarioHSC.Model
                 case TiposMensaje.Advertencia:
                     HttpContext.Current.Response.Redirect("Mensaje.aspx?Tipo=" + "A" + "&Titulo=" + HttpContext.Current.Server.UrlEncode(Titulo) + "&Mensaje=" + HttpContext.Current.Server.UrlEncode(Descripcion), false);
                     break;
+
                 case TiposMensaje.Error:
                     HttpContext.Current.Response.Redirect("Mensaje.aspx?Tipo=" + "E" + "&Titulo=" + HttpContext.Current.Server.UrlEncode(Titulo) + "&Mensaje=" + HttpContext.Current.Server.UrlEncode(Descripcion), false);
                     break;
+
                 case TiposMensaje.Informacion:
                     HttpContext.Current.Response.Redirect("Mensaje.aspx?Tipo=" + "I" + "&Titulo=" + HttpContext.Current.Server.UrlEncode(Titulo) + "&Mensaje=" + HttpContext.Current.Server.UrlEncode(Descripcion), false);
                     break;
@@ -510,101 +516,132 @@ namespace InventarioHSC.Model
         {
             string Equivalente = "";
 
-            switch(SQLDataType)
+            switch (SQLDataType)
             {
                 case "bigint":
                     Equivalente = "Int64";
                     break;
+
                 case "binary":
                     Equivalente = "Byte[]";
                     break;
+
                 case "bit":
                     Equivalente = "Boolean";
                     break;
+
                 case "char":
                     Equivalente = "String";
                     break;
+
                 case "date":
                     Equivalente = "DateTime";
                     break;
+
                 case "datetime":
                     Equivalente = "DateTime";
                     break;
+
                 case "datetime2":
                     Equivalente = "DateTime";
                     break;
+
                 case "datetimeoffset":
                     Equivalente = "DateTimeOffset";
                     break;
+
                 case "decimal":
                     Equivalente = "Decimal";
                     break;
+
                 case "float":
                     Equivalente = "Double";
                     break;
+
                 case "image":
                     Equivalente = "Byte[]";
                     break;
+
                 case "int":
                     Equivalente = "Int32";
                     break;
+
                 case "money":
                     Equivalente = "Decimal";
                     break;
+
                 case "nchar":
                     Equivalente = "String";
                     break;
+
                 case "ntext":
                     Equivalente = "String";
                     break;
+
                 case "numeric":
                     Equivalente = "Decimal";
                     break;
+
                 case "nvarchar":
                     Equivalente = "String";
                     break;
+
                 case "real":
                     Equivalente = "Single";
                     break;
+
                 case "rowversion":
                     Equivalente = "Byte[]";
                     break;
+
                 case "smalldatetime":
                     Equivalente = "DateTime";
                     break;
+
                 case "smallint":
                     Equivalente = "Int16";
                     break;
+
                 case "smallmoney":
                     Equivalente = "Decimal";
                     break;
+
                 case "sql_variant":
                     Equivalente = "Object";
                     break;
+
                 case "text":
                     Equivalente = "String";
                     break;
+
                 case "time":
                     Equivalente = "TimeSpan";
                     break;
+
                 case "timestamp":
                     Equivalente = "Byte[]";
                     break;
+
                 case "tinyint":
                     Equivalente = "Byte";
                     break;
+
                 case "uniqueidentifier":
                     Equivalente = "Guid";
                     break;
+
                 case "varbinary":
                     Equivalente = "Byte[]";
                     break;
+
                 case "varchar":
                     Equivalente = "String";
                     break;
+
                 case "xml":
                     Equivalente = "Xml";
                     break;
+
                 default:
                     Equivalente = "String";
                     break;
@@ -624,96 +661,127 @@ namespace InventarioHSC.Model
                 case "bigint":
                     Tipo = System.Data.SqlDbType.BigInt;
                     break;
+
                 case "binary":
                     Tipo = System.Data.SqlDbType.Binary;
                     break;
+
                 case "bit":
                     Tipo = System.Data.SqlDbType.Bit;
                     break;
+
                 case "char":
                     Tipo = System.Data.SqlDbType.Char;
                     break;
+
                 case "date":
                     Tipo = System.Data.SqlDbType.Date;
                     break;
+
                 case "datetime":
                     Tipo = System.Data.SqlDbType.DateTime;
                     break;
+
                 case "datetime2":
                     Tipo = System.Data.SqlDbType.DateTime2;
                     break;
+
                 case "datetimeoffset":
                     Tipo = System.Data.SqlDbType.DateTimeOffset;
                     break;
+
                 case "decimal":
                     Tipo = System.Data.SqlDbType.Decimal;
                     break;
+
                 case "float":
                     Tipo = System.Data.SqlDbType.Float;
                     break;
+
                 case "image":
                     Tipo = System.Data.SqlDbType.Image;
                     break;
+
                 case "int":
                     Tipo = System.Data.SqlDbType.Int;
                     break;
+
                 case "money":
                     Tipo = System.Data.SqlDbType.Money;
                     break;
+
                 case "nchar":
                     Tipo = System.Data.SqlDbType.NChar;
                     break;
+
                 case "ntext":
                     Tipo = System.Data.SqlDbType.NText;
                     break;
+
                 case "numeric":
                     Tipo = System.Data.SqlDbType.Decimal;
                     break;
+
                 case "nvarchar":
                     Tipo = System.Data.SqlDbType.NVarChar;
                     break;
+
                 case "real":
                     Tipo = System.Data.SqlDbType.Real;
                     break;
+
                 case "rowversion":
                     Tipo = System.Data.SqlDbType.Timestamp;
                     break;
+
                 case "smalldatetime":
                     Tipo = System.Data.SqlDbType.SmallDateTime;
                     break;
+
                 case "smallint":
                     Tipo = System.Data.SqlDbType.SmallInt;
                     break;
+
                 case "smallmoney":
                     Tipo = System.Data.SqlDbType.SmallMoney;
                     break;
+
                 case "sql_variant":
                     Tipo = System.Data.SqlDbType.Variant;
                     break;
+
                 case "text":
                     Tipo = System.Data.SqlDbType.Text;
                     break;
+
                 case "time":
                     Tipo = System.Data.SqlDbType.Time;
                     break;
+
                 case "timestamp":
                     Tipo = System.Data.SqlDbType.Timestamp;
                     break;
+
                 case "tinyint":
                     Tipo = System.Data.SqlDbType.TinyInt;
                     break;
+
                 case "uniqueidentifier":
                     Tipo = System.Data.SqlDbType.UniqueIdentifier;
                     break;
+
                 case "varbinary":
                     Tipo = System.Data.SqlDbType.VarBinary;
                     break;
+
                 case "varchar":
                     Tipo = System.Data.SqlDbType.VarChar;
                     break;
+
                 case "xml":
                     Tipo = System.Data.SqlDbType.Xml;
                     break;
+
                 default:
                     Tipo = System.Data.SqlDbType.Variant;
                     break;
@@ -811,7 +879,7 @@ namespace InventarioHSC.Model
                 outputTable.Columns.Add(newColName);
             }
 
-            // Add rows by looping columns        
+            // Add rows by looping columns
             for (int rCount = 1; rCount <= inputTable.Columns.Count - 1; rCount++)
             {
                 System.Data.DataRow newRow = outputTable.NewRow();
@@ -906,6 +974,7 @@ namespace InventarioHSC.Model
         }
 
         #region ManejoFechas
+
         public static DateTime? ValidaFecha(string Fecha)
         {
             DateTime Test = new DateTime();
@@ -980,9 +1049,11 @@ namespace InventarioHSC.Model
                     case FormatosFecha.Dianum_Mestxt_Anno:
                         fFecha = Fecha.ToString("dd") + " de " + Fecha.ToString("MMMM") + " de " + Fecha.ToString("yyyy");
                         break;
+
                     case FormatosFecha.Diatxt_Dianum_Mestxt_Anno:
                         fFecha = Fecha.ToString("dddd") + ", " + Fecha.ToString("dd") + " de " + Fecha.ToString("MMMM") + " de " + Fecha.ToString("yyyy");
                         break;
+
                     default:
                         fFecha = "";
                         break;
@@ -1011,14 +1082,18 @@ namespace InventarioHSC.Model
             TimeSpan diff = (fin - ini);
             return diff;
         }
+
         #endregion ManejoFechas
+
         #region Constancias
+
         public enum ConstanciasCatalogos
         {
             Administradoras = 1,
             Portafolios_por_administradora = 2,
             Portafolios_con_administradora = 3
         }
+
         #endregion Constancias
     }
 }

@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 using System.Data.Common;
+using System.Text;
 using InventarioHSC.Model;
-using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace InventarioHSC.DataLayer
 {
@@ -14,7 +13,6 @@ namespace InventarioHSC.DataLayer
     {
         public DLEstado()
         {
-
         }
 
         public Estado getEstadoporID(int idEstado)
@@ -40,7 +38,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
             //db.AddInParameter("@id", DbType.Int32, idArea);
@@ -79,7 +76,6 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
             //db.AddInParameter("@id", DbType.Int32, idArea);
@@ -108,7 +104,6 @@ namespace InventarioHSC.DataLayer
             sqlCommand.AppendLine(" 	    , Descripcion ");
             sqlCommand.AppendLine("FROM	Estado ");
 
-
             DbCommand selectCommand = null;
             selectCommand = db.GetSqlStringCommand(sqlCommand.ToString());
 
@@ -119,7 +114,6 @@ namespace InventarioHSC.DataLayer
                 List<Estado> lstEstado = new List<Estado>();
                 if (ds.Tables[0].Rows.Count > 0)
                 {
-
                     foreach (DataRow dr in ds.Tables[0].Rows)
                     {
                         Estado oEstado = new Estado();
@@ -132,10 +126,8 @@ namespace InventarioHSC.DataLayer
             }
             catch (DataException ex)
             {
-
                 throw ex;
             }
         }
-
     }
 }

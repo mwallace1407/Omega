@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
@@ -13,10 +11,10 @@ namespace InventarioHSC.Forms
     {
         /*
          Agregando una nueva carpeta de módulos.
-         * 
-         * Main.Master.cs: 
+         *
+         * Main.Master.cs:
          *              Page_Load, agregar en el switch cuidando la cantidad de caracteres
-         * BLSeguridad.cs: 
+         * BLSeguridad.cs:
          *              AccesoPermitido, agregar en la lista de texto a remover
          *stpI_HistoricoApp: agregar en la lista de texto a remover
          *
@@ -26,6 +24,7 @@ namespace InventarioHSC.Forms
         protected const int MinimoCadena = 14;
 
         #region Eventos
+
         protected void Page_Init(object sender, EventArgs e)
         {
             if (!Page.ClientScript.IsStartupScriptRegistered(GetType(), "MaskedEditFix"))
@@ -47,27 +46,35 @@ namespace InventarioHSC.Forms
                     case "forms_articulo":
                         NivelRuta = "../";
                         break;
+
                     case "forms_catalogo":
                         NivelRuta = "../";
                         break;
+
                     case "forms_software":
                         NivelRuta = "../";
                         break;
+
                     case "forms_reportes":
                         NivelRuta = "../";
                         break;
+
                     case "forms_aplicaci":
                         NivelRuta = "../";
                         break;
+
                     case "forms_administ":
                         NivelRuta = "../";
                         break;
+
                     case "forms_maximage":
                         NivelRuta = "../";
                         break;
+
                     case "forms_servidor":
                         NivelRuta = "../";
                         break;
+
                     case "forms_operacio":
                         NivelRuta = "../";
                         break;
@@ -75,7 +82,6 @@ namespace InventarioHSC.Forms
 
                 AplicaEstilo(NivelRuta);
             }
-
 
             if (Request.IsAuthenticated)
             {
@@ -100,7 +106,6 @@ namespace InventarioHSC.Forms
                             Response.Redirect("~/Forms/sessionTimeout.html");
                     }
                     catch { Response.Redirect("~/Forms/sessionTimeout.html"); }
-
                 }
             }
             else
@@ -128,10 +133,12 @@ namespace InventarioHSC.Forms
 
         protected void LoginStatus3_LoggedOut(object sender, EventArgs e)
         {
-
         }
+
         #endregion Eventos
+
         #region Menu
+
         private void CreaMenu(string NivelRuta)
         {
             BLMenu oBLMenu = new BLMenu();
@@ -146,14 +153,12 @@ namespace InventarioHSC.Forms
             PlaceHolder MainPlaceHolder = new PlaceHolder();
             MainPlaceHolder = (PlaceHolder)this.LoginView2.Controls[0].FindControl("MainPlaceHolder");
 
-            
             lit = new Literal();
             lit.Text += TextWriter.MakeOpenUlWithClassAndId("topmenu", "css3menu1");
             lit.Text += TextWriter.MakeHomeNew(NivelRuta);
             lit.Text += TextWriter.MakeCloseli();
             Session["Cadenota"] += lit.Text;
             MainPlaceHolder.Controls.Add(lit);
-
 
             foreach (sysMenu oMenu in lMenu)
                 fnGeneraOpcionMenu(1, oMenu, false, NivelRuta);
@@ -217,8 +222,11 @@ namespace InventarioHSC.Forms
             lit = DivCloseMenu(lit, MainPlaceHolder1);
             return;
         }
+
         #endregion Menu
+
         #region Diseño
+
         public string RutaFondoPagina = "";
         public string RutaLogoPagina = "";
 
@@ -246,6 +254,7 @@ namespace InventarioHSC.Forms
 
             return mnu;
         }
+
         #endregion Diseño
     }
 }

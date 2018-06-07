@@ -124,7 +124,8 @@
                                                 CultureCurrencySymbolPlaceholder="" CultureDateFormat="" CultureDatePlaceholder=""
                                                 CultureDecimalPlaceholder="" CultureThousandsPlaceholder="" CultureTimePlaceholder=""
                                                 Enabled="True" Mask="99/99/9999" MaskType="Date" TargetControlID="txtFechaLFin">
-                                            </asp:MaskedEditExtender>&nbsp
+                                            </asp:MaskedEditExtender>
+                                            &nbsp
                                             <asp:Label ID="lblFechaLote" runat="server" ForeColor="#CC0000"></asp:Label>
                                         </div>
                                     </div>
@@ -148,7 +149,8 @@
                                                 CultureCurrencySymbolPlaceholder="" CultureDateFormat="" CultureDatePlaceholder=""
                                                 CultureDecimalPlaceholder="" CultureThousandsPlaceholder="" CultureTimePlaceholder=""
                                                 Enabled="True" Mask="99/99/9999" MaskType="Date" TargetControlID="txtFechaCFin">
-                                            </asp:MaskedEditExtender>&nbsp
+                                            </asp:MaskedEditExtender>
+                                            &nbsp
                                             <asp:Label ID="lblFechaCarga" runat="server" ForeColor="#CC0000"></asp:Label>
                                         </div>
                                     </div>

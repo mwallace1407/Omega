@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using InventarioHSC.Model;
-using InventarioHSC.BusinessLayer;
 using System.IO;
+using System.Linq;
+using System.Web.UI.WebControls;
+using InventarioHSC.BusinessLayer;
+using InventarioHSC.Model;
 
 namespace InventarioHSC.Forms.Administracion
 {
@@ -14,7 +11,6 @@ namespace InventarioHSC.Forms.Administracion
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void LimpiaTemporales(string Ruta, ref Label lblText)
@@ -75,7 +71,7 @@ namespace InventarioHSC.Forms.Administracion
                 }
 
                 System.Data.DataTable Resultados = new System.Data.DataTable();
-                
+
                 Resultados = gen.ObtenerDocumentosUsuario("", (Int16)DatosGenerales.EstadosDocumentos.Vigentes);
 
                 if (Resultados.TableName != "Error")

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace InventarioHSC.Model
+﻿namespace InventarioHSC.Model
 {
     public class Validacion
     {
@@ -15,6 +10,7 @@ namespace InventarioHSC.Model
             get { return _Validate; }
             set { _Validate = value; }
         }
+
         public string message
         {
             get { return _Message; }

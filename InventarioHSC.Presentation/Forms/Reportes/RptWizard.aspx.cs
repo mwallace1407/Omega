@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using InventarioHSC.Model;
 using InventarioHSC.BusinessLayer;
+using InventarioHSC.Model;
 
 namespace InventarioHSC.Forms.Reportes
 {
@@ -22,6 +21,7 @@ namespace InventarioHSC.Forms.Reportes
         protected const int CeldaDescripcion = 10;
 
         #region Metodos
+
         protected void CargaCatalogos()
         {
             //Cargar lista de conecciones
@@ -51,6 +51,7 @@ namespace InventarioHSC.Forms.Reportes
         }
 
         #region Paso02
+
         protected void Limpieza02(bool Completa = false)
         {
             lblMsj02.Text = "";
@@ -128,9 +129,13 @@ namespace InventarioHSC.Forms.Reportes
 
             return HayError;
         }
+
         #endregion Paso02
+
         #region Paso04
+
         #region Stored
+
         protected void CargaStored()
         {
             BLCatalogos objCat = new BLCatalogos();
@@ -190,8 +195,11 @@ namespace InventarioHSC.Forms.Reportes
 
             return Errores;
         }
+
         #endregion Stored
+
         #region Query
+
         private IEnumerable<string> AnalizarScript(string Script)
         {
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
@@ -336,10 +344,15 @@ namespace InventarioHSC.Forms.Reportes
 
             return Errores;
         }
+
         #endregion Query
+
         #endregion Paso04
+
         #endregion Metodos
+
         #region Eventos
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -349,6 +362,7 @@ namespace InventarioHSC.Forms.Reportes
         }
 
         #region Paso01
+
         protected void btnProcesar01_Click(object sender, EventArgs e)
         {
             lblMsj01.Text = "";
@@ -371,13 +385,16 @@ namespace InventarioHSC.Forms.Reportes
             pnlPaso03.Visible = true;
             hddPasoAnterior01.Value = "1";
         }
+
         #endregion Paso01
+
         #region Paso02
+
         protected void btnValidar02_Click(object sender, EventArgs e)
         {
             Validar02();
         }
-        
+
         protected void btnAgregar02_Click(object sender, EventArgs e)
         {
             if (!Validar02())
@@ -421,8 +438,11 @@ namespace InventarioHSC.Forms.Reportes
             pnlPaso01.Visible = true;
             pnlPaso02.Visible = false;
         }
+
         #endregion Paso02
+
         #region Paso03
+
         protected void btnProcesar03_Click(object sender, EventArgs e)
         {
             lblMsj03.Text = "";
@@ -443,10 +463,12 @@ namespace InventarioHSC.Forms.Reportes
                     case (int)DatosGenerales.TiposScript.Texto:
                         pnlTexto.Visible = true;
                         break;
+
                     case (int)DatosGenerales.TiposScript.Stored:
                         pnlStored.Visible = true;
                         CargaStored();
                         break;
+
                     case (int)DatosGenerales.TiposScript.Paquete:
                         pnlSSIS.Visible = true;
                         break;
@@ -479,9 +501,13 @@ namespace InventarioHSC.Forms.Reportes
 
             pnlPaso03.Visible = false;
         }
+
         #endregion Paso03
+
         #region Paso04
+
         #region Stored
+
         protected void grdParams_RowSelected(object sender, EventArgs e)
         {
             if (grdParams.SelectedIndex != -1)
@@ -679,7 +705,7 @@ namespace InventarioHSC.Forms.Reportes
                 if (RD_Id > 0)
                 {
                     bool AplicarBorradoPrevio = true;
-                    
+
                     for (int w = 0; w < grdParams.Rows.Count; w++)
                     {
                         BLReportes.RptDinamicosParametro param = new BLReportes.RptDinamicosParametro(grdParams.Rows[w]);
@@ -706,8 +732,11 @@ namespace InventarioHSC.Forms.Reportes
                     lblMsjGrid04.Text = MsjBD;
             }
         }
-        #endregion Sotred
+
+        #endregion Stored
+
         #region Query
+
         protected void grdParamsQ_RowSelected(object sender, EventArgs e)
         {
             if (grdParamsQ.SelectedIndex != -1)
@@ -792,7 +821,7 @@ namespace InventarioHSC.Forms.Reportes
                     lbl.Text = "Nor";
                 }
 
-                if (string.IsNullOrWhiteSpace(e.Row.Cells[CeldaTipoDato].Text) || e.Row.Cells[CeldaTipoDato].Text == "&nbsp;" )
+                if (string.IsNullOrWhiteSpace(e.Row.Cells[CeldaTipoDato].Text) || e.Row.Cells[CeldaTipoDato].Text == "&nbsp;")
                 {
                     Label lbl = (Label)e.Row.FindControl("lblBAprox");
 
@@ -821,7 +850,7 @@ namespace InventarioHSC.Forms.Reportes
                 if (RD_Id > 0)
                 {
                     bool AplicarBorradoPrevio = true;
-                    
+
                     for (int w = 0; w < grdParamsQ.Rows.Count; w++)
                     {
                         BLReportes.RptDinamicosParametro param = new BLReportes.RptDinamicosParametro(grdParamsQ.Rows[w]);
@@ -857,7 +886,6 @@ namespace InventarioHSC.Forms.Reportes
 
         protected void btnIngresarQ_Click(object sender, EventArgs e)
         {
-
         }
 
         protected void ddlTipo04Q_SelectedIndexChanged(object sender, EventArgs e)
@@ -868,7 +896,7 @@ namespace InventarioHSC.Forms.Reportes
 
                 pnlCat04Q.Visible = true;
 
-                if(ddlTipo04Q.SelectedValue == "lst")
+                if (ddlTipo04Q.SelectedValue == "lst")
                     objCat.ListaCatalogos(ref ddlCat04Q, ddlCnx.SelectedValue, (int)DatosGenerales.EstiloReportesDinamicos.eDropDownList);
                 else
                     objCat.ListaCatalogos(ref ddlCat04Q, ddlCnx.SelectedValue, (int)DatosGenerales.EstiloReportesDinamicos.eCheckBoxList);
@@ -881,7 +909,7 @@ namespace InventarioHSC.Forms.Reportes
                 pnlCat04Q.Visible = false;
             }
         }
-        
+
         protected void btnAsignar04Q_Click(object sender, EventArgs e)
         {
             bool Continuar = true;
@@ -984,10 +1012,11 @@ namespace InventarioHSC.Forms.Reportes
             txtLongitud04Q.Text = "";
             ValidarTD();
         }
+
         #endregion Query
+
         #endregion Paso04
 
         #endregion Eventos
     }
-
 }

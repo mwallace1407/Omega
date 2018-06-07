@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Reporte para el número anterior de empleados" Language="C#" MasterPageFile="~/Forms/Main.Master" AutoEventWireup="true" CodeBehind="RptNumeroAnterior.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptNumeroAnterior" %>
+﻿<%@ Page Title="Reporte para el número anterior de empleados" Language="C#" MasterPageFile="~/Forms/Main.Master"
+    AutoEventWireup="true" CodeBehind="RptNumeroAnterior.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptNumeroAnterior" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headMaster" runat="server">

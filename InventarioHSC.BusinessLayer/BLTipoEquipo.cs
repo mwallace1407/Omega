@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.UI.WebControls;
-using InventarioHSC.Model;
 using InventarioHSC.DataLayer;
+using InventarioHSC.Model;
 
 namespace InventarioHSC.BusinessLayer
 {
@@ -12,9 +9,8 @@ namespace InventarioHSC.BusinessLayer
     {
         public BLTipoEquipo()
         {
-
         }
-        
+
         public List<TipoEquipo> ObtieneTipoEquipoAll()
         {
             DLTipoEquipo odlTipoEquipo = new DLTipoEquipo();
@@ -27,7 +23,6 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
 
@@ -49,7 +44,6 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return objTipoEquipo.idTipoEquipo;
@@ -70,7 +64,6 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return objTipoEquipo.idTipoEquipo;
@@ -92,11 +85,9 @@ namespace InventarioHSC.BusinessLayer
                 {
                     odlTipo.UpdateTipoEquipo(ref objTipoEquipo);
                 }
-
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
             return TotalTipos;
@@ -104,7 +95,6 @@ namespace InventarioHSC.BusinessLayer
 
         public int ValidaAsignacionTipo(int i_idTipoEquipo)
         {
-
             int TotalAignados;
             DLTipoEquipo odlTipo = new DLTipoEquipo();
 
@@ -114,12 +104,10 @@ namespace InventarioHSC.BusinessLayer
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
 
             return TotalAignados;
-
         }
     }
 }

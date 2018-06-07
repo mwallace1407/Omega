@@ -8,24 +8,24 @@
         rel="stylesheet" />
     <link href="../../App_Themes/Estilos/estilo1.css" type="text/css" rel="stylesheet" />
     <style type="text/css">
-    .modalBackground
-    {
-        background-color: Black;
-        filter: alpha(opacity=90);
-        opacity: 0.8;
-    }
-    .modalPopup
-    {
-        background-color: #FFFFFF;
-        border-width: 3px;
-        border-style: solid;
-        border-color: black;
-        padding-top: 10px;
-        padding-left: 10px;
-        width: 395px;
-        height: 395px;
-    }
-</style>
+        .modalBackground
+        {
+            background-color: Black;
+            filter: alpha(opacity=90);
+            opacity: 0.8;
+        }
+        .modalPopup
+        {
+            background-color: #FFFFFF;
+            border-width: 3px;
+            border-style: solid;
+            border-color: black;
+            padding-top: 10px;
+            padding-left: 10px;
+            width: 395px;
+            height: 395px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
@@ -221,5 +221,6 @@
             </div>
         </div>
     </div>
-    <div style="display: none"><asp:Button ID="btnFalso" runat="server" Text="" Visible="True" /></div>
+    <div style="display: none">
+        <asp:Button ID="btnFalso" runat="server" Text="" Visible="True" /></div>
 </asp:Content>

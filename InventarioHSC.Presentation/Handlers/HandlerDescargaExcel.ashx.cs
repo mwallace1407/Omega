@@ -1,16 +1,17 @@
 ﻿using System;
-using System.Web;
 using System.IO;
+using System.Web;
 
 namespace InventarioHSC.Handlers
 {
     public class HandlerDescargaExcel : IHttpHandler
     {
         /// <summary>
-        /// You will need to configure this handler in the web.config file of your 
+        /// You will need to configure this handler in the web.config file of your
         /// web and register it with IIS before being able to use it. For more information
         /// see the following link: http://go.microsoft.com/?linkid=8101007
         /// </summary>
+
         #region IHttpHandler Members
 
         public bool IsReusable
@@ -42,6 +43,7 @@ namespace InventarioHSC.Handlers
             context.Response.OutputStream.Write(bArray, 0, intTamano);
             context.Response.End();
         }
-        #endregion
-    } 
+
+        #endregion IHttpHandler Members
+    }
 }

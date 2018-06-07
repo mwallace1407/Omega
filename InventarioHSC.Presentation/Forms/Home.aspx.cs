@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
 
 namespace InventarioHSC.Forms
@@ -18,8 +14,9 @@ namespace InventarioHSC.Forms
         protected const float Rec_width = 180.0F;
         protected const float Rec_height = 100.0F;
         protected const string ImagenBase = "BasePrincipal.png";
+
         //Dar permisos a la carpeta de imágenes al usuario de servicio de red
-        System.Data.DataTable Resultados = new System.Data.DataTable();
+        private System.Data.DataTable Resultados = new System.Data.DataTable();
 
         protected void Page_Load(object sender, EventArgs e)
         {

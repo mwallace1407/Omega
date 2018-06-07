@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.IO;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
 using InventarioHSC.Model;
-using System.IO;
 using iTextSharp.text.pdf;
 
 namespace InventarioHSC.Forms.Operacion
@@ -14,6 +10,7 @@ namespace InventarioHSC.Forms.Operacion
     public partial class Op_Cartero_GenerarCarta : System.Web.UI.Page
     {
         #region Metodos
+
         protected string ArmarCadena()
         {
             string Cadena = System.IO.File.ReadAllText(Server.MapPath("CartaLiberacionDN.html"));
@@ -37,7 +34,7 @@ namespace InventarioHSC.Forms.Operacion
             Cadena = Cadena.Replace("@@ImagenFirma", Server.MapPath("../../App_Themes/Imagenes/firma.jpg"));
             Cadena = Cadena.Replace("@@ImagenLogo", Server.MapPath("../../App_Themes/Imagenes/LogoHSC.png"));
             Cadena = Cadena.Replace("@@ImagenPie", Server.MapPath("../../App_Themes/Imagenes/piePag.png"));
-            
+
             return Cadena;
         }
 
@@ -99,9 +96,11 @@ namespace InventarioHSC.Forms.Operacion
 
             return ArchivoR;
         }
+
         #endregion Metodos
 
         #region Eventos
+
         protected void Page_Load(object sender, EventArgs e)
         {
             System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("es-MX");
@@ -223,7 +222,7 @@ namespace InventarioHSC.Forms.Operacion
         {
             Response.Redirect("Op_Cartero_GenerarCarta.aspx");
         }
-        #endregion Eventos
 
+        #endregion Eventos
     }
 }

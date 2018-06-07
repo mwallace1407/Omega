@@ -1,19 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Data;
 using System.Web.UI.WebControls;
 using InventarioHSC.DataLayer;
-using System.Data;
 using InventarioHSC.Model;
 
 namespace InventarioHSC.BusinessLayer
 {
     public class BLConstancias
     {
-        DLConstancias dlObj = new DLConstancias();
+        private DLConstancias dlObj = new DLConstancias();
 
         #region Catalogos
+
         public void ObtenerCatalogos(ref DropDownList oddl, int Cat_Id, int Valor01 = 0, bool IncluirValorInicial = true, string Descripcion = "")
         {
             oddl.DataSource = dlObj.ObtenerCatalogos(Cat_Id, Valor01);
@@ -43,8 +41,11 @@ namespace InventarioHSC.BusinessLayer
                 ochkl.Items.Insert(0, itm);
             }
         }
+
         #endregion Catalogos
+
         #region Metodos
+
         public string VerificarExistencia(int ConA_Id, int ConP_Id, DateTime Fecha)
         {
             return dlObj.VerificarExistencia(ConA_Id, ConP_Id, (Int16)Fecha.Year);
@@ -137,6 +138,7 @@ namespace InventarioHSC.BusinessLayer
         {
             return dlObj.GenerarTXTBuzonE(Ejercicio.ToString(), Lotes);
         }
+
         #endregion Metodos
     }
 }

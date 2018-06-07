@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Mensaje.aspx.cs" Inherits="InventarioHSC.Forms.Mensaje" ValidateRequest="false"  %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Mensaje.aspx.cs" Inherits="InventarioHSC.Forms.Mensaje"
+    ValidateRequest="false" %>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -35,8 +36,8 @@
                     <br />
                 </div>
                 <div style="text-align: center">
-                    <input id="btnRegresar" type="button" value="Regresar" class="boton"
-                        onmousedown="Regresa();" onkeypress="catchEnter(event);" />
+                    <input id="btnRegresar" type="button" value="Regresar" class="boton" onmousedown="Regresa();"
+                        onkeypress="catchEnter(event);" />
                     <br />
                     <br />
                     <asp:HiddenField ID="hddPagina" runat="server" />

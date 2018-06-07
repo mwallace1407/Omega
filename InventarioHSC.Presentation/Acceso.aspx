@@ -24,8 +24,7 @@
                     this.value = (this.defaultValue ? this.defaultValue : '');
                 }
             });
-        });  
-
+        });
     </script>--%>
     <div>
         <table style="vertical-align: top; width: 100%; border-collapse: collapse;">
@@ -40,7 +39,8 @@
                 <div style="width: 135px; float: left">
                     <asp:Image runat="server" ID="imgCasita" ImageUrl="~/App_Themes/Imagenes/CastorParado.jpg"
                         Height="136px" Width="131px" /></div>
-                        <div style="width: 384px; height:50px; float: right"></div>
+                <div style="width: 384px; height: 50px; float: right">
+                </div>
                 <div style="width: 384px; float: right; text-align: left;">
                     <asp:Panel ID="pnlLog" runat="server" HorizontalAlign="Center">
                         <asp:Login ID="Login1" runat="server" CssClass="Login" DestinationPageUrl="~/Forms/Home.aspx"

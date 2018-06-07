@@ -1,18 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
-using InventarioHSC.Model;
-using Microsoft.Practices.EnterpriseLibrary.Data;
-using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
 using System.Data.Common;
+using System.Text;
+using InventarioHSC.Model;
+using Microsoft.Practices.EnterpriseLibrary.Common.Configuration;
+using Microsoft.Practices.EnterpriseLibrary.Data;
 
 namespace InventarioHSC.DataLayer
 {
     public class DLOperaciones
     {
         #region Cartero
+
         public DataTable LeerDatosFolio(string SolId)
         {
             DataTable MsjBD = new DataTable();
@@ -136,7 +135,7 @@ namespace InventarioHSC.DataLayer
                 if (MsjBD == "")
                     MsjBD = "OK";
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MsjBD = ex.Message;
             }
@@ -346,8 +345,11 @@ namespace InventarioHSC.DataLayer
 
             return MensajeBD.Tables[0];
         }
+
         #endregion Cartero
+
         #region AAE
+
         public DataTable BuscarDocumentosAAE(string CadenaBusqueda)
         {
             DataSet MensajeBD = new DataSet();
@@ -381,8 +383,11 @@ namespace InventarioHSC.DataLayer
 
             return MensajeBD.Tables[0];
         }
+
         #endregion AAE
+
         #region SAB
+
         public DataTable BuscarDocumentosSAB(string CadenaBusqueda)
         {
             DataSet MensajeBD = new DataSet();
@@ -416,8 +421,11 @@ namespace InventarioHSC.DataLayer
 
             return MensajeBD.Tables[0];
         }
+
         #endregion SAB
+
         #region Abanks
+
         public DataTable ObtenerMonedasAbanks(bool IncluirValorInicial = true)
         {
             DataSet ds = new DataSet();
@@ -483,8 +491,11 @@ namespace InventarioHSC.DataLayer
 
             return MsjBD;
         }
+
         #endregion Abanks
+
         #region Intranet
+
         public DataTable BuscarDocumentosIntranet(string CadenaBusqueda)
         {
             DataSet MensajeBD = new DataSet();
@@ -518,6 +529,7 @@ namespace InventarioHSC.DataLayer
 
             return MensajeBD.Tables[0];
         }
+
         #endregion Intranet
     }
 }

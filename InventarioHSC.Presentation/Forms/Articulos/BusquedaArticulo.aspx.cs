@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
@@ -13,6 +10,7 @@ namespace InventarioHSC
     public partial class BusquedaArticulo : System.Web.UI.Page
     {
         public BLArticulo oblArticulo = new BLArticulo();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -22,6 +20,7 @@ namespace InventarioHSC
                 CargaCatalogos();
             }
         }
+
         public void CargaCatalogos()
         {
             BLCatalogos oblCatalogos = new BLCatalogos();
@@ -34,7 +33,6 @@ namespace InventarioHSC
 
             oblCatalogos.CargaUbicacion(ref ddlUbicacion);
             ddlUbicacion.DataBind();
-
         }
 
         protected void chklstFiltros_SelectedIndexChanged(object sender, EventArgs e)
@@ -84,7 +82,6 @@ namespace InventarioHSC
                 ddlTipoArticulo.Enabled = false;
                 ddlTipoArticulo.SelectedValue = "0";
             }
-
         }
 
         protected void btnBuscar_Click(object sender, EventArgs e)
@@ -98,7 +95,7 @@ namespace InventarioHSC
             {
                 Params.Add(txtNoSerie.Text);
                 Params.Add(txtResponsiva.Text);
-                Params.Add(chklstFiltros.Items[2].Selected? Convert.ToInt32(ddlUsuario.SelectedValue) : 0);
+                Params.Add(chklstFiltros.Items[2].Selected ? Convert.ToInt32(ddlUsuario.SelectedValue) : 0);
                 Params.Add(Convert.ToInt32(ddlUbicacion.SelectedValue));
                 Params.Add(Convert.ToInt32(ddlTipoArticulo.SelectedValue));
 
@@ -151,7 +148,6 @@ namespace InventarioHSC
             //    LabelError.Text = ex.Message;
             //    Warning.Visible = true;
             //}
-
         }
 
         protected void gvwArticulos_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -180,7 +176,6 @@ namespace InventarioHSC
             gvwArticulos.DataSource = oblArticulo.BuscaArticuloFitrado(Params);
             gvwArticulos.PageIndex = e.NewPageIndex;
             gvwArticulos.DataBind();
-
         }
 
         protected void btnCancelar_Click(object sender, EventArgs e)

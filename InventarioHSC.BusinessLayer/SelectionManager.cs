@@ -31,10 +31,10 @@ namespace InventarioHSC.BusinessLayer
             // si algun item de esa pagina fue marcado previamente no se devuelve
             //
             idSelected = (from item in idSelected
-                             join item2 in grid.Rows.Cast<GridViewRow>()
-                                on item equals Convert.ToInt32(grid.DataKeys[item2.RowIndex].Value) into g
-                             where !g.Any()
-                             select item).ToList();
+                          join item2 in grid.Rows.Cast<GridViewRow>()
+                             on item equals Convert.ToInt32(grid.DataKeys[item2.RowIndex].Value) into g
+                          where !g.Any()
+                          select item).ToList();
 
             //
             // se agregan los seleccionados
@@ -42,12 +42,10 @@ namespace InventarioHSC.BusinessLayer
             idSelected.AddRange(checkedProd);
 
             HttpContext.Current.Session["idSelectedSess"] = idSelected;
-
         }
 
         public static void RestoreSelection(GridView grid)
         {
-
             List<int> idSelected = HttpContext.Current.Session["idSelectedSess"] as List<int>;
 
             if (idSelected == null)

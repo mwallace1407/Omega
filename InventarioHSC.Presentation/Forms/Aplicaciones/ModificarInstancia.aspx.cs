@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Data;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
 using InventarioHSC.Model;
-using System.Data;
 
 namespace InventarioHSC.Forms.Aplicaciones
 {
@@ -21,6 +17,7 @@ namespace InventarioHSC.Forms.Aplicaciones
         }
 
         #region Catalogos
+
         protected void CargaCatalogos()
         {
             BLCatalogos objCatalogo = new BLCatalogos();
@@ -32,6 +29,7 @@ namespace InventarioHSC.Forms.Aplicaciones
             objCatalogo.CatalogoBD(ref ddlBD);
             ddlBD.DataBind();
         }
+
         #endregion Catalogos
 
         protected void ddlInstancia_SelectedIndexChanged(object sender, EventArgs e)
@@ -87,7 +85,6 @@ namespace InventarioHSC.Forms.Aplicaciones
                 objGrupoSoftware.HistoricoApp(this.Page.ToString().Substring(4, this.Page.ToString().Substring(4).Length - 5) + ".aspx", Session["UserNameLogin"].ToString(), "U", AppSB_Id);
 
                 DatosGenerales.EnviaMensaje("Proceso finalizado", "Modificación de instancia BD", DatosGenerales.TiposMensaje.Informacion);
-                
             }
         }
     }

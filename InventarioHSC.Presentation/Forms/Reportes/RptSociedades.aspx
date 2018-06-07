@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Reporte de sociedades" Language="C#" MasterPageFile="~/Forms/Main.Master" AutoEventWireup="true" CodeBehind="RptSociedades.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptSociedades" %>
+﻿<%@ Page Title="Reporte de sociedades" Language="C#" MasterPageFile="~/Forms/Main.Master"
+    AutoEventWireup="true" CodeBehind="RptSociedades.aspx.cs" Inherits="InventarioHSC.Forms.Reportes.RptSociedades" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="headMaster" runat="server">

@@ -1,18 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
-using InventarioHSC.Model;
-using InventarioHSC.DataLayer;
 using System.Web.UI.WebControls;
+using InventarioHSC.DataLayer;
+using InventarioHSC.Model;
 
 namespace InventarioHSC.BusinessLayer
 {
     public class BLBovedaContra
     {
         #region Correo
-        Mailer.ArrayOfString CorreosCC = new Mailer.ArrayOfString();
+
+        private Mailer.ArrayOfString CorreosCC = new Mailer.ArrayOfString();
         private string CorreoTo = "";
 
         private void ParseMailAcc(string Correos)
@@ -46,7 +44,9 @@ namespace InventarioHSC.BusinessLayer
                 CorreoLista = null;
             }
         }
+
         #endregion Correo
+
         public string GuardarLlave(string UserName)
         {
             string Errores = "";

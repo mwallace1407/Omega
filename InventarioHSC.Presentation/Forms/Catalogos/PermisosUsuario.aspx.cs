@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using InventarioHSC.BusinessLayer;
-using InventarioHSC.Model;
 
 namespace InventarioHSC.Forms.Catalogos
 {
@@ -17,7 +13,7 @@ namespace InventarioHSC.Forms.Catalogos
         protected const int CeldaDesc = 1;
         protected const int CeldaAut = 2;
         protected const int CeldaMenu = 4;
-        System.Data.DataTable Resultados = new System.Data.DataTable();
+        private System.Data.DataTable Resultados = new System.Data.DataTable();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -82,7 +78,7 @@ namespace InventarioHSC.Forms.Catalogos
 
             objUsuario.BuscarUsuarioPermisos(ref cboUsuarios, txtUsuario.Text.Trim());
             cboUsuarios.DataBind();
-            
+
             if (cboUsuarios.Items.Count <= 1)
             {
                 cboUsuarios.Visible = false;
